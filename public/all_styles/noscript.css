@@ -1,0 +1,140 @@
+    @font-face { font-family: Roboto-Regular; src: url('../fonts/Roboto_Mono/static/RobotoMono-Regular.ttf'); } 
+
+body{
+  font-family: Roboto-Regular, sans-serif;
+  background-color: white;
+  color: black;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+  -webkit-touch-callout: default; /* iOS Safari */
+  -webkit-user-select: text; /* Chrome, Safari, Opera & Edge */
+  -khtml-user-select: text; /* Konqueror */
+  -moz-user-select: text; /* Firefox */
+  -ms-user-select: text; /* Internet Explorer/Edge */
+  user-select: text; /* Non-standardized but widely supported */
+  margin: 0px; 
+  padding: 0px; 
+  height: 100%;
+  text-align: center;
+}::selection {
+  color: white;
+  background: #474747;
+}
+
+.oldweb0{
+  display: none;
+}
+
+.noscript_pin{
+  position: fixed;
+  background-color: #ffcc00; 
+  color: black; 
+  padding: 10px; 
+  text-align: center;
+  width: 100%;
+  z-index: 999;
+}
+
+.noscript_coppyright{
+  padding-bottom: 80px;
+}
+
+.allert_content{
+  text-align: left;
+  padding-top: 80px;
+}
+
+.allert_content_p{
+  padding: 15px;
+  opacity: 0;
+  color: white;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome, Safari, Opera & Edge */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-standardized but widely supported */
+}
+
+.allert_content_c{
+  padding: 10px;
+}
+
+a{
+  color: gray;
+}
+
+a:hover{
+  color: black;
+  background-color: #ffcc00;
+  cursor: pointer;
+}
+
+.ac{
+  color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  body{
+  font-family: Roboto-Regular, sans-serif;
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+  -webkit-touch-callout: default; /* iOS Safari */
+  -webkit-user-select: text; /* Chrome, Safari, Opera & Edge */
+  -khtml-user-select: text; /* Konqueror */
+  -moz-user-select: text; /* Firefox */
+  -ms-user-select: text; /* Internet Explorer/Edge */
+  user-select: text; /* Non-standardized but widely supported */
+  margin: 0px; 
+  padding: 0px; 
+  height: 100%;
+  text-align: center;
+}::selection {
+color: black;
+background: #ffffff;
+}
+
+.noscript_coppyright{
+  padding-bottom: 80px;
+}
+
+.noscript_pin{
+  position: fixed;
+  background-color: #ffcc00; 
+  color: black; 
+  padding: 10px; 
+  text-align: center;
+  width: 100%;
+  z-index: 999;
+}
+
+.allert_content_p{
+  opacity: 0;
+  color: white;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome, Safari, Opera & Edge */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-standardized but widely supported */
+}
+
+a{
+  color: gray;
+}
+
+a:hover{
+  background-color: #ffcc00;
+  cursor: pointer;
+}
+
+.ac{
+  color: white;
+}
+
+}

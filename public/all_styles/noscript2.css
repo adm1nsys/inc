@@ -1,0 +1,287 @@
+    @font-face { font-family: Roboto-Regular; src: url('../fonts/Roboto_Mono/static/RobotoMono-Regular.ttf'); } 
+
+body{
+  font-family: Roboto-Regular, sans-serif;
+  background-color: white;
+  color: black;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+  -webkit-touch-callout: default; /* iOS Safari */
+  -webkit-user-select: text; /* Chrome, Safari, Opera & Edge */
+  -khtml-user-select: text; /* Konqueror */
+  -moz-user-select: text; /* Firefox */
+  -ms-user-select: text; /* Internet Explorer/Edge */
+  user-select: text; /* Non-standardized but widely supported */
+  margin: 0px; 
+  padding: 0px; 
+  height: 100%;
+  text-align: center;
+  min-height: 100vh;
+}::selection {
+  color: white;
+  background: #474747;
+}
+
+.oldweb0{
+  display: none;
+}
+
+a{
+  color: gray;
+}
+
+a:hover{
+  color: black;
+  background-color: #ffcc00;
+  cursor: pointer;
+}
+
+.noscript_coppyright{
+  padding-bottom: 80px;
+}
+
+.ac{
+  color: black;
+}
+
+.noscript_pin{
+  display: flex;
+  position: fixed;
+  background-color: #ffcc00; 
+  color: black; 
+  padding: 10px; 
+  text-align: center;
+  width: 100%;
+  z-index: 999;
+  justify-content: center;
+  top: 0;
+}
+
+.notification_t0{
+  text-align: left;
+}
+
+.pin_l{
+  color: white;
+}
+
+.pin_l:hover{
+  color: black;
+  background-color: white;
+}
+
+.ch_lang_list{
+  margin-top: 0;
+/*justify-content: center;*/
+width: 100%; 
+display: flex; 
+flex-wrap: wrap; 
+overflow-y: hidden;
+overflow-x: auto;
+/*gap: 10px;*/
+border-bottom: 2px solid black;
+/*background: rgb(2,0,36);*/
+background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(119, 115, 115, 1), rgba(0, 0, 0, 1));
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+.ch_lang_list2{
+justify-content: center;
+width: 100%; 
+display: flex; 
+flex-wrap: wrap; 
+/*gap: 10px;*/
+border: 2px solid white;
+border-left: none;
+border-right: none;
+padding-top: 10px;
+padding-bottom: 10px;
+background-color: gray;
+}
+
+.ch_lang_b{
+  padding: 10px; 
+  background-color: black; 
+  color: white; 
+  text-decoration: none;
+  border-radius: 10px;
+  border: 2px solid white;
+/*  margin-left: 20px;*/
+}
+
+.ch_lang_b:hover{
+
+}
+
+.title{
+  text-align: left;
+  padding-left: 10px;
+  font-size: 20px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(119, 115, 115, 1), rgba(0, 0, 0, 1));
+/*  margin-block-end: 0em;*/
+  border-top: 2px solid black;
+  color: white;
+}
+
+.title2{
+  text-align: left;
+  padding-left: 10px;
+  font-size: 40px;
+}
+
+.font{
+
+}
+
+.margin-gap{
+  width: 50px;
+  height: 2px;
+}
+
+@media screen and (max-width: 767px)
+{
+body{
+  font-size: 10px;
+}
+
+.title{
+  font-size: 16px;
+}
+
+.title2{
+  font-size: 20px;
+}
+
+.ch_lang_b{
+  padding: 5px; 
+}
+
+.font{
+  font-size: 10px;
+  
+}
+
+.ch_lang_b{
+  border-radius: 5px;
+}
+
+}
+
+.c1{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  text-align: left;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  body{
+  font-family: Roboto-Regular, sans-serif;
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+  -webkit-touch-callout: default; /* iOS Safari */
+  -webkit-user-select: text; /* Chrome, Safari, Opera & Edge */
+  -khtml-user-select: text; /* Konqueror */
+  -moz-user-select: text; /* Firefox */
+  -ms-user-select: text; /* Internet Explorer/Edge */
+  user-select: text; /* Non-standardized but widely supported */
+  margin: 0px; 
+  padding: 0px; 
+  height: 100%;
+  text-align: center;
+  min-height: 100vh;
+}::selection {
+color: black;
+background: #ffffff;
+}
+
+.noscript_coppyright{
+  padding-bottom: 80px;
+}
+
+.font{
+  
+}
+
+.noscript_pin{
+  display: flex;
+  position: fixed;
+  background-color: #ffcc00; 
+  color: black; 
+  padding: 10px; 
+  text-align: center;
+  width: 100%;
+  z-index: 999;
+  justify-content: center;
+  top: 0;
+}
+
+a{
+  color: gray;
+}
+
+a:hover{
+  background-color: #ffcc00;
+  cursor: pointer;
+}
+
+.ac{
+  color: white;
+}
+
+.notification_t0{
+  text-align: left;
+}
+
+.ch_lang_b{
+  padding: 10px; 
+  background-color: white; 
+  color: black; 
+  text-decoration: none;
+  border: 2px solid black;
+}
+
+.ch_lang_b:hover{
+
+}
+
+.title{
+  color: white;
+}
+
+@media screen and (max-width: 767px)
+{
+body{
+  font-size: 10px;
+}
+
+.title{
+  font-size: 16px;
+}
+
+.title2{
+  font-size: 20px;
+}
+
+.ch_lang_b{
+  padding: 5px; 
+}
+
+.font{
+  font-size: 10px;
+  
+}
+
+.ch_lang_b{
+  border-radius: 5px;
+}
+
+}
+
+}
