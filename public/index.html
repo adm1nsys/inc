@@ -12,7 +12,7 @@
 
 <script type="text/javascript">
 const page_id = 0;
-const dev_mode = false;
+const dev_mode = true;
 
 function loadFile(filePath, fileType, callback) {
     let tag;
@@ -43,12 +43,13 @@ function loadFilesSequentially(files, index = 0, finalCallback) {
 }
 
 const filesToLoad = [
-    { path: "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js", type: "js" },
+    // { path: "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js", type: "js" },
     { path: "all_styles/pre0.css", type: "css" },
     { path: "all_scripts/universal/jquery-3.7.1.js", type: "js" },
     { path: "all_scripts/universal/conf_01.js", type: "js" },
-    { path: "all_scripts/universal/lsccreen.js", type: "js" },
     { path: "all_scripts/universal/user_agent.js", type: "js" },
+    { path: "all_scripts/universal/safe_load.js", type: "js" },
+    { path: "all_scripts/universal/lsccreen.js", type: "js" },
     { path: "all_styles/ainc_l.css", type: "css" },
     { path: "all_styles/ainc_d.css", type: "css" },
     { path: "all_styles/corp_l.css", type: "css" },
@@ -72,24 +73,16 @@ loadFilesSequentially(filesToLoad, 0, function() {
 
 
 
+
 </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 
 </head>
 <body>
 
 <script>
-$(document).ready(function() {
-    // Load content from i01.html into the content-container div
-    $("#content").load("templates/a0/i01.html", function(response, status, xhr) {
-        // Optional: Error handling
-        if (status === "error") {
-            var errorMsg = "There was an error loading the content: ";
-            $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
-        }
-    });
-});
+
 </script>
 
 <div id="content" style="display: none;">
@@ -148,12 +141,73 @@ $(document).ready(function() {
 
 
 function panop (){
-  if (document.getElementById("panel1").style.bottom ==="0px") {
-  document.getElementById("panel1").style.bottom = "-100vh"; 
+  if (document.getElementById("panel1").style.display ==="flex") {
+
+  // document.getElementById("panel1").style.bottom = "-100vh"; 
+  document.getElementById("panel1").style.opacity = "0"; 
+  setTimeout(function() {
+  document.getElementById("panel1").style.display = "none"; 
+}, 400); 
+
+
   }else{
-  document.getElementById("panel1").style.bottom = "0px"; 
+
+  // document.getElementById("panel1").style.bottom = "0px"; 
+  document.getElementById("panel1").style.display = "flex"; 
+  setTimeout(function() {
+      document.getElementById("panel1").style.opacity = "1"; 
+  // document.getElementById("panel1").style.display = "none"; 
+}, 10); 
 
   }
+}
+
+function log_screen(){
+
+  if (c01.new_user === true) {
+    $(document).ready(function() {
+    $("#content").load(`templates/a0/${c01.lang}/i02.html`, function(response, status, xhr) {
+        if (status === "error") {
+            var errorMsg = "There was an error loading the content: ";
+            $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
+        }
+    });
+});
+  setTimeout(function() {
+
+  // document.getElementById("i01").style.display = "none";
+  document.getElementById("i02").style.display = "block";
+}, 100); 
+
+  }
+
+
+}
+
+function home_screen(){
+
+  // if (c01.new_user === true) {
+    $(document).ready(function() {
+    $("#content").load(`templates/a0/${c01.lang}/i01.html`, function(response, status, xhr) {
+        if (status === "error") {
+            var errorMsg = "There was an error loading the content: ";
+            $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
+        }
+    });
+});
+
+  setTimeout(function() {
+    loadFile("data/corp.js", "js");
+    loadFile("data/corp01_q.js", "js");
+corp_apply()
+    // loadFile("data/corpapply.js", "js");
+  document.getElementById("i01").style.display = "block";
+  // document.getElementById("i02").style.display = "block";
+}, 100); 
+
+  // }
+
+
 }
 
 document.addEventListener('DOMContentLoaded', function() {

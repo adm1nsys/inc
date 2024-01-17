@@ -16,6 +16,10 @@ let c01 = {
     ac05_d: '#949494',
     //max width content
     ac06: "80rem",
+    //lang
+    lang: "en",
+    //is new user
+    new_user: true
 };
 // c01.ac02 = "new color";
 

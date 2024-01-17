@@ -15,7 +15,7 @@ shtoraT.classList.add("lsc04");
 document.body.appendChild(shtoraT);
 
 const shtoraTtotle = document.createElement("div");
-shtoraTtotle.style.fontSize = getFontSizeRelativeToWindow(60, 60, 200);
+shtoraTtotle.style.fontSize = getFontSizeRelativeToWindow(50, 50, 200);
 shtoraTtotle.classList.add("lsc01");
 shtoraTtotle.textContent = "Admin inc.";
 shtoraT.appendChild(shtoraTtotle);
@@ -27,7 +27,7 @@ document.body.appendChild(shtoraB);
 
 
 const shtoraBtotle = document.createElement("div");
-shtoraBtotle.style.fontSize = getFontSizeRelativeToWindow(20, 20, 200);
+shtoraBtotle.style.fontSize = getFontSizeRelativeToWindow(10, 15, 200);
 shtoraBtotle.classList.add("lsc02");
 shtoraBtotle.textContent = "Made by Admin inc.";
 shtoraB.appendChild(shtoraBtotle);

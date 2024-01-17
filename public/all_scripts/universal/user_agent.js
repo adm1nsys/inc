@@ -62,15 +62,7 @@ const deviceType = getDeviceType();
 
     const debug_menu = document.createElement('div');
     debug_menu.id = 'debug_menu';
-    if (dev_mode === true) {
-        debug_menu.style.display = 'flex';
-        mode_title.textContent = "Mode: Developer"
-    mode_title.style.color = "red";
-    } else {
-        debug_menu.style.display = 'none';
-        mode_title.textContent = "Mode: User"
-    mode_title.style.color = "green";
-    }
+
     
     document.body.appendChild(debug_menu);
 

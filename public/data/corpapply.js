@@ -1,4 +1,4 @@
-
+function corp_apply(){
     if (typeof corporateDataArray !== 'undefined' && corporateDataArray.length > 0) {
         const PRODUCT_NAME = corporateDataArray[0].name;
         console.log(PRODUCT_NAME);  
@@ -16,6 +16,7 @@
     } else {
         console.error('corporateDataArray undefined or empty');
     }
-
+}
+corp_apply()
 document.getElementById("content").style.display = "block";
     

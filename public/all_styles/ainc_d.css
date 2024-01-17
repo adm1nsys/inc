@@ -41,7 +41,7 @@ color: white;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.pin-btn1:hover{
+.pin-btn1:active{
 color: white;
   background-color: rgba(125, 125, 125, 0.5);
 }
@@ -50,7 +50,9 @@ color: white;
   background-image: url('../img/logod.png');
 }
 
-
+.pin-btn3{
+  fill: white;
+}
 
   .page1_bg{
 background-color: #070707;
@@ -318,6 +320,11 @@ rotate: 0deg;
 .f1{
   rotate: 0deg;
   width: 100%;
+  border-radius: 0px;
+}
+
+#debug_menu{
+  display: none;
 }
 
 }

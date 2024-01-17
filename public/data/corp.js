@@ -36,7 +36,7 @@ var corporateDataArray = [
     },
     {
         name: "XN1GHT",
-        logo_c: "a0",
+        logo_c: "a3",
         status: "Release",
         pcversion: "2.2PR",
         mobileversion: "2.2MR",
@@ -48,13 +48,14 @@ var corporateDataArray = [
     },
     {
         name: "Admin Store",
-        logo_c: "a0",
+        logo_c: "a4",
         status: "Beta",
         pcversion: "2.2PR",
         mobileversion: "2.2MR",
         vrversion: "2.2VRR",
         universalversion: "2.2UR",
         description:"description for Admin Store",
+        link: "https://administrati0n.github.io/admin-store/",
         accent_color:"white",
     },
     {
