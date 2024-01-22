@@ -1,0 +1,120 @@
+<div id="i02">
+<style type="text/css">
+    .p0l{
+/*        width: 40%;*/
+        background: rgba(128, 128, 128, 0.2);
+border: 2px solid rgba(148, 148, 148, 0.4);
+        border-radius: 10px;
+        margin: 10px;
+margin-right: 5px;
+overflow-y: auto;
+min-width: 200px;
+max-width: 300px;
+    }
+    .p0r{
+        width: 100%;
+        background: rgba(128, 128, 128, 0.2);
+border: 2px solid rgba(148, 148, 148, 0.4);
+        border-radius: 10px;
+        margin: 10px;
+margin-left: 5px;
+overflow-y: auto;
+    }
+    .del_all_account_btn{
+        color: darkred;
+        background: none;
+        border-radius: 10px;
+        margin: 10px;
+padding-top: 10px;
+padding-bottom: 10px;
+transition: 0.4s;
+    }
+    .del_all_account_btn:hover{
+        background: rgba(128, 128, 128, 0.25);
+        cursor: pointer;
+    }
+    .pin_al{
+/*        display: none;*/
+/*        opacity: 0;*/
+        display: flex;
+        background: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transition: 1.5s;
+    }
+</style>
+<script>
+$(document).ready(function() {
+        loadFile("../../all_styles/i02.css", "css");
+});
+  
+</script>
+
+<div style="display: flex; flex-direction: row; max-height: 100vh; min-height: 100vh;">
+<div class="p0l">
+    <div class="del_all_account_btn" style="color: white;" onclick="home_screen()"><-- Go Back</div>
+    <div class="del_all_account_btn" style="color: white; ">Global Settings</div>
+    
+    <div class="del_all_account_btn" onclick="account_deleate_win()">Deleate Account</div>
+
+</div>
+
+<div class="p0r">
+    <h1 style="display:flex; margin-left: 20px; margin-right: 20px;">Hello&nbsp;<div id="account_btn"></div>!</h1>
+
+
+    <div style="margin-left: 20px; margin-right: 20px; text-align: left;" class="h2">
+        PC
+    </div>
+
+</div>
+</div>
+
+
+<div class="pin_al" id="pin_al" style="display: none;">
+    <div style="margin: auto;">
+        <div style="flex-direction: column; background-color: background: rgba(128, 128, 128, 0.25);
+padding: 15px;
+border: 2px solid rgba(148, 148, 148, 0.4);
+border-radius: 10px;">
+        <h2 style="margin-top: 0px;">Are you sure you want to delete your account?</h2>
+            <div style="margin-left: auto; margin-right:auto;">All settings will be lost!</div>
+    <div class="del_all_account_btn" onclick="account_deleate()">Deleate Account</div>
+    <div class="del_all_account_btn" onclick="account_deleate_cancel()" style="color: white;">Cancel</div>
+
+</div>
+    </div>
+</div>
+
+</div>
+
+<script>
+function name_id00() {
+    if (localStorage.getItem('c01.user_id') === null || localStorage.getItem('c01.user_id') === "") {
+        document.getElementById("account_btn").textContent = "sign up";
+    } else if (localStorage.getItem('c01.new_user') === 'true') {
+        document.getElementById("account_btn").textContent = "sign up";
+    } else {
+        document.getElementById("account_btn").textContent = localStorage.getItem('c01.user_id');
+    }
+}
+$(document).ready(function() {
+name_id00();
+});
+
+function account_deleate(){
+    localStorage.clear();
+}
+
+function account_deleate_cancel(){
+    $('#pin_al').fadeOut();
+}
+function account_deleate_win(){
+    $('#pin_al').fadeIn();
+}
+</script>

@@ -1,0 +1,108 @@
+<div id="i02">
+
+<script>
+$(document).ready(function() {
+        loadFile("../../all_styles/i02.css", "css");
+});
+  
+</script>
+
+
+
+
+  <div class="frame">
+  
+
+  
+  <div class="frame-bg">
+
+    <div class="bg-color album-artwork bg-set"></div>
+
+    <div class="bg-black album-artwork bg-set"></div>
+
+  </div>  
+<div style="z-index: 99; padding-right: 2rem; padding-left: 2rem;">
+<!-- <input type="text" placeholder="Name" style="width: 100%; padding: 10px;"> -->
+<h3 style="margin-right: auto; display:flex;">id:</h3>
+<span class="editableSpan" contenteditable="true" oninput="checkConditions()"></span>
+<br>
+<br>
+<span>Please read the <a href="">terms of use</a>, <a href="">privacy</a> and <a href="">license</a> agreements carefully before proceeding.</span>
+
+<br>
+<label>
+        <input type="checkbox" id="agreementCheckbox" onclick="checkConditions()">
+        I have read and agree to the terms and conditions
+    </label><br><br>
+  <button id="continueButton" class="disabled btn" disabled onclick="onContinueClick()"><h2>Continue</h2></button>
+</div>
+<!-- </div> -->
+</div>
+
+  <div onclick="home_screen()"  style="display: flex;
+width: 50px;
+height: 50px;
+justify-content: center;
+justify-items: center;
+align-content: center;
+align-items: center;
+line-height: 0px;
+left: 20px;
+top: 20px;
+position: fixed;
+background-color: gray;
+border-radius: 10px;"><-</div>
+
+</div>
+
+<script>
+
+  document.getElementById("content").style.display = "block"
+        function generateRandomId(length) {
+            var result = '';
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var charactersLength = characters.length;
+            for (var i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            return result;
+        }
+
+        function checkConditions() {
+            var spanText = document.querySelector('.editableSpan').innerText.trim();
+            var isCheckboxChecked = document.getElementById('agreementCheckbox').checked;
+            var continueButton = document.getElementById('continueButton');
+
+            if (spanText.length > 0 && isCheckboxChecked) {
+                continueButton.disabled = false;
+                continueButton.classList.remove('disabled');
+            } else {
+                continueButton.disabled = true;
+                continueButton.classList.add('disabled');
+            }
+        }
+
+
+        function updateLocalStorage() {
+            var userId = document.querySelector('.editableSpan').innerText.trim();
+            localStorage.setItem('c01.new_user', 'false');
+            localStorage.setItem('c01.user_id', userId);
+        }
+
+        function onContinueClick() {
+            if (!document.getElementById('continueButton').disabled) {
+                updateLocalStorage();
+                    $("#content").load(`templates/a0/${c01.lang}/account/i00.html`, function(response, status, xhr) {
+        if (status === "error") {
+            var errorMsg = "There was an error loading the content: ";
+            $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
+        }
+      window.history.pushState({}, '', '/account.html');
+        
+    });
+            }
+        }
+
+            document.querySelector('.editableSpan').innerText = generateRandomId(8);
+            checkConditions();
+    </script>

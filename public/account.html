@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ADMIN inc.</title>
+  <link rel="shortcut icon" href="img/logoico1.ico" type="image/x-icon">
+<link rel="icon" href="img/logoico32.png" sizes="32x32">
+<link rel="icon" href="img/logoico48.png" sizes="48x48">
+<link rel="icon" href="img/logoico96.png" sizes="96x96">
+<link rel="icon" href="img/logoico144.png" sizes="144x144">  
+
+<script type="text/javascript">
+const page_id = 2;
+const dev_mode = false;
+
+function loadFile(filePath, fileType, callback) {
+    let tag;
+
+    if (fileType === "css") {
+        tag = document.createElement("link");
+        tag.rel = "stylesheet";
+        tag.type = "text/css";
+        tag.href = filePath;
+    } else if (fileType === "js") {
+        tag = document.createElement("script");
+        tag.type = "text/javascript";
+        tag.src = filePath;
+    }
+
+    if (tag) {
+        tag.onload = callback;
+        document.head.appendChild(tag);
+    }
+}
+
+function loadFilesSequentially(files, index = 0, finalCallback) {
+    if (index < files.length) {
+        loadFile(files[index].path, files[index].type, () => loadFilesSequentially(files, index + 1, finalCallback));
+    } else if (finalCallback) {
+        finalCallback();
+    }
+}
+
+const filesToLoad = [
+    // { path: "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js", type: "js" },
+    { path: "all_styles/pre0.css", type: "css" },
+    { path: "all_scripts/universal/jquery-3.7.1.js", type: "js" },
+    { path: "all_scripts/universal/conf_01.js", type: "js" },
+    { path: "all_scripts/universal/user_agent.js", type: "js" },
+    { path: "all_scripts/universal/safe_load.js", type: "js" },
+    { path: "all_scripts/universal/lsccreen.js", type: "js" },
+    { path: "all_styles/ainc_l.css", type: "css" },
+    { path: "all_styles/ainc_d.css", type: "css" },
+    { path: "all_styles/corp_l.css", type: "css" },
+    { path: "all_styles/corp_d.css", type: "css" },
+    { path: "data/corp.js", type: "js" },
+    { path: "data/corpapply.js", type: "js" },
+    { path: "data/corp01_q.js", type: "js" },
+    { path: "all_scripts/universal/lsccreenend.js", type: "js" },
+
+// document.getElementById("content").style.display = "block";
+
+];
+
+loadFilesSequentially(filesToLoad, 0, function() {
+    if (typeof userInfo !== 'undefined' && userInfo.browser === 'Safari' && userInfo.version === 0 && userInfo.os === 'macOS' && userInfo.deviceType === 'PC') {
+        // loadFile("data/corpapply.js", "js");
+    } else {
+        // loadFile("all_scripts/universal/jquery-3.7.1.js", "js");
+    }
+});
+
+
+
+
+</script>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+</head>
+<body>
+
+<script>
+
+</script>
+
+<div id="content" style="display: none;">
+
+</div>
+
+
+<noscript>
+<link rel="stylesheet" type="text/css" href="all_styles/noscript.css">
+
+<div style="min-height:100vh">
+
+  <div class="noscript_pin">
+    <strong>Attention:</strong> JavaScript was not detected.
+  </div>
+
+<div class="allert_content">
+
+
+
+<div class="allert_content_c">
+      It appears that JavaScript is disabled in your browser. To ensure the Admin Inc website functions correctly, JavaScript must be enabled. If you're experiencing issues with JavaScript, please consult one of the following links for assistance in resolving the problem.
+      <br>
+ <a href="unavaleble/noscript/fix/noscript_en.html" target="_blank">Instruction by Admin inc.</a>
+      <br>
+ <a href="http://www.enable-javascript.com/" target="_blank">Instruction 2</a>
+      <br>
+</div>
+
+</div>
+      <br>
+
+<div class="noscript_coppyright">© by <a href="" target="_blank" class="ac">Admin inc.</a> All rights reserved</div>
+
+</div>
+</noscript>
+
+<div class="oldweb0">Now is unsupported</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+<script type="text/javascript">
+
+
+
+function panop() {
+  if (document.getElementById("panel1").style.display === "flex") {
+    document.getElementById("panel1").style.opacity = "0";
+    setTimeout(function() {
+      document.getElementById("panel1").style.display = "none";
+    }, 400);
+  } else {
+    document.getElementById("panel1").style.display = "flex";
+    setTimeout(function() {
+      document.getElementById("panel1").style.opacity = "1";
+    }, 10);
+  }
+}
+
+function log_screen() {
+  if (localStorage.getItem('c01.user_id') === null || localStorage.getItem('c01.user_id') === "") {
+    $(document).ready(function() {
+      $("#content").load(`templates/a0/${c01.lang}/i02.html`, function(response, status, xhr) {
+        if (status === "error") {
+          var errorMsg = "There was an error loading the content: ";
+          $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
+        }
+        window.history.pushState({}, '', '/login.html');
+      });
+    });
+    setTimeout(function() {
+      document.getElementById("i02").style.display = "block";
+    }, 100);
+  } else {
+    $("#content").load(`templates/a0/${c01.lang}/account/i00.html`, function(response, status, xhr) {
+      if (status === "error") {
+        var errorMsg = "There was an error loading the content: ";
+        $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
+      }
+      window.history.pushState({}, '', '/account.html');
+    });
+  }
+}
+
+function home_screen1() {
+  window.history.pushState({}, '', '/index.html');
+}
+
+function home_screen() {
+  home_screen1();
+  $(document).ready(function() {
+    $("#content").load(`templates/a0/${c01.lang}/i01.html`, function(response, status, xhr) {
+      if (status === "error") {
+        var errorMsg = "There was an error loading the content: ";
+        $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
+      }
+    });
+  });
+  setTimeout(function() {
+    loadFile("data/corp.js", "js");
+    loadFile("data/corp01_q.js", "js");
+    if (getDeviceType = "Mobile") {
+      loadFile("data/corpapply.js", "js");
+    } else {
+      corp_apply();
+    }
+    if (dev_mode === true) {
+      document.getElementById("adm").style.display = "flex";
+    } else {
+      document.getElementById("adm").style.display = "none";
+    }
+    document.getElementById("i01").style.display = "block";
+  }, 100);
+}
+
+
+</script>
+
+
+
+</html>
