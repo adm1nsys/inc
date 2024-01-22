@@ -43,9 +43,9 @@ switch (c01.lang) {
 
 
 if(osInfo.os === "macOS"){
-        loadFile("../../all_styles/blur_style.css", "css");
+        loadFile("https://raw.githubusercontent.com/adm1nsys/inc/main/public/all_styles/blur_style.css", "css");
 }else{
-        loadFile("../../all_styles/no_blur_style.css", "css");
+        loadFile("https://raw.githubusercontent.com/adm1nsys/inc/main/public/all_styles/no_blur_style.css", "css");
 } 
 
 });
