@@ -8,7 +8,7 @@
 <link rel="icon" href="img/logoico32.png" sizes="32x32">
 <link rel="icon" href="img/logoico48.png" sizes="48x48">
 <link rel="icon" href="img/logoico96.png" sizes="96x96">
-<link rel="icon" href="img/logoico144.png" sizes="144x144">  
+<link rel="icon" href="img/logoico144.png" sizes="144x144">
 
 <script type="text/javascript">
 const page_id = 1;
@@ -142,17 +142,17 @@ loadFilesSequentially(filesToLoad, 0, function() {
 
 function panop (){
   if (document.getElementById("panel1").style.display ==="flex") {
-  document.getElementById("panel1").style.opacity = "0"; 
+  document.getElementById("panel1").style.opacity = "0";
   setTimeout(function() {
-  document.getElementById("panel1").style.display = "none"; 
-}, 400); 
+  document.getElementById("panel1").style.display = "none";
+}, 400);
 
 
   }else{
-  document.getElementById("panel1").style.display = "flex"; 
+  document.getElementById("panel1").style.display = "flex";
   setTimeout(function() {
-      document.getElementById("panel1").style.opacity = "1"; 
-}, 10); 
+      document.getElementById("panel1").style.opacity = "1";
+}, 10);
 
   }
 }
@@ -166,14 +166,14 @@ function log_screen(){
             var errorMsg = "There was an error loading the content: ";
             $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
         }
-      window.history.pushState({}, '', '/account.html');
-        
+      window.history.pushState({}, 'inc/', '/account.html');
+
     });
 });
   setTimeout(function() {
 
   document.getElementById("i02").style.display = "block";
-}, 100); 
+}, 100);
 
   } else{
       $("#content").load(`templates/a0/${c01.lang}/account/i00.html`, function(response, status, xhr) {
@@ -182,7 +182,7 @@ function log_screen(){
             $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
         }
     });
-            
+
 
   }
 
@@ -190,7 +190,7 @@ function log_screen(){
 }
 
 function home_screen1(){
-window.history.pushState({}, '', '/index.html');
+window.history.pushState({}, 'inc/', '/index.html');
 }
 
 function home_screen(){
@@ -221,7 +221,7 @@ corp_apply()
     }
   document.getElementById("i01").style.display = "block";
   // document.getElementById("i02").style.display = "block";
-}, 100); 
+}, 100);
 
   // }
 

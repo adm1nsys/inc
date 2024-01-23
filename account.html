@@ -8,7 +8,7 @@
 <link rel="icon" href="img/logoico32.png" sizes="32x32">
 <link rel="icon" href="img/logoico48.png" sizes="48x48">
 <link rel="icon" href="img/logoico96.png" sizes="96x96">
-<link rel="icon" href="img/logoico144.png" sizes="144x144">  
+<link rel="icon" href="img/logoico144.png" sizes="144x144">
 
 <script type="text/javascript">
 const page_id = 2;
@@ -173,13 +173,13 @@ function log_screen() {
         var errorMsg = "There was an error loading the content: ";
         $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
       }
-      window.history.pushState({}, '', '/account.html');
+      window.history.pushState({}, 'inc/', '/account.html');
     });
   }
 }
 
 function home_screen1() {
-  window.history.pushState({}, '', '/index.html');
+  window.history.pushState({}, 'inc/', '/index.html');
 }
 
 function home_screen() {
