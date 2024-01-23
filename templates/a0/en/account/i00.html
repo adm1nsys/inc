@@ -72,18 +72,24 @@ $(document).ready(function() {
         PC
     </h2>
 
-    <h4 style="margin-left: 20px; margin-right: 20px; text-align: left;" for="dropdown">
-        Theme:<select id="dropdown" name="options">
-              <option value="option1">System</option>
-              <option value="option2">Dark</option>
-              <option value="option3">Light</option>
-              <option value="option3">Custom</option>
-            </select>
+    <h4 style="margin-left: 20px; margin-right: 20px; text-align: left;">
+        Theme:
+        <select id="themeSelector" name="options">
+            <option value="system">System</option>
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+            <option value="custom">Custom</option>
+        </select>
     </h4>
 
-    <h4 style="margin-left: 20px; margin-right: 20px; text-align: left;" disabled>
-      Change Color 1 : <input type="color" id="colorPicker" name="color" disabled> <input type="color" id="colorPicker" name="color" disabled>
+    <h4 style="margin-left: 20px; margin-right: 20px; text-align: left;">
+        Change Color 1 : <input type="color" id="colorPicker1" name="color1"> <input type="color" id="colorPicker1_d" name="color1_d"><br>
+        Change Color 2 : <input type="color" id="colorPicker2" name="color2"> <input type="color" id="colorPicker2_d" name="color2_d"><br>
+        Change Color 3 : <input type="color" id="colorPicker3" name="color3"> <input type="color" id="colorPicker3_d" name="color3_d"><br>
+        Change Color 4 : <input type="color" id="colorPicker4" name="color4"> <input type="color" id="colorPicker4_d" name="color4_d"><br>
+        Change Color 5 : <input type="color" id="colorPicker5" name="color5"> <input type="color" id="colorPicker5_d" name="color5_d"><br>
     </h4>
+
 
     <h4 style="margin-left: 20px; margin-right: 20px; text-align: left;">
       Download Configuration: <button type="button" name="button">Download</button>
@@ -140,5 +146,39 @@ function account_deleate_cancel(){
 }
 function account_deleate_win(){
     $('#pin_al').fadeIn();
+}
+
+
+
+document.getElementById('themeSelector').addEventListener('change', function() {
+    toggleColorPickers(this.value);
+});
+
+function toggleColorPickers(theme) {
+    let disabled = (theme !== 'custom');
+    for (let i = 1; i <= 5; i++) {
+        document.getElementById('colorPicker' + i).disabled = disabled;
+        document.getElementById('colorPicker' + i + '_d').disabled = disabled;
+
+        if (!disabled) {
+            let color = localStorage.getItem('color' + i) || c01['ac0' + i];
+            let color_d = localStorage.getItem('color' + i + '_d') || c01['ac0' + i + '_d'];
+            document.getElementById('colorPicker' + i).value = color;
+            document.getElementById('colorPicker' + i + '_d').value = color_d;
+        }
+    }
+}
+
+// Инициализация при загрузке страницы
+toggleColorPickers(document.getElementById('themeSelector').value);
+
+// Сохранение выбранных цветов в localStorage
+for (let i = 1; i <= 5; i++) {
+    document.getElementById('colorPicker' + i).addEventListener('input', function() {
+        localStorage.setItem('color' + i, this.value);
+    });
+    document.getElementById('colorPicker' + i + '_d').addEventListener('input', function() {
+        localStorage.setItem('color' + i + '_d', this.value);
+    });
 }
 </script>
