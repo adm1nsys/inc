@@ -46,7 +46,7 @@ if(osInfo.os === "macOS"){
         loadFile("https://adm1nsys.github.io/inc/public/all_styles/blur_style.css", "css");
 }else{
         loadFile("https://adm1nsys.github.io/inc/public/all_styles/no_blur_style.css", "css");
-} 
+}
 
 });
 
@@ -54,7 +54,7 @@ if(osInfo.os === "macOS"){
 
 
 function loadContentForLanguage() {
-    $("#content").load(`templates/a0/${c01.lang}/i01.html`, function(response, status, xhr) {
+    $("#content").load(`public/templates/a0/${c01.lang}/i01.html`, function(response, status, xhr) {
         if (status === "error") {
             var errorMsg = "There was an error loading the content: ";
             $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
@@ -63,7 +63,7 @@ function loadContentForLanguage() {
 }
 
 function loadContentForLanguage1() {
-    $("#content").load(`templates/a0/${c01.lang}/i02.html`, function(response, status, xhr) {
+    $("#content").load(`public/templates/a0/${c01.lang}/i02.html`, function(response, status, xhr) {
         if (status === "error") {
             var errorMsg = "There was an error loading the content: ";
             $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
@@ -72,14 +72,10 @@ function loadContentForLanguage1() {
 }
 
 function loadContentForLanguage2() {
-      $("#content").load(`templates/a0/${c01.lang}/account/i00.html`, function(response, status, xhr) {
+      $("#content").load(`public/templates/a0/${c01.lang}/account/i00.html`, function(response, status, xhr) {
         if (status === "error") {
             var errorMsg = "There was an error loading the content: ";
             $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
         }
     });
 }
-
-
-
-

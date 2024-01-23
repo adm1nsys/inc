@@ -4,23 +4,23 @@
 $(document).ready(function() {
         loadFile("../../all_styles/i02.css", "css");
 });
-  
+
 </script>
 
 
 
 
   <div class="frame">
-  
 
-  
+
+
   <div class="frame-bg">
 
     <div class="bg-color album-artwork bg-set"></div>
 
     <div class="bg-black album-artwork bg-set"></div>
 
-  </div>  
+  </div>
 <div style="z-index: 99; padding-right: 2rem; padding-left: 2rem;">
 <!-- <input type="text" placeholder="Name" style="width: 100%; padding: 10px;"> -->
 <h3 style="margin-right: auto; display:flex;">id:</h3>
@@ -92,13 +92,13 @@ border-radius: 10px;"><-</div>
         function onContinueClick() {
             if (!document.getElementById('continueButton').disabled) {
                 updateLocalStorage();
-                    $("#content").load(`templates/a0/${c01.lang}/account/i00.html`, function(response, status, xhr) {
+                    $("#content").load(`inc/public/templates/a0/${c01.lang}/account/i00.html`, function(response, status, xhr) {
         if (status === "error") {
             var errorMsg = "There was an error loading the content: ";
             $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
         }
-      window.history.pushState({}, '', '/account.html');
-        
+      window.history.pushState({}, '', 'inc/public/account.html');
+
     });
             }
         }
