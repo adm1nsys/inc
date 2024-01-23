@@ -162,7 +162,7 @@ function log_screen() {
           var errorMsg = "There was an error loading the content: ";
           $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
         }
-        window.history.pushState({}, 'inc/', '/login.html');
+        window.history.pushState({}, '', 'login.html');
       });
     });
     setTimeout(function() {
@@ -174,13 +174,13 @@ function log_screen() {
         var errorMsg = "There was an error loading the content: ";
         $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
       }
-      window.history.pushState({}, 'inc/', '/account.html');
+      window.history.pushState({}, '', 'account.html');
     });
   }
 }
 
 function home_screen1() {
-  window.history.pushState({}, 'inc/', '/index.html');
+  window.history.pushState({}, '', 'index.html');
 }
 
 function home_screen() {
