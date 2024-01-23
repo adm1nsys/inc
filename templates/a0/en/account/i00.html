@@ -50,16 +50,16 @@ transition: 0.4s;
 </style>
 <script>
 $(document).ready(function() {
-        loadFile("../../all_styles/i02.css", "css");
+        // loadFile("../../all_styles/i02.css", "css");
 });
-  
+
 </script>
 
 <div style="display: flex; flex-direction: row; max-height: 100vh; min-height: 100vh;">
 <div class="p0l">
     <div class="del_all_account_btn" style="color: white;" onclick="home_screen()"><-- Go Back</div>
     <div class="del_all_account_btn" style="color: white; ">Global Settings</div>
-    
+
     <div class="del_all_account_btn" onclick="account_deleate_win()">Deleate Account</div>
 
 </div>
@@ -68,9 +68,33 @@ $(document).ready(function() {
     <h1 style="display:flex; margin-left: 20px; margin-right: 20px;">Hello&nbsp;<div id="account_btn"></div>!</h1>
 
 
-    <div style="margin-left: 20px; margin-right: 20px; text-align: left;" class="h2">
+    <h2 style="margin-left: 20px; margin-right: 20px; text-align: left;">
         PC
-    </div>
+    </h2>
+
+    <h4 style="margin-left: 20px; margin-right: 20px; text-align: left;" for="dropdown">
+        Theme:<select id="dropdown" name="options">
+              <option value="option1">System</option>
+              <option value="option2">Dark</option>
+              <option value="option3">Light</option>
+              <option value="option3">Custom</option>
+            </select>
+    </h4>
+
+    <h4 style="margin-left: 20px; margin-right: 20px; text-align: left;" disabled>
+      Change Color 1 : <input type="color" id="colorPicker" name="color" disabled> <input type="color" id="colorPicker" name="color" disabled>
+    </h4>
+
+    <h4 style="margin-left: 20px; margin-right: 20px; text-align: left;">
+      Download Configuration: <button type="button" name="button">Download</button>
+    </h4>
+
+    <h4 style="margin-left: 20px; margin-right: 20px; text-align: left;" for="fileUpload">
+      Load Configuration: <input type="file" id="fileUpload" name="file">
+    </h4>
+
+
+
 
 </div>
 </div>
