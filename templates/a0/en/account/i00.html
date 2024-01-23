@@ -47,6 +47,8 @@ transition: 0.4s;
         -webkit-backdrop-filter: blur(10px);
         transition: 1.5s;
     }
+
+
 </style>
 <script>
 $(document).ready(function() {
@@ -99,7 +101,7 @@ $(document).ready(function() {
       Load Configuration: <input type="file" id="fileUpload" name="file">
     </h4>
 
- 
+
 
 
 </div>
@@ -139,6 +141,8 @@ name_id00();
 
 function account_deleate(){
     localStorage.clear();
+    home_screen1()
+    home_screen()
 }
 
 function account_deleate_cancel(){
