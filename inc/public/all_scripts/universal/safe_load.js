@@ -54,7 +54,7 @@ if(osInfo.os === "macOS"){
 
 
 function loadContentForLanguage() {
-    $("#content").load(`public/templates/a0/${c01.lang}/i01.html`, function(response, status, xhr) {
+    $("#content").load(`templates/a0/${c01.lang}/i01.html`, function(response, status, xhr) {
         if (status === "error") {
             var errorMsg = "There was an error loading the content: ";
             $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
@@ -63,7 +63,7 @@ function loadContentForLanguage() {
 }
 
 function loadContentForLanguage1() {
-    $("#content").load(`public/templates/a0/${c01.lang}/i02.html`, function(response, status, xhr) {
+    $("#content").load(`templates/a0/${c01.lang}/i02.html`, function(response, status, xhr) {
         if (status === "error") {
             var errorMsg = "There was an error loading the content: ";
             $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
