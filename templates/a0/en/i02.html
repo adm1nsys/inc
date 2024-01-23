@@ -92,12 +92,12 @@ border-radius: 10px;"><-</div>
         function onContinueClick() {
             if (!document.getElementById('continueButton').disabled) {
                 updateLocalStorage();
-                    $("#content").load(`inc/public/templates/a0/${c01.lang}/account/i00.html`, function(response, status, xhr) {
+                    $("#content").load(`/templates/a0/${c01.lang}/account/i00.html`, function(response, status, xhr) {
         if (status === "error") {
             var errorMsg = "There was an error loading the content: ";
             $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
         }
-      window.history.pushState({}, '', 'inc/public/account.html');
+      window.history.pushState({}, '', '/account.html');
 
     });
             }
