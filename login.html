@@ -166,7 +166,7 @@ function log_screen(){
             var errorMsg = "There was an error loading the content: ";
             $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
         }
-      window.history.pushState({}, '', '/account.html');
+      window.history.pushState({}, '', '/inc/account.html');
 
     });
 });
@@ -190,7 +190,7 @@ function log_screen(){
 }
 
 function home_screen1(){
-window.history.pushState({}, '', '/index.html');
+window.history.pushState({}, '', '/inc/index.html');
 }
 
 function home_screen(){
