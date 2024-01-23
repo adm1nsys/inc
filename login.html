@@ -176,7 +176,7 @@ function log_screen(){
 }, 100);
 
   } else{
-      $("#content").load(`templates/a0/${c01.lang}/account/i00.html`, function(response, status, xhr) {
+      $("#content").load(`/inc/templates/a0/${c01.lang}/account/i00.html`, function(response, status, xhr) {
         if (status === "error") {
             var errorMsg = "There was an error loading the content: ";
             $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
