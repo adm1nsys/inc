@@ -2,23 +2,25 @@
 <style type="text/css">
     .p0l{
 /*        width: 40%;*/
-        background: rgba(128, 128, 128, 0.2);
-border: 2px solid rgba(148, 148, 148, 0.4);
-        border-radius: 10px;
+background: rgba(0, 0, 0, 0.27);
+border: 2px solid #2A2A2A;
+        border-radius: 20px;
         margin: 10px;
 margin-right: 5px;
 overflow-y: auto;
 min-width: 200px;
 max-width: 300px;
+position: relative;
     }
     .p0r{
         width: 100%;
-        background: rgba(128, 128, 128, 0.2);
-border: 2px solid rgba(148, 148, 148, 0.4);
-        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.27);
+        border: 2px solid #2A2A2A;
+        border-radius: 20px;
         margin: 10px;
 margin-left: 5px;
 overflow-y: auto;
+position: relative;
     }
     .del_all_account_btn{
         color: darkred;
@@ -47,7 +49,26 @@ transition: 0.4s;
         -webkit-backdrop-filter: blur(10px);
         transition: 1.5s;
     }
-
+    .light1{
+      position:absolute;
+      left: 20%;
+      right: 20%;
+      height: 10px;
+      background:white;
+      bottom:0px;
+      border-radius: 999px 999px 0px 0px;
+    }
+    .light2{
+      position:absolute;
+      left: 20%;
+      right: 20%;
+      height: 10px;
+      background:white;
+      bottom:0px;
+      border-radius: 999px 999px 0px 0px;
+      filter: blur(19px);
+      -webkit-filter: blur(19px);
+    }
 
 </style>
 <script>
@@ -57,8 +78,42 @@ $(document).ready(function() {
 
 </script>
 
-<div style="display: flex; flex-direction: row; max-height: 100vh; min-height: 100vh;">
+<div style="position: absolute;
+background-color: white;
+width: 30%;
+height: 30%;
+filter: blur(99px);
+-webkit-filter: blur(99px);
+bottom: 20px;
+left: 50px;
+border-radius: 999px;"></div>
+
+<div style="position: absolute;
+background-color: white;
+width: 50%;
+height: 40%;
+filter: blur(99px);
+-webkit-filter: blur(99px);
+bottom: 20px;
+right: 50px;
+border-radius: 999px;"></div>
+
+<div style="position: absolute;
+background-color: white;
+width: 50%;
+height: 40%;
+filter: blur(99px);
+-webkit-filter: blur(99px);
+top: 10%;
+left: 20%;
+border-radius: 999px;"></div>
+
+<div style="display: flex; flex-direction: row; max-height: 100vh; min-height: 100vh; z-index: 9; position: relative;">
 <div class="p0l">
+
+  <div class="light1"></div>
+  <div class="light2"></div>
+
     <div class="del_all_account_btn" style="color: white;" onclick="home_screen()"><-- Go Back</div>
     <div class="del_all_account_btn" style="color: white; ">Global Settings</div>
 
@@ -67,6 +122,10 @@ $(document).ready(function() {
 </div>
 
 <div class="p0r">
+
+  <div class="light1"></div>
+  <div class="light2"></div>
+
     <h1 style="display:flex; margin-left: 20px; margin-right: 20px;">Hello&nbsp;<div id="account_btn"></div>!</h1>
 
 
