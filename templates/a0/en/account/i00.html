@@ -39,16 +39,20 @@ border-radius: 999px;"></div> -->
 
 
 
-<div style="display: flex; flex-direction: row; max-height: 100vh; min-height: 100vh; z-index: 9; position: relative;">
+<div style="display: flex; flex-direction: row; max-height: 100vh; min-height: 100vh; z-index: 9; position: relative;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: left; background-image: url('/inc/img/bg_s_bw.jpg');">
 <div class="p0l">
 
   <div class="light1"></div>
   <div class="light2"></div>
+  <div class="light3"></div>
 
-    <div class="del_all_account_btn" style="color: white;" onclick="home_screen()"><-- Go Back</div>
-    <div class="del_all_account_btn" style="color: white; ">Global Settings</div>
+    <div class="regular_btn" onclick="home_screen()"><div class="regular_btn1"><b class="regular_btn2"><-- Go Back</b></div></div>
+    <div class="regular_btn" onclick=""><div class="regular_btn1"><b class="regular_btn2">Global Settings</b></div></div>
 
-    <div class="del_all_account_btn" onclick="account_deleate_win()">Deleate Account</div>
+    <div class="del_all_account_btn" onclick="account_deleate_win()"><div class="del_all_account_btn1"><b class="del_all_account_btn2">Deleate Account</b></div></div>
 
 </div>
 
@@ -56,6 +60,7 @@ border-radius: 999px;"></div> -->
 
   <div class="light1"></div>
   <div class="light2"></div>
+  <div class="light3"></div>
 
     <h1 style="display:flex; margin-left: 20px; margin-right: 20px;">Hello&nbsp;<div id="account_btn"></div>!</h1>
 
@@ -106,8 +111,8 @@ border: 2px solid rgba(148, 148, 148, 0.4);
 border-radius: 10px;">
         <h2 style="margin-top: 0px;">Are you sure you want to delete your account?</h2>
             <div style="margin-left: auto; margin-right:auto;">All settings will be lost!</div>
-    <div class="del_all_account_btn" onclick="account_deleate()">Deleate Account</div>
-    <div class="del_all_account_btn" onclick="account_deleate_cancel()" style="color: white;">Cancel</div>
+            <div class="del_all_account_btn" onclick="account_deleate()"><div class="del_all_account_btn1"><b class="del_all_account_btn2">Deleate Account</b></div></div>
+            <div class="regular_btn" onclick="account_deleate_cancel()"><div class="regular_btn1"><b class="regular_btn2">Cancel</b></div></div>
 
 </div>
     </div>

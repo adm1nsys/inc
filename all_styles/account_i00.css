@@ -2,7 +2,10 @@ body {
   /* background: radial-gradient(circle, rgba(23, 23, 23, 1) 0%, rgba(13, 13, 13, 1) 100%);
   background-image: linear-gradient(80deg, rgba(0, 0, 0, 0) 18.91%, rgba(255, 255, 255, 0.1) 26.89%, rgba(255, 255, 255, 0.13) 31.09%, rgba(255, 255, 255, 0.1) 37.39%, rgba(0, 0, 0, 0) 44.12%), linear-gradient(101deg, rgba(0, 0, 0, 0) 2.94%, rgba(255, 255, 255, 0.14) 10.5%, rgba(255, 255, 255, 0.14) 17.65%, rgba(255, 255, 255, 0.11) 21.85%, rgba(0, 0, 0, 0) 28.15%),linear-gradient(88deg, rgba(0, 0, 0, 0) 7.98%, rgba(255, 255, 255, 0.14) 21.43%, rgba(255, 255, 255, 0.14) 24.37%, rgba(255, 255, 255, 0.05) 32.35%, rgba(0, 0, 0, 0) 36.97%),
 radial-gradient(circle, rgba(23, 23, 23, 1) 0%, rgba(13, 13, 13, 1) 100%) */
-background-image: url("img/bg_s.jpg");
+/* background-image: url("/inc/img/bg_s.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: left; */
 }
 
 .p0l{
@@ -16,6 +19,8 @@ overflow-y: auto;
 min-width: 300px;
 max-width: 400px;
 position: relative;
+-webkit-backdrop-filter: blur(90px);
+backdrop-filter: blur(90px);
 }
 .p0r{
     width: 100%;
@@ -26,20 +31,164 @@ position: relative;
 margin-left: 5px;
 overflow-y: auto;
 position: relative;
+-webkit-backdrop-filter: blur(90px);
+backdrop-filter: blur(90px);
 }
 .del_all_account_btn{
-    color: darkred;
+  position: relative;
+  display: flex;
+    color: red;
     background: none;
     border-radius: 10px;
     margin: 10px;
-padding-top: 10px;
-padding-bottom: 10px;
+/* padding-top: 10px;
+padding-bottom: 10px; */
 transition: 0.4s;
+justify-content: center;
+justify-items: center;
+white-space: nowrap;
+overflow: hidden;
+border: 2px solid rgba(0, 0, 0, 0);
 }
+
+.del_all_account_btn1{
+  display: flex;
+  height: 100%;
+  width: 0%;
+  /* background: rgba(59, 0, 0, 0.49);; */
+  background: linear-gradient(to right, rgba(137, 0, 0, 0), rgba(137, 0, 0, 1) 50%, rgba(137, 0, 0, 0));
+  position: relative;
+  transition: width 0.3s, background 14s;
+  /* margin: auto; */
+  /* text-align: center; */
+  flex-wrap: nowrap;
+  justify-content: center;
+  justify-items: center;
+
+}
+
+.del_all_account_btn2{
+  display: flex;
+  height: 100%;
+  width: 0%;
+  /* background: rgba(59, 0, 0, 0.49);; */
+  background: linear-gradient(to right, rgba(37, 0, 0, 0), rgba(81, 0, 0, 1) 50%, rgba(37, 0, 0, 0));
+  position: relative;
+  transition: width 0.3s, background 14s;
+  /* margin: auto; */
+  /* text-align: center; */
+  flex-wrap: nowrap;
+  justify-content: center;
+  justify-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
 .del_all_account_btn:hover{
-    background: rgba(128, 128, 128, 0.25);
+    /* background: rgba(128, 128, 128, 0.25); */
+    border: 2px solid red;
+
     cursor: pointer;
 }
+
+.del_all_account_btn:hover .del_all_account_btn1{
+  width: 100%;
+  background: linear-gradient(to right, rgba(137, 0, 0, 1), rgba(137, 0, 0, 1) 50%, rgba(137, 0, 0, 1));
+  transition: width 0.3s, background 14s;
+
+}
+
+.del_all_account_btn:active .del_all_account_btn2{
+  width: 100%;
+  background: linear-gradient(to right, rgba(37, 0, 0, 0.5), rgba(81, 0, 0, 1) 50%, rgba(37, 0, 0, 0.5));
+  transition: width 0.3s, background 14s;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.regular_btn{
+  position: relative;
+  display: flex;
+    color: white;
+    background: none;
+    border-radius: 10px;
+    margin: 10px;
+/* padding-top: 10px;
+padding-bottom: 10px; */
+transition: 0.4s;
+justify-content: center;
+justify-items: center;
+white-space: nowrap;
+overflow: hidden;
+border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.regular_btn1{
+  display: flex;
+  height: 100%;
+  width: 0%;
+  /* background: rgba(59, 0, 0, 0.49);; */
+  background: linear-gradient(to right, rgba(73, 73, 73, 0), rgba(73, 73, 73, 1) 50%, rgba(73, 73, 73, 0));
+  position: relative;
+  transition: width 0.3s, background 14s;
+  /* margin: auto; */
+  /* text-align: center; */
+  flex-wrap: nowrap;
+  justify-content: center;
+  justify-items: center;
+
+}
+
+.regular_btn2{
+  display: flex;
+  height: 100%;
+  width: 0%;
+  /* background: rgba(59, 0, 0, 0.49);; */
+  background: linear-gradient(to right, rgba(27, 27, 37, 0), rgba(51, 51, 51, 1) 50%, rgba(27, 27, 27, 0));
+  position: relative;
+  transition: width 0.3s, background 14s;
+  /* margin: auto; */
+  /* text-align: center; */
+  flex-wrap: nowrap;
+  justify-content: center;
+  justify-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+.regular_btn:hover{
+    /* background: rgba(128, 128, 128, 0.25); */
+    border: 2px solid white;
+
+    cursor: pointer;
+}
+
+.regular_btn:hover .regular_btn1{
+  width: 100%;
+  background: linear-gradient(to right, rgba(73, 73, 73, 1), rgba(73, 73, 73, 1) 50%, rgba(73, 73, 73, 1));
+  transition: width 0.3s, background 14s;
+
+}
+
+.regular_btn:active .regular_btn2{
+  width: 100%;
+  background: linear-gradient(to right, rgba(27, 27, 37, 0.5), rgba(51, 51, 51, 1) 50%, rgba(27, 27, 27, 0.5));
+  transition: width 0.3s, background 14s;
+
+}
+
+
 .pin_al{
 /*        display: none;*/
 /*        opacity: 0;*/
@@ -72,6 +221,18 @@ transition: 0.4s;
   background:white;
   bottom:0px;
   /* border-radius: 999px 999px 0px 0px; */
-  filter: blur(65px);
+  filter: blur(85px);
+  -webkit-filter: blur(85px);
+}
+
+.light3{
+  position:absolute;
+  left: 20%;
+  right: 20%;
+  height: 30px;
+  background:white;
+  bottom:0px;
+  border-radius: 999px 999px 0px 0px;
+  filter: blur(85px);
   -webkit-filter: blur(65px);
 }
