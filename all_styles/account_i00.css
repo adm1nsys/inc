@@ -21,6 +21,11 @@ max-width: 400px;
 position: relative;
 -webkit-backdrop-filter: blur(90px);
 backdrop-filter: blur(90px);
+overflow: hidden;
+}
+.p0l1{
+       height: 100%;
+overflow: auto;
 }
 .p0r{
     width: 100%;
