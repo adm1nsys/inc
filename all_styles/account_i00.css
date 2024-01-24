@@ -21,12 +21,9 @@ max-width: 400px;
 position: relative;
 -webkit-backdrop-filter: blur(90px);
 backdrop-filter: blur(90px);
-overflow: hidden;
+/* overflow: hidden; */
 }
-.p0l1{
-       height: 100%;
-overflow: auto;
-}
+
 .p0r{
     width: 100%;
     background: rgba(0, 0, 0, 0.27);
@@ -208,6 +205,11 @@ border: 2px solid rgba(73, 73, 73, 0.25);
     -webkit-backdrop-filter: blur(10px);
     transition: 1.5s;
     z-index: 999;
+}
+
+.p0l1{
+position: sticky;
+bottom: 0px
 }
 .light1{
   position:absolute;
