@@ -1,0 +1,87 @@
+
+    <h1 style="display:flex; margin-left: 20px; margin-right: 20px; margin-top: 2.5em;">Hello&nbsp;<div id="account_btn"></div>!</h1>
+
+
+    <h2 style="margin-left: 20px; margin-right: 20px; text-align: left;">
+        PC about
+    </h2>
+
+    <h4 style="margin-left: 20px; margin-right: 20px; text-align: left;">
+        Theme:
+        <select id="themeSelector" name="options">
+            <option value="system">System</option>
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+            <option value="custom">Custom</option>
+        </select>
+    </h4>
+
+    <h4 style="margin-left: 20px; margin-right: 20px; text-align: left;">
+        Change Color 1 : <input type="color" id="colorPicker1" name="color1"> <input type="color" id="colorPicker1_d" name="color1_d"><br>
+        Change Color 2 : <input type="color" id="colorPicker2" name="color2"> <input type="color" id="colorPicker2_d" name="color2_d"><br>
+        Change Color 3 : <input type="color" id="colorPicker3" name="color3"> <input type="color" id="colorPicker3_d" name="color3_d"><br>
+        Change Color 4 : <input type="color" id="colorPicker4" name="color4"> <input type="color" id="colorPicker4_d" name="color4_d"><br>
+        Change Color 5 : <input type="color" id="colorPicker5" name="color5"> <input type="color" id="colorPicker5_d" name="color5_d"><br>
+    </h4>
+
+
+    <h4 style="margin-left: 20px; margin-right: 20px; text-align: left; display: flex;
+align-items: center;">
+      Download Configuration:     <div class="regular_btn" onclick=""><div class="regular_btn1"><b class="regular_btn2">&nbsp;Download&nbsp;</b></div></div>
+    </h4>
+
+    <h4 style="margin-left: 20px; margin-right: 20px; text-align: left;" for="fileUpload">
+      Load Configuration: <input type="file" id="fileUpload" name="file">
+    </h4>
+
+
+    <script type="text/javascript">
+      function account_deleate(){
+          localStorage.clear();
+          home_screen1()
+          home_screen()
+      }
+
+      function account_deleate_cancel(){
+          $('#pin_al').fadeOut();
+      }
+      function account_deleate_win(){
+          $('#pin_al').fadeIn();
+      }
+
+
+
+      document.getElementById('themeSelector').addEventListener('change', function() {
+          toggleColorPickers(this.value);
+      });
+
+      function toggleColorPickers(theme) {
+          let disabled = (theme !== 'custom');
+          for (let i = 1; i <= 5; i++) {
+              document.getElementById('colorPicker' + i).disabled = disabled;
+              document.getElementById('colorPicker' + i + '_d').disabled = disabled;
+
+              if (!disabled) {
+                  let color = localStorage.getItem('color' + i) || c01['ac0' + i];
+                  let color_d = localStorage.getItem('color' + i + '_d') || c01['ac0' + i + '_d'];
+                  document.getElementById('colorPicker' + i).value = color;
+                  document.getElementById('colorPicker' + i + '_d').value = color_d;
+              }
+          }
+      }
+
+      // Инициализация при загрузке страницы
+      toggleColorPickers(document.getElementById('themeSelector').value);
+
+      // Сохранение выбранных цветов в localStorage
+      for (let i = 1; i <= 5; i++) {
+          document.getElementById('colorPicker' + i).addEventListener('input', function() {
+              localStorage.setItem('color' + i, this.value);
+          });
+          document.getElementById('colorPicker' + i + '_d').addEventListener('input', function() {
+              localStorage.setItem('color' + i + '_d', this.value);
+          });
+      }
+      name_id00();
+
+    </script>
