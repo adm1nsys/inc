@@ -1,0 +1,76 @@
+body {
+  background: radial-gradient(circle, rgba(23, 23, 23, 1) 0%, rgba(13, 13, 13, 1) 100%);
+  background-image: linear-gradient(80deg, rgba(0, 0, 0, 0) 18.91%, rgba(255, 255, 255, 0.1) 26.89%, rgba(255, 255, 255, 0.13) 31.09%, rgba(255, 255, 255, 0.1) 37.39%, rgba(0, 0, 0, 0) 44.12%), linear-gradient(101deg, rgba(0, 0, 0, 0) 2.94%, rgba(255, 255, 255, 0.14) 10.5%, rgba(255, 255, 255, 0.14) 17.65%, rgba(255, 255, 255, 0.11) 21.85%, rgba(0, 0, 0, 0) 28.15%),linear-gradient(88deg, rgba(0, 0, 0, 0) 7.98%, rgba(255, 255, 255, 0.14) 21.43%, rgba(255, 255, 255, 0.14) 24.37%, rgba(255, 255, 255, 0.05) 32.35%, rgba(0, 0, 0, 0) 36.97%),
+radial-gradient(circle, rgba(23, 23, 23, 1) 0%, rgba(13, 13, 13, 1) 100%)
+}
+
+.p0l{
+/*        width: 40%;*/
+background: rgba(0, 0, 0, 0.27);
+border: 2px solid #2A2A2A;
+    border-radius: 20px;
+    margin: 10px;
+margin-right: 5px;
+overflow-y: auto;
+min-width: 300px;
+max-width: 400px;
+position: relative;
+}
+.p0r{
+    width: 100%;
+    background: rgba(0, 0, 0, 0.27);
+    border: 2px solid #2A2A2A;
+    border-radius: 20px;
+    margin: 10px;
+margin-left: 5px;
+overflow-y: auto;
+position: relative;
+}
+.del_all_account_btn{
+    color: darkred;
+    background: none;
+    border-radius: 10px;
+    margin: 10px;
+padding-top: 10px;
+padding-bottom: 10px;
+transition: 0.4s;
+}
+.del_all_account_btn:hover{
+    background: rgba(128, 128, 128, 0.25);
+    cursor: pointer;
+}
+.pin_al{
+/*        display: none;*/
+/*        opacity: 0;*/
+    display: flex;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: 1.5s;
+    z-index: 999;
+}
+.light1{
+  position:absolute;
+  left: 20%;
+  right: 20%;
+  height: 10px;
+  background:white;
+  bottom:0px;
+  border-radius: 999px 999px 0px 0px;
+}
+.light2{
+  position:absolute;
+  left: 20%;
+  right: 20%;
+  height: 30px;
+  background:white;
+  bottom:0px;
+  /* border-radius: 999px 999px 0px 0px; */
+  filter: blur(65px);
+  -webkit-filter: blur(65px);
+}
