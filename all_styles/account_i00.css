@@ -38,7 +38,7 @@ backdrop-filter: blur(90px);
   position: relative;
   display: flex;
     color: red;
-    background: none;
+    background: rgba(87, 0, 0, 0.25);
     border-radius: 10px;
     margin: 10px;
 /* padding-top: 10px;
@@ -48,7 +48,7 @@ justify-content: center;
 justify-items: center;
 white-space: nowrap;
 overflow: hidden;
-border: 2px solid rgba(0, 0, 0, 0);
+border: 2px solid rgba(137, 0, 0, 0.25);
 }
 
 .del_all_account_btn1{
@@ -56,7 +56,7 @@ border: 2px solid rgba(0, 0, 0, 0);
   height: 100%;
   width: 0%;
   /* background: rgba(59, 0, 0, 0.49);; */
-  background: linear-gradient(to right, rgba(137, 0, 0, 0), rgba(137, 0, 0, 1) 50%, rgba(137, 0, 0, 0));
+  background: linear-gradient(to right, rgba(137, 0, 0, 0), rgba(137, 0, 0, 0.5) 50%, rgba(137, 0, 0, 0));
   position: relative;
   transition: width 0.3s, background 14s;
   /* margin: auto; */
@@ -72,7 +72,7 @@ border: 2px solid rgba(0, 0, 0, 0);
   height: 100%;
   width: 0%;
   /* background: rgba(59, 0, 0, 0.49);; */
-  background: linear-gradient(to right, rgba(37, 0, 0, 0), rgba(81, 0, 0, 1) 50%, rgba(37, 0, 0, 0));
+  background: linear-gradient(to right, rgba(37, 0, 0, 0), rgba(81, 0, 0, 0.5) 50%, rgba(37, 0, 0, 0));
   position: relative;
   transition: width 0.3s, background 14s;
   /* margin: auto; */
@@ -89,19 +89,19 @@ border: 2px solid rgba(0, 0, 0, 0);
     /* background: rgba(128, 128, 128, 0.25); */
     border: 2px solid red;
 
-    cursor: pointer;
+    cursor: crosshair;
 }
 
 .del_all_account_btn:hover .del_all_account_btn1{
   width: 100%;
-  background: linear-gradient(to right, rgba(137, 0, 0, 1), rgba(137, 0, 0, 1) 50%, rgba(137, 0, 0, 1));
+  background: linear-gradient(to right, rgba(137, 0, 0, 0.5), rgba(137, 0, 0, 0.5) 50%, rgba(137, 0, 0, 0.5));
   transition: width 0.3s, background 14s;
 
 }
 
 .del_all_account_btn:active .del_all_account_btn2{
   width: 100%;
-  background: linear-gradient(to right, rgba(37, 0, 0, 0.5), rgba(81, 0, 0, 1) 50%, rgba(37, 0, 0, 0.5));
+  background: linear-gradient(to right, rgba(37, 0, 0, 0.25), rgba(81, 0, 0, 0.5) 50%, rgba(37, 0, 0, 0.25));
   transition: width 0.3s, background 14s;
 
 }
@@ -120,7 +120,7 @@ border: 2px solid rgba(0, 0, 0, 0);
   position: relative;
   display: flex;
     color: white;
-    background: none;
+    background: rgba(51, 51, 51, 0.25);
     border-radius: 10px;
     margin: 10px;
 /* padding-top: 10px;
@@ -130,7 +130,7 @@ justify-content: center;
 justify-items: center;
 white-space: nowrap;
 overflow: hidden;
-border: 2px solid rgba(0, 0, 0, 0);
+border: 2px solid rgba(73, 73, 73, 0.25);
 }
 
 .regular_btn1{
@@ -138,7 +138,7 @@ border: 2px solid rgba(0, 0, 0, 0);
   height: 100%;
   width: 0%;
   /* background: rgba(59, 0, 0, 0.49);; */
-  background: linear-gradient(to right, rgba(73, 73, 73, 0), rgba(73, 73, 73, 1) 50%, rgba(73, 73, 73, 0));
+  background: linear-gradient(to right, rgba(73, 73, 73, 0), rgba(73, 73, 73, 0.5) 50%, rgba(73, 73, 73, 0));
   position: relative;
   transition: width 0.3s, background 14s;
   /* margin: auto; */
@@ -154,7 +154,7 @@ border: 2px solid rgba(0, 0, 0, 0);
   height: 100%;
   width: 0%;
   /* background: rgba(59, 0, 0, 0.49);; */
-  background: linear-gradient(to right, rgba(27, 27, 37, 0), rgba(51, 51, 51, 1) 50%, rgba(27, 27, 27, 0));
+  background: linear-gradient(to right, rgba(27, 27, 37, 0), rgba(51, 51, 51, 0.5) 50%, rgba(27, 27, 27, 0));
   position: relative;
   transition: width 0.3s, background 14s;
   /* margin: auto; */
@@ -171,19 +171,19 @@ border: 2px solid rgba(0, 0, 0, 0);
     /* background: rgba(128, 128, 128, 0.25); */
     border: 2px solid white;
 
-    cursor: pointer;
+    cursor: crosshair;
 }
 
 .regular_btn:hover .regular_btn1{
   width: 100%;
-  background: linear-gradient(to right, rgba(73, 73, 73, 1), rgba(73, 73, 73, 1) 50%, rgba(73, 73, 73, 1));
+  background: linear-gradient(to right, rgba(73, 73, 73, 0.5), rgba(73, 73, 73, 0.5) 50%, rgba(73, 73, 73, 0.5));
   transition: width 0.3s, background 14s;
 
 }
 
 .regular_btn:active .regular_btn2{
   width: 100%;
-  background: linear-gradient(to right, rgba(27, 27, 37, 0.5), rgba(51, 51, 51, 1) 50%, rgba(27, 27, 27, 0.5));
+  background: linear-gradient(to right, rgba(27, 27, 37, 0.25), rgba(51, 51, 51, 0.5) 50%, rgba(27, 27, 27, 0.25));
   transition: width 0.3s, background 14s;
 
 }
