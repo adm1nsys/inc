@@ -13,69 +13,10 @@
   align-items: center;
   align-content: center;
 }
-/*.frame:before {
-  content: "";
-  display: block;
-  width: 4em;
-  height: 0.6em;
-  background: white;
-  margin: 0 auto;
-  z-index: 10;
-  border-radius: 10em;
-  mix-blend-mode: overlay;
-}*/
-/*.frame-header {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  padding: 2rem;
-}*/
-/*.frame-header .image {
-  margin-right: 1.5em;
-}
-.frame-header .image > img {
-  width: 50px;
-  border-radius: 0.5em;
-  box-shadow: 0 3px 30px rgba(0, 0, 0, 0.2), 0 3px 10px rgba(0, 0, 0, 0.4);
-}
-.frame-header .info .title {
-  font-size: 1.8rem;
-}
-.frame-header .info .subtitle {
-  font-size: 1.2rem;
-  margin-top: 0.25em;
-}
-.frame-lyrics {
-  position: relative;
-  z-index: 10;
-  flex-grow: 1;
-  padding: 2rem;
-  padding-top: 0;
-  font-size: 2rem;
-  overflow-y: auto;
-}*/
-/*.frame-lyrics > div {
-  color: rgba(255, 255, 255, 0.75);
-}
-.frame-lyrics > div + div {
-  margin-top: 1.4em;
-}
-.frame-lyrics > div.active {
-  color: white;
-  font-size: 3rem;
-  margin-top: 0.8em;
-}
-.frame-lyrics > div:not(.active) {
-  filter: blur(0.05px);
-}*/
+
 
 .bg-set{
-/*  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);*/
-/*  background: linear-gradient(90deg, rgba(76, 76, 76, 1) 0%, rgba(128, 128, 128, 1) 50%, rgba(183, 183, 183, 1) 100%);*/
-/*  background: linear-gradient(90deg, rgba(66, 66, 66, 1) 0%, rgba(118, 118, 118, 1) 50%, rgba(173, 173, 173, 1) 100%);;*/
-  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(47, 47, 47, 1), rgba(135, 135, 135, 1));
+  background: linear-gradient(to right, rgba(44, 44, 44, 1), rgba(118, 118, 118, 1), rgba(192, 192, 192, 1));
   width: 200%;
   height: 200%;
 }
@@ -170,4 +111,16 @@ background-color: rgba(0, 0, 0, 0.75);
 .btn:active{
   color: gray;
 background-color: rgba(0, 0, 0, 0.25);
+}
+
+@media (prefers-color-scheme: dark) {
+  .bg-set{
+  /*  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);*/
+  /*  background: linear-gradient(90deg, rgba(76, 76, 76, 1) 0%, rgba(128, 128, 128, 1) 50%, rgba(183, 183, 183, 1) 100%);*/
+  /*  background: linear-gradient(90deg, rgba(66, 66, 66, 1) 0%, rgba(118, 118, 118, 1) 50%, rgba(173, 173, 173, 1) 100%);;*/
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(47, 47, 47, 1), rgba(135, 135, 135, 1));
+    width: 200%;
+    height: 200%;
+  }
+
 }

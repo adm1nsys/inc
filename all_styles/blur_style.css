@@ -1,5 +1,6 @@
 .jumbo {
-    --stripes: repeating-linear-gradient(
+  background: linear-gradient(45deg, rgba(175,175,175,1) 0%, rgba(89,89,89,1) 35%, rgba(185,185,185,1) 100%);
+    /* --stripes: repeating-linear-gradient(
         100deg,
         #fff 0%,
         #fff 7%,
@@ -27,44 +28,44 @@
     background-size: 300%, 200%;
     background-position: 50% 50%, 50% 50%;
 
-    filter: blur(10px) invert(100%);
+    filter: blur(10px) invert(100%); */
 
 /*    mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);*/
 
-    pointer-events: none;
-   animation: jumbo 30s ease-in-out infinite;
+    /* pointer-events: none;
+   animation: jumbo 30s ease-in-out infinite; */
    width: 150px;
    height: 150px;
    rotate: -70deg;
 }
 
-.jumbo::after {
-    content: "";
+/* .jumbo::after { */
+    /* content: "";
     position: absolute;
     inset: 0;
     background-image: var(--stripes), var(--rainbow);
     background-size: 200%, 100%;
     animation: jumbo 30s linear infinite;
     background-attachment: fixed;
-    mix-blend-mode: difference;
-}
+    mix-blend-mode: difference; */
+/* } */
 
-.dark .jumbo {
+/* .dark .jumbo {
     background-image: var(--stripesDark), var(--rainbow);
-    filter: blur(10px) opacity(50%) saturate(200%);
-}
-.dark .jumbo::after {
+    filter: blur(10px) opacity(50%) saturate(200%); */
+/* } */
+/* .dark .jumbo::after {
     background-image: var(--stripesDark), var(--rainbow);
-}
+} */
 
-@keyframes jumbo {
+/* @keyframes jumbo {
     from {
         background-position: 50% 50%, 50% 50%;
     }
     to {
         background-position: 350% 50%, 350% 50%;
     }
-}
+} */
 
 .f1{
   width:150px; height: 150px; rotate: 70deg;
