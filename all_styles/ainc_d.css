@@ -1,6 +1,10 @@
 
 /* Стили для темной темы */
 @media (prefers-color-scheme: dark) {
+  html {
+  scroll-behavior: smooth;
+}
+
   body {
 /**/
   }::selection {

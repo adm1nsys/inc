@@ -1,5 +1,9 @@
     @font-face { font-family: Roboto-Regular; src: url('../fonts/Roboto_Mono/static/RobotoMono-Regular.ttf'); }
 /*    @font-face { font-family: Roboto-Italic; src: url('fonts/Roboto_Mono/RobotoMono-Italic-VariableFont_wght.ttf'); } */
+html {
+  scroll-behavior: smooth;
+}
+
 body{
       font-family: Roboto-Regular, sans-serif;
   margin: 0px;
