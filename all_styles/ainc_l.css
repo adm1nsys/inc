@@ -1,9 +1,9 @@
-    @font-face { font-family: Roboto-Regular; src: url('../fonts/Roboto_Mono/static/RobotoMono-Regular.ttf'); } 
+    @font-face { font-family: Roboto-Regular; src: url('../fonts/Roboto_Mono/static/RobotoMono-Regular.ttf'); }
 /*    @font-face { font-family: Roboto-Italic; src: url('fonts/Roboto_Mono/RobotoMono-Italic-VariableFont_wght.ttf'); } */
 body{
       font-family: Roboto-Regular, sans-serif;
-  margin: 0px; 
-  padding: 0px; 
+  margin: 0px;
+  padding: 0px;
   height: 100%;
     -webkit-touch-callout: none;
 -webkit-user-select: none;
@@ -350,16 +350,16 @@ padding-left: 2px;*/
 .panel{
   display: none;
   flex-direction: column;
-  position: fixed; 
-  width: 100%; 
+  position: fixed;
+  width: 100%;
 /*  height: 475px; */
-  height: 100vh; 
+  height: 100vh;
 /*  max-height: 70%;*/
 justify-content: center;
-  background:rgba(201, 201, 201, 0.5); 
+  background:rgba(201, 201, 201, 0.5);
   -webkit-backdrop-filter: blur(10px);
-backdrop-filter: blur(10px); 
-bottom: 0vh; 
+backdrop-filter: blur(10px);
+bottom: 0vh;
 opacity: 0;
 /*border-radius: 30px 30px 0px 0px; */
 /*-webkit-border-radius: 30px 30px 0px 0px; */
@@ -378,7 +378,7 @@ z-index: 9;
 justify-content: center;
 flex-wrap: wrap;
   margin-top: 5rem;
-  border-radius: 13px; 
+  border-radius: 13px;
 -webkit-border-radius: 13px; /* для старых версий Safari, Google Chrome и других браузеров на основе WebKit */
     -moz-border-radius: 13px;
     overflow: hidden;
@@ -395,9 +395,9 @@ grid-gap: 1rem;
   display: flex;
   flex-direction: row;
   position: relative;
-    background:rgba(190, 190, 190, 0.5); 
+    background:rgba(190, 190, 190, 0.5);
   -webkit-backdrop-filter: blur(10px);
-backdrop-filter: blur(10px); 
+backdrop-filter: blur(10px);
 /*padding: 1rem;*/
 text-decoration: none;
 text-transform: uppercase;
@@ -408,17 +408,35 @@ align-items: center;
 color: black;
 }
 
+
 .pin-btn3{
   padding: 15px;
   fill: black;
+  transition: 0.4s;
 }
+
+.pin-btn4{
+  padding: 15px;
+  stroke:black;
+  /* fill: black; */
+  transition: 0.4s;
+}
+
+.pin-btn2:hover .pin-btn3 {
+  opacity: 0.5;
+}
+
+.pin-btn2:hover .pin-btn4{
+  opacity: 0.5;
+}
+
 
 .pr_st_list{
   margin-top: 0;
 justify-content: center;
-width: 100%; 
-display: flex; 
-flex-wrap: wrap; 
+width: 100%;
+display: flex;
+flex-wrap: wrap;
 padding-top: 10px;
 padding-bottom: 10px;
 }
@@ -783,20 +801,20 @@ justify-items: center;
 
 
 .logo_brend_by_list{
-   width: 60px; 
-   height: 60px; 
-   position: absolute; 
-   z-index: 9; 
-   background-size: contain; 
+   width: 60px;
+   height: 60px;
+   position: absolute;
+   z-index: 9;
+   background-size: contain;
    background-position: center;
    background-repeat: no-repeat;
 }
 
 
 .cont_req{
-  width: 100%; 
+  width: 100%;
 /*  height: 80%; */
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 55%), url('../img/mainbgl.jpg'); 
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 55%), url('../img/mainbgl.jpg');
 /*  margin: auto;*/
 justify-content: center;
 justify-items: center;

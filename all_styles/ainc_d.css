@@ -18,12 +18,12 @@ background-color: rgba(0, 0, 0, 0.2);
 }
 
 .pin-btn2{
-    background:rgba(0, 0, 0, 0.5); 
+    background:rgba(0, 0, 0, 0.5);
 color: white;
 }
 
 .panel{
-  background:rgba(37, 37, 37, 0.5); 
+  background:rgba(37, 37, 37, 0.5);
 }
 
 .pin-btn{
@@ -52,6 +52,11 @@ color: white;
 
 .pin-btn3{
   fill: white;
+}
+
+.pin-btn4{
+  /* fill: white; */
+  stroke:white;
 }
 
   .page1_bg{
@@ -132,7 +137,7 @@ stroke: white;
 }
 
 .cont_req{
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 55%), url('../img/mainbgd.jpg'); 
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 55%), url('../img/mainbgd.jpg');
 }
 
 .q_t{
@@ -299,7 +304,7 @@ align-items: center;
 }
 
 .brend_container{
-   padding-left: 1rem; 
+   padding-left: 1rem;
 padding-right: 1rem;
 }
 
