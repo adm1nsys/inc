@@ -76,12 +76,16 @@
 
 
 .editableSpan {
+  color: black;
+  padding-top: 8px;
+  padding-bottom: 8px;
+background-color: rgba(226, 226, 226, 0.5);
+-webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
     border: 1px solid #ccc;
-    padding: 5px;
     display: inline-block;
     min-width: 100px;
     width: 100%;
-    background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
 
@@ -113,6 +117,10 @@ background-color: rgba(0, 0, 0, 0.75);
 background-color: rgba(0, 0, 0, 0.25);
 }
 
+.n_color{
+  color: black;
+}
+
 @media (prefers-color-scheme: dark) {
   .bg-set{
   /*  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);*/
@@ -122,5 +130,18 @@ background-color: rgba(0, 0, 0, 0.25);
     width: 200%;
     height: 200%;
   }
-
+  .editableSpan {
+    color: white;
+    padding-top: 8px;
+    padding-bottom: 8px;
+      border: 1px solid #ccc;
+      display: inline-block;
+      min-width: 100px;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+  }
+  .n_color{
+    color: white;
+  }
 }
