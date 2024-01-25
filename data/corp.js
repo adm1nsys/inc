@@ -20,7 +20,8 @@ var corporateDataArray = [
         universalversion: "2.2UR",
         description:"description for Server Master",
         link:"https://adm1nsys.github.io/NumeraLogic/",
-        accent_color:"rgb(61, 132, 190)",
+        accent_color:"white",
+        // accent_color:"rgb(61, 132, 190)",
     },
     {
         name: "http master",
@@ -32,7 +33,8 @@ var corporateDataArray = [
         universalversion: "2.2UR",
         description:"description for Server Master",
         link:"https://adm1nsys.github.io/http-master/en/",
-        accent_color:"rgb(254, 160, 10)",
+        accent_color:"white",
+        // accent_color:"rgb(254, 160, 10)",
     },
     {
         name: "XN1GHT",
@@ -69,7 +71,7 @@ var corporateDataArray = [
         description:"description for DesignCode",
         accent_color:"white",
     },
-    
+
 ];
 
 function displayReleaseData() {
@@ -101,7 +103,7 @@ function displayReleaseData() {
             brandsList.appendChild(brendContainer);
         }
     });
-} 
+}
 
 // Call the function to display data
 
