@@ -772,7 +772,7 @@ justify-items: center;
   height: 150px;
   margin-left: auto;
   overflow: hidden;
-  box-shadow: 0 0 8px black;
+  /* box-shadow: 0 0 8px black; */
   transition: 0.4s;
   align-items: center;
   justify-content: center;
@@ -785,7 +785,7 @@ justify-items: center;
 }
 
 .brend_container:hover .brend_container_img{
-  box-shadow: 0 0 30px black;
+  /* box-shadow: 0 0 30px black; */
 }
 
 
