@@ -71,7 +71,18 @@ var corporateDataArray = [
         description:"description for DesignCode",
         accent_color:"white",
     },
-
+    {
+        name: "AX",
+        logo_c: "a0",
+        status: "Beta",
+        pcversion: "2.2PR",
+        mobileversion: "2.2MR",
+        vrversion: "2.2VRR",
+        universalversion: "2.2UR",
+        description:"description for AX",
+        link: "/inc/AX/index.html",
+        accent_color:"white",
+    },
 ];
 
 function displayReleaseData() {
