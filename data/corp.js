@@ -73,7 +73,7 @@ var corporateDataArray = [
     },
     {
         name: "AX",
-        logo_c: "a0",
+        logo_c: "a5",
         status: "Beta",
         pcversion: "2.2PR",
         mobileversion: "2.2MR",
