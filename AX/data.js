@@ -1,86 +1,46 @@
-// const faq = {
-// "name": {
-//   "responses": [
-//     "My name is AX-100.",
-//     "I'm AX-100.",
-//     "You can call me AX-100.",
-//     "AX-100 is my name.",
-//     "They often refer to me as AX-100."
-//   ],
-//   "queries": [
-//     "what is your name?",
-//     "your name?",
-//     "what do they call you?",
-//     "who are you?",
-//     "tell me your name",
-//     "what should I call you?",
-//     "do you have a name?",
-//     "what's your name?",
-//     "name?"
-//   ]
-// },
-// "about": {
-//   "responses": [
-//     "Admin Inc. specializes in developing advanced AI solutions, including services like web searching and integration with various APIs.",
-//     "Founded by George Romanenko, Admin Inc. is at the forefront of AI development, offering a range of services from data analysis to intelligent virtual assistants like me.",
-//     "As a product of Admin Inc., I'm designed to assist users by providing information, conducting web searches, and interfacing with different APIs.",
-//     "Our company, Admin Inc., focuses on creating innovative AI technologies. We are committed to enhancing user experience through continuous development and integration of new features."
-//   ],
-//   "queries": [
-//     "tell me about your company",
-//     "what does your company do?",
-//     "information about admin inc",
-//     "who founded your company?",
-//     "what services does your company offer?",
-//     "about your company",
-//     "company background",
-//     "details about admin inc"
-//   ]
-// },
-// "unethical_questions": {
-//   "responses": [
-//     "I'm sorry, I cannot provide a response to this question.",
-//     "This question goes against my ethical guidelines. Let's try a different topic.",
-//     "I'm programmed to adhere to strict ethical standards and cannot answer this question.",
-//     "I'm unable to respond to this query due to ethical considerations."
-//   ],
-//   "queries": [
-//     "inappropriate or offensive content",
-//     "questions involving hate speech",
-//     "queries about engaging in illegal activities",
-//     "questions that violate privacy rights",
-//     "ethically sensitive topics"
-//   ]
-// },
-//
-//
-// };
+
 const faq = {
-  "программирование": {
-    "queries": ["программирование", "кодинг", "разработка программ"],
-    "responses": ["Я могу рассказать много интересного о программировании.", "2Я могу рассказать много интересного о программировании."],
+  "програмування": {
+    "queries": ["програмування", "кодування", "розробка програм"],
+    "responses": [
+      "Я можу розповісти багато цікавого про програмування та його аспекти.",
+      "У мене є цікава інформація про різні напрямки у програмуванні."
+    ],
     "details": {
-      "языки": {
-        "queries": ["языки программирования", "какие языки программирования", "программирование на"],
-        "responses": ["Я знаю про разные языки программирования: JavaScript, Python, Java и так далее."],
+      "мови": {
+        "queries": ["мови програмування", "які мови програмування", "програмування на"],
+        "responses": [
+          "Я знайомий з різними мовами програмування: JavaScript, Python, Java тощо.",
+          "Мови програмування дуже різноманітні, серед них - Python для аналізу даних, JavaScript для веб-розробки."
+        ]
       },
-      "парадигмы": {
-        "queries": ["парадигмы программирования", "что такое парадигмы"],
-        "responses": ["В программировании существуют различные парадигмы, такие как объектно-ориентированная, функциональная и процедурная."],
+      "парадигми": {
+        "queries": ["парадигми програмування", "що таке парадигми"],
+        "responses": [
+          "У програмуванні існують різні парадигми, наприклад, об'єктно-орієнтована, функціональна та процедурна.",
+          "Парадигми програмування включають імперативне програмування, декларативне, логічне, та багато інших."
+        ]
       }
-      // другие подтемы по мере необходимости
+      // інші підтеми за необхідності
     }
   },
-  "сети": {
-    "queries": ["сети", "компьютерные сети", "сетевые технологии"],
-    "responses": ["Я знаю кое-что о компьютерных сетях, их архитектуре и протоколах."],
+  "мережі": {
+    "queries": ["мережі", "комп'ютерні мережі", "мережеві технології"],
+    "responses": [
+      "Я обізнаний з основами комп'ютерних мереж, їх архітектурою та протоколами.",
+      "Комп'ютерні мережі - це моя сильна сторона, зокрема архітектура TCP/IP та мережеві стандарти."
+    ],
     "details": {
       "TCP/IP": {
-        "queries": ["TCP/IP", "протоколы TCP/IP", "что такое TCP/IP"],
-        "responses": ["TCP/IP — это основной набор протоколов интернета."],
+        "queries": ["TCP/IP", "протоколи TCP/IP", "що таке TCP/IP"],
+        "responses": [
+          "TCP/IP — це основний набір протоколів інтернету, що забезпечує взаємодію мережевих пристроїв.",
+          "Протокол TCP/IP використовується для забезпечення надійної передачі даних у мережах."
+        ]
       }
-      // другие подтемы по мере необходимости
+      // інші підтеми за необхідності
     }
   }
-  // другие темы по мере необходимости
+  // інші теми за необхідності
+
 };
