@@ -139,13 +139,13 @@ container.style.alignItems = "center";
     let progress = 0;
     const intervalId = setInterval(() => {
     if (progress >= 100) {
-    clearInterval(intervalId); 
+    clearInterval(intervalId);
     setTimeout(() => {
     circle2.style.strokeWidth = "53";
     }, 500);
     } else {
     setProgress(progress);
-    progress += 1; 
+    progress += 1;
     }
     }, 10);
     document.getElementById('loading-indicator').appendChild(container);
@@ -182,28 +182,54 @@ function getRandomResponse(responses) {
 
 function getResponse(input) {
     input = input.toLowerCase();
+    let foundResponse = null;
+
+    // Поиск ответа в базе данных
     for (let key in faq) {
-        // Проверяем, есть ли совпадение со словами из запроса пользователя
-        const isMatch = faq[key].queries.some(question => {
+        const category = faq[key];
+
+        // Проверка на совпадение в основных категориях
+        const isMatchInPrimary = category.queries.some(question => {
             const words = question.toLowerCase().split(" ");
             return words.every(word => input.includes(word));
         });
 
-        if (isMatch) {
-            // Выбираем случайный ответ
-            return Promise.resolve(getRandomResponse(faq[key].responses));
-        }else {
+        if (isMatchInPrimary) {
+            foundResponse = getRandomResponse(category.responses);
+            break; // Прерываем цикл, если найден ответ
+        } else {
+            // Поиск в подкатегориях, если они есть
+            if (category.details) {
+                for (let detailKey in category.details) {
+                    const detail = category.details[detailKey];
+                    const isMatchInDetails = detail.queries.some(question => {
+                        const words = question.toLowerCase().split(" ");
+                        return words.every(word => input.includes(word));
+                    });
+
+                    if (isMatchInDetails) {
+                        foundResponse = getRandomResponse(detail.responses);
+                        break; // Прерываем внутренний цикл, если найден ответ
+                    }
+                }
+            }
+        }
+
+        if (foundResponse) break; // Прерываем внешний цикл, если найден ответ
+    }
+
+    // Возвращаем найденный ответ или выполняем поиск в Википедии, если ответ не найден
+    if (foundResponse) {
+        return Promise.resolve(foundResponse);
+    } else {
         showLoadingIndicator();
         return searchWikipedia(input).then(response => {
-            // hideLoadingIndicator();
+            hideLoadingIndicator();
             return response;
         });
     }
-    }
-
-    // Если не найден ответ, ищем в Википедии
-    return searchWikipedia(input);
 }
+
 
 
 
@@ -277,17 +303,10 @@ return;
 
     addMessageToChat('user', message);
     userInput.value = "";
-    
+
     getResponse(message.toLowerCase()).then(response => {
         setTimeout(() => {
             addMessageToChat('bot', response);
         }, 1000);
     });
 }
-
-
-
-
-
-
-
