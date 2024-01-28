@@ -7,7 +7,7 @@
   <script>
     async function loadRSS() {
         const proxyUrl = 'https://api.allorigins.win/raw?url=';
-        const rssUrl = 'https://your-rss-feed-url-here.com/feed'; // Замените на URL вашего RSS-канала
+        const rssUrl = 'https://cors-anywhere.herokuapp.com/'; // Замените на URL вашего RSS-канала
         const response = await fetch(proxyUrl + encodeURIComponent(rssUrl));
         const data = await response.text();
 
