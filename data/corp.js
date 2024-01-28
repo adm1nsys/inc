@@ -174,7 +174,7 @@ function displaySoonData() {
                     </div>
                 </div>`;
                 brendContainer.onclick = function() {
-                 window.open(data.link, '_blank'); // Assuming data.link is the URL
+                 // window.open(data.link, '_blank'); // Assuming data.link is the URL
             };
 
             brandsList.appendChild(brendContainer);
