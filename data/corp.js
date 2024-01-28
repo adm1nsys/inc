@@ -24,7 +24,7 @@ var corporateDataArray = [
         // accent_color:"rgb(61, 132, 190)",
     },
     {
-        name: "http master",
+        name: "WebMaster",
         logo_c: "a2",
         status: "Release",
         pcversion: "2.2PR",
@@ -32,7 +32,7 @@ var corporateDataArray = [
         vrversion: "2.2VRR",
         universalversion: "2.2UR",
         description:"Start your http-server in 2 clicks.",
-        link:"https://adm1nsys.github.io/http-master/en/",
+        link:"/inc/web-master/index.html",
         accent_color:"white",
         // accent_color:"rgb(254, 160, 10)",
     },
