@@ -65,15 +65,13 @@ background-position: left; background-image: url('/inc/img/bg_s_bw.jpg');"> -->
   <div class="l_title"><h2 style="margin:0px;"><b>Settings</b></h2></div>
   </div>
 
-<div style="min-height:100%;">
+<div style="min-height:100%;" id="btns_c">
 
-    <div style="margin-top:3.5em;" class="regular_btn" onclick="home_screen()"><div class="regular_btn1"><b class="regular_btn2"><-- Go Back</b></div></div>
-    <div class="regular_btn" onclick="load_g_s()"><div class="regular_btn1"><b class="regular_btn2">Global Settings</b></div></div>
-    <div class="regular_btn" onclick="load_g_s()"><div class="regular_btn1"><b class="regular_btn2">Experimental Functions</b></div></div>
-    <div class="regular_btn" onclick="load_about()"><div class="regular_btn1"><b class="regular_btn2">Instructions</b></div></div>
-    <div class="regular_btn" onclick="load_about()"><div class="regular_btn1"><b class="regular_btn2">About</b></div></div>
+<!--  -->
 
-    <div class="del_all_account_btn" onclick="account_deleate_win()"><div class="del_all_account_btn1"><b class="del_all_account_btn2">Deleate Account</b></div></div>
+<script type="text/javascript">
+
+</script>
   </div>
 
 <div class="p0l1">
@@ -134,29 +132,15 @@ function name_id00() {
     }
 }
 
-function load_g_s() {
-  $("#set").load(`/inc/templates/a0/${c01.lang}/account/i00_g.html`, function(response, status, xhr) {
-if (status === "error") {
-var errorMsg = "There was an error loading the content: ";
-$("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
-}
-document.getElementById("title_menu").textContent = "Global Settings";
 
-});
-}
-
-function load_about() {
-  $("#set").load(`/inc/templates/a0/${c01.lang}/account/i00_about.html`, function(response, status, xhr) {
-if (status === "error") {
-var errorMsg = "There was an error loading the content: ";
-$("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
-}
-document.getElementById("title_menu").textContent = "About";
-
-});
-}
 
 $(document).ready(function() {
+  $("#btns_c").load(`templates/a0/${c01.lang}/account/i00_btns.html`, function(response, status, xhr) {
+    if (status === "error") {
+        var errorMsg = "There was an error loading the content: ";
+        $("#btns_c").html(errorMsg + xhr.status + " " + xhr.statusText);
+    }
+});
 load_g_s();
 });
 

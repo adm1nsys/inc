@@ -72,10 +72,22 @@ function loadContentForLanguage1() {
 }
 
 function loadContentForLanguage2() {
-      $("#content").load(`templates/a0/${c01.lang}/account/i00.html`, function(response, status, xhr) {
-        if (status === "error") {
-            var errorMsg = "There was an error loading the content: ";
-            $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
-        }
-    });
+  if (window.innerWidth > 767) {
+    $("#content").load(`templates/a0/${c01.lang}/account/i00.html`, function(response, status, xhr) {
+      if (status === "error") {
+          var errorMsg = "There was an error loading the content: ";
+          $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
+      }
+  });
+} else {
+  $("#content").load(`templates/a0/${c01.lang}/account/i00_btns.html`, function(response, status, xhr) {
+    if (status === "error") {
+        var errorMsg = "There was an error loading the content: ";
+        $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
+    }
+});
+}
+
+
+
 }

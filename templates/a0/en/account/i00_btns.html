@@ -1,0 +1,62 @@
+<script>
+$(document).ready(function() {
+        loadFile("all_styles/account_i00.css", "css");
+});
+
+</script>
+
+<div style="margin-top:3.5em;" class="regular_btn" onclick="home_screen()"><div class="regular_btn1"><b class="regular_btn2"><-- Go Back</b></div></div>
+<div class="regular_btn" onclick="load_g_s()"><div class="regular_btn1"><b class="regular_btn2">Global Settings</b></div></div>
+<div class="regular_btn" onclick="load_g_s()"><div class="regular_btn1"><b class="regular_btn2">Experimental Functions</b></div></div>
+<div class="regular_btn" onclick="load_about()"><div class="regular_btn1"><b class="regular_btn2">Instructions</b></div></div>
+<div class="regular_btn" onclick="load_about()"><div class="regular_btn1"><b class="regular_btn2">About</b></div></div>
+
+<div class="del_all_account_btn" onclick="account_deleate_win()"><div class="del_all_account_btn1"><b class="del_all_account_btn2">Deleate Account</b></div></div>
+
+<script type="text/javascript">
+
+function load_g_s() {
+  if (window.innerWidth > 767) {
+  $("#set").load(`/inc/templates/a0/${c01.lang}/account/i00_g.html`, function(response, status, xhr) {
+if (status === "error") {
+var errorMsg = "There was an error loading the content: ";
+$("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
+}
+document.getElementById("title_menu").textContent = "Global Settings";
+
+});
+}else {
+  $("#content").load(`/inc/templates/a0/${c01.lang}/account/i00_g.html`, function(response, status, xhr) {
+if (status === "error") {
+var errorMsg = "There was an error loading the content: ";
+$("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
+}
+document.getElementById("title_menu").textContent = "Global Settings";
+
+});
+}
+}
+
+function load_about() {
+  if (window.innerWidth > 767) {
+
+  $("#set").load(`/inc/templates/a0/${c01.lang}/account/i00_about.html`, function(response, status, xhr) {
+if (status === "error") {
+var errorMsg = "There was an error loading the content: ";
+$("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
+}
+document.getElementById("title_menu").textContent = "About";
+
+});
+}else {
+  $("#content").load(`/inc/templates/a0/${c01.lang}/account/i00_about.html`, function(response, status, xhr) {
+if (status === "error") {
+var errorMsg = "There was an error loading the content: ";
+$("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
+}
+document.getElementById("title_menu").textContent = "About";
+
+});
+}
+}
+</script>
