@@ -86,7 +86,7 @@ var corporateDataArray = [
     {
         name: "Global News",
         logo_c: "a0",
-        status: "Beta",
+        status: "Soon",
         pcversion: "2.2PR",
         mobileversion: "2.2MR",
         vrversion: "2.2VRR",

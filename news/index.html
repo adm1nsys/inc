@@ -5,26 +5,7 @@
     <title>Global News</title>
   </head>
   <script>
-    async function loadRSS() {
-        const proxyUrl = 'https://api.allorigins.win/raw?url=';
-        const rssUrl = 'https://cors-anywhere.herokuapp.com/'; // Замените на URL вашего RSS-канала
-        const response = await fetch(proxyUrl + encodeURIComponent(rssUrl));
-        const data = await response.text();
 
-        // Разбор данных RSS
-        const parser = new DOMParser();
-        const xmlData = parser.parseFromString(data, 'application/xml');
-        const items = xmlData.querySelectorAll('item');
-
-        // Отображение данных
-        let html = '';
-        items.forEach(item => {
-            const title = item.querySelector('title').textContent;
-            const link = item.querySelector('link').textContent;
-            html += `<li><a href="${link}" target="_blank">${title}</a></li>`;
-        });
-        document.getElementById('news').innerHTML = html;
-    }
 </script>
   <style media="screen">
 
