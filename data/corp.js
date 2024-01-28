@@ -45,7 +45,7 @@ var corporateDataArray = [
         vrversion: "2.2VRR",
         universalversion: "2.2UR",
         description:"Techno magazin.",
-        link:"https://adm1nsys.github.io/xn1ght/index.html",
+        link:"/inc/xn1ght/index.html",
         accent_color:"white",
     },
     {
@@ -81,18 +81,6 @@ var corporateDataArray = [
         universalversion: "2.2UR",
         description:"AX - Simple helper for every day.",
         link: "/inc/AX/index.html",
-        accent_color:"white",
-    },
-    {
-        name: "Global News",
-        logo_c: "a0",
-        status: "Soon",
-        pcversion: "2.2PR",
-        mobileversion: "2.2MR",
-        vrversion: "2.2VRR",
-        universalversion: "2.2UR",
-        description:"Read the Global News when you drink coffee.",
-        link: "/inc/news/index.html",
         accent_color:"white",
     },
 ];

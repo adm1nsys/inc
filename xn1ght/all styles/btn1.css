@@ -1,0 +1,142 @@
+@font-face { font-family: Samsung Sharp Sans; src: url('../fonts/Font1.otf'); } 
+
+.container2 {
+/*	background-color: rgba(255, 255, 255, 0.1);*/
+/*width: 50%;*/
+/*border: 1px solid white;*/
+  display: flex;
+/*  flex-wrap: wrap;*/
+overflow-x: auto;
+/*  justify-content: center;*/
+}
+
+.line1 {
+  background-color: black;
+  width: 180px;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 10px;
+  font-family: LED Dot-Matrix;
+  position: relative;
+  transition: 0.8s;
+}
+
+.l1t1 {
+  height: 30px;
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-135%, 0%);
+}
+
+.pol1{
+  background-color: white;
+  transform: translate(3200%, -10%) rotate(-10deg);
+  width: 5px;
+  height: 40px;
+  transition: 0.8s;
+}
+
+.pol2{
+  background-color: white;
+  transform: translate(2700%, -110%) rotate(-10deg);
+  width: 5px;
+  height: 40px;
+  transition: 0.8s;
+}
+
+.box1 {
+  width: 200px;
+  height: 380px;
+  background-color: white;
+  margin: 10px;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  z-index: 1;
+  transition: 0.8s;
+}
+
+.box1:hover{
+
+background:white;
+transition: 0.8s;
+box-shadow: 0px 0px 15px white;
+cursor: crosshair;
+}
+
+.box1:hover .pol1{
+/*background:rgb(51, 51, 51);*/
+transition: 0.8s;
+}
+
+.box1:hover .pol2{
+/*background:rgb(51, 51, 51);*/
+transition: 0.8s;
+}
+
+.box1:hover .line1{
+/*color:rgb(51, 51, 51);*/
+transition: 0.8s;
+}
+
+.box1:hover .t2{
+/*color:rgb(51, 51, 51);*/
+transition: 0.8s;
+}
+
+.imgl{
+  width: 180px;
+  height: 180px;
+  background-color: rgba(0, 0, 0, 0.9);
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url('../img/win11intall.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.t1{
+  font-size: 35px;
+  font-family: LED Dot-Matrix;
+  line-height: 90%;
+}
+
+.t2{
+  width: 180px;
+  background-color: black;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  font-family: LED Dot-Matrix;
+  font-size: 15px;
+  transition: 0.8s;
+}
+
+.descript{
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+/*  background-color: red;*/
+  width: 100%;
+  color: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 0px;
+  font-family: LED Dot-Matrix;
+  font-size: 10px;
+  text-align: center;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  flex-direction: column;
+  padding-bottom: 10px;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>XN1GHT | Library</title>
+    <script src="all scripts/script1.js"></script>
+    <link rel="stylesheet" type="text/css" href="all styles/style1.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+</head>
+<body>
+
+<div class="header"></div>
+<div class="m1">
+    <button onclick="location.href='index.html'" class="b2">Home</button>
+    <button class="b3">Library</button>
+    <button onclick="location.href='Links.html'" class="b2">Links</button>
+</div>
+<div class="content">
+    
+<div class="h1">Library</div>
+
+<div style="display: flex; margin-top: 2vh;">
+<button class="c1" onclick="location.href='iph2g.html'" id="myDiv">
+  <div class="img1"></div>
+  <div class="title2">iPhone 2G</div>
+  <div class="title3">About First iPhone</div>
+</button>
+<button class="c1" onclick="location.href='iph2g.html'" id="myDiv">
+  <div class="img2"></div>
+  <div class="title2">Install Windows 11</div>
+  <div class="title3">On Unsupported Devices</div>
+</button>
+</div>
+<br>
+<div style="display: flex; margin-top: 2vh;">
+<button class="c1" onclick="location.href='iph2g.html'" id="myDiv">
+  <div class="img3"></div>
+  <div class="title2">Jailbreak iOS 3</div>
+  <div class="title3">All Devices Without PC</div>
+</button>
+<button class="c1" onclick="location.href='iph2g.html'" id="myDiv">
+  <div class="img4"></div>
+  <div class="title2">Fix Cydia</div>
+  <div class="title3">Fix error connection</div>
+</button>
+</div>
+<br>
+
+<!-- <div id=""></div> -->
+
+<script type="text/javascript">
+function resizeDivs() {
+  $('.c1').each(function() {
+    var windowWidth = $(window).width();
+    var windowHeight = $(window).height();
+    var originalWidth = 100;
+    var originalHeight = 50;
+
+    var widthScale = windowWidth / originalWidth;
+    var heightScale = windowHeight / originalHeight;
+
+    var scale = Math.min(widthScale, heightScale);
+
+    $(this).css({
+      // transform: 'scale(' + scale + ')',
+      width: originalWidth * scale + 'px',
+      height: originalHeight * scale + 'px'
+    });
+
+    $(this).find('.img1').css({
+      // transform: 'scale(' + scale + ')'
+      // width: originalWidth * scale + 'px',
+      // height: originalHeight * scale + 'px'
+    });
+  });
+}
+
+$(window).resize(resizeDivs);
+$(document).ready(resizeDivs);
+</script>
+
+<div style="width:90%; height: 5vh;"></div>
+
+<!-- <form action="iph2g.html">
+    <button class="btn2" ><img src="https://konkurent.ua/media/uploads/prev/2023/02/04/22/01/09/f005cc06c70b8450570ce2622ed82750.png" width="160px" height="100px" alt="Продовжити"></button>
+</form> -->
+</div>
+
+<div class="container">
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+</div>
+
+
+<!-- <form action="iph2g.html"> -->
+    <!-- <button class="btn3" >Text</button> -->
+
+
+
+<script type = "text/javascript">
+  var msg =
+    " XN1GHT | Library ";
+  var chars = Array.from(msg);
+
+  function scrollTitle() {
+    chars.push(chars.shift());
+    document.title = chars.join("");
+    window.setTimeout(scrollTitle, 100);
+  }
+
+  (function() {
+    scrollTitle();
+  })();
+</script>
+</body>
+</html>

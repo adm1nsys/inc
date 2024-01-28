@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>XN1GHT</title>
+    <script src="all scripts/script1.js"></script>
+    <link rel="stylesheet" type="text/css" href="all styles/style1.css">
+    <script type="text/javascript">
+  let a = 5 + 8;
+  console.log("Результат математичного обчислення");
+  console.log(a);
+    </script>
+</head>
+<body>
+
+<script type="text/javascript">
+var donauts = ("With orange and cherry");
+console.log("Donauts before change", donauts);
+username = "With pineapple and sprinkles";
+console.log("Beautiful donautes after change", donauts);
+
+
+const beautifuldonauts = [
+  ["one", 2, true],
+  ["four", 5, "six"],
+  ["seven", 8, "nine"]
+];
+console.log(beautifuldonauts[0]); // ["sprinkles", 200, "description1"]
+console.log(beautifuldonauts[1]); // ["vanilka", 460, "description2"]
+console.log(beautifuldonauts[2]); // ["vanilka", 460, "description2"]
+
+const dano = ["Orange", "Pear", "Sprinkles"];
+console.log(dano[0]);
+const danoSprinkles = dano[1];
+console.log(danoSprinkles);
+const danoSprinkles2 = dano[2];
+console.log(danoSprinkles2);
+
+try{
+callSomeFunc();
+}
+catch(error){
+console.log("Тип помилки:", error.name);
+console.log("Помилка:", error.message);
+}
+
+</script>
+
+<div class="header"></div>
+<div class="m1">
+    <button class="b3">Home</button>
+    <button onclick="location.href='Library.html'" class="b2">Library</button>
+    <button onclick="location.href='Links.html'" class="b2">Links</button>
+</div>
+<div class="content">
+    <button class="btn777">Text</button>
+<!--     <form action=mailto:georgeiv14@icloud.com method=post>
+<div class="h1">Ideas help</div>
+<center>
+<textarea style="width: 80%; background: rgba(47,47,47,1); border: 2px solid white; color: white; margin-top: 2vh; margin-bottom: 2vh;" rows=10 name=Comment>
+</textarea>
+<br>
+<input type=submit value=Send class="b1"></input>
+</center>
+</form> -->
+
+
+<hello-yes hellocolor="#2980b9"></hello-yes>
+
+<script type="text/javascript">
+class HelloYes extends HTMLElement {
+  constructor() {
+    super();
+    
+    let welcome = "Доброго ранку";
+    const hour = new Date().getHours();
+
+    if (hour > 17) {
+      welcome = "Доброго вечора";
+    } else if (hour > 12) {
+      welcome = "Доброго дня";
+    }
+
+    this.style.cursor = "pointer";
+    this.innerText = welcome;
+  }
+
+  connectedCallback() {
+    this.style.color = "";
+
+    if (this.hasAttribute("hellocolor")) {
+      this.style.color = this.getAttribute("hellocolor");
+    }
+  }
+}
+customElements.define("hello-yes", HelloYes);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<form name="myForm">
+    <select name="list" size="5">
+        <option value="textone" selected="selected">textone</option>
+        <option value="texttwo">texttwo</option>
+        <option value="textthree">textthree</option>
+        <option value="textfour">textfour</option>
+    </select>
+    <input type="text" name="textInput" placeholder="Enter text" />
+    <input type="text" name="valueInput" placeholder="Enter value" />
+    <input type="button" name="addButton" value="Add" /><input type="button" name="removeButton" value="Deleate" />
+</form>
+ 
+<script>
+var addButton = myForm.addButton, 
+    removeButton = myForm.removeButton, 
+    Btnsellect = myForm.list;
+function addOption(){
+    var text = myForm.textInput.value;
+    var value = myForm.valueInput.value;
+    var newOption = new Option(text,value);
+    Btnsellect.options[Btnsellect.options.length]=newOption;
+}
+function removeOption(){
+    var selectedIndex = Btnsellect.options.selectedIndex;
+    Btnsellect.options[selectedIndex] = null;
+}
+addButton.addEventListener("click", addOption);
+removeButton.addEventListener("click", removeOption);
+</script>
+
+<form name="search">
+<input type="text" name="key"></input>
+<input type="submit" name="send" value="Send" />
+</form>
+
+<left><h3>Copyright © <script type="text/javascript">document.write(new Date().getFullYear())</script> George</h3></left>
+
+<form name="ddddd">
+<select name="language" size="4">
+<option value="With Sweet Chocolate" selected="selected">Chocolate</option>
+<option value="With Orange and apple">PineApple</option>
+<option value="With pear">Pear</option>
+<option value="With lime and vanilla">Lime and Vanilla</option>
+</select>
+</form>
+
+<script type="text/javascript">
+  var aaaaaa = ddddd.language.options[0];
+document.write("Index: " + aaaaaa.index + "<br/>");
+document.write("Text: " + aaaaaa.text + "<br/>");
+document.write("Value: " + aaaaaa.value + "<br/>");
+
+</script>
+
+<script type="text/javascript">
+  function sendForm(e){
+var keyBox = document.search.key;
+var val = keyBox.value;
+if(val.length>5){
+alert("The number of characters is greater than required. Try entering the text again.");
+}   
+else
+alert("Sending text.");
+document.search.action="Send_yes";
+}
+// var sendButton = document;
+var sendButton = document.search.send;
+sendButton.addEventListener("click", sendForm);
+</script>
+
+
+<form name="myForm2">
+<input type="checkbox" name="enabled" checked><span>I confirm this order, I am familiar with the terms of delivery, OK</span>
+</form>
+
+<div id="printBlock"></div>
+
+<script>
+var enabledBox = document.myForm2.enabled;
+function onclick(e){
+var printBlock = document.getElementById("printBlock");
+var enabled = e.target.checked;
+printBlock.textContent = enabled;
+}
+enabledBox.addEventListener("click", onclick);
+</script>
+
+
+
+</div>
+
+<script type = "text/javascript">
+  var msg =
+    " XN1GHT ";
+  var chars = Array.from(msg);
+
+  function scrollTitle() {
+    chars.push(chars.shift());
+    document.title = chars.join("");
+    window.setTimeout(scrollTitle, 100);
+  }
+
+  (function() {
+    scrollTitle();
+  })();
+</script>
+
+
+
+
+
+</body>
+</html>

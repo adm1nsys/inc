@@ -1,0 +1,192 @@
+@font-face { font-family: Samsung Sharp Sans; src: url('../fonts/Font1.otf'); } 
+
+.container {
+/*  width: 80%;*/
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.line3 {
+  background-color: white;
+  width: 180px;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  color: black;
+  font-size: 10px;
+  font-family: LED Dot-Matrix;
+  position: relative;
+  transition: 0.8s;
+}
+
+.l3t3 {
+  color: black;
+  height: 30px;
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-135%, 0%);
+}
+
+.pol5{
+  background-color: black;
+  transform: translate(3200%, -10%) rotate(-10deg);
+  width: 5px;
+  height: 40px;
+  transition: 0.8s;
+}
+
+.pol6{
+  background-color: black;
+  transform: translate(2700%, -110%) rotate(-10deg);
+  width: 5px;
+  height: 40px;
+  transition: 0.8s;
+}
+
+.box3 {
+  width: 200px;
+  height: 380px;
+  background-color: black;
+  margin: 10px;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  z-index: 1;
+  transition: 0.8s;
+}
+
+.box3:hover{
+
+background:rgb(51, 51, 51);
+transition: 0.8s;
+box-shadow: 0px 0px 15px white;
+cursor: crosshair;
+}
+
+.box3:hover .pol5{
+background:rgb(51, 51, 51);
+transition: 0.8s;
+}
+
+.box3:hover .pol6{
+background:rgb(51, 51, 51);
+transition: 0.8s;
+}
+
+.box3:hover .line1{
+color:rgb(51, 51, 51);
+transition: 0.8s;
+}
+
+.box3:hover .t6{
+color:rgb(51, 51, 51);
+transition: 0.8s;
+}
+
+.box3:hover .l3t3{
+color:rgb(51, 51, 51);
+transition: 0.8s;
+}
+
+.imgl3{
+  width: 180px;
+  height: 180px;
+  background-color: rgba(0, 0, 0, 0.9);
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url('../img/iphc.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.t5{
+/*  display: flex;*/
+  font-size: 40px;
+  font-family: LED Dot-Matrix;
+  line-height: 90%;
+  color: white;
+  margin-left: 5px;
+  margin-right: auto;
+  text-align: center;
+  letter-spacing: 4px;
+}
+
+.t6{
+  width: 180px;
+  background-color: white;
+  color: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  font-family: LED Dot-Matrix;
+  font-size: 15px;
+  transition: 0.8s;
+}
+
+.descript3{
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+/*  background-color: red;*/
+  width: 100%;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 0px;
+  font-family: LED Dot-Matrix;
+  font-size: 10px;
+  text-align: center;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
+
+.imgl4{
+  width: 180px;
+  height: 180px;
+  background-color: rgba(0, 0, 0, 1);
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url('../img/new-iphone-SE1.jpg.webp');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.imgl5{
+  width: 180px;
+  height: 180px;
+  background-color: rgba(0, 0, 0, 1);
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url('../img/5d568a9315563.jpeg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.imgl6{
+  width: 180px;
+  height: 180px;
+  background-color: rgba(0, 0, 0, 1);
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url('../img/pwa_vertical_1024_110191c91cd15ff752f9e25775a5b1de.jpg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

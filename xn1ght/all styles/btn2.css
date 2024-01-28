@@ -1,0 +1,131 @@
+@font-face { font-family: Samsung Sharp Sans; src: url('../fonts/Font1.otf'); } 
+.line2 {
+  background-color: black;
+  width: 180px;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  color: #ff7f73;
+  font-size: 10px;
+  font-family: LED Dot-Matrix;
+  position: relative;
+  transition: 0.8s;
+}
+
+.l2t2 {
+  height: 30px;
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-135%, 0%);
+}
+
+.pol3{
+  background-color: #ff7f73;
+  transform: translate(3200%, -10%) rotate(-10deg);
+  width: 5px;
+  height: 40px;
+  transition: 0.8s;
+}
+
+.pol4{
+  background-color: #ff7f73;
+  transform: translate(2700%, -110%) rotate(-10deg);
+  width: 5px;
+  height: 40px;
+  transition: 0.8s;
+}
+
+.box2 {
+  width: 200px;
+  height: 380px;
+  background-color: #ff7f73;
+  margin: 10px;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  z-index: 1;
+  transition: 0.8s;
+}
+
+.box2:hover{
+
+background:#ff7f73;
+transition: 0.8s;
+box-shadow: 0px 0px 15px #ff7f73;
+cursor: crosshair;
+}
+
+.box2:hover .pol1{
+/*background:rgb(51, 51, 51);*/
+transition: 0.8s;
+}
+
+.box2:hover .pol2{
+/*background:rgb(51, 51, 51);*/
+transition: 0.8s;
+}
+
+.box2:hover .line1{
+/*color:rgb(51, 51, 51);*/
+transition: 0.8s;
+}
+
+.box2:hover .t2{
+/*color:rgb(51, 51, 51);*/
+transition: 0.8s;
+}
+
+.imgl2{
+  width: 180px;
+  height: 180px;
+  background-color: rgba(0, 0, 0, 1);
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url('https://imgproxy4.tinhte.vn/DJ23InP0nUqGWXEWwfDEfZnZfl_ICigssQpSBynpwkE/w:400/plain/https://s3.cloud.cmctelecom.vn/tinhte2/2020/06/5063541_stevejobs_iphone2g.jpg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.t3{
+  font-size: 35px;
+  font-family: LED Dot-Matrix;
+  line-height: 90%;
+}
+
+.t4{
+  width: 180px;
+  background-color: black;
+  color: #ff7f73;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  font-family: LED Dot-Matrix;
+  font-size: 15px;
+  transition: 0.8s;
+}
+
+.descript2{
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+/*  background-color: red;*/
+  width: 100%;
+  color: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 0px;
+  font-family: LED Dot-Matrix;
+  font-size: 10px;
+  text-align: center;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  flex-direction: column;
+  padding-bottom: 10px;
+}
