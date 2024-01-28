@@ -31,7 +31,7 @@ var corporateDataArray = [
         mobileversion: "2.2MR",
         vrversion: "2.2VRR",
         universalversion: "2.2UR",
-        description:"Start your http-server in 2 clicks.",
+        description:"Start your local server in 2 clicks.",
         link:"/inc/web-master/index.html",
         accent_color:"white",
         // accent_color:"rgb(254, 160, 10)",
