@@ -1,1 +1,43 @@
-404
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Global News</title>
+  </head>
+  <script>
+    async function loadRSS() {
+        const proxyUrl = 'https://api.allorigins.win/raw?url=';
+        const rssUrl = 'https://your-rss-feed-url-here.com/feed'; // Замените на URL вашего RSS-канала
+        const response = await fetch(proxyUrl + encodeURIComponent(rssUrl));
+        const data = await response.text();
+
+        // Разбор данных RSS
+        const parser = new DOMParser();
+        const xmlData = parser.parseFromString(data, 'application/xml');
+        const items = xmlData.querySelectorAll('item');
+
+        // Отображение данных
+        let html = '';
+        items.forEach(item => {
+            const title = item.querySelector('title').textContent;
+            const link = item.querySelector('link').textContent;
+            html += `<li><a href="${link}" target="_blank">${title}</a></li>`;
+        });
+        document.getElementById('news').innerHTML = html;
+    }
+</script>
+  <style media="screen">
+
+  </style>
+  <body onload="loadRSS()">
+
+<header>
+Global News
+</header>
+<div class="">
+
+</div>
+<hr>
+<ul id="news"></ul>
+  </body>
+</html>

@@ -83,6 +83,18 @@ var corporateDataArray = [
         link: "/inc/AX/index.html",
         accent_color:"white",
     },
+    {
+        name: "Global News",
+        logo_c: "a0",
+        status: "Beta",
+        pcversion: "2.2PR",
+        mobileversion: "2.2MR",
+        vrversion: "2.2VRR",
+        universalversion: "2.2UR",
+        description:"AX - Simple helper for every day.",
+        link: "/inc/news/index.html",
+        accent_color:"white",
+    },
 ];
 
 function displayReleaseData() {
