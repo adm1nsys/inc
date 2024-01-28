@@ -51,7 +51,7 @@ var corporateDataArray = [
     {
         name: "Admin Store",
         logo_c: "a4",
-        status: "Beta",
+        status: "Soon",
         pcversion: "2.2PR",
         mobileversion: "2.2MR",
         vrversion: "2.2VRR",

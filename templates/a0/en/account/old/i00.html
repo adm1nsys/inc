@@ -38,7 +38,7 @@ left: 20%;
 border-radius: 999px;"></div> -->
 
 <style media="screen">
-/*  ::-webkit-scrollbar {
+  ::-webkit-scrollbar {
   width: 0px;
   height: 12px;
   }
@@ -47,17 +47,13 @@ border-radius: 999px;"></div> -->
 ::-webkit-scrollbar {
 width: 0px;
 height: 12px;
-} */
+}
 </style>
 
 <div style="display: flex; flex-direction: row; max-height: 100vh; min-height: 100vh; z-index: 9; position: relative;
 background-size: cover;
 background-repeat: no-repeat;
-background-position: left;">
-<!-- <div style="display: flex; flex-direction: row; max-height: 100vh; min-height: 100vh; z-index: 9; position: relative;
-background-size: cover;
-background-repeat: no-repeat;
-background-position: left; background-image: url('/inc/img/bg_s_bw.jpg');"> -->
+background-position: left; background-image: url('/inc/img/bg_s_bw.jpg');">
 <div class="p0l">
 
   <div class="p0l2">
@@ -69,8 +65,6 @@ background-position: left; background-image: url('/inc/img/bg_s_bw.jpg');"> -->
 
     <div style="margin-top:3.5em;" class="regular_btn" onclick="home_screen()"><div class="regular_btn1"><b class="regular_btn2"><-- Go Back</b></div></div>
     <div class="regular_btn" onclick="load_g_s()"><div class="regular_btn1"><b class="regular_btn2">Global Settings</b></div></div>
-    <div class="regular_btn" onclick="load_g_s()"><div class="regular_btn1"><b class="regular_btn2">Experimental Functions</b></div></div>
-    <div class="regular_btn" onclick="load_about()"><div class="regular_btn1"><b class="regular_btn2">Instructions</b></div></div>
     <div class="regular_btn" onclick="load_about()"><div class="regular_btn1"><b class="regular_btn2">About</b></div></div>
 
     <div class="del_all_account_btn" onclick="account_deleate_win()"><div class="del_all_account_btn1"><b class="del_all_account_btn2">Deleate Account</b></div></div>
@@ -88,7 +82,7 @@ background-position: left; background-image: url('/inc/img/bg_s_bw.jpg');"> -->
 <div class="p0r">
   <div class="p0l2">
 
-  <div class="l_title"><h2 style="margin:0px;" id="title_menu"><b>Settings</b></h2></div>
+  <div class="l_title"><h2 style="margin:0px;"><b>Settings</b></h2></div>
   </div>
 <div style="min-height:100%;" id="set">
   <!-- <div class="p0l1"> -->
@@ -140,7 +134,6 @@ if (status === "error") {
 var errorMsg = "There was an error loading the content: ";
 $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
 }
-document.getElementById("title_menu").textContent = "Global Settings";
 
 });
 }
@@ -151,7 +144,6 @@ if (status === "error") {
 var errorMsg = "There was an error loading the content: ";
 $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
 }
-document.getElementById("title_menu").textContent = "About";
 
 });
 }
