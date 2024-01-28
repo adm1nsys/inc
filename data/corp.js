@@ -91,7 +91,7 @@ var corporateDataArray = [
         mobileversion: "2.2MR",
         vrversion: "2.2VRR",
         universalversion: "2.2UR",
-        description:"AX - Simple helper for every day.",
+        description:"Read the Global News when you drink coffee.",
         link: "/inc/news/index.html",
         accent_color:"white",
     },
