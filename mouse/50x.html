@@ -29,9 +29,14 @@
 </header>
 
 <div id="content_gen">
-<div style="position:relative;">
-<div id="draggable"></div>
-<div id="obstacle"></div>
+  <div class="draggable"></div>
+<div style="position:static; display:flex;">
+<div>
+  <div class="obstacle" style="top:100px; left:100px;"></div>
+  <div class="obstacle0" style="top:200px; left:100px;"></div>
+  <div class="obstacle" style="top:300px; left:100px;"></div>
+
+</div>
 </div>
 </div>
 </div>
@@ -63,12 +68,11 @@
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
-
-    const draggable = document.getElementById('draggable');
-    const obstacle = document.getElementById('obstacle');
+    const draggable = document.querySelector('.draggable'); // Изменено на выбор по классу
+    const obstacles = document.querySelectorAll('.obstacle'); // Выбираем все препятствия
     let currentX = 0;
     let currentY = 0;
-    const step = 1; // Шаг смещения в пикселях
+    const step = 10; // Шаг смещения в пикселях
 
     window.move = (direction) => {
         let deltaX = 0;
@@ -103,18 +107,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
         futureRect.x = newX;
         futureRect.y = newY;
 
-        const obstacleRect = obstacle.getBoundingClientRect();
+        // Проверяем каждое препятствие
+        for (const obstacle of obstacles) {
+            const obstacleRect = obstacle.getBoundingClientRect();
 
-        if (futureRect.x < obstacleRect.x + obstacleRect.width &&
-            futureRect.x + futureRect.width > obstacleRect.x &&
-            futureRect.y < obstacleRect.y + obstacleRect.height &&
-            futureRect.y + futureRect.height > obstacleRect.y) {
-            console.log('Коллізія!');
-            return true;
+            if (futureRect.x < obstacleRect.x + obstacleRect.width &&
+                futureRect.x + futureRect.width > obstacleRect.x &&
+                futureRect.y < obstacleRect.y + obstacleRect.height &&
+                futureRect.y + futureRect.height > obstacleRect.y) {
+                console.log('Коллизия!');
+                return true;
+            }
         }
         return false;
     }
 });
+
+
 
 
 </script>
