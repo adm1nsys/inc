@@ -95,6 +95,6 @@ const l_b = [[{'id': 'cel_11_1', 'class': 'area_f'},
   {'id': 'cel_20_5', 'class': 'area_f'},
   {'id': 'cel_20_6', 'class': 'area_f'},
   {'id': 'cel_20_7', 'class': 'area_f'},
-  {'id': 'cel_20_8', 'class': 'area_f'},
+  {'id': 'cel_20_8', 'class': 'area_r'},
   {'id': 'cel_20_9', 'class': 'area_f'},
   {'id': 'cel_20_10', 'class': 'area_f'}]];

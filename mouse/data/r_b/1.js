@@ -97,4 +97,4 @@ const r_b = [[{'id': 'cel_11_11', 'class': 'area_f'},
   {'id': 'cel_20_17', 'class': 'area_f'},
   {'id': 'cel_20_18', 'class': 'area_f'},
   {'id': 'cel_20_19', 'class': 'area_f'},
-  {'id': 'cel_20_20', 'class': 'area_f'}]];
+  {'id': 'cel_20_20', 'class': 'area_p'}]];

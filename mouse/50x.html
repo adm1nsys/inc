@@ -6,7 +6,10 @@
 
 <link rel="stylesheet" type="text/css" href="btns.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <script src="/inc/mouse/data/l_t/1.js"></script>
+<script src="/inc/mouse/data/l_t/1.js"></script>
+<script src="/inc/mouse/data/r_t/1.js"></script>
+<script src="/inc/mouse/data/r_b/1.js"></script>
+<script src="/inc/mouse/data/l_b/1.js"></script>
 
 </head>
 <body>
@@ -614,7 +617,32 @@
 
 <script>
 
+
+
 document.addEventListener('DOMContentLoaded', (event) => {
+
+  // console.log("Полный массив r_t:", r_t); // Проверяем структуру массива
+
+  function updateCellClasses(array) {
+      array.forEach(celObject => {
+          // console.log("Обрабатываемый объект:", celObject); // Для отладки
+          const element = document.getElementById(celObject.id);
+          if (element) {
+              element.className = celObject.class;
+          } else {
+              // console.log("Элемент не найден:", celObject.id); // Если элемент не найден
+          }
+      });
+  }
+
+  const allArrays = [r_t, l_b, l_t, r_b];
+  allArrays.forEach(array => {
+      updateCellClasses(array);
+  });
+
+  // [r_t, l_b, l_t, r_b].forEach(array => updateCellClasses(array));
+
+
 const mouse_id = "id_мищі";
   var slider = document.getElementById("slider_b_size");
    var outputs = document.getElementsByClassName("b_size");
