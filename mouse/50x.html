@@ -5,6 +5,7 @@
 <title>Лабиринт</title>
 
 <link rel="stylesheet" type="text/css" href="btns.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 </head>
@@ -13,15 +14,13 @@
 <header>
 <center class="header"><b><h1>Генератор Лабіринту</h1></b></center>
 <div class="h1">
-  <button class="h2">Генератр</button>
-  <button class="h2">Інформація</button>
+  <button class="h2" onclick="generator_c()">Генератр</button>
+  <button class="h2" onclick="info_c()">Інформація</button>
 </div>
 </header>
 
-<div style="position:relative;">
+<div id="content_gen">
 
-<div id="draggable"></div>
-<div id="obstacle"></div>
 </div>
 
 <div class="btns_c">
@@ -48,7 +47,32 @@
 </div>
 
 <script>
+
+function generator_c() {
+  $(document).ready(function() {
+    $("#content_gen").load(`/inc/mouse/generator_c.html`, function(response, status, xhr) {
+      if (status === "error") {
+        var errorMsg = "There was an error loading the content: ";
+        $("#content_gen").html(errorMsg + xhr.status + " " + xhr.statusText);
+      }
+    });
+  });
+}
+
+function info_c() {
+  $(document).ready(function() {
+    $("#content_gen").load(`/inc/mouse/info_c.html`, function(response, status, xhr) {
+      if (status === "error") {
+        var errorMsg = "There was an error loading the content: ";
+        $("#content_gen").html(errorMsg + xhr.status + " " + xhr.statusText);
+      }
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', (event) => {
+generator_c();
+
     const draggable = document.getElementById('draggable');
     const obstacle = document.getElementById('obstacle');
     let currentX = 0;

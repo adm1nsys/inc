@@ -91,12 +91,19 @@ svg{
 body{
   background-color: #F9F9F9;
   margin: 0px;
+  scroll-behavior: smooth;
+  font-family: arial;
+}
+
+h1{
+  font-size: 3em;
 }
 
 .header{
   padding-top: 1em;
   padding-bottom: 1em;
   background-color: #F9F9F9;
+  background: linear-gradient(gray, gray 35%, rgba(0, 0, 0, 0))
 }
 
 .h1{
@@ -111,5 +118,11 @@ body{
 background: none;
 border: none;
 border-bottom: 2px solid gray;
+transition: 0.4s;
+background: none;
+}
 
+.h2:hover{
+  background: rgb(191, 191, 191);
+  cursor: crosshair;
 }
