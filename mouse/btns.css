@@ -17,7 +17,7 @@
   width: 100px;
   height: 100px;
   background: blue;
-  position: absolute;
+  /* position: absolute; */
   top: 0px;
   left: 0px;
 }
@@ -37,7 +37,7 @@
 }
 
 .btns_c{
-  display: none;
+  display: flex;
   position: fixed;
   bottom: 10px;
   right: 10px;
@@ -445,4 +445,39 @@ background: gray;
 border: 1px solid black;
 /* opacity: 0; */
 display: none;
+}
+
+
+.area{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  border: 50px solid black;
+  background: white;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+}
+
+.area_p{
+  background: rgb(107, 153, 201);
+  width: 50px;
+  height: 50px;
+}
+
+.area_f{
+  background: white;
+  width: 50px;
+  height: 50px;
+}
+
+.area_r{
+  background: rgb(0, 0, 0);
+  width: 50px;
+  height: 50px;
 }
