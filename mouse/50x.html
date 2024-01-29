@@ -9,8 +9,20 @@
 
 </head>
 <body>
+
+<header>
+<center class="header"><b><h1>Генератор Лабіринту</h1></b></center>
+<div class="h1">
+  <button class="h2">Генератр</button>
+  <button class="h2">Інформація</button>
+</div>
+</header>
+
+<div style="position:relative;">
+
 <div id="draggable"></div>
 <div id="obstacle"></div>
+</div>
 
 <div class="btns_c">
 <button class="button btn_l btn_style" onclick="move('left')">
@@ -82,7 +94,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             futureRect.x + futureRect.width > obstacleRect.x &&
             futureRect.y < obstacleRect.y + obstacleRect.height &&
             futureRect.y + futureRect.height > obstacleRect.y) {
-            console.log('Коллизия!');
+            console.log('Коллізія!');
             return true;
         }
         return false;
