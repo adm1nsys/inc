@@ -10,6 +10,8 @@
 </head>
 <body>
 <div class="content">
+<div style="  max-width: 80rem;
+  margin: auto;">
 
 <header>
 <center class="header"><b><h1>Генератор Лабіринту</h1></b></center>
@@ -22,8 +24,9 @@
 
 </div>
 <div class="h1">
-  <div class="regular_btn" onclick="load_g_s()"><div class="regular_btn1"><b class="regular_btn2">Генератр</b></div></div>
-  <div class="regular_btn" onclick="load_g_s()"><div class="regular_btn1"><b class="regular_btn2">Інформація</b></div></div>
+  <div class="regular_btn"  onclick=""><div class="regular_btn1"><b class="regular_btn2">Генератр</b></div></div>
+  <div class="regular_btn" onclick=""><div class="regular_btn1"><b class="regular_btn2">Тест</b></div></div>
+  <div class="regular_btn" onclick=""><div class="regular_btn1"><b class="regular_btn2">Інформація</b></div></div>
 
 </div>
 </header>
@@ -39,6 +42,31 @@
 </div>
 </div>
 </div>
+
+<div style="margin:auto; width: 90%; max-width: 80rem; display: flex; flex-direction: column;">
+
+  <h2><label for="slider_b_size">Розмір ячейки <span class="b_size">100</span>Х<span class="b_size">100</span> PX</label></h2>
+  <input type="range" id="slider_b_size" name="volume" min="10" max="1000" value="100"  step="10" class="slider">
+
+
+
+  <h2><label for="slider_b_size0">Розмір мищі <span class="m_size0">50</span>Х<span class="m_size1">100</span> PX (Ширина, Висота)</label></h2>
+
+Ширина:<br>
+    <input type="range" id="slider_m_size0" name="volume" min="10" max="1000" value="50"  step="10" class="slider">
+
+Висота:<br>
+  <input type="range" id="slider_m_size1" name="volume" min="10" max="1000" value="100"  step="10" class="slider">
+
+
+  <h2>Колір 1 (Доріжка) (Формат RGBA)</h2>
+
+  <h2>Колір 2 (Стіни) (Формат RGBA)</h2>
+
+  <h2>Колір 3 (Ціль) (Формат RGBA)</h2>
+
+</div>
+
 </div>
 
 <div class="btns_c">
@@ -64,10 +92,51 @@
 </button>
 </div>
 
+
+</div>
+
+</body>
+
 <script>
 
-
 document.addEventListener('DOMContentLoaded', (event) => {
+
+  var slider = document.getElementById("slider_b_size");
+   var outputs = document.getElementsByClassName("b_size");
+   var b_size = slider.value;
+
+  // Обновление текущего значения при перемещении ползунка
+  slider.oninput = function() {
+             b_size = this.value; // Обновление переменной
+             for (var i = 0; i < outputs.length; i++) {
+                 outputs[i].innerHTML = b_size;
+                 // console.log(b_size);
+             }
+         }
+
+         var slider1 = document.getElementById("slider_m_size0");
+         var slider2 = document.getElementById("slider_m_size1");
+         var outputs0 = document.getElementsByClassName("m_size0");
+         var outputs1 = document.getElementsByClassName("m_size1");
+         var m_size0 = slider1.value;
+         var m_size1 = slider2.value;
+
+         // Обновление текущего значения при перемещении первого ползунка
+         slider1.oninput = function() {
+             m_size0 = this.value; // Обновление переменной
+             for (var i = 0; i < outputs0.length; i++) {
+                 outputs0[i].innerHTML = m_size0;
+             }
+         }
+
+         // Обновление текущего значения при перемещении второго ползунка
+         slider2.oninput = function() {
+             m_size1 = this.value; // Обновление переменной
+             for (var i = 0; i < outputs1.length; i++) {
+                 outputs1[i].innerHTML = m_size1;
+             }
+         }
+
     const draggable = document.querySelector('.draggable'); // Изменено на выбор по классу
     const obstacles = document.querySelectorAll('.obstacle'); // Выбираем все препятствия
     let currentX = 0;
@@ -127,6 +196,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 </script>
-
-</body>
 </html>
