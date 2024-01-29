@@ -274,3 +274,57 @@ filter: blur(15px);
 .slider:hover{
   cursor: ew-resize;
 }
+
+.color-box {
+   width: 1.5em;
+   height: 1.5em;
+   display: inline-block;
+   border: 2px solid white;
+   border-radius: 999px;
+   margin-left: 0.5em;
+}
+h2{
+  align-items: center;
+display: flex;
+}
+
+#textToCopy{
+  display: none;
+}
+
+.textToCopy{
+  display: flex;
+-webkit-backdrop-filter: blur(90px);
+-webkit-backdrop-filter: blur(90px);
+background: rgba(0, 0, 0, 0.27);
+padding: 10px;
+border-radius: 10px;
+border: 2px solid #2A2A2A;
+}
+
+.horizon{
+  display: flex;
+flex-direction: row;
+justify-content: left;
+align-content: center;
+align-items: center;
+}
+
+.c0{
+  color: rgba(141, 109, 247, 1);
+}
+
+.c1{
+  color: rgba(255, 154, 20, 1);
+}
+
+.c2{
+  color: rgba(255, 210, 20, 1);
+}
+
+.editable {
+  border: 2px solid #505050;
+  padding: 5px;
+  display: inline-block;
+  border-radius: 6px;
+}
