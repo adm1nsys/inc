@@ -1,0 +1,89 @@
+#draggable {
+  width: 50px;
+  height: 50px;
+  background: red;
+  position: absolute;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#draggable:hover{
+  transition: 0s;
+}
+
+#obstacle {
+  width: 100px;
+  height: 100px;
+  background: blue;
+  position: absolute;
+  top: 150px;
+  left: 250px;
+}
+
+.button {
+  /* margin-top: 200px; */
+}
+
+.btns_c{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.btn_l{
+  width: 50px;
+height: 50px;
+position: absolute;
+right: 100px;
+bottom: 50px;
+rotate: -90deg;
+}
+
+.btn_r{
+  width: 50px;
+height: 50px;
+position: absolute;
+bottom: 50px;
+right: 0px;
+rotate: 90deg;
+}
+
+.btn_t{
+  width: 50px;
+height: 50px;
+position: absolute;
+bottom: 100px;
+right: 50px;
+}
+
+.btn_b{
+  width: 50px;
+height: 50px;
+position: absolute;
+bottom: 0px;
+right: 50px;
+rotate: 180deg;
+}
+
+.btn_style{
+  background-color: gray;
+  border-radius: 10px;
+  border: 2px solid rgb(92, 92, 92);
+  transition: 0.4s;
+  cursor: crosshair;
+}
+
+.btn_style:hover{
+  background-color: rgb(91, 91, 91);
+border: 2px solid rgb(180, 180, 180);
+}
+
+.btn_style:active{
+  background-color: rgb(255, 91, 91);
+border: 2px solid rgb(180, 180, 180);
+}
+
+svg{
+  width: 20px;
+  height: 20px;
+}

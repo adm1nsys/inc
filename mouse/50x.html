@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Лабиринт</title>
+
+<link rel="stylesheet" type="text/css" href="btns.css">
+
+
+</head>
+<body>
+<div id="draggable"></div>
+<div id="obstacle"></div>
+
+<div class="btns_c">
+<button class="button btn_l btn_style" onclick="move('left')">
+  <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M320 0H192V128H128V256H64V384H0V512H128V384H192V256H256H320V384H384V512H512V384H448V256H384V128H320V0Z" fill="white"/>
+</svg>
+</button>
+<button class="button btn_t btn_style" onclick="move('up')">
+  <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M320 0H192V128H128V256H64V384H0V512H128V384H192V256H256H320V384H384V512H512V384H448V256H384V128H320V0Z" fill="white"/>
+</svg>
+</button>
+<button class="button btn_r btn_style" onclick="move('right')">
+  <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M320 0H192V128H128V256H64V384H0V512H128V384H192V256H256H320V384H384V512H512V384H448V256H384V128H320V0Z" fill="white"/>
+</svg>
+</button>
+<button class="button btn_b btn_style" onclick="move('down')">
+  <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M320 0H192V128H128V256H64V384H0V512H128V384H192V256H256H320V384H384V512H512V384H448V256H384V128H320V0Z" fill="white"/>
+  </svg>
+</button>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const draggable = document.getElementById('draggable');
+    const obstacle = document.getElementById('obstacle');
+    let currentX = 0;
+    let currentY = 0;
+    const step = 1; // Шаг смещения в пикселях
+
+    window.move = (direction) => {
+        let deltaX = 0;
+        let deltaY = 0;
+
+        switch(direction) {
+            case 'left':
+                deltaX = -step;
+                break;
+            case 'right':
+                deltaX = step;
+                break;
+            case 'up':
+                deltaY = -step;
+                break;
+            case 'down':
+                deltaY = step;
+                break;
+        }
+
+        // Проверка на коллизию перед перемещением
+        if (!checkCollision(currentX + deltaX, currentY + deltaY)) {
+            currentX += deltaX;
+            currentY += deltaY;
+            draggable.style.left = currentX + 'px';
+            draggable.style.top = currentY + 'px';
+        }
+    }
+
+    function checkCollision(newX, newY) {
+        const futureRect = draggable.getBoundingClientRect();
+        futureRect.x = newX;
+        futureRect.y = newY;
+
+        const obstacleRect = obstacle.getBoundingClientRect();
+
+        if (futureRect.x < obstacleRect.x + obstacleRect.width &&
+            futureRect.x + futureRect.width > obstacleRect.x &&
+            futureRect.y < obstacleRect.y + obstacleRect.height &&
+            futureRect.y + futureRect.height > obstacleRect.y) {
+            console.log('Коллизия!');
+            return true;
+        }
+        return false;
+    }
+});
+
+
+</script>
+
+</body>
+</html>
