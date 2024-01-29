@@ -30,7 +30,7 @@
   left: 0px;
 }
 #content_gen{
-  display: none;
+  display: flex;
 }
 .button {
   /* margin-top: 200px; */
