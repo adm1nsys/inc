@@ -9,12 +9,19 @@
 
 </head>
 <body>
+<div class="content">
 
 <header>
 <center class="header"><b><h1>Генератор Лабіринту</h1></b></center>
+<div class="p0l1">
+  <div class="light1"></div>
+  <div class="light2"></div>
+  <div class="light3"></div>
+</div>
 <div class="h1">
-  <button class="h2">Генератр</button>
-  <button class="h2">Інформація</button>
+  <div class="regular_btn" onclick="load_g_s()"><div class="regular_btn1"><b class="regular_btn2">Генератр</b></div></div>
+  <div class="regular_btn" onclick="load_g_s()"><div class="regular_btn1"><b class="regular_btn2">Інформація</b></div></div>
+
 </div>
 </header>
 
@@ -22,6 +29,7 @@
 <div style="position:relative;">
 <div id="draggable"></div>
 <div id="obstacle"></div>
+</div>
 </div>
 </div>
 
@@ -52,7 +60,7 @@
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  
+
     const draggable = document.getElementById('draggable');
     const obstacle = document.getElementById('obstacle');
     let currentX = 0;
