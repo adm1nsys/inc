@@ -413,3 +413,36 @@ input[type=range]:focus {
     outline: none;
     transition: 0.4s;
 }
+.tooltip {
+           position: fixed;
+           top: 10px;
+           left: 10px;
+           background: white;
+           border: 1px solid black;
+           padding: 5px;
+           display: none;
+       }
+
+       #dynamicElement {
+     position: fixed;
+     top: 0px;
+     left: 0px;
+     width: 100px;
+     height: 100px;
+     background: white;
+     border: 1px solid black;
+     /* opacity: 0; */
+     display: none;
+ }
+
+ #dynamicElement2 {
+position: fixed;
+top: 0px;
+left: 0px;
+width: 100px;
+height: 100px;
+background: gray;
+border: 1px solid black;
+/* opacity: 0; */
+display: none;
+}
