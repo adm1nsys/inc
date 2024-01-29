@@ -129,6 +129,20 @@ position: relative;
 backdrop-filter: blur(90px);
 margin-top: 0px;
 }
+.pt{
+  /* width: 100%; */
+  background: rgba(0, 0, 0, 0.27);
+  border: 2px solid #2A2A2A;
+  border-radius: 20px;
+  /* margin: 10px; */
+/* margin-left: 5px; */
+/* overflow-y: auto; */
+position: relative;
+-webkit-backdrop-filter: blur(90px);
+backdrop-filter: blur(90px);
+margin-top: 10px;
+padding: 10px
+}
 
 .content{
   background: url('/inc/mouse/bg_d.jpg');
@@ -268,7 +282,7 @@ filter: blur(15px);
 }
 
 .slider{
-
+width: 100%;
 }
 
 .slider:hover{

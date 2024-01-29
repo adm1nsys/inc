@@ -43,13 +43,15 @@
 </div>
 </div>
 
-<div style="margin:auto; width: 90%; max-width: 80rem; display: flex; flex-direction: column;">
+<div style="margin:auto; margin-left: 10px; margin-right: 10px; max-width: 80rem; display: flex; flex-direction: column;">
+<div class="pt">
 
   <h2><label for="slider_b_size">Розмір ячейки <span class="b_size">100</span>Х<span class="b_size">100</span> PX</label></h2>
   <input type="range" id="slider_b_size" name="volume" min="10" max="1000" value="100"  step="10" class="slider">
+</div>
 
 
-
+<div class="pt">
   <h2><label for="slider_b_size0">Розмір мищі <span class="m_size0">50</span>Х<span class="m_size1">100</span> PX (Ширина, Висота)</label></h2>
 
 Ширина:<br>
@@ -57,28 +59,34 @@
 
 Висота:<br>
   <input type="range" id="slider_m_size1" name="volume" min="10" max="1000" value="100"  step="10" class="slider">
+</div>
 
 
+<div class="pt">
   <h2>Колір 1 (Доріжка) (Формат RGBA)<div class="color-box" id="colorBox1"></div></h2>
   Колір:<br>
   <input type="color" id="color1" value="#ffffff">
   Альфа канал:<br>
   <input type="range" id="alpha1" min="0" max="255" value="255" class="slider">
+</div>
 
-
+<div class="pt">
   <h2>Колір 2 (Стіни) (Формат RGBA)  <div class="color-box" id="colorBox2"></div></h2>
   Колір:<br>
   <input type="color" id="color2" value="#000000">
   Альфа канал:<br>
   <input type="range" id="alpha2" min="0" max="255" value="255" class="slider">
+</div>
 
-
+<div class="pt">
   <h2>Колір 3 (Ціль) (Формат RGBA)  <div class="color-box" id="colorBox3"></div></h2>
   Колір:<br>
   <input type="color" id="color3" value="#ff0000">
   Альфа канал:<br>
   <input type="range" id="alpha3" min="0" max="255" value="255" class="slider">
+</div>
 
+<div class="pt">
   <h2>Ідентифікация мищі</h2>
 
   <div class="horizon">
@@ -87,13 +95,26 @@
       </div>
       <div id="copyButton" class="regular_btn" style="width:auto; margin:0px; margin-left: 10px; height: 100%;">
           <div class="regular_btn1">
-              <b class="regular_btn2" style="padding: 10px 10px 10px 10px;">Скопіювати</b>
+              <b class="regular_btn2" style="padding: 15px">Скопіювати</b>
           </div>
       </div>
   </div>
+
 <span style="opacity:0.5">Вставте цю константу першою строкою у ваш JavaScript.</span>
   <div id="textToCopy">const mouse_id = "id_мищі";</div>
+</div>
+
   <br>
+  <div class="pt">
+
+  <div class="horizon">
+    <div class="regular_btn"  onclick=""><div class="regular_btn1"><b class="regular_btn2">Сгенерувати</b></div></div>
+    <div class="regular_btn"  onclick=""><div class="regular_btn1"><b class="regular_btn2">Завантажити</b></div></div>
+  </div>
+</div>
+
+
+
 </div>
 
 </div>
