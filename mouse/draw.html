@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Генератор Лабіринту</title>
 
-<link rel="stylesheet" type="text/css" href="btns_test.css">
+<link rel="stylesheet" type="text/css" href="btns_draw.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
@@ -37,16 +37,56 @@
 
 <div style="margin:auto; margin-left: 10px; margin-right: 10px; max-width: 80rem; display: flex; flex-direction: column;">
 
+<div class="pt" style="display: flex; justify-content: center;">
+  <button class="area_t_c" onclick="setCurrentColor('area_t')"></button>
+  <button class="area_f_c" onclick="setCurrentColor('area_f')"></button>
+  <button class="area_r_c" onclick="setCurrentColor('area_r')"></button>
+  <button class="area_p_c" onclick="setCurrentColor('area_p')"></button>
+</div>
 
-  <button onclick="setCurrentColor('area_t')">Красный</button>
-  <button onclick="setCurrentColor('area_f')">Белый</button>
-  <button onclick="setCurrentColor('area_r')">Чёрный</button>
-  <button onclick="setCurrentColor('area_p')">Голубой</button>
 
+<div class="pt" style="display:flex; justify-content: center;">
+
+
+<div>
+  <b class="show_n_t" style="margin-left: 35px;">1</b>
+  <b class="show_n_t" style="margin-left: 71px;">2</b>
+  <b class="show_n_t" style="margin-left: 107px;">3</b>
+  <b class="show_n_t" style="margin-left: 143px;">4</b>
+  <b class="show_n_t" style="margin-left: 179px;">5</b>
+  <b class="show_n_t" style="margin-left: 215px;">6</b>
+  <b class="show_n_t" style="margin-left: 251px;">7</b>
+  <b class="show_n_t" style="margin-left: 287px;">8</b>
+  <b class="show_n_t1" style="margin-left: 323px;">9</b>
+  <b class="show_n_t1" style="margin-left: 359px;">10</b>
+  <b class="show_n_t1" style="margin-left: 395px;">11</b>
+  <b class="show_n_t1" style="margin-left: 431px;">12</b>
+  <b class="show_n_t1" style="margin-left: 467px;">13</b>
+  <b class="show_n_t1" style="margin-left: 503px;">14</b>
+  <b class="show_n_t1" style="margin-left: 539px;">15</b>
+  <b class="show_n_t1" style="margin-left: 575px;">16</b>
+
+  <b class="show_n_l" style="top: 66px;">1</b>
+  <b class="show_n_l" style="top: 102px;">2</b>
+  <b class="show_n_l" style="top: 138px;">3</b>
+  <b class="show_n_l" style="top: 174px;">4</b>
+  <b class="show_n_l" style="top: 210px;">5</b>
+  <b class="show_n_l" style="top: 246px;">6</b>
+  <b class="show_n_l" style="top: 282px;">7</b>
+  <b class="show_n_l" style="top: 318px;">8</b>
+
+  <b class="show_n_l1" style="top: 354px;">9</b>
+  <b class="show_n_l1" style="top: 390px;">10</b>
+  <b class="show_n_l1" style="top: 426px;">11</b>
+  <b class="show_n_l1" style="top: 462px;">12</b>
+  <b class="show_n_l1" style="top: 498px;">13</b>
+  <b class="show_n_l1" style="top: 534px;">14</b>
+  <b class="show_n_l1" style="top: 570px;">15</b>
+  <b class="show_n_l1" style="top: 606px;">16</b>
 
 <div class="area">
 
-  <!-- <div class="draggable"></div> -->
+
 <div style="position:static; display:flex;">
 <div>
 
@@ -363,12 +403,73 @@
 
 
 </div>
+</div>
+</div>
 
+<div class="pt" style="justify-content: center; margin-bottom: 50px;">
+  <div id="loadButton" class="regular_btn" style="width:auto; margin:0px;height: 100%;">
+      <div class="regular_btn1">
+          <b class="regular_btn2" style="padding: 15px">Завантажити</b>
+      </div>
+  </div>
 </div>
 
 </div>
 
+</div>
 
+<div id="popupMenu" style="display:none;">
+<div class="pt0">
+
+  <div class="pt pt2">
+
+    <div onclick="downloadPixelArtAsHTML()" id="loadButton" class="regular_btn pt0" style="">
+        <div class="regular_btn1">
+            <b class="regular_btn2" style="padding: 15px">HTML</b>
+        </div>
+    </div>
+
+    <hr>
+
+
+    <div onclick="downloadLTAsJS()" id="loadButton" class="regular_btn pt0" style="">
+        <div class="regular_btn1">
+            <b class="regular_btn2" style="padding: 15px">Завантажити l_t як JS</b>
+        </div>
+    </div>
+
+    <div onclick="downloadRTAsJS()" id="loadButton" class="regular_btn pt0" style="">
+        <div class="regular_btn1">
+            <b class="regular_btn2" style="padding: 15px">Завантажити r_t як JS</b>
+        </div>
+    </div>
+
+    <div onclick="downloadLBAsJS()" id="loadButton" class="regular_btn pt0" style="">
+        <div class="regular_btn1">
+            <b class="regular_btn2" style="padding: 15px">Завантажити l_b як JS</b>
+        </div>
+    </div>
+
+    <div onclick="downloadRBAsJS()" id="loadButton" class="regular_btn pt0" style="">
+        <div class="regular_btn1">
+            <b class="regular_btn2" style="padding: 15px">Завантажити r_b як JS</b>
+        </div>
+    </div>
+
+    <!--
+    <button onclick="downloadLTAsJS()">Скачать l_t как JS</button>
+    <button onclick="downloadRTAsJS()">Скачать r_t как JS</button>
+<button onclick="downloadLBAsJS()">Скачать l_b как JS</button>
+<button onclick="downloadRBAsJS()">Скачать r_b как JS</button> -->
+<button onclick="$('#popupMenu').fadeOut();">Закрити</button>
+  </div>
+
+</div>
+
+
+
+
+</div>
 
 </div>
 
@@ -376,30 +477,218 @@
 
 <script>
 
+function downloadLTAsJS() {
+    let l_t = [];
+    for (let row = 1; row <= 8; row++) {
+        let currentRow = [];
+        for (let col = 1; col <= 8; col++) {
+            let cellId = `cel_${row}_${col}`;
+            let cell = document.getElementById(cellId);
+            if (cell) {
+                currentRow.push({ id: cellId, class: cell.className });
+            }
+        }
+        l_t.push(currentRow);
+    }
+
+    downloadArray(l_t, 'l_t');
+}
+
+function downloadArray(array, arrayName) {
+    if (array.length === 0) {
+        console.error(`Массив ${arrayName} пуст.`);
+        return;
+    }
+
+    const jsContent = `const ${arrayName} = ${JSON.stringify(array, null, 2)};`;
+    const blob = new Blob([jsContent], { type: 'text/javascript' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${arrayName}.js`;
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+
+
+function downloadRTAsJS() {
+    let r_t = [];
+    for (let row = 1; row <= 8; row++) {
+        let currentRow = [];
+        for (let col = 9; col <= 16; col++) {
+            let cellId = `cel_${row}_${col}`;
+            let cell = document.getElementById(cellId);
+            if (cell) {
+                currentRow.push({ id: cellId, class: cell.className });
+            }
+        }
+        r_t.push(currentRow);
+    }
+
+    downloadArray(r_t, 'r_t');
+}
+
+
+function downloadLBAsJS() {
+    let l_b = [];
+    for (let row = 9; row <= 16; row++) {
+        let currentRow = [];
+        for (let col = 1; col <= 8; col++) {
+            let cellId = `cel_${row}_${col}`;
+            let cell = document.getElementById(cellId);
+            if (cell) {
+                currentRow.push({ id: cellId, class: cell.className });
+            }
+        }
+        l_b.push(currentRow);
+    }
+
+    downloadArray(l_b, 'l_b');
+}
+
+
+function downloadRBAsJS() {
+    let r_b = [];
+    for (let row = 9; row <= 16; row++) {
+        let currentRow = [];
+        for (let col = 9; col <= 16; col++) {
+            let cellId = `cel_${row}_${col}`;
+            let cell = document.getElementById(cellId);
+            if (cell) {
+                currentRow.push({ id: cellId, class: cell.className });
+            }
+        }
+        r_b.push(currentRow);
+    }
+
+    downloadArray(r_b, 'r_b');
+}
+
+
+
+function downloadArrayAsJSON(arrayClass) {
+    let array = [];
+    let currentRow = [];
+    document.querySelectorAll(`.${arrayClass}`).forEach((cell, index) => {
+        currentRow.push({ id: cell.id, class: cell.className });
+        if ((index + 1) % 16 === 0) { // Предполагается, что лабиринт 16x16
+            array.push(currentRow);
+            currentRow = [];
+        }
+    });
+
+    // Создание и скачивание файла JSON
+    const jsonStr = JSON.stringify(array, null, 2);
+    const blob = new Blob([jsonStr], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${arrayClass}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+function downloadPixelArtAsHTML() {
+    // Получение содержимого пиксель-арта
+    const pixelArtContent = document.querySelector('.area').innerHTML;
+
+    // Создание стандартной структуры HTML
+    const fullHtml = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pixel Art</title>
+        <style>
+            /* Здесь добавьте свои CSS стили */
+        </style>
+    </head>
+    <body>
+        ${pixelArtContent}
+    </body>
+    </html>`;
+
+    // Создание и скачивание файла
+    const blob = new Blob([fullHtml], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'micromause_area.html';
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+function downloadArrayAsJSON(array, filename) {
+    const jsonString = JSON.stringify(array, null, 2);
+    const blob = new Blob([jsonString], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename + '.json';
+    a.click();
+    URL.revokeObjectURL(url);
+}
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
-  // function applyClassesFromArray(arr) {
-  //     arr.forEach(subArray => {
-  //         subArray.forEach(obj => {
-  //             // Найти элемент по ID
-  //             const element = document.getElementById(obj.id);
-  //             if (element) {
-  //                 // Заменить классы элемента
-  //                 element.className = obj.class;
-  //             } else {
-  //                 console.log(`Элемент с ID ${obj.id} не найден.`);
-  //             }
-  //         });
-  //     });
-  // }
 
-  // Пример использования функции с вашим массивом
-  // applyClassesFromArray(l_b);
-  // applyClassesFromArray(l_t);
-  // applyClassesFromArray(r_t);
-  // applyClassesFromArray(r_b);
+
+
+
+  document.getElementById('loadButton').addEventListener('click', function() {
+      $('#popupMenu').fadeIn();
+  });
+
+  function downloadArt(format) {
+      let artData = collectArtData();
+
+      if (format === 'json') {
+          downloadJSON(artData);
+      } else if (format === 'csv') {
+          downloadCSV(artData);
+      }
+
+      // Закрыть всплывающее меню после выбора
+      $('#popupMenu').fadeOut();
+  }
+
+  function collectArtData() {
+      // Собираем данные из вашего лабиринта
+      // Пример: получаем данные всех ячеек лабиринта
+      let data = [];
+      for (let row = 1; row <= 16; row++) {
+          for (let col = 1; col <= 16; col++) {
+              let cellId = `cel_${row}_${col}`;
+              let cell = document.getElementById(cellId);
+              if (cell) {
+                  data.push({id: cellId, class: cell.className});
+              }
+          }
+      }
+      return data;
+  }
+
+  function downloadJSON(data) {
+      let dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data));
+      let dlAnchorElem = document.createElement('a');
+      dlAnchorElem.setAttribute("href", dataStr);
+      dlAnchorElem.setAttribute("download", "art.json");
+      dlAnchorElem.click();
+  }
+
+  function downloadCSV(data) {
+      let csvContent = "data:text/csv;charset=utf-8,"
+      + data.map(e => e.id + "," + e.class).join("\n");
+
+      let dlAnchorElem = document.createElement('a');
+      dlAnchorElem.setAttribute("href", encodeURI(csvContent));
+      dlAnchorElem.setAttribute("download", "art.csv");
+      dlAnchorElem.click();
+  }
+
 
 setupPixelArt();
 
