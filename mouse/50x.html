@@ -621,26 +621,27 @@
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
-  // console.log("Полный массив r_t:", r_t); // Проверяем структуру массива
-
-  function updateCellClasses(array) {
-      array.forEach(celObject => {
-          // console.log("Обрабатываемый объект:", celObject); // Для отладки
-          const element = document.getElementById(celObject.id);
-          if (element) {
-              element.className = celObject.class;
-          } else {
-              // console.log("Элемент не найден:", celObject.id); // Если элемент не найден
-          }
+  function applyClassesFromArray(arr) {
+      arr.forEach(subArray => {
+          subArray.forEach(obj => {
+              // Найти элемент по ID
+              const element = document.getElementById(obj.id);
+              if (element) {
+                  // Заменить классы элемента
+                  element.className = obj.class;
+              } else {
+                  console.log(`Элемент с ID ${obj.id} не найден.`);
+              }
+          });
       });
   }
 
-  const allArrays = [r_t, l_b, l_t, r_b];
-  allArrays.forEach(array => {
-      updateCellClasses(array);
-  });
+  // Пример использования функции с вашим массивом
+  applyClassesFromArray(l_b);
+  applyClassesFromArray(l_t);
+  applyClassesFromArray(r_t);
+  applyClassesFromArray(r_b);
 
-  // [r_t, l_b, l_t, r_b].forEach(array => updateCellClasses(array));
 
 
 const mouse_id = "id_мищі";
