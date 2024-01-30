@@ -1,4 +1,4 @@
-const l_b = [
+let l_b = [
   [
     {
       "id": "cel_9_1",

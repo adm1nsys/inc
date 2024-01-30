@@ -1,4 +1,4 @@
-const l_t = [
+let l_t = [
   [{'id': 'cel_1_1', 'class': 'area_p'}, {'id': 'cel_1_2', 'class': 'area_f'}, {'id': 'cel_1_3', 'class': 'area_f'}, {'id': 'cel_1_4', 'class': 'area_f'}, {'id': 'cel_1_5', 'class': 'area_f'}, {'id': 'cel_1_6', 'class': 'area_f'}, {'id': 'cel_1_7', 'class': 'area_f'}, {'id': 'cel_1_8', 'class': 'area_f'}],
   [{'id': 'cel_2_1', 'class': 'area_f'}, {'id': 'cel_2_2', 'class': 'area_f'}, {'id': 'cel_2_3', 'class': 'area_f'}, {'id': 'cel_2_4', 'class': 'area_f'}, {'id': 'cel_2_5', 'class': 'area_f'}, {'id': 'cel_2_6', 'class': 'area_f'}, {'id': 'cel_2_7', 'class': 'area_f'}, {'id': 'cel_2_8', 'class': 'area_f'}],
   [{'id': 'cel_3_1', 'class': 'area_f'}, {'id': 'cel_3_2', 'class': 'area_f'}, {'id': 'cel_3_3', 'class': 'area_f'}, {'id': 'cel_3_4', 'class': 'area_f'}, {'id': 'cel_3_5', 'class': 'area_f'}, {'id': 'cel_3_6', 'class': 'area_f'}, {'id': 'cel_3_7', 'class': 'area_f'}, {'id': 'cel_3_8', 'class': 'area_f'}],

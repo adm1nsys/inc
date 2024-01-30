@@ -6,11 +6,11 @@ r_t = [
     },
     {
       "id": "cel_1_10",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_1_11",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_1_12",
@@ -40,7 +40,7 @@ r_t = [
     },
     {
       "id": "cel_2_10",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_2_11",
@@ -70,7 +70,7 @@ r_t = [
   [
     {
       "id": "cel_3_9",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_3_10",
@@ -78,7 +78,7 @@ r_t = [
     },
     {
       "id": "cel_3_11",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_3_12",
@@ -94,7 +94,7 @@ r_t = [
     },
     {
       "id": "cel_3_15",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_3_16",
@@ -108,7 +108,7 @@ r_t = [
     },
     {
       "id": "cel_4_10",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_4_11",
@@ -124,7 +124,7 @@ r_t = [
     },
     {
       "id": "cel_4_14",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_4_15",
@@ -154,7 +154,7 @@ r_t = [
     },
     {
       "id": "cel_5_13",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_5_14",
@@ -172,7 +172,7 @@ r_t = [
   [
     {
       "id": "cel_6_9",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_6_10",
@@ -180,7 +180,7 @@ r_t = [
     },
     {
       "id": "cel_6_11",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_6_12",
@@ -214,7 +214,7 @@ r_t = [
     },
     {
       "id": "cel_7_11",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_7_12",

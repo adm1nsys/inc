@@ -40,7 +40,7 @@ l_b = [
     },
     {
       "id": "cel_10_2",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_10_3",
@@ -78,7 +78,7 @@ l_b = [
     },
     {
       "id": "cel_11_3",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_11_4",
@@ -86,7 +86,7 @@ l_b = [
     },
     {
       "id": "cel_11_5",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_11_6",
@@ -94,7 +94,7 @@ l_b = [
     },
     {
       "id": "cel_11_7",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_11_8",
@@ -116,7 +116,7 @@ l_b = [
     },
     {
       "id": "cel_12_4",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_12_5",
@@ -124,7 +124,7 @@ l_b = [
     },
     {
       "id": "cel_12_6",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_12_7",
@@ -154,7 +154,7 @@ l_b = [
     },
     {
       "id": "cel_13_5",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_13_6",
@@ -214,7 +214,7 @@ l_b = [
     },
     {
       "id": "cel_15_3",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_15_4",
@@ -222,7 +222,7 @@ l_b = [
     },
     {
       "id": "cel_15_5",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_15_6",
@@ -252,7 +252,7 @@ l_b = [
     },
     {
       "id": "cel_16_4",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_16_5",
@@ -260,7 +260,7 @@ l_b = [
     },
     {
       "id": "cel_16_6",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_16_7",

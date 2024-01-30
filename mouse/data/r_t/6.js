@@ -94,7 +94,7 @@ r_t = [
     },
     {
       "id": "cel_3_15",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_3_16",
@@ -116,7 +116,7 @@ r_t = [
     },
     {
       "id": "cel_4_12",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_4_13",
@@ -124,7 +124,7 @@ r_t = [
     },
     {
       "id": "cel_4_14",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_4_15",
@@ -154,7 +154,7 @@ r_t = [
     },
     {
       "id": "cel_5_13",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_5_14",
@@ -180,7 +180,7 @@ r_t = [
     },
     {
       "id": "cel_6_11",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_6_12",

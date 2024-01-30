@@ -14,7 +14,7 @@ r_b = [
     },
     {
       "id": "cel_9_12",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_9_13",
@@ -30,7 +30,7 @@ r_b = [
     },
     {
       "id": "cel_9_16",
-      "class": "area_r"
+      "class": "area_f"
     }
   ],
   [
@@ -48,19 +48,19 @@ r_b = [
     },
     {
       "id": "cel_10_12",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_10_13",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_10_14",
       "class": "area_r"
     },
     {
-      "id": "cel_10_15",
+      "id": "cel_10_13",
+      "class": "area_r"
+    },
+    {
+      "id": "cel_10_14",
       "class": "area_f"
+    },
+    {
+      "id": "cel_10_15",
+      "class": "area_r"
     },
     {
       "id": "cel_10_16",
@@ -74,11 +74,11 @@ r_b = [
     },
     {
       "id": "cel_11_10",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_11_11",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_11_12",
@@ -90,7 +90,7 @@ r_b = [
     },
     {
       "id": "cel_11_14",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_11_15",
@@ -120,7 +120,7 @@ r_b = [
     },
     {
       "id": "cel_12_13",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_12_14",
@@ -150,7 +150,7 @@ r_b = [
     },
     {
       "id": "cel_13_12",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_13_13",
@@ -158,7 +158,7 @@ r_b = [
     },
     {
       "id": "cel_13_14",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_13_15",
@@ -176,7 +176,7 @@ r_b = [
     },
     {
       "id": "cel_14_10",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_14_11",
@@ -188,7 +188,7 @@ r_b = [
     },
     {
       "id": "cel_14_13",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_14_14",
@@ -196,7 +196,7 @@ r_b = [
     },
     {
       "id": "cel_14_15",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_14_16",
@@ -240,7 +240,7 @@ r_b = [
   [
     {
       "id": "cel_16_9",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_16_10",
@@ -248,7 +248,7 @@ r_b = [
     },
     {
       "id": "cel_16_11",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_16_12",

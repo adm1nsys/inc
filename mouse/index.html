@@ -11,6 +11,43 @@
 <script src="/inc/mouse/data/r_b/1.js"></script>
 <script src="/inc/mouse/data/l_b/1.js"></script>
 
+<script>
+function loadFile(filePath, fileType, callback) {
+    let tag;
+
+    if (fileType === "css") {
+        tag = document.createElement("link");
+        tag.rel = "stylesheet";
+        tag.type = "text/css";
+        tag.href = filePath;
+    } else if (fileType === "js") {
+        tag = document.createElement("script");
+        tag.type = "text/javascript";
+        tag.src = filePath;
+    }
+
+    if (tag) {
+        tag.onload = callback;
+        document.head.appendChild(tag);
+    }
+}
+
+function loadFilesSequentially(files, index = 0, finalCallback) {
+    if (index < files.length) {
+        loadFile(files[index].path, files[index].type, () => loadFilesSequentially(files, index + 1, finalCallback));
+    } else if (finalCallback) {
+        finalCallback();
+    }
+}
+
+const filesToLoad = [
+
+
+];
+
+loadFilesSequentially(filesToLoad, 0, function() {});
+</script>
+
 </head>
 <body>
 <div class="content">
@@ -103,7 +140,7 @@
   <div class="pt">
 
   <div class="horizon">
-    <div class="regular_btn"  onclick=""><div class="regular_btn1"><b class="regular_btn2">Сгенерувати</b></div></div>
+    <div class="regular_btn" onclick="randomizeLayer()"><div class="regular_btn1"><b class="regular_btn2">Сгенерувати</b></div></div>
     <div class="regular_btn"  onclick=""><div class="regular_btn1"><b class="regular_btn2">Завантажити</b></div></div>
   </div>
 </div>
@@ -464,7 +501,53 @@
 </body>
 
 <script>
+function applyClassesFromArray1(arr) {
+    arr.forEach(subArray => {
+        subArray.forEach(obj => {
+            // Найти элемент по ID
+            const element = document.getElementById(obj.id);
+            if (element) {
+                // Заменить классы элемента
+                element.className = obj.class;
+            } else {
+                console.log(`Элемент с ID ${obj.id} не найден.`);
+            }
+        });
+    });
+}
+function randomizeLayer(){
+  let num1 = generateRandomNumbers(1, 7);
+  let num2 = generateRandomNumbers(1, 7);
+  let num3 = generateRandomNumbers(1, 7);
+  let num4 = generateRandomNumbers(1, 7);
+  // console.log(`num1: ${num1}, num2: ${num2}, num3: ${num3}, num4: ${num4}`);
+  const filesToLoad = [
+      { path: `/inc/mouse/data/l_t/${num1}.js`, type: 'js' },
+      { path: `/inc/mouse/data/r_t/${num2}.js`, type: 'js' },
+      { path: `/inc/mouse/data/l_b/${num3}.js`, type: 'js' },
+      { path: `/inc/mouse/data/r_b/${num4}.js`, type: 'js' }
+  ];
 
+  loadFilesSequentially(filesToLoad, 0, function() {
+      applyClassesFromArray1(l_b);
+      applyClassesFromArray1(l_t);
+      applyClassesFromArray1(r_t);
+      applyClassesFromArray1(r_b);
+  });
+}
+
+function generateRandomNumbers(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function randomizeNumbers() {
+
+
+}
+
+// Вызов функции для генерации чисел
+
+// Если вы хотите изменить интервал, просто измените параметры в функции generateRandomNumbers.
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
