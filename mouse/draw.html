@@ -380,28 +380,28 @@
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
-  function applyClassesFromArray(arr) {
-      arr.forEach(subArray => {
-          subArray.forEach(obj => {
-              // Найти элемент по ID
-              const element = document.getElementById(obj.id);
-              if (element) {
-                  // Заменить классы элемента
-                  element.className = obj.class;
-              } else {
-                  console.log(`Элемент с ID ${obj.id} не найден.`);
-              }
-          });
-      });
-  }
+  // function applyClassesFromArray(arr) {
+  //     arr.forEach(subArray => {
+  //         subArray.forEach(obj => {
+  //             // Найти элемент по ID
+  //             const element = document.getElementById(obj.id);
+  //             if (element) {
+  //                 // Заменить классы элемента
+  //                 element.className = obj.class;
+  //             } else {
+  //                 console.log(`Элемент с ID ${obj.id} не найден.`);
+  //             }
+  //         });
+  //     });
+  // }
 
   // Пример использования функции с вашим массивом
-  applyClassesFromArray(l_b);
-  applyClassesFromArray(l_t);
-  applyClassesFromArray(r_t);
-  applyClassesFromArray(r_b);
+  // applyClassesFromArray(l_b);
+  // applyClassesFromArray(l_t);
+  // applyClassesFromArray(r_t);
+  // applyClassesFromArray(r_b);
 
-
+setupPixelArt();
 
 
 
@@ -410,7 +410,7 @@ const grid = document.querySelector('.area'); // Контейнер для ла�
 const gridCells = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
 let currentRow = 0; // Текущая строка
 let currentCol = 0; // Текущий столбец
-const gridSize = 20; // Предположим, что у нас 20 ячеек в строке
+const gridSize = 16; // Предположим, что у нас 20 ячеек в строке
 
 window.move = (direction) => {
     let newRow = currentRow;
@@ -448,8 +448,8 @@ function canMoveTo(row, col) {
 }
 
 function updatePosition() {
-    draggable.style.top = (currentRow * 20) + 'px'; // 50 - высота ячейки
-    draggable.style.left = (currentCol * 20) + 'px'; // 50 - ширина ячейки
+    draggable.style.top = (currentRow * 35) + 'px'; // 50 - высота ячейки
+    draggable.style.left = (currentCol * 35) + 'px'; // 50 - ширина ячейки
 }
 });
 
@@ -484,7 +484,7 @@ function setCurrentColor(newClass) {
 }
 
 // Инициализация при загрузке страницы
-document.addEventListener('DOMContentLoaded', setupPixelArt);
+// document.addEventListener('DOMContentLoaded', );
 
 
 

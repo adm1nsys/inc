@@ -1,6 +1,6 @@
 .draggable {
-  width: 20px;
-  height: 20px;
+  width: 35px;
+  height: 35px;
   background: purple;
   position: absolute;
   cursor: pointer;
@@ -452,7 +452,7 @@ display: none;
   display: flex;
   position: relative;
   flex-direction: column;
-  border: 20px solid black;
+  border: 35px solid black;
   background: white;
   margin: auto;
   margin-top: 20px;
@@ -466,18 +466,18 @@ display: none;
 
 .area_p{
   background: rgb(107, 153, 201);
-  width: 20px;
-  height: 20px;
+  width: 35px;
+  height: 35px;
 }
 
 .area_f{
   background: white;
-  width: 20px;
-  height: 20px;
+  width: 35px;
+  height: 35px;
 }
 
 .area_r{
   background: rgb(0, 0, 0);
-  width: 20px;
-  height: 20px;
+  width: 35px;
+  height: 35px;
 }
