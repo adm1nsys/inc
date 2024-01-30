@@ -40,11 +40,11 @@ const r_t = [
     },
     {
       "id": "cel_2_10",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_2_11",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_2_12",
@@ -74,15 +74,15 @@ const r_t = [
     },
     {
       "id": "cel_3_10",
-      "class": "area_r"
-    },
-    {
-      "id": "cel_3_11",
       "class": "area_f"
     },
     {
-      "id": "cel_3_12",
+      "id": "cel_3_11",
       "class": "area_r"
+    },
+    {
+      "id": "cel_3_12",
+      "class": "area_f"
     },
     {
       "id": "cel_3_13",
@@ -90,7 +90,7 @@ const r_t = [
     },
     {
       "id": "cel_3_14",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_3_15",
@@ -108,11 +108,11 @@ const r_t = [
     },
     {
       "id": "cel_4_10",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_4_11",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_4_12",
@@ -120,7 +120,7 @@ const r_t = [
     },
     {
       "id": "cel_4_13",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_4_14",
@@ -128,11 +128,11 @@ const r_t = [
     },
     {
       "id": "cel_4_15",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_4_16",
-      "class": "area_r"
+      "class": "area_f"
     }
   ],
   [
@@ -142,7 +142,7 @@ const r_t = [
     },
     {
       "id": "cel_5_10",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_5_11",
@@ -150,7 +150,7 @@ const r_t = [
     },
     {
       "id": "cel_5_12",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_5_13",
@@ -158,11 +158,11 @@ const r_t = [
     },
     {
       "id": "cel_5_14",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_5_15",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_5_16",
@@ -180,7 +180,7 @@ const r_t = [
     },
     {
       "id": "cel_6_11",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_6_12",
@@ -188,7 +188,7 @@ const r_t = [
     },
     {
       "id": "cel_6_13",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_6_14",
@@ -218,7 +218,7 @@ const r_t = [
     },
     {
       "id": "cel_7_12",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_7_13",

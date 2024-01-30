@@ -48,7 +48,7 @@ const r_b = [
     },
     {
       "id": "cel_10_12",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_10_13",
@@ -56,11 +56,11 @@ const r_b = [
     },
     {
       "id": "cel_10_14",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_10_15",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_10_16",
@@ -74,11 +74,11 @@ const r_b = [
     },
     {
       "id": "cel_11_10",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_11_11",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_11_12",
@@ -86,7 +86,7 @@ const r_b = [
     },
     {
       "id": "cel_11_13",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_11_14",
@@ -94,7 +94,7 @@ const r_b = [
     },
     {
       "id": "cel_11_15",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_11_16",
@@ -108,15 +108,15 @@ const r_b = [
     },
     {
       "id": "cel_12_10",
-      "class": "area_r"
-    },
-    {
-      "id": "cel_12_11",
       "class": "area_f"
     },
     {
-      "id": "cel_12_12",
+      "id": "cel_12_11",
       "class": "area_r"
+    },
+    {
+      "id": "cel_12_12",
+      "class": "area_f"
     },
     {
       "id": "cel_12_13",
@@ -124,7 +124,7 @@ const r_b = [
     },
     {
       "id": "cel_12_14",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_12_15",
@@ -132,7 +132,7 @@ const r_b = [
     },
     {
       "id": "cel_12_16",
-      "class": "area_r"
+      "class": "area_f"
     }
   ],
   [
@@ -142,7 +142,7 @@ const r_b = [
     },
     {
       "id": "cel_13_10",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_13_11",
@@ -154,7 +154,7 @@ const r_b = [
     },
     {
       "id": "cel_13_13",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_13_14",
@@ -162,7 +162,7 @@ const r_b = [
     },
     {
       "id": "cel_13_15",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_13_16",
@@ -176,7 +176,7 @@ const r_b = [
     },
     {
       "id": "cel_14_10",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_14_11",
@@ -184,7 +184,7 @@ const r_b = [
     },
     {
       "id": "cel_14_12",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_14_13",
@@ -192,7 +192,7 @@ const r_b = [
     },
     {
       "id": "cel_14_14",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_14_15",
@@ -210,11 +210,11 @@ const r_b = [
     },
     {
       "id": "cel_15_10",
-      "class": "area_r"
+      "class": "area_f"
     },
     {
       "id": "cel_15_11",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_15_12",
@@ -230,7 +230,7 @@ const r_b = [
     },
     {
       "id": "cel_15_15",
-      "class": "area_f"
+      "class": "area_r"
     },
     {
       "id": "cel_15_16",
@@ -268,7 +268,7 @@ const r_b = [
     },
     {
       "id": "cel_16_16",
-      "class": "area_r"
+      "class": "area_f"
     }
   ]
 ];
