@@ -6,6 +6,10 @@
 
 <link rel="stylesheet" type="text/css" href="btns_draw.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/inc/mouse/data/l_t/0_draw.js"></script>
+<script src="/inc/mouse/data/r_t/0_draw.js"></script>
+<script src="/inc/mouse/data/l_b/0_draw.js"></script>
+<script src="/inc/mouse/data/r_b/0_draw.js"></script>
 
 
 </head>
@@ -456,11 +460,6 @@
         </div>
     </div>
 
-    <!--
-    <button onclick="downloadLTAsJS()">Скачать l_t как JS</button>
-    <button onclick="downloadRTAsJS()">Скачать r_t как JS</button>
-<button onclick="downloadLBAsJS()">Скачать l_b как JS</button>
-<button onclick="downloadRBAsJS()">Скачать r_b как JS</button> -->
 <button onclick="$('#popupMenu').fadeOut();">Закрити</button>
   </div>
 
@@ -476,6 +475,27 @@
 </body>
 
 <script>
+
+function applyClassesFromArray(arr) {
+    arr.forEach(subArray => {
+        subArray.forEach(obj => {
+            // Найти элемент по ID
+            const element = document.getElementById(obj.id);
+            if (element) {
+                // Заменить классы элемента
+                element.className = obj.class;
+            } else {
+                console.log(`Элемент с ID ${obj.id} не найден.`);
+            }
+        });
+    });
+}
+
+// Пример использования функции с вашим массивом
+applyClassesFromArray(l_t);
+applyClassesFromArray(r_t);
+applyClassesFromArray(l_b);
+applyClassesFromArray(r_b);
 
 function downloadLTAsJS() {
     let l_t = [];
@@ -600,22 +620,23 @@ function downloadPixelArtAsHTML() {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pixel Art</title>
+        <title>Micromouse Map</title>
         <style>
-            /* Здесь добавьте свои CSS стили */
+            /* CSS */
         </style>
     </head>
     <body>
         ${pixelArtContent}
     </body>
-    </html>`;
+    </html>
+    /* by George Romanenko */`;
 
     // Создание и скачивание файла
     const blob = new Blob([fullHtml], { type: 'text/html' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'micromause_area.html';
+    a.download = 'micromouse_area.html';
     a.click();
     URL.revokeObjectURL(url);
 }
