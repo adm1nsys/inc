@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+<meta charset="UTF-8">
+<title>Генератор Лабіринту</title>
+
+<link rel="stylesheet" type="text/css" href="btns.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/inc/mouse/data/l_t/1.js"></script>
+<script src="/inc/mouse/data/r_t/1.js"></script>
+<script src="/inc/mouse/data/r_b/1.js"></script>
+<script src="/inc/mouse/data/l_b/1.js"></script>
+
+</head>
+<body>
+<div class="content">
+<div style="  max-width: 80rem;
+  margin: auto;">
+
+<header>
+<center class="header"><b><h1>Генератор Лабіринту</h1></b></center>
+<div class="p0l1">
+  <div class="light1"></div>
+  <div style="top: -50%;">
+    <div class="light2"></div>
+    <div class="light3"></div>
+  </div>
+
+</div>
+<div class="h1">
+  <div class="regular_btn"><div class="regular_btn1"><b class="regular_btn2">Генератр</b></div></div>
+  <a class="regular_btn" href="/inc/mouse/draw.html"><div class="regular_btn1"><b class="regular_btn2">Малювати</b></div></a>
+  <a class="regular_btn" href="/inc/mouse/test.html"><div class="regular_btn1"><b class="regular_btn2">Тест</b></div></a>
+  <div class="regular_btn" onclick=""><div class="regular_btn1"><b class="regular_btn2">Інформація</b></div></div>
+
+</div>
+</header>
+
+
+
+<div style="margin:auto; margin-left: 10px; margin-right: 10px; max-width: 80rem; display: flex; flex-direction: column;">
+<div class="pt">
+
+  <h2><label for="slider_b_size">Розмір ячейки <span class="b_size">100</span>Х<span class="b_size">100</span> PX</label></h2>
+  <input type="range" id="slider_b_size" name="volume" min="10" max="1000" value="100"  step="10" class="slider">
+</div>
+
+
+<div class="pt">
+  <h2><label for="slider_b_size0">Розмір мищі <span class="m_size0">50</span>Х<span class="m_size1">100</span> PX (Ширина, Висота)</label></h2>
+
+Ширина:<br>
+    <input type="range" id="slider_m_size0" name="volume" min="10" max="1000" value="50"  step="10" class="slider">
+
+Висота:<br>
+  <input type="range" id="slider_m_size1" name="volume" min="10" max="1000" value="100"  step="10" class="slider">
+</div>
+
+
+<div class="pt">
+  <h2>Колір 1 (Доріжка) (Формат RGBA)<div class="color-box" id="colorBox1"></div></h2>
+  Колір:<br>
+  <input type="color" id="color1" value="#ffffff">
+  Альфа канал:<br>
+  <input type="range" id="alpha1" min="0" max="255" value="255" class="slider">
+</div>
+
+<div class="pt">
+  <h2>Колір 2 (Стіни) (Формат RGBA)  <div class="color-box" id="colorBox2"></div></h2>
+  Колір:<br>
+  <input type="color" id="color2" value="#000000">
+  Альфа канал:<br>
+  <input type="range" id="alpha2" min="0" max="255" value="255" class="slider">
+</div>
+
+<div class="pt">
+  <h2>Колір 3 (Ціль) (Формат RGBA)  <div class="color-box" id="colorBox3"></div></h2>
+  Колір:<br>
+  <input type="color" id="color3" value="#ff0000">
+  Альфа канал:<br>
+  <input type="range" id="alpha3" min="0" max="255" value="255" class="slider">
+</div>
+
+<div class="pt">
+  <h2>Ідентифікация мищі</h2>
+
+  <div class="horizon">
+      <div class="textToCopy">
+          <b><span class="c0">const</span> <span class="c1">mouse_id</span> = <span class="c2">"<span id="id_inp" class="editable" contenteditable="true">id_мищі</span>"</span>;</b>
+      </div>
+      <div id="copyButton" class="regular_btn" style="width:auto; margin:0px; margin-left: 10px; height: 100%;">
+          <div class="regular_btn1">
+              <b class="regular_btn2" style="padding: 15px">Скопіювати</b>
+          </div>
+      </div>
+  </div>
+
+<span style="opacity:0.5">Вставте цю константу першою строкою у ваш JavaScript.</span>
+  <div id="textToCopy">const mouse_id = "id_мищі";</div>
+</div>
+
+  <br>
+  <div class="pt">
+
+  <div class="horizon">
+    <div class="regular_btn"  onclick=""><div class="regular_btn1"><b class="regular_btn2">Сгенерувати</b></div></div>
+    <div class="regular_btn"  onclick=""><div class="regular_btn1"><b class="regular_btn2">Завантажити</b></div></div>
+  </div>
+</div>
+
+<div class="area">
+
+  <div class="draggable"></div>
+<div style="position:static; display:flex;">
+<div>
+  <!-- <div class="obstacle" style="top:100px; left:100px;"></div>
+  <div class="obstacle0" style="top:200px; left:100px;"></div>
+  <div class="obstacle" style="top:300px; left:100px;"></div> -->
+
+</div>
+</div>
+<div class="row">
+    <div class="area_p" id="cel_1_1"></div>
+    <div class="area_f" id="cel_1_2"></div>
+    <div class="area_f" id="cel_1_3"></div>
+    <div class="area_f" id="cel_1_4"></div>
+    <div class="area_f" id="cel_1_5"></div>
+    <div class="area_f" id="cel_1_6"></div>
+    <div class="area_f" id="cel_1_7"></div>
+    <div class="area_f" id="cel_1_8"></div>
+    <div class="area_f" id="cel_1_9"></div>
+    <div class="area_f" id="cel_1_10"></div>
+    <div class="area_f" id="cel_1_11"></div>
+    <div class="area_f" id="cel_1_12"></div>
+    <div class="area_f" id="cel_1_13"></div>
+    <div class="area_f" id="cel_1_14"></div>
+    <div class="area_f" id="cel_1_15"></div>
+    <div class="area_f" id="cel_1_16"></div>
+</div>
+
+<div class="row">
+  <div class="area_f" id="cel_2_1">  </div>
+  <div class="area_f" id="cel_2_2">  </div>
+  <div class="area_f" id="cel_2_3">  </div>
+  <div class="area_f" id="cel_2_4">  </div>
+  <div class="area_f" id="cel_2_5">  </div>
+  <div class="area_f" id="cel_2_6">  </div>
+  <div class="area_f" id="cel_2_7">  </div>
+  <div class="area_f" id="cel_2_8">  </div>
+  <div class="area_f" id="cel_2_9">  </div>
+  <div class="area_f" id="cel_2_10">  </div>
+  <div class="area_f" id="cel_2_11">  </div>
+  <div class="area_f" id="cel_2_12">  </div>
+  <div class="area_f" id="cel_2_13">  </div>
+  <div class="area_f" id="cel_2_14">  </div>
+  <div class="area_f" id="cel_2_15">  </div>
+  <div class="area_f" id="cel_2_16">  </div>
+</div>
+
+<div class="row">
+  <div class="area_f" id="cel_3_1">  </div>
+  <div class="area_f" id="cel_3_2">  </div>
+  <div class="area_f" id="cel_3_3">  </div>
+  <div class="area_f" id="cel_3_4">  </div>
+  <div class="area_f" id="cel_3_5">  </div>
+  <div class="area_f" id="cel_3_6">  </div>
+  <div class="area_f" id="cel_3_7">  </div>
+  <div class="area_f" id="cel_3_8">  </div>
+  <div class="area_f" id="cel_3_9">  </div>
+  <div class="area_f" id="cel_3_10">  </div>
+  <div class="area_f" id="cel_3_11">  </div>
+  <div class="area_f" id="cel_3_12">  </div>
+  <div class="area_f" id="cel_3_13">  </div>
+  <div class="area_f" id="cel_3_14">  </div>
+  <div class="area_f" id="cel_3_15">  </div>
+  <div class="area_f" id="cel_3_16">  </div>
+</div>
+
+<div class="row">
+  <div class="area_f" id="cel_4_1">  </div>
+  <div class="area_f" id="cel_4_2">  </div>
+  <div class="area_f" id="cel_4_3">  </div>
+  <div class="area_f" id="cel_4_4">  </div>
+  <div class="area_f" id="cel_4_5">  </div>
+  <div class="area_f" id="cel_4_6">  </div>
+  <div class="area_f" id="cel_4_7">  </div>
+  <div class="area_f" id="cel_4_8">  </div>
+  <div class="area_f" id="cel_4_9">  </div>
+  <div class="area_f" id="cel_4_10">  </div>
+  <div class="area_f" id="cel_4_11">  </div>
+  <div class="area_f" id="cel_4_12">  </div>
+  <div class="area_f" id="cel_4_13">  </div>
+  <div class="area_f" id="cel_4_14">  </div>
+  <div class="area_f" id="cel_4_15">  </div>
+  <div class="area_f" id="cel_4_16">  </div>
+</div>
+
+<div class="row">
+  <div class="area_f" id="cel_5_1">  </div>
+  <div class="area_f" id="cel_5_2">  </div>
+  <div class="area_f" id="cel_5_3">  </div>
+  <div class="area_f" id="cel_5_4">  </div>
+  <div class="area_f" id="cel_5_5">  </div>
+  <div class="area_f" id="cel_5_6">  </div>
+  <div class="area_f" id="cel_5_7">  </div>
+  <div class="area_f" id="cel_5_8">  </div>
+  <div class="area_f" id="cel_5_9">  </div>
+  <div class="area_f" id="cel_5_10">  </div>
+  <div class="area_f" id="cel_5_11">  </div>
+  <div class="area_f" id="cel_5_12">  </div>
+  <div class="area_f" id="cel_5_13">  </div>
+  <div class="area_f" id="cel_5_14">  </div>
+  <div class="area_f" id="cel_5_15">  </div>
+  <div class="area_f" id="cel_5_16">  </div>
+</div>
+
+<div class="row">
+  <div class="area_f" id="cel_6_1">  </div>
+  <div class="area_f" id="cel_6_2">  </div>
+  <div class="area_f" id="cel_6_3">  </div>
+  <div class="area_f" id="cel_6_4">  </div>
+  <div class="area_f" id="cel_6_5">  </div>
+  <div class="area_f" id="cel_6_6">  </div>
+  <div class="area_f" id="cel_6_7">  </div>
+  <div class="area_f" id="cel_6_8">  </div>
+  <div class="area_f" id="cel_6_9">  </div>
+  <div class="area_f" id="cel_6_10">  </div>
+  <div class="area_f" id="cel_6_11">  </div>
+  <div class="area_f" id="cel_6_12">  </div>
+  <div class="area_f" id="cel_6_13">  </div>
+  <div class="area_f" id="cel_6_14">  </div>
+  <div class="area_f" id="cel_6_15">  </div>
+  <div class="area_f" id="cel_6_16">  </div>
+</div>
+
+<div class="row">
+  <div class="area_f" id="cel_7_1">  </div>
+  <div class="area_f" id="cel_7_2">  </div>
+  <div class="area_f" id="cel_7_3">  </div>
+  <div class="area_f" id="cel_7_4">  </div>
+  <div class="area_f" id="cel_7_5">  </div>
+  <div class="area_f" id="cel_7_6">  </div>
+  <div class="area_f" id="cel_7_7">  </div>
+  <div class="area_f" id="cel_7_8">  </div>
+  <div class="area_f" id="cel_7_9">  </div>
+  <div class="area_f" id="cel_7_10">  </div>
+  <div class="area_f" id="cel_7_11">  </div>
+  <div class="area_f" id="cel_7_12">  </div>
+  <div class="area_f" id="cel_7_13">  </div>
+  <div class="area_f" id="cel_7_14">  </div>
+  <div class="area_f" id="cel_7_15">  </div>
+  <div class="area_f" id="cel_7_16">  </div>
+</div>
+
+<div class="row">
+  <div class="area_f" id="cel_8_1">  </div>
+  <div class="area_f" id="cel_8_2">  </div>
+  <div class="area_f" id="cel_8_3">  </div>
+  <div class="area_f" id="cel_8_4">  </div>
+  <div class="area_f" id="cel_8_5">  </div>
+  <div class="area_f" id="cel_8_6">  </div>
+  <div class="area_f" id="cel_8_7">  </div>
+  <div class="area_f" id="cel_8_8">  </div>
+  <div class="area_f" id="cel_8_9">  </div>
+  <div class="area_f" id="cel_8_10">  </div>
+  <div class="area_f" id="cel_8_11">  </div>
+  <div class="area_f" id="cel_8_12">  </div>
+  <div class="area_f" id="cel_8_13">  </div>
+  <div class="area_f" id="cel_8_14">  </div>
+  <div class="area_f" id="cel_8_15">  </div>
+  <div class="area_f" id="cel_8_16">  </div>
+</div>
+
+<div class="row">
+  <div class="area_f" id="cel_9_1">  </div>
+  <div class="area_f" id="cel_9_2">  </div>
+  <div class="area_f" id="cel_9_3">  </div>
+  <div class="area_f" id="cel_9_4">  </div>
+  <div class="area_f" id="cel_9_5">  </div>
+  <div class="area_f" id="cel_9_6">  </div>
+  <div class="area_f" id="cel_9_7">  </div>
+  <div class="area_f" id="cel_9_8">  </div>
+  <div class="area_f" id="cel_9_9">  </div>
+  <div class="area_f" id="cel_9_10">  </div>
+  <div class="area_f" id="cel_9_11">  </div>
+  <div class="area_f" id="cel_9_12">  </div>
+  <div class="area_f" id="cel_9_13">  </div>
+  <div class="area_f" id="cel_9_14">  </div>
+  <div class="area_f" id="cel_9_15">  </div>
+  <div class="area_f" id="cel_9_16">  </div>
+</div>
+
+<div class="row">
+  <div class="area_f" id="cel_10_1">  </div>
+  <div class="area_f" id="cel_10_2">  </div>
+  <div class="area_f" id="cel_10_3">  </div>
+  <div class="area_f" id="cel_10_4">  </div>
+  <div class="area_f" id="cel_10_5">  </div>
+  <div class="area_f" id="cel_10_6">  </div>
+  <div class="area_f" id="cel_10_7">  </div>
+  <div class="area_f" id="cel_10_8">  </div>
+  <div class="area_f" id="cel_10_9">  </div>
+  <div class="area_f" id="cel_10_10">  </div>
+  <div class="area_f" id="cel_10_11">  </div>
+  <div class="area_f" id="cel_10_12">  </div>
+  <div class="area_f" id="cel_10_13">  </div>
+  <div class="area_f" id="cel_10_14">  </div>
+  <div class="area_f" id="cel_10_15">  </div>
+  <div class="area_f" id="cel_10_16">  </div>
+</div>
+
+<div class="row">
+  <div class="area_f" id="cel_11_1">  </div>
+  <div class="area_f" id="cel_11_2">  </div>
+  <div class="area_f" id="cel_11_3">  </div>
+  <div class="area_f" id="cel_11_4">  </div>
+  <div class="area_f" id="cel_11_5">  </div>
+  <div class="area_f" id="cel_11_6">  </div>
+  <div class="area_f" id="cel_11_7">  </div>
+  <div class="area_f" id="cel_11_8">  </div>
+  <div class="area_f" id="cel_11_9">  </div>
+  <div class="area_f" id="cel_11_10">  </div>
+  <div class="area_f" id="cel_11_11">  </div>
+  <div class="area_f" id="cel_11_12">  </div>
+  <div class="area_f" id="cel_11_13">  </div>
+  <div class="area_f" id="cel_11_14">  </div>
+  <div class="area_f" id="cel_11_15">  </div>
+  <div class="area_f" id="cel_11_16">  </div>
+</div>
+
+<div class="row">
+  <div class="area_f" id="cel_12_1">  </div>
+  <div class="area_f" id="cel_12_2">  </div>
+  <div class="area_f" id="cel_12_3">  </div>
+  <div class="area_f" id="cel_12_4">  </div>
+  <div class="area_f" id="cel_12_5">  </div>
+  <div class="area_f" id="cel_12_6">  </div>
+  <div class="area_f" id="cel_12_7">  </div>
+  <div class="area_f" id="cel_12_8">  </div>
+  <div class="area_f" id="cel_12_9">  </div>
+  <div class="area_f" id="cel_12_10">  </div>
+  <div class="area_f" id="cel_12_11">  </div>
+  <div class="area_f" id="cel_12_12">  </div>
+  <div class="area_f" id="cel_12_13">  </div>
+  <div class="area_f" id="cel_12_14">  </div>
+  <div class="area_f" id="cel_12_15">  </div>
+  <div class="area_f" id="cel_12_16">  </div>
+</div>
+
+<div class="row">
+  <div class="area_f" id="cel_13_1">  </div>
+  <div class="area_f" id="cel_13_2">  </div>
+  <div class="area_f" id="cel_13_3">  </div>
+  <div class="area_f" id="cel_13_4">  </div>
+  <div class="area_f" id="cel_13_5">  </div>
+  <div class="area_f" id="cel_13_6">  </div>
+  <div class="area_f" id="cel_13_7">  </div>
+  <div class="area_f" id="cel_13_8">  </div>
+  <div class="area_f" id="cel_13_9">  </div>
+  <div class="area_f" id="cel_13_10">  </div>
+  <div class="area_f" id="cel_13_11">  </div>
+  <div class="area_f" id="cel_13_12">  </div>
+  <div class="area_f" id="cel_13_13">  </div>
+  <div class="area_f" id="cel_13_14">  </div>
+  <div class="area_f" id="cel_13_15">  </div>
+  <div class="area_f" id="cel_13_16">  </div>
+</div>
+
+<div class="row">
+  <div class="area_f" id="cel_14_1">  </div>
+  <div class="area_f" id="cel_14_2">  </div>
+  <div class="area_f" id="cel_14_3">  </div>
+  <div class="area_f" id="cel_14_4">  </div>
+  <div class="area_f" id="cel_14_5">  </div>
+  <div class="area_f" id="cel_14_6">  </div>
+  <div class="area_f" id="cel_14_7">  </div>
+  <div class="area_f" id="cel_14_8">  </div>
+  <div class="area_f" id="cel_14_9">  </div>
+  <div class="area_f" id="cel_14_10">  </div>
+  <div class="area_f" id="cel_14_11">  </div>
+  <div class="area_f" id="cel_14_12">  </div>
+  <div class="area_f" id="cel_14_13">  </div>
+  <div class="area_f" id="cel_14_14">  </div>
+  <div class="area_f" id="cel_14_15">  </div>
+  <div class="area_f" id="cel_14_16">  </div>
+</div>
+
+<div class="row">
+  <div class="area_f" id="cel_15_1">  </div>
+  <div class="area_f" id="cel_15_2">  </div>
+  <div class="area_f" id="cel_15_3">  </div>
+  <div class="area_f" id="cel_15_4">  </div>
+  <div class="area_f" id="cel_15_5">  </div>
+  <div class="area_f" id="cel_15_6">  </div>
+  <div class="area_f" id="cel_15_7">  </div>
+  <div class="area_f" id="cel_15_8">  </div>
+  <div class="area_f" id="cel_15_9">  </div>
+  <div class="area_f" id="cel_15_10">  </div>
+  <div class="area_f" id="cel_15_11">  </div>
+  <div class="area_f" id="cel_15_12">  </div>
+  <div class="area_f" id="cel_15_13">  </div>
+  <div class="area_f" id="cel_15_14">  </div>
+  <div class="area_f" id="cel_15_15">  </div>
+  <div class="area_f" id="cel_15_16">  </div>
+</div>
+
+<div class="row">
+  <div class="area_f" id="cel_16_1">  </div>
+  <div class="area_f" id="cel_16_2">  </div>
+  <div class="area_f" id="cel_16_3">  </div>
+  <div class="area_f" id="cel_16_4">  </div>
+  <div class="area_f" id="cel_16_5">  </div>
+  <div class="area_f" id="cel_16_6">  </div>
+  <div class="area_f" id="cel_16_7">  </div>
+  <div class="area_f" id="cel_16_8">  </div>
+  <div class="area_f" id="cel_16_9">  </div>
+  <div class="area_f" id="cel_16_10">  </div>
+  <div class="area_f" id="cel_16_11">  </div>
+  <div class="area_f" id="cel_16_12">  </div>
+  <div class="area_f" id="cel_16_13">  </div>
+  <div class="area_f" id="cel_16_14">  </div>
+  <div class="area_f" id="cel_16_15">  </div>
+  <div class="area_f" id="cel_16_16">  </div>
+</div>
+
+
+
+
+
+
+</div>
+
+</div>
+
+</div>
+<div id="dynamicElement"></div>
+<div id="dynamicElement2"></div>
+<div class="btns_c">
+<button class="button btn_l btn_style" onclick="move('left')">
+  <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M320 0H192V128H128V256H64V384H0V512H128V384H192V256H256H320V384H384V512H512V384H448V256H384V128H320V0Z" fill="white"/>
+</svg>
+</button>
+<button class="button btn_t btn_style" onclick="move('up')">
+  <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M320 0H192V128H128V256H64V384H0V512H128V384H192V256H256H320V384H384V512H512V384H448V256H384V128H320V0Z" fill="white"/>
+</svg>
+</button>
+<button class="button btn_r btn_style" onclick="move('right')">
+  <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M320 0H192V128H128V256H64V384H0V512H128V384H192V256H256H320V384H384V512H512V384H448V256H384V128H320V0Z" fill="white"/>
+</svg>
+</button>
+<button class="button btn_b btn_style" onclick="move('down')">
+  <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M320 0H192V128H128V256H64V384H0V512H128V384H192V256H256H320V384H384V512H512V384H448V256H384V128H320V0Z" fill="white"/>
+  </svg>
+</button>
+</div>
+
+
+</div>
+
+</body>
+
+<script>
+
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+
+  function applyClassesFromArray(arr) {
+      arr.forEach(subArray => {
+          subArray.forEach(obj => {
+              // Найти элемент по ID
+              const element = document.getElementById(obj.id);
+              if (element) {
+                  // Заменить классы элемента
+                  element.className = obj.class;
+              } else {
+                  console.log(`Элемент с ID ${obj.id} не найден.`);
+              }
+          });
+      });
+  }
+
+  // Пример использования функции с вашим массивом
+  applyClassesFromArray(l_b);
+  applyClassesFromArray(l_t);
+  applyClassesFromArray(r_t);
+  applyClassesFromArray(r_b);
+
+
+
+const mouse_id = "id_мищі";
+  var slider = document.getElementById("slider_b_size");
+   var outputs = document.getElementsByClassName("b_size");
+   var b_size = slider.value;
+
+  // Обновление текущего значения при перемещении ползунка
+  slider.oninput = function() {
+             b_size = this.value; // Обновление переменной
+             for (var i = 0; i < outputs.length; i++) {
+                 outputs[i].innerHTML = b_size;
+                 // console.log(b_size);
+             }
+         }
+
+         var slider1 = document.getElementById("slider_m_size0");
+         var slider2 = document.getElementById("slider_m_size1");
+         var outputs0 = document.getElementsByClassName("m_size0");
+         var outputs1 = document.getElementsByClassName("m_size1");
+         var m_size0 = slider1.value;
+         var m_size1 = slider2.value;
+
+         // Обновление текущего значения при перемещении первого ползунка
+         slider1.oninput = function() {
+             m_size0 = this.value; // Обновление переменной
+             for (var i = 0; i < outputs0.length; i++) {
+                 outputs0[i].innerHTML = m_size0;
+             }
+         }
+
+         // Обновление текущего значения при перемещении второго ползунка
+         slider2.oninput = function() {
+             m_size1 = this.value; // Обновление переменной
+             for (var i = 0; i < outputs1.length; i++) {
+                 outputs1[i].innerHTML = m_size1;
+             }
+         }
+$(document).ready(function() {
+         $("#slider_b_size").mouseover(function() {
+             $("#dynamicElement").fadeIn().css('opacity', '1');
+         });
+
+         $("#slider_b_size").mouseout(function() {
+             $("#dynamicElement").fadeOut().css('opacity', '0');
+         });
+
+         $("#slider_b_size").on('input', function() {
+             var value = $(this).val();
+             $("#dynamicElement").width(value).height(value);
+         });
+
+         var fadeDuration = 500;
+
+function updateSize() {
+    var width = $("#slider_m_size0").val();
+    var height = $("#slider_m_size1").val();
+    $("#dynamicElement2").width(width).height(height);
+}
+
+$("#slider_m_size0, #slider_m_size1").mouseover(function() {
+    $("#dynamicElement2").fadeIn(fadeDuration);
+    updateSize();
+});
+
+$("#slider_m_size0, #slider_m_size1").mouseout(function() {
+    $("#dynamicElement2").fadeOut(fadeDuration);
+});
+
+$("#slider_m_size0, #slider_m_size1").on('input', updateSize);
+           });
+         function updateColor(colorInputId, alphaInputId, colorBoxId) {
+    var color = document.getElementById(colorInputId).value;
+    var alpha = document.getElementById(alphaInputId).value;
+    var rgbaColor = hexToRgba(color, alpha);
+    document.getElementById(colorBoxId).style.backgroundColor = rgbaColor;
+}
+document.getElementById("copyButton").addEventListener("click", function() {
+    var text = document.querySelector(".textToCopy").innerText;
+    var textArea = document.createElement("textarea");
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("Copy");
+    textArea.remove();
+    alert("Текст скопирован: " + text);
+});
+
+document.getElementById("id_inp").addEventListener("input", function() {
+    var editableText = this.innerText;
+    document.getElementById("textToCopy").innerText = 'const mouse_id = "' + editableText + '";';
+});
+
+function hexToRgba(hex, alpha) {
+    var r = parseInt(hex.slice(1, 3), 16);
+    var g = parseInt(hex.slice(3, 5), 16);
+    var b = parseInt(hex.slice(5, 7), 16);
+    return `rgba(${r}, ${g}, ${b}, ${alpha / 255})`;
+}
+
+['color1', 'color2', 'color3'].forEach(function(colorId, index) {
+    var alphaId = 'alpha' + (index + 1);
+    var colorBoxId = 'colorBox' + (index + 1);
+    updateColor(colorId, alphaId, colorBoxId);
+
+    document.getElementById(colorId).oninput = function() {
+        updateColor(colorId, alphaId, colorBoxId);
+    };
+
+    document.getElementById(alphaId).oninput = function() {
+        updateColor(colorId, alphaId, colorBoxId);
+    };
+});
+
+const draggable = document.querySelector('.draggable');
+const grid = document.querySelector('.area'); // Контейнер для лабиринта
+const gridCells = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
+let currentRow = 0; // Текущая строка
+let currentCol = 0; // Текущий столбец
+const gridSize = 20; // Предположим, что у нас 20 ячеек в строке
+
+window.move = (direction) => {
+    let newRow = currentRow;
+    let newCol = currentCol;
+
+    switch(direction) {
+        case 'left':
+            newCol--;
+            break;
+        case 'right':
+            newCol++;
+            break;
+        case 'up':
+            newRow--;
+            break;
+        case 'down':
+            newRow++;
+            break;
+    }
+
+    if (canMoveTo(newRow, newCol)) {
+        currentRow = newRow;
+        currentCol = newCol;
+        updatePosition();
+    }
+}
+
+function canMoveTo(row, col) {
+    if (row < 0 || col < 0 || row >= gridSize || col >= gridSize) {
+      console.log("За межами лабіринту");
+        return false; // За пределами лабиринта
+    }
+    const cellIndex = row * gridSize + col;
+    return !gridCells[cellIndex].classList.contains('area_r');
+}
+
+function updatePosition() {
+    draggable.style.top = (currentRow * 50) + 'px'; // 50 - высота ячейки
+    draggable.style.left = (currentCol * 50) + 'px'; // 50 - ширина ячейки
+}
+});
+
+
+
+
+</script>
+</html>
