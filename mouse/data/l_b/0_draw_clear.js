@@ -1,273 +1,273 @@
-let r_t = [
+l_b = [
   [
     {
-      "id": "cel_1_9",
+      "id": "cel_9_1",
       "class": "area_f"
     },
     {
-      "id": "cel_1_10",
+      "id": "cel_9_2",
       "class": "area_f"
     },
     {
-      "id": "cel_1_11",
+      "id": "cel_9_3",
       "class": "area_f"
     },
     {
-      "id": "cel_1_12",
+      "id": "cel_9_4",
       "class": "area_f"
     },
     {
-      "id": "cel_1_13",
+      "id": "cel_9_5",
       "class": "area_f"
     },
     {
-      "id": "cel_1_14",
+      "id": "cel_9_6",
       "class": "area_f"
     },
     {
-      "id": "cel_1_15",
+      "id": "cel_9_7",
       "class": "area_f"
     },
     {
-      "id": "cel_1_16",
-      "class": "area_f"
-    }
-  ],
-  [
-    {
-      "id": "cel_2_9",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_2_10",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_2_11",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_2_12",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_2_13",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_2_14",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_2_15",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_2_16",
-      "class": "area_f"
-    }
-  ],
-  [
-    {
-      "id": "cel_3_9",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_3_10",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_3_11",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_3_12",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_3_13",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_3_14",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_3_15",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_3_16",
-      "class": "area_f"
-    }
-  ],
-  [
-    {
-      "id": "cel_4_9",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_4_10",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_4_11",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_4_12",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_4_13",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_4_14",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_4_15",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_4_16",
-      "class": "area_f"
-    }
-  ],
-  [
-    {
-      "id": "cel_5_9",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_5_10",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_5_11",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_5_12",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_5_13",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_5_14",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_5_15",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_5_16",
-      "class": "area_f"
-    }
-  ],
-  [
-    {
-      "id": "cel_6_9",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_6_10",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_6_11",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_6_12",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_6_13",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_6_14",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_6_15",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_6_16",
-      "class": "area_f"
-    }
-  ],
-  [
-    {
-      "id": "cel_7_9",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_7_10",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_7_11",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_7_12",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_7_13",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_7_14",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_7_15",
-      "class": "area_f"
-    },
-    {
-      "id": "cel_7_16",
-      "class": "area_f"
-    }
-  ],
-  [
-    {
-      "id": "cel_8_9",
+      "id": "cel_9_8",
       "class": "area_t"
-    },
+    }
+  ],
+  [
     {
-      "id": "cel_8_10",
+      "id": "cel_10_1",
       "class": "area_f"
     },
     {
-      "id": "cel_8_11",
+      "id": "cel_10_2",
       "class": "area_f"
     },
     {
-      "id": "cel_8_12",
+      "id": "cel_10_3",
       "class": "area_f"
     },
     {
-      "id": "cel_8_13",
+      "id": "cel_10_4",
       "class": "area_f"
     },
     {
-      "id": "cel_8_14",
+      "id": "cel_10_5",
       "class": "area_f"
     },
     {
-      "id": "cel_8_15",
+      "id": "cel_10_6",
       "class": "area_f"
     },
     {
-      "id": "cel_8_16",
+      "id": "cel_10_7",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_10_8",
+      "class": "area_f"
+    }
+  ],
+  [
+    {
+      "id": "cel_11_1",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_11_2",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_11_3",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_11_4",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_11_5",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_11_6",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_11_7",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_11_8",
+      "class": "area_f"
+    }
+  ],
+  [
+    {
+      "id": "cel_12_1",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_12_2",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_12_3",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_12_4",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_12_5",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_12_6",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_12_7",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_12_8",
+      "class": "area_f"
+    }
+  ],
+  [
+    {
+      "id": "cel_13_1",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_13_2",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_13_3",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_13_4",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_13_5",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_13_6",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_13_7",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_13_8",
+      "class": "area_f"
+    }
+  ],
+  [
+    {
+      "id": "cel_14_1",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_14_2",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_14_3",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_14_4",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_14_5",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_14_6",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_14_7",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_14_8",
+      "class": "area_f"
+    }
+  ],
+  [
+    {
+      "id": "cel_15_1",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_15_2",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_15_3",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_15_4",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_15_5",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_15_6",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_15_7",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_15_8",
+      "class": "area_f"
+    }
+  ],
+  [
+    {
+      "id": "cel_16_1",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_16_2",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_16_3",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_16_4",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_16_5",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_16_6",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_16_7",
+      "class": "area_f"
+    },
+    {
+      "id": "cel_16_8",
       "class": "area_f"
     }
   ]

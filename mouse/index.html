@@ -95,7 +95,7 @@ loadFilesSequentially(filesToLoad, 0, function() {});
 
 
 <div class="pt">
-  <h2>Колір 1 (Доріжка) (Формат RGBA)<div class="color-box" id="colorBox1"></div></h2>
+  <h2>Колір 1 (Доріжка) (Формат RGB(A))<div class="color-box" id="colorBox1"></div></h2>
   Колір:<br>
   <input type="color" id="color1" value="#ffffff">
   Альфа канал:<br>
@@ -103,7 +103,7 @@ loadFilesSequentially(filesToLoad, 0, function() {});
 </div>
 
 <div class="pt">
-  <h2>Колір 2 (Стіни) (Формат RGBA)  <div class="color-box" id="colorBox2"></div></h2>
+  <h2>Колір 2 (Стіни) (Формат RGB(A))  <div class="color-box" id="colorBox2"></div></h2>
   Колір:<br>
   <input type="color" id="color2" value="#000000">
   Альфа канал:<br>
@@ -111,12 +111,21 @@ loadFilesSequentially(filesToLoad, 0, function() {});
 </div>
 
 <div class="pt">
-  <h2>Колір 3 (Ціль) (Формат RGBA)  <div class="color-box" id="colorBox3"></div></h2>
+  <h2>Колір 3 (Ціль) (Формат RGB(A))  <div class="color-box" id="colorBox3"></div></h2>
   Колір:<br>
   <input type="color" id="color3" value="#ff0000">
   Альфа канал:<br>
   <input type="range" id="alpha3" min="0" max="255" value="255" class="slider">
 </div>
+
+<div class="pt">
+  <h2>Колір 4 (Місце спавну мищі) (Формат RGB(A))  <div class="color-box" id="colorBox4"></div></h2>
+  Колір:<br>
+  <input type="color" id="color4" value="#6B99C9">
+  Альфа канал:<br>
+  <input type="range" id="alpha4" min="0" max="255" value="255" class="slider">
+</div>
+
 
 <div class="pt">
   <h2>Ідентифікация мищі</h2>
@@ -147,7 +156,7 @@ loadFilesSequentially(filesToLoad, 0, function() {});
 
 <div class="area">
 
-  <div class="draggable"></div>
+  <!-- <div class="draggable"></div> -->
 <div style="position:static; display:flex;">
 <div>
   <!-- <div class="obstacle" style="top:100px; left:100px;"></div>
@@ -472,7 +481,7 @@ loadFilesSequentially(filesToLoad, 0, function() {});
 </div>
 <div id="dynamicElement"></div>
 <div id="dynamicElement2"></div>
-<div class="btns_c">
+<!-- <div class="btns_c">
 <button class="button btn_l btn_style" onclick="move('left')">
   <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M320 0H192V128H128V256H64V384H0V512H128V384H192V256H256H320V384H384V512H512V384H448V256H384V128H320V0Z" fill="white"/>
@@ -492,7 +501,7 @@ loadFilesSequentially(filesToLoad, 0, function() {});
   <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M320 0H192V128H128V256H64V384H0V512H128V384H192V256H256H320V384H384V512H512V384H448V256H384V128H320V0Z" fill="white"/>
   </svg>
-</button>
+</button> -->
 </div>
 
 
@@ -520,13 +529,13 @@ function randomizeLayer(){
   let num2 = generateRandomNumbers(1, 7);
   let num3 = generateRandomNumbers(1, 7);
   let num4 = generateRandomNumbers(1, 7);
-  // console.log(`num1: ${num1}, num2: ${num2}, num3: ${num3}, num4: ${num4}`);
   const filesToLoad = [
       { path: `/inc/mouse/data/l_t/${num1}.js`, type: 'js' },
       { path: `/inc/mouse/data/r_t/${num2}.js`, type: 'js' },
       { path: `/inc/mouse/data/l_b/${num3}.js`, type: 'js' },
       { path: `/inc/mouse/data/r_b/${num4}.js`, type: 'js' }
   ];
+  console.log(`num1: ${num1}, num2: ${num2}, num3: ${num3}, num4: ${num4}`);
 
   loadFilesSequentially(filesToLoad, 0, function() {
       applyClassesFromArray1(l_b);
@@ -673,17 +682,38 @@ function hexToRgba(hex, alpha) {
     return `rgba(${r}, ${g}, ${b}, ${alpha / 255})`;
 }
 
-['color1', 'color2', 'color3'].forEach(function(colorId, index) {
-    var alphaId = 'alpha' + (index + 1);
-    var colorBoxId = 'colorBox' + (index + 1);
-    updateColor(colorId, alphaId, colorBoxId);
+function updateColor(colorId, alphaId, colorBoxId, className) {
+    var colorValue = document.getElementById(colorId).value;
+    var alphaValue = document.getElementById(alphaId).value;
+    var rgbaColor = hexToRgba(colorValue, alphaValue);
 
-    document.getElementById(colorId).oninput = function() {
-        updateColor(colorId, alphaId, colorBoxId);
+    // Update the color box background
+    document.getElementById(colorBoxId).style.backgroundColor = rgbaColor;
+
+    // Update the background color of elements with the specified class name
+    var elements = document.getElementsByClassName(className);
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.backgroundColor = rgbaColor;
+    }
+}
+
+// Mapping color pickers and sliders to class names
+var mappings = [
+    { colorId: 'color1', alphaId: 'alpha1', colorBoxId: 'colorBox1', className: 'area_f' },
+    { colorId: 'color2', alphaId: 'alpha2', colorBoxId: 'colorBox2', className: 'area_r' },
+    { colorId: 'color3', alphaId: 'alpha3', colorBoxId: 'colorBox3', className: 'area_t' },
+    { colorId: 'color4', alphaId: 'alpha4', colorBoxId: 'colorBox4', className: 'area_p' }
+];
+
+mappings.forEach(function(mapping) {
+    updateColor(mapping.colorId, mapping.alphaId, mapping.colorBoxId, mapping.className); // Initial update
+
+    document.getElementById(mapping.colorId).oninput = function() {
+        updateColor(mapping.colorId, mapping.alphaId, mapping.colorBoxId, mapping.className);
     };
 
-    document.getElementById(alphaId).oninput = function() {
-        updateColor(colorId, alphaId, colorBoxId);
+    document.getElementById(mapping.alphaId).oninput = function() {
+        updateColor(mapping.colorId, mapping.alphaId, mapping.colorBoxId, mapping.className);
     };
 });
 

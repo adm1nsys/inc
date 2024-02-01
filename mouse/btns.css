@@ -450,13 +450,23 @@ display: none;
 
 .area{
   display: flex;
-  position: relative;
+  position: fixed;
   flex-direction: column;
-  border: 50px solid black;
+  border: 20px solid black;
   background: white;
-  margin: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  /* margin: auto; */
+  /* margin-top: 20px; */
+  /* margin-bottom: 20px; */
+  top: 0px;
+  right: 0px;
+  opacity: 0.5;
+  transition: 0.4s;
+  top: 0px;
+  right: 0px;
+}
+
+.area:hover{
+  opacity: 1;
 }
 
 .row{
@@ -466,24 +476,24 @@ display: none;
 
 .area_p{
   background: rgb(107, 153, 201);
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
 }
-
+ 
 .area_f{
   background: white;
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
 }
 
 .area_r{
   background: rgb(0, 0, 0);
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
 }
 
 .area_t{
   background: red;
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
 }
