@@ -6,10 +6,10 @@
 
 <link rel="stylesheet" type="text/css" href="btns.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="/inc/mouse/data/l_t/1.js"></script>
+<!-- <script src="/inc/mouse/data/l_t/1.js"></script>
 <script src="/inc/mouse/data/r_t/1.js"></script>
 <script src="/inc/mouse/data/r_b/1.js"></script>
-<script src="/inc/mouse/data/l_b/1.js"></script>
+<script src="/inc/mouse/data/l_b/1.js"></script> -->
 
 <script>
 function loadFile(filePath, fileType, callback) {
@@ -40,9 +40,9 @@ function loadFilesSequentially(files, index = 0, finalCallback) {
     }
 }
 
+
+
 const filesToLoad = [
-
-
 ];
 
 loadFilesSequentially(filesToLoad, 0, function() {});
@@ -95,7 +95,7 @@ loadFilesSequentially(filesToLoad, 0, function() {});
 
 
 <div class="pt">
-  <h2>Колір 1 (Доріжка) (Формат RGB(A))<div class="color-box" id="colorBox1"></div></h2>
+  <h2>Колір 1 (Доріжка) (Формат RGB(A))<div class="area_f color-box" id="colorBox1"></div></h2>
   Колір:<br>
   <input type="color" id="color1" value="#ffffff">
   Альфа канал:<br>
@@ -103,7 +103,7 @@ loadFilesSequentially(filesToLoad, 0, function() {});
 </div>
 
 <div class="pt">
-  <h2>Колір 2 (Стіни) (Формат RGB(A))  <div class="color-box" id="colorBox2"></div></h2>
+  <h2>Колір 2 (Стіни) (Формат RGB(A))  <div class="area_r color-box" id="colorBox2"></div></h2>
   Колір:<br>
   <input type="color" id="color2" value="#000000">
   Альфа канал:<br>
@@ -111,7 +111,7 @@ loadFilesSequentially(filesToLoad, 0, function() {});
 </div>
 
 <div class="pt">
-  <h2>Колір 3 (Ціль) (Формат RGB(A))  <div class="color-box" id="colorBox3"></div></h2>
+  <h2>Колір 3 (Ціль) (Формат RGB(A))  <div class="area_t color-box" id="colorBox3"></div></h2>
   Колір:<br>
   <input type="color" id="color3" value="#ff0000">
   Альфа канал:<br>
@@ -119,7 +119,7 @@ loadFilesSequentially(filesToLoad, 0, function() {});
 </div>
 
 <div class="pt">
-  <h2>Колір 4 (Місце спавну мищі) (Формат RGB(A))  <div class="color-box" id="colorBox4"></div></h2>
+  <h2>Колір 4 (Місце спавну мищі) (Формат RGB(A))  <div class="area_p color-box" id="colorBox4"></div></h2>
   Колір:<br>
   <input type="color" id="color4" value="#6B99C9">
   Альфа канал:<br>
@@ -166,7 +166,7 @@ loadFilesSequentially(filesToLoad, 0, function() {});
 </div>
 </div>
 <div class="row">
-    <div class="area_p" id="cel_1_1"></div>
+    <div class="area_f" id="cel_1_1"></div>
     <div class="area_f" id="cel_1_2"></div>
     <div class="area_f" id="cel_1_3"></div>
     <div class="area_f" id="cel_1_4"></div>
@@ -510,79 +510,67 @@ loadFilesSequentially(filesToLoad, 0, function() {});
 </body>
 
 <script>
-function applyClassesFromArray1(arr) {
-    arr.forEach(subArray => {
-        subArray.forEach(obj => {
-            // Найти элемент по ID
-            const element = document.getElementById(obj.id);
-            if (element) {
-                // Заменить классы элемента
-                element.className = obj.class;
-            } else {
-                console.log(`Элемент с ID ${obj.id} не найден.`);
-            }
-        });
-    });
-}
-function randomizeLayer(){
-  let num1 = generateRandomNumbers(1, 7);
-  let num2 = generateRandomNumbers(1, 7);
-  let num3 = generateRandomNumbers(1, 7);
-  let num4 = generateRandomNumbers(1, 7);
-  const filesToLoad = [
-      { path: `/inc/mouse/data/l_t/${num1}.js`, type: 'js' },
-      { path: `/inc/mouse/data/r_t/${num2}.js`, type: 'js' },
-      { path: `/inc/mouse/data/l_b/${num3}.js`, type: 'js' },
-      { path: `/inc/mouse/data/r_b/${num4}.js`, type: 'js' }
-  ];
-  console.log(`num1: ${num1}, num2: ${num2}, num3: ${num3}, num4: ${num4}`);
-
-  loadFilesSequentially(filesToLoad, 0, function() {
-      applyClassesFromArray1(l_b);
-      applyClassesFromArray1(l_t);
-      applyClassesFromArray1(r_t);
-      applyClassesFromArray1(r_b);
-  });
-}
-
-function generateRandomNumbers(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function randomizeNumbers() {
 
 
-}
-
-// Вызов функции для генерации чисел
-
-// Если вы хотите изменить интервал, просто измените параметры в функции generateRandomNumbers.
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
-  function applyClassesFromArray(arr) {
-      arr.forEach(subArray => {
-          subArray.forEach(obj => {
-              // Найти элемент по ID
-              const element = document.getElementById(obj.id);
-              if (element) {
-                  // Заменить классы элемента
-                  element.className = obj.class;
-              } else {
-                  console.log(`Элемент с ID ${obj.id} не найден.`);
-              }
-          });
-      });
+  // Функция для асинхронной загрузки скрипта
+  function loadScript(src) {
+    return new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = src;
+      script.onload = () => resolve();
+      script.onerror = () => reject(new Error(`Ошибка загрузки скрипта ${src}`));
+      document.head.appendChild(script);
+    });
   }
 
-  // Пример использования функции с вашим массивом
-  applyClassesFromArray(l_b);
-  applyClassesFromArray(l_t);
-  applyClassesFromArray(r_t);
-  applyClassesFromArray(r_b);
+  // Функция для применения классов из массива
+  function applyClassesFromArray(arr) {
+    arr.forEach(subArray => {
+      subArray.forEach(obj => {
+        const element = document.getElementById(obj.id);
+        // console.log(element);
+        if (element) {
+          element.className = obj.class;
+          // console.log(element.className = obj.class);
 
+        } else {
+          console.log(`Элемент с ID ${obj.id} не найден.`);
+        }
+      });
+    });
+  }
 
+  // Функция для генерации случайных чисел
+  function generateRandomNumbers(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  // Основная функция для рандомизации слоёв
+  async function randomizeLayer() {
+    const nums = [generateRandomNumbers(1, 7), generateRandomNumbers(1, 7), generateRandomNumbers(1, 7), generateRandomNumbers(1, 7)];
+    const paths = ['/inc/mouse/data/l_t/', '/inc/mouse/data/r_t/', '/inc/mouse/data/l_b/', '/inc/mouse/data/r_b/'];
+    const promises = nums.map((num, index) => loadScript(`${paths[index]}${num}.js`));
+
+    try {
+      await Promise.all(promises);
+      // После загрузки скриптов применяем классы
+      applyClassesFromArray(window.l_t);
+      applyClassesFromArray(window.r_t);
+      applyClassesFromArray(window.l_b);
+      applyClassesFromArray(window.r_b);
+    } catch (error) {
+      console.error("Ошибка при загрузке скриптов: ", error);
+    }
+  }
+
+  // Для вызова из HTML, функция должна быть доступна глобально
+  window.randomizeLayer = randomizeLayer;
+
+randomizeLayer();
 
 const mouse_id = "id_мищі";
   var slider = document.getElementById("slider_b_size");
@@ -693,7 +681,8 @@ function updateColor(colorId, alphaId, colorBoxId, className) {
     // Update the background color of elements with the specified class name
     var elements = document.getElementsByClassName(className);
     for (var i = 0; i < elements.length; i++) {
-        elements[i].style.backgroundColor = rgbaColor;
+      console.log(elements[i].style.backgroundColor = rgbaColor);
+        elements[i].style.backgroundColor = rgbaColor; //Эта строка делает баг
     }
 }
 
@@ -706,7 +695,7 @@ var mappings = [
 ];
 
 mappings.forEach(function(mapping) {
-    updateColor(mapping.colorId, mapping.alphaId, mapping.colorBoxId, mapping.className); // Initial update
+    // updateColor(mapping.colorId, mapping.alphaId, mapping.colorBoxId, mapping.className); // Initial update
 
     document.getElementById(mapping.colorId).oninput = function() {
         updateColor(mapping.colorId, mapping.alphaId, mapping.colorBoxId, mapping.className);
@@ -763,6 +752,8 @@ function updatePosition() {
     draggable.style.top = (currentRow * 50) + 'px'; // 50 - высота ячейки
     draggable.style.left = (currentCol * 50) + 'px'; // 50 - ширина ячейки
 }
+
+
 });
 
 
