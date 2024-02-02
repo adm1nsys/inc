@@ -453,7 +453,7 @@ display: none;
   position: fixed;
   flex-direction: column;
   border: 20px solid black;
-  background: white;
+  /* background: white; */
   /* margin: auto; */
   /* margin-top: 20px; */
   /* margin-bottom: 20px; */
@@ -496,4 +496,21 @@ display: none;
   background: red;
   width: 20px;
   height: 20px;
+}
+
+
+#popupMenu {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.35);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    -webkit-backdrop-filter: blur(90px);
+    backdrop-filter: blur(90px);
+    /* transition: 0.4s; */
 }
