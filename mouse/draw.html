@@ -594,6 +594,15 @@ function clearLayer(){
   // let num3 = generateRandomNumbers(1, 7);
   // let num4 = generateRandomNumbers(1, 7);
   // console.log(`num1: ${num1}, num2: ${num2}, num3: ${num3}, num4: ${num4}`);
+  document.getElementById('color1').value = "#ffffff";
+document.getElementById('color2').value = "#000000";
+document.getElementById('color3').value = "#ff0000";
+document.getElementById('color4').value = "#6B99C9";
+
+document.getElementById('alpha1').value = 255;
+document.getElementById('alpha2').value = 255;
+document.getElementById('alpha3').value = 255;
+document.getElementById('alpha4').value = 255;
   ['area_t', 'area_f', 'area_r', 'area_p'].forEach(className => {
       let elements = document.getElementsByClassName(className);
       for (let element of elements) {
