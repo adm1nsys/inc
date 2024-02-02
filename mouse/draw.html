@@ -76,15 +76,46 @@ loadFilesSequentially(filesToLoad, 0, function() {});
 
 
 <div style="margin:auto; margin-left: 10px; margin-right: 10px; max-width: 80rem; display: flex; flex-direction: column;">
+  <div class="pt">
+    <h2>Колір 1 (Доріжка) (Формат RGB(A))<div class="area_f color-box" id="colorBox1"></div></h2>
+    Колір:<br>
+    <input type="color" id="color1" value="#ffffff">
+    Альфа канал:<br>
+    <input type="range" id="alpha1" min="0" max="255" value="255" class="slider">
+  </div>
 
+  <div class="pt">
+    <h2>Колір 2 (Стіни) (Формат RGB(A))  <div class="area_r color-box" id="colorBox2"></div></h2>
+    Колір:<br>
+    <input type="color" id="color2" value="#000000">
+    Альфа канал:<br>
+    <input type="range" id="alpha2" min="0" max="255" value="255" class="slider">
+  </div>
+
+  <div class="pt">
+    <h2>Колір 3 (Ціль) (Формат RGB(A))  <div class="area_t color-box" id="colorBox3"></div></h2>
+    Колір:<br>
+    <input type="color" id="color3" value="#ff0000">
+    Альфа канал:<br>
+    <input type="range" id="alpha3" min="0" max="255" value="255" class="slider">
+  </div>
+
+  <div class="pt">
+    <h2>Колір 4 (Місце спавну мищі) (Формат RGB(A))  <div class="area_p color-box" id="colorBox4"></div></h2>
+    Колір:<br>
+    <input type="color" id="color4" value="#6B99C9">
+    Альфа канал:<br>
+    <input type="range" id="alpha4" min="0" max="255" value="255" class="slider">
+  </div>
 <div class="flex">
 
 <div class="pt" style="display: flex; justify-content: center; flex-direction: column; margin-right: 10px;">
-  <button class="area_t_c" onclick="setCurrentColor('area_t')"></button>
-  <button class="area_f_c" onclick="setCurrentColor('area_f')"></button>
-  <button class="area_r_c" onclick="setCurrentColor('area_r')"></button>
-  <button class="area_p_c" onclick="setCurrentColor('area_p')"></button>
+  <button class="area_t area_t_c" onclick="setCurrentColor('area_t')"></button>
+  <button class="area_f area_f_c" onclick="setCurrentColor('area_f')"></button>
+  <button class="area_r area_r_c" onclick="setCurrentColor('area_r')"></button>
+  <button class="area_p area_p_c" onclick="setCurrentColor('area_p')"></button>
   <button class="area_color_change" onclick=""><div class="area_color_change_blur"></div></button>
+
   <button class="area_color_change" style="padding: 0px;
 justify-content: center;
 border: 0px;
@@ -563,6 +594,12 @@ function clearLayer(){
   // let num3 = generateRandomNumbers(1, 7);
   // let num4 = generateRandomNumbers(1, 7);
   // console.log(`num1: ${num1}, num2: ${num2}, num3: ${num3}, num4: ${num4}`);
+  ['area_t', 'area_f', 'area_r', 'area_p'].forEach(className => {
+      let elements = document.getElementsByClassName(className);
+      for (let element of elements) {
+          element.style.backgroundColor = ''; // Удаление индивидуального фона
+      }
+  });
   const filesToLoad = [
       { path: `/inc/mouse/data/l_t/0_draw_clear.js`, type: 'js' },
       { path: `/inc/mouse/data/r_t/0_draw_clear.js`, type: 'js' },
@@ -889,8 +926,25 @@ function changeColor(cell) {
     cell.classList.remove('area_t', 'area_f', 'area_r', 'area_p');
     // Добавление текущего выбранного класса
     cell.classList.add(currentClass);
-}
 
+    // Получаем текущий цвет и прозрачность для класса
+    const colorValue = document.getElementById(`color${getClassIndex(currentClass)}`).value;
+    const alphaValue = document.getElementById(`alpha${getClassIndex(currentClass)}`).value;
+    const rgbaColor = hexToRgba(colorValue, alphaValue);
+
+    // Применяем background-color непосредственно к ячейке
+    cell.style.backgroundColor = rgbaColor;
+}
+function getClassIndex(className) {
+    // Возвращает индекс на основе className для получения соответствующего color и alpha input
+    switch(className) {
+        case 'area_f': return 1;
+        case 'area_r': return 2;
+        case 'area_t': return 3;
+        case 'area_p': return 4;
+        default: return 1; // Значение по умолчанию, если класс не определен
+    }
+}
 // Функция для изменения текущего цвета
 function setCurrentColor(newClass) {
     currentClass = newClass;
@@ -899,6 +953,49 @@ function setCurrentColor(newClass) {
 // Инициализация при загрузке страницы
 // document.addEventListener('DOMContentLoaded', );
 
+
+function hexToRgba(hex, alpha) {
+    var r = parseInt(hex.slice(1, 3), 16);
+    var g = parseInt(hex.slice(3, 5), 16);
+    var b = parseInt(hex.slice(5, 7), 16);
+    return `rgba(${r}, ${g}, ${b}, ${alpha / 255})`;
+}
+
+function updateColor(colorId, alphaId, colorBoxId, className) {
+    var colorValue = document.getElementById(colorId).value;
+    var alphaValue = document.getElementById(alphaId).value;
+    var rgbaColor = hexToRgba(colorValue, alphaValue);
+
+    // Update the color box background
+    document.getElementById(colorBoxId).style.backgroundColor = rgbaColor;
+
+    // Update the background color of elements with the specified class name
+    var elements = document.getElementsByClassName(className);
+    for (var i = 0; i < elements.length; i++) {
+      // console.log(elements[i].style.backgroundColor = rgbaColor);
+        elements[i].style.backgroundColor = rgbaColor; //Эта строка делает баг
+    }
+}
+
+// Mapping color pickers and sliders to class names
+var mappings = [
+    { colorId: 'color1', alphaId: 'alpha1', colorBoxId: 'colorBox1', className: 'area_f' },
+    { colorId: 'color2', alphaId: 'alpha2', colorBoxId: 'colorBox2', className: 'area_r' },
+    { colorId: 'color3', alphaId: 'alpha3', colorBoxId: 'colorBox3', className: 'area_t' },
+    { colorId: 'color4', alphaId: 'alpha4', colorBoxId: 'colorBox4', className: 'area_p' }
+];
+
+mappings.forEach(function(mapping) {
+    // updateColor(mapping.colorId, mapping.alphaId, mapping.colorBoxId, mapping.className); // Initial update
+
+    document.getElementById(mapping.colorId).oninput = function() {
+        updateColor(mapping.colorId, mapping.alphaId, mapping.colorBoxId, mapping.className);
+    };
+
+    document.getElementById(mapping.alphaId).oninput = function() {
+        updateColor(mapping.colorId, mapping.alphaId, mapping.colorBoxId, mapping.className);
+    };
+});
 
 
 </script>
