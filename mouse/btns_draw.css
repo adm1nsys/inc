@@ -545,3 +545,53 @@ position: absolute;
 top: 0px;
 left: 0px;
 }
+
+
+#popupMenu_color {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.35);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    -webkit-backdrop-filter: blur(90px);
+    backdrop-filter: blur(90px);
+    /* transition: 0.4s; */
+}
+
+.pt4{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.pt5{
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+}
+.color-box {
+   width: 1.5em;
+   height: 1.5em;
+   display: inline-block;
+   border: 2px solid white;
+   border-radius: 999px;
+   margin-left: auto;
+}
+
+.center_vert{
+  align-items: center;
+}
+
+.cursor-indicator {
+  position: absolute;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  pointer-events: none; /* Чтобы не мешать событиям мыши */
+  z-index: 1000;
+}

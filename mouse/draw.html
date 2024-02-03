@@ -76,37 +76,7 @@ loadFilesSequentially(filesToLoad, 0, function() {});
 
 
 <div style="margin:auto; margin-left: 10px; margin-right: 10px; max-width: 80rem; display: flex; flex-direction: column;">
-  <div class="pt">
-    <h2>Колір 1 (Доріжка) (Формат RGB(A))<div class="area_f color-box" id="colorBox1"></div></h2>
-    Колір:<br>
-    <input type="color" id="color1" value="#ffffff">
-    Альфа канал:<br>
-    <input type="range" id="alpha1" min="0" max="255" value="255" class="slider">
-  </div>
 
-  <div class="pt">
-    <h2>Колір 2 (Стіни) (Формат RGB(A))  <div class="area_r color-box" id="colorBox2"></div></h2>
-    Колір:<br>
-    <input type="color" id="color2" value="#000000">
-    Альфа канал:<br>
-    <input type="range" id="alpha2" min="0" max="255" value="255" class="slider">
-  </div>
-
-  <div class="pt">
-    <h2>Колір 3 (Ціль) (Формат RGB(A))  <div class="area_t color-box" id="colorBox3"></div></h2>
-    Колір:<br>
-    <input type="color" id="color3" value="#ff0000">
-    Альфа канал:<br>
-    <input type="range" id="alpha3" min="0" max="255" value="255" class="slider">
-  </div>
-
-  <div class="pt">
-    <h2>Колір 4 (Місце спавну мищі) (Формат RGB(A))  <div class="area_p color-box" id="colorBox4"></div></h2>
-    Колір:<br>
-    <input type="color" id="color4" value="#6B99C9">
-    Альфа канал:<br>
-    <input type="range" id="alpha4" min="0" max="255" value="255" class="slider">
-  </div>
 <div class="flex">
 
 <div class="pt" style="display: flex; justify-content: center; flex-direction: column; margin-right: 10px;">
@@ -114,7 +84,7 @@ loadFilesSequentially(filesToLoad, 0, function() {});
   <button class="area_f area_f_c" onclick="setCurrentColor('area_f')"></button>
   <button class="area_r area_r_c" onclick="setCurrentColor('area_r')"></button>
   <button class="area_p area_p_c" onclick="setCurrentColor('area_p')"></button>
-  <button class="area_color_change" onclick=""><div class="area_color_change_blur"></div></button>
+  <button class="area_color_change" id="color_ch_btn"><div class="area_color_change_blur"></div></button>
 
   <button class="area_color_change" style="padding: 0px;
 justify-content: center;
@@ -567,6 +537,54 @@ justify-content: center;" fill="none" xmlns="http://www.w3.org/2000/svg">
 
 </div>
 
+
+<div id="popupMenu_color" style="display:none;">
+<div class="pt0">
+
+  <div class="pt pt4">
+
+    <div class="pt5">
+      <h2 class="flex center_vert">Колір 1 (Доріжка) (Формат RGB(A))<div class="area_f color-box" id="colorBox1"></div></h2>
+      Колір:<br>
+      <input type="color" id="color1" value="#ffffff">
+      Альфа канал:<br>
+      <input type="range" id="alpha1" min="0" max="255" value="255" class="slider">
+    </div>
+
+    <div class="pt5">
+      <h2 class="flex center_vert">Колір 2 (Стіни) (Формат RGB(A))  <div class="area_r color-box" id="colorBox2"></div></h2>
+      Колір:<br>
+      <input type="color" id="color2" value="#000000">
+      Альфа канал:<br>
+      <input type="range" id="alpha2" min="0" max="255" value="255" class="slider">
+    </div>
+
+    <div class="pt5">
+      <h2 class="flex center_vert">Колір 3 (Ціль) (Формат RGB(A))  <div class="area_t color-box" id="colorBox3"></div></h2>
+      Колір:<br>
+      <input type="color" id="color3" value="#ff0000">
+      Альфа канал:<br>
+      <input type="range" id="alpha3" min="0" max="255" value="255" class="slider">
+    </div>
+
+    <div class="pt5">
+      <h2 class="flex center_vert">Колір 4 (Місце спавну мищі) (Формат RGB(A))  <div class="area_p color-box" id="colorBox4"></div></h2>
+      Колір:<br>
+      <input type="color" id="color4" value="#6B99C9">
+      Альфа канал:<br>
+      <input type="range" id="alpha4" min="0" max="255" value="255" class="slider">
+    </div>
+
+<button onclick="$('#popupMenu_color').fadeOut();">Закрити</button>
+  </div>
+
+</div>
+
+
+
+
+</div>
+
 </div>
 
 </body>
@@ -651,10 +669,10 @@ function downloadLTAsJS() {
     for (let row = 1; row <= 8; row++) {
         let currentRow = [];
         for (let col = 1; col <= 8; col++) {
-            let cellId = `cel_${row}_${col}`;
-            let cell = document.getElementById(cellId);
-            if (cell) {
-                currentRow.push({ id: cellId, class: cell.className });
+            let celId = `cel_${row}_${col}`;
+            let cel = document.getElementById(celId);
+            if (cel) {
+                currentRow.push({ id: celId, class: cel.className });
             }
         }
         l_t.push(currentRow);
@@ -686,10 +704,10 @@ function downloadRTAsJS() {
     for (let row = 1; row <= 8; row++) {
         let currentRow = [];
         for (let col = 9; col <= 16; col++) {
-            let cellId = `cel_${row}_${col}`;
-            let cell = document.getElementById(cellId);
-            if (cell) {
-                currentRow.push({ id: cellId, class: cell.className });
+            let celId = `cel_${row}_${col}`;
+            let cel = document.getElementById(celId);
+            if (cel) {
+                currentRow.push({ id: celId, class: cel.className });
             }
         }
         r_t.push(currentRow);
@@ -704,10 +722,10 @@ function downloadLBAsJS() {
     for (let row = 9; row <= 16; row++) {
         let currentRow = [];
         for (let col = 1; col <= 8; col++) {
-            let cellId = `cel_${row}_${col}`;
-            let cell = document.getElementById(cellId);
-            if (cell) {
-                currentRow.push({ id: cellId, class: cell.className });
+            let celId = `cel_${row}_${col}`;
+            let cel = document.getElementById(celId);
+            if (cel) {
+                currentRow.push({ id: celId, class: cel.className });
             }
         }
         l_b.push(currentRow);
@@ -722,10 +740,10 @@ function downloadRBAsJS() {
     for (let row = 9; row <= 16; row++) {
         let currentRow = [];
         for (let col = 9; col <= 16; col++) {
-            let cellId = `cel_${row}_${col}`;
-            let cell = document.getElementById(cellId);
-            if (cell) {
-                currentRow.push({ id: cellId, class: cell.className });
+            let celId = `cel_${row}_${col}`;
+            let cel = document.getElementById(celId);
+            if (cel) {
+                currentRow.push({ id: celId, class: cel.className });
             }
         }
         r_b.push(currentRow);
@@ -739,8 +757,8 @@ function downloadRBAsJS() {
 function downloadArrayAsJSON(arrayClass) {
     let array = [];
     let currentRow = [];
-    document.querySelectorAll(`.${arrayClass}`).forEach((cell, index) => {
-        currentRow.push({ id: cell.id, class: cell.className });
+    document.querySelectorAll(`.${arrayClass}`).forEach((cel, index) => {
+        currentRow.push({ id: cel.id, class: cel.className });
         if ((index + 1) % 16 === 0) { // Предполагается, что лабиринт 16x16
             array.push(currentRow);
             currentRow = [];
@@ -808,8 +826,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 
+
+
   document.getElementById('loadButton').addEventListener('click', function() {
       $('#popupMenu').fadeIn();
+  });
+
+  document.getElementById('color_ch_btn').addEventListener('click', function() {
+      $('#popupMenu_color').fadeIn();
   });
 
   function downloadArt(format) {
@@ -831,10 +855,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
       let data = [];
       for (let row = 1; row <= 16; row++) {
           for (let col = 1; col <= 16; col++) {
-              let cellId = `cel_${row}_${col}`;
-              let cell = document.getElementById(cellId);
-              if (cell) {
-                  data.push({id: cellId, class: cell.className});
+              let celId = `cel_${row}_${col}`;
+              let cel = document.getElementById(celId);
+              if (cel) {
+                  data.push({id: celId, class: cel.className});
               }
           }
       }
@@ -866,7 +890,7 @@ setupPixelArt();
 
 const draggable = document.querySelector('.draggable');
 const grid = document.querySelector('.area'); // Контейнер для лабиринта
-const gridCells = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
+const gridcels = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
 let currentRow = 0; // Текущая строка
 let currentCol = 0; // Текущий столбец
 const gridSize = 16; // Предположим, что у нас 20 ячеек в строке
@@ -902,8 +926,8 @@ function canMoveTo(row, col) {
       console.log("За межами лабіринту");
         return false; // За пределами лабиринта
     }
-    const cellIndex = row * gridSize + col;
-    return !gridCells[cellIndex].classList.contains('obstacle');
+    const celIndex = row * gridSize + col;
+    return !gridcels[celIndex].classList.contains('obstacle');
 }
 
 function updatePosition() {
@@ -916,25 +940,28 @@ function setupPixelArt() {
     // Перебор всех ячеек лабиринта
     for (let row = 1; row <= 16; row++) {
         for (let col = 1; col <= 16; col++) {
-            let cellId = `cel_${row}_${col}`;
-            let cell = document.getElementById(cellId);
-            if (cell) {
-                cell.addEventListener('click', function() {
-                    changeColor(cell);
+            let celId = `cel_${row}_${col}`;
+            let cel = document.getElementById(celId);
+            if (cel) {
+                cel.addEventListener('click', function() {
+                    changeColor(cel);
                 });
             }
         }
     }
 }
 
+
+
+
 // Глобальная переменная для хранения текущего выбранного класса
 let currentClass = 'area_f';
 
-function changeColor(cell) {
+function changeColor(cel) {
     // Удаление всех возможных классов цвета
-    cell.classList.remove('area_t', 'area_f', 'area_r', 'area_p');
+    cel.classList.remove('area_t', 'area_f', 'area_r', 'area_p');
     // Добавление текущего выбранного класса
-    cell.classList.add(currentClass);
+    cel.classList.add(currentClass);
 
     // Получаем текущий цвет и прозрачность для класса
     const colorValue = document.getElementById(`color${getClassIndex(currentClass)}`).value;
@@ -942,7 +969,7 @@ function changeColor(cell) {
     const rgbaColor = hexToRgba(colorValue, alphaValue);
 
     // Применяем background-color непосредственно к ячейке
-    cell.style.backgroundColor = rgbaColor;
+    cel.style.backgroundColor = rgbaColor;
 }
 function getClassIndex(className) {
     // Возвращает индекс на основе className для получения соответствующего color и alpha input
@@ -954,9 +981,43 @@ function getClassIndex(className) {
         default: return 1; // Значение по умолчанию, если класс не определен
     }
 }
+// const colorValue = document.getElementById(`color${getClassIndex(currentClass)}`).value;
+// const cursorElement = document.createElement('div');
+// cursorElement.style.width = '20px';
+// cursorElement.style.height = '20px';
+// cursorElement.style.borderRadius = '50%';
+// cursorElement.style.position = 'absolute';
+// cursorElement.style.zIndex = '1000';
+// cursorElement.setAttribute('id', 'customCursor');
+// document.body.appendChild(cursorElement);
+// document.addEventListener('mousemove', (e) => {
+//     cursorElement.style.left = e.pageX + 5 + 'px';
+//     cursorElement.style.top = e.pageY + 5 + 'px';
+// });
 // Функция для изменения текущего цвета
+function updateCursor(newClass) {
+
+ cursorElement.classList.add(newClass);
+ // cursorElement.style.backgroundColor = colorValue;
+
+
+}
+
 function setCurrentColor(newClass) {
-    currentClass = newClass;
+ currentClass = newClass;
+ // Обновляем курсор при смене цвета
+ // updateCursor(newClass); // Создаем курсор, если он еще не создан
+ // const cursorElement = document.getElementById('customCursor');
+ if (cursorElement) {
+     // const colorValue = document.getElementById(`color${getClassIndex(currentClass)}`).value;
+     // cursorElement.classList.add(newClass);
+     // cursorElement.style.backgroundColor = colorValue;
+ } else {
+   // cursorElement.style.backgroundColor = colorValue;
+ }
+
+updateCursor()
+
 }
 
 // Инициализация при загрузке страницы
