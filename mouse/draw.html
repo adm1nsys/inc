@@ -522,11 +522,7 @@ justify-content: center;" fill="none" xmlns="http://www.w3.org/2000/svg">
     <label><input type="checkbox" id="includeComments" checked> Включить комментарии к коду</label><br>
 
 
-    <!-- <label><input type="radio" name="cssOption" value="inline" checked> Встроенный CSS</label>
-    <label><input type="radio" name="cssOption" value="link"> CSS через ссылку</label><br>
 
-    <label><input type="radio" name="jsOption" value="inline" checked> Встроенный JS</label>
-    <label><input type="radio" name="jsOption" value="link"> JS через ссылку</label><br> -->
 
 
     <div onclick="downloadPixelArtAsHTML()" id="loadButton" class="regular_btn pt0" style="">
@@ -848,21 +844,24 @@ $('#includeFunctionality').change(function(){
 function downloadPixelArtAsHTML() {
     const includeCss = document.getElementById('includeCss').checked;
     const cssOption = document.querySelector('input[name="cssOption"]:checked').value;
+    const includeCssSizes = document.getElementById('includeCssSizes').checked;
+    const cssSizesOption = document.querySelector('input[name="cssSizesOption"]:checked').value;
+    const includeFunctionality = document.getElementById('includeFunctionality').checked;
+    const jsOption = document.querySelector('input[name="jsOption"]:checked').value;
+    const functionalityCssOption = document.querySelector('input[name="functionalityCssOption"]:checked').value;
 
     // Получение содержимого пиксель-арта
     const pixelArtContent = document.querySelector('.area').innerHTML;
 
-    // Определение CSS контента на основе выбора пользователя
-    let cssContent = '';
-    if (includeCss) {
-        if (cssOption === 'inline') {
-            cssContent = '<style>/* CSS цветовая схема здесь */</style>';
-        } else if (cssOption === 'link') {
-            cssContent = '<link rel="stylesheet" href="path/to/your/styles.css">';
-        }
-    }
+    // Определение CSS и JS контента
+    let cssColorSchemeContent = includeCss && cssOption === 'inline' ? '<style>/* CSS цветовая схема здесь */</style>' : includeCss && cssOption === 'link' ? '<link rel="stylesheet" href="path/to/your/color_scheme_styles.css">' : '';
+    let cssSizesContent = includeCssSizes && cssSizesOption === 'inline' ? '<style>/* CSS размеры здесь */</style>' : includeCssSizes && cssSizesOption === 'link' ? '<link rel="stylesheet" href="path/to/your/size_styles.css">' : '';
+    let functionalityCssContent = includeFunctionality && functionalityCssOption === 'inline' ? '<style>/* Дополнительный CSS функционала здесь */</style>' : includeFunctionality && functionalityCssOption === 'link' ? '<link rel="stylesheet" href="path/to/your/functionality_styles.css">' : '';
 
-    // Пропускаем остальные настройки для упрощения
+    // Исправление для экранирования закрывающего тега script
+    let jsContent = includeFunctionality && jsOption === 'inline' ? '<script>/* Ваш JavaScript код здесь */<\/script>' : includeFunctionality && jsOption === 'link' ? '<script src="path/to/your/functionality_script.js"><\/script>' : '';
+
+    // Создание стандартной структуры HTML
     const fullHtml = `
     <!DOCTYPE html>
     <html lang="en">
@@ -870,12 +869,14 @@ function downloadPixelArtAsHTML() {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Micromouse Map</title>
-        ${cssContent}
+        ${cssColorSchemeContent}
+        ${cssSizesContent}
+        ${functionalityCssContent}
     </head>
     <body>
         ${pixelArtContent}
-        <!-- Вставьте сюда другой функционал по мере необходимости -->
     </body>
+    ${jsContent}
     </html>`;
 
     // Создание и скачивание файла
@@ -883,10 +884,13 @@ function downloadPixelArtAsHTML() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'pixel_art.html'; // Измените название файла по вашему усмотрению
+    a.download = 'pixel_art.html';
     a.click();
     URL.revokeObjectURL(url);
 }
+
+
+
 
 
 
