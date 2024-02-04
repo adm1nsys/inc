@@ -570,7 +570,7 @@ left: 0px;
 }
 
 .pt5{
-  margin: 0px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
 }
