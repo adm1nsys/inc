@@ -671,3 +671,82 @@ border: 2px solid rgba(137, 0, 0, 0.25);
 .marg_10{
   margin: 10px;
 }
+
+/* Стилизация трека слайдера */
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    background: #ddd; /* Цвет фона трека */
+    border-radius: 4px;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 8px;
+    background: #ddd; /* Цвет фона трека */
+    border-radius: 4px;
+}
+
+/* Стилизация ползунка */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,0,0,0) 100%); /* Цвет фона ползунка */
+    border-radius: 50%;
+    /* cursor: pointer; */
+    margin-top: -8px; /* Для выравнивания по центру трека */
+    transition: 0.4s;
+}
+
+input[type=range]::-moz-range-thumb {
+    height: 24px;
+    width: 24px;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,0,0,0) 100%);; /* Цвет фона ползунка */
+    border-radius: 50%;
+    /* cursor: pointer; */
+    transition: 0.4s;
+}
+
+/* Стилизация активной части трека (для WebKit/Blink) */
+input[type=range]::-webkit-slider-runnable-track {
+    background: linear-gradient(#ffffff, #787878) 0 / var(--sx) 100% no-repeat #595959;
+    --sx: 0%; /* Начальное положение */
+}
+
+input[type=range]:is(:hover, :focus)::-webkit-slider-runnable-track {
+    --sx: var(--sx);
+}
+
+input[type=range]::-webkit-slider-thumb {
+    appearance: none;
+    margin-top: calc((var(--track-height, 8px) - var(--thumb-size, 24px)) / 2);
+}
+
+input[type=range] {
+    --thumb-size: 24px;
+    --track-height: 8px;
+    --track-fill: #b8b8b8;
+    --sx: 0%; /* Начальное положение ползунка */
+    width: 100%;
+    /* cursor: pointer; */
+    background: linear-gradient(#ffffff, #959595) 0/var(--sx) 100% no-repeat, #4f4f4f;
+    border-radius: calc(var(--track-height) / 2);
+    height: var(--track-height);
+    -webkit-appearance: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+input[type=range]:focus {
+    outline: none;
+    transition: 0.4s;
+}
+
+.slider{
+width: 100%;
+}
+
+.slider:hover{
+  cursor: ew-resize;
+}
