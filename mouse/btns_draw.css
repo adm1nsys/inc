@@ -595,3 +595,74 @@ left: 0px;
   pointer-events: none; /* Чтобы не мешать событиям мыши */
   z-index: 1000;
 }
+.del_all_account_btn{
+  position: relative;
+  display: flex;
+    color: red;
+    background: rgba(87, 0, 0, 0.25);
+    border-radius: 10px;
+    margin: 10px;
+/* padding-top: 10px;
+padding-bottom: 10px; */
+transition: 0.4s;
+justify-content: center;
+justify-items: center;
+white-space: nowrap;
+overflow: hidden;
+border: 2px solid rgba(137, 0, 0, 0.25);
+}
+
+.del_all_account_btn1{
+  display: flex;
+  height: 100%;
+  width: 0%;
+  /* background: rgba(59, 0, 0, 0.49);; */
+  background: linear-gradient(to right, rgba(137, 0, 0, 0), rgba(137, 0, 0, 0.5) 50%, rgba(137, 0, 0, 0));
+  position: relative;
+  transition: width 0.3s, background 14s;
+  /* margin: auto; */
+  /* text-align: center; */
+  flex-wrap: nowrap;
+  justify-content: center;
+  justify-items: center;
+
+}
+
+.del_all_account_btn2{
+  display: flex;
+  height: 100%;
+  width: 0%;
+  /* background: rgba(59, 0, 0, 0.49);; */
+  background: linear-gradient(to right, rgba(37, 0, 0, 0), rgba(81, 0, 0, 0.5) 50%, rgba(37, 0, 0, 0));
+  position: relative;
+  transition: width 0.3s, background 14s;
+  /* margin: auto; */
+  /* text-align: center; */
+  flex-wrap: nowrap;
+  justify-content: center;
+  justify-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+.del_all_account_btn:hover{
+    /* background: rgba(128, 128, 128, 0.25); */
+    border: 2px solid red;
+
+    cursor: crosshair;
+}
+
+.del_all_account_btn:hover .del_all_account_btn1{
+  width: 100%;
+  background: linear-gradient(to right, rgba(137, 0, 0, 0.5), rgba(137, 0, 0, 0.5) 50%, rgba(137, 0, 0, 0.5));
+  transition: width 0.3s, background 14s;
+
+}
+
+.del_all_account_btn:active .del_all_account_btn2{
+  width: 100%;
+  background: linear-gradient(to right, rgba(37, 0, 0, 0.25), rgba(81, 0, 0, 0.5) 50%, rgba(37, 0, 0, 0.25));
+  transition: width 0.3s, background 14s;
+
+}
