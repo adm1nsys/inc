@@ -493,6 +493,10 @@ justify-content: center;" fill="none" xmlns="http://www.w3.org/2000/svg">
 <div class="pt0">
 
   <div class="pt pt2">
+    <label><input type="checkbox" id="includeCss" checked> Включить CSS (цветовая схема)</label><br>
+    <label><input type="checkbox" id="includeCssSizes" checked> Включить CSS (размеры)</label><br>
+    <label><input type="checkbox" id="includeFunctionality" checked> Включить функционал (JS, CSS)</label><br>
+    <label><input type="checkbox" id="includeComments" checked> Включить комментарии к коду</label><br>
 
     <div onclick="downloadPixelArtAsHTML()" id="loadButton" class="regular_btn pt0" style="">
         <div class="regular_btn1">
@@ -782,10 +786,22 @@ function downloadArrayAsJSON(arrayClass) {
 }
 
 function downloadPixelArtAsHTML() {
+    const includeCss = document.getElementById('includeCss').checked;
+    const includeCssSizes = document.getElementById('includeCssSizes').checked;
+    const includeFunctionality = document.getElementById('includeFunctionality').checked;
+    const includeComments = document.getElementById('includeComments').checked;
+
     // Получение содержимого пиксель-арта
     const pixelArtContent = document.querySelector('.area').innerHTML;
 
-    // Создание стандартной структуры HTML
+    // Определение CSS и JS контента
+    const cssContent = includeCss ? '/* CSS цветовая схема */' : '';
+    const cssSizesContent = includeCssSizes ? '/* CSS размеры */' : '';
+    const functionalityContent = includeFunctionality ? '<script src="path/to/your/script.js"><\/script>' : '';
+
+    const commentsContent = includeComments ? '<!-- Комментарии к коду -->' : '';
+
+    // Создание стандартной структуры HTML с условным добавлением контента
     const fullHtml = `
     <!DOCTYPE html>
     <html lang="en">
@@ -794,14 +810,16 @@ function downloadPixelArtAsHTML() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Micromouse Map</title>
         <style>
-            /* CSS */
+            ${cssContent}
+            ${cssSizesContent}
         </style>
     </head>
     <body>
         ${pixelArtContent}
+        ${functionalityContent}
     </body>
     </html>
-    /* by George Romanenko */`;
+    ${commentsContent}`;
 
     // Создание и скачивание файла
     const blob = new Blob([fullHtml], { type: 'text/html' });
@@ -812,6 +830,7 @@ function downloadPixelArtAsHTML() {
     a.click();
     URL.revokeObjectURL(url);
 }
+
 
 function downloadArrayAsJSON(array, filename) {
     const jsonString = JSON.stringify(array, null, 2);
