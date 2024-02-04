@@ -494,6 +494,13 @@ justify-content: center;" fill="none" xmlns="http://www.w3.org/2000/svg">
 
   <div class="pt pt2">
 
+<div style="background: rgba(0, 0, 0, 0.08);
+border: 2px solid rgba(42, 42, 42, 0.23);
+border-radius: 12px;
+/* padding: 10px; */
+padding-top: 10px;">
+
+
 <div class="flex" style="justify-content: start; align-items: center;">
   <svg width="50" height="40" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" class="x50x40">
 <g clip-path="url(#clip0_274_3284)">
@@ -513,8 +520,15 @@ justify-content: center;" fill="none" xmlns="http://www.w3.org/2000/svg">
 </defs>
 </svg>
 
+
   <h2 style="margin:0px;">HTML</h2>
+
+<h3 class="to_man_html" onclick="to_man_html()">
+  >
+</h3>
+
 </div><br>
+<div id="html_set" style="height: 0px;">
 
     <!-- Включение CSS (цветовая схема) -->
     <label><input type="checkbox" id="includeCss" checked> Включить CSS (цветовая схема)</label>
@@ -539,20 +553,27 @@ justify-content: center;" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- Ошибка в исходном сообщении: Имя группы радио кнопок дублировалось. Должно быть уникальным для каждой группы. -->
         <label><input type="radio" name="functionalityCssOption" value="inline" checked>Через тег &lt;style&gt;</label><br>
         <label><input type="radio" name="functionalityCssOption" value="link">Через тег &lt;link&gt;</label><br>
-    </div><br>
+    </div>
+    <br>
 
     <!-- Включение комментариев к коду -->
     <!-- <label><input type="checkbox" id="includeComments" checked> Включить комментарии к коду</label><br> -->
 
+  </div>
 
 
 
-
-    <div onclick="downloadPixelArtAsHTML()" id="loadButton" class="regular_btn pt0" style="">
+    <div onclick="downloadPixelArtAsHTML()" id="loadButton" class="regular_btn pt0" style="width: auto; border-radius: 0px 0px 10px 10px;">
         <div class="regular_btn1">
             <b class="regular_btn2" >Завантажити</b>
         </div>
-    </div><br>
+    </div>
+  </div><br>
+
+
+
+
+
 
     <hr><br>
 
@@ -722,6 +743,35 @@ applyClassesFromArray(l_t);
 applyClassesFromArray(r_t);
 applyClassesFromArray(l_b);
 applyClassesFromArray(r_b);
+
+function to_man_html() {
+  var elements = document.getElementsByClassName("to_man_html");
+  var content = document.getElementById("html_set");
+
+  if (elements.length > 0) {
+    var element = elements[0]; // Работаем только с первым элементом
+
+    // Проверяем текущий стиль поворота
+    if (element.style.transform === "rotate(-180deg)") {
+      element.style.transform = "rotate(0deg)";
+      // Анимируем изменение высоты до 0
+      content.style.height = "0px";
+    } else {
+      element.style.transform = "rotate(-180deg)";
+      // Сначала устанавливаем высоту в auto, чтобы получить полную высоту содержимого
+      content.style.height = "auto";
+      var fullHeight = content.scrollHeight + "px"; // Получаем полную высоту
+      // Затем снова устанавливаем высоту в 0, после чего немедленно в полную высоту,
+      // чтобы инициировать анимацию
+      content.style.height = "0px";
+      // Используем setTimeout, чтобы изменение высоты произошло после того, как браузер успеет обработать установку высоты в 0px
+      setTimeout(function() {
+        content.style.height = fullHeight;
+      }, 0);
+    }
+  }
+}
+
 
 function downloadLTAsJS() {
     let l_t = [];
