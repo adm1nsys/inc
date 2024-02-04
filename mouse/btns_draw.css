@@ -147,8 +147,8 @@ padding: 10px;
 .pt2{
   justify-content: center;
   justify-items: center;
-  align-content: center;
-  align-items: center;
+  /* align-content: center; */
+  /* align-items: center; */
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -197,7 +197,7 @@ hr{
     color: white;
     background: rgba(51, 51, 51, 0.25);
     border-radius: 10px;
-    margin: 10px;
+    margin: 0px;
 /* padding-top: 10px;
 padding-bottom: 10px; */
 transition: 0.4s;
@@ -601,7 +601,8 @@ left: 0px;
     color: red;
     background: rgba(87, 0, 0, 0.25);
     border-radius: 10px;
-    margin: 10px;
+    margin: 0px;
+    width: 100%;
 /* padding-top: 10px;
 padding-bottom: 10px; */
 transition: 0.4s;
@@ -665,4 +666,8 @@ border: 2px solid rgba(137, 0, 0, 0.25);
   background: linear-gradient(to right, rgba(37, 0, 0, 0.25), rgba(81, 0, 0, 0.5) 50%, rgba(37, 0, 0, 0.25));
   transition: width 0.3s, background 14s;
 
+}
+
+.marg_10{
+  margin: 10px;
 }
