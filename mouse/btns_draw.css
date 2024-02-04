@@ -750,3 +750,8 @@ width: 100%;
 .slider:hover{
   cursor: ew-resize;
 }
+
+.x50x40{
+  width: 50px;
+  height: 40px;
+}
