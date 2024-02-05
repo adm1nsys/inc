@@ -116,56 +116,30 @@ box-shadow: none;"><div class="regular_btn1"><b class="regular_btn2">Заван�
   <div id="textToCopy">const mouse_id = "id_мищі";</div>
 </div>
 
-<div class="pt">
 
-  <h2><label for="slider_b_size">Розмір ячейки <span class="b_size">100</span>Х<span class="b_size">100</span> PX</label></h2>
-  <input type="range" id="slider_b_size" name="volume" min="10" max="1000" value="100"  step="10" class="slider">
-</div>
+
 
 
 <div class="pt">
-  <h2><label for="slider_b_size0">Розмір мищі <span class="m_size0">50</span>Х<span class="m_size1">100</span> PX (Ширина, Висота)</label></h2>
 
-Ширина:<br>
-    <input type="range" id="slider_m_size0" name="volume" min="10" max="1000" value="50"  step="10" class="slider">
-
-Висота:<br>
-  <input type="range" id="slider_m_size1" name="volume" min="10" max="1000" value="100"  step="10" class="slider">
+<div class="horizon">
+  <div class="regular_btn" onclick="openm_s();"><div class="regular_btn1"><b class="regular_btn2">Розміри</b></div></div>
+  <div class="regular_btn" onclick="openm_c();" style="position: relative;
+display: flex;
+color: white;
+background: rgba(51, 51, 51, 0.25);
+border-radius: 10px;
+margin: 10px;
+transition: 0.4s;
+justify-content: center;
+justify-items: center;
+white-space: nowrap;
+overflow: hidden;
+border: 2px solid rgba(73, 73, 73, 0.25);
+width: 100%;padding: 0px;
+box-shadow: none;"><div class="regular_btn1"><b class="regular_btn2">Кольори</b></div></div>
 </div>
-
-
-<div class="pt">
-  <h2>Колір 1 (Доріжка) (Формат RGB(A))<div class="area_f color-box" id="colorBox1"></div></h2>
-  Колір:<br>
-  <input type="color" id="color1" value="#ffffff">
-  Альфа канал:<br>
-  <input type="range" id="alpha1" min="0" max="255" value="255" class="slider">
 </div>
-
-<div class="pt">
-  <h2>Колір 2 (Стіни) (Формат RGB(A))  <div class="area_r color-box" id="colorBox2"></div></h2>
-  Колір:<br>
-  <input type="color" id="color2" value="#000000">
-  Альфа канал:<br>
-  <input type="range" id="alpha2" min="0" max="255" value="255" class="slider">
-</div>
-
-<div class="pt">
-  <h2>Колір 3 (Ціль) (Формат RGB(A))  <div class="area_t color-box" id="colorBox3"></div></h2>
-  Колір:<br>
-  <input type="color" id="color3" value="#ff0000">
-  Альфа канал:<br>
-  <input type="range" id="alpha3" min="0" max="255" value="255" class="slider">
-</div>
-
-<div class="pt">
-  <h2>Колір 4 (Місце спавну мищі) (Формат RGB(A))  <div class="area_p color-box" id="colorBox4"></div></h2>
-  Колір:<br>
-  <input type="color" id="color4" value="#6B99C9">
-  Альфа канал:<br>
-  <input type="range" id="alpha4" min="0" max="255" value="255" class="slider">
-</div>
-
 
 
 
@@ -491,8 +465,92 @@ box-shadow: none;"><div class="regular_btn1"><b class="regular_btn2">Заван�
 </div>
 
 </div>
-<div id="dynamicElement"></div>
-<div id="dynamicElement2"></div>
+
+
+<div id="popupMenu_size" style="display:none; ">
+  <div id="dynamicElement"></div>
+  <div id="dynamicElement2"></div>
+  <div style="justify-content: center;
+justify-items: center;
+align-content: center;
+align-items: center;
+display: flex;
+flex-direction: column;
+min-height:100vh;
+height:auto;">
+
+  <div class="pt" style="width: 550px;">
+
+    <h2><label for="slider_b_size">Розмір ячейки <span class="b_size">100</span>Х<span class="b_size">100</span> PX</label></h2>
+    <input type="range" id="slider_b_size" name="volume" min="10" max="1000" value="100"  step="10" class="slider">
+  </div>
+
+<br>
+  <div class="pt" style="width: 550px;">
+    <h2><label for="slider_b_size0">Розмір мищі <span class="m_size0">50</span>Х<span class="m_size1">100</span> PX (Ширина, Висота)</label></h2>
+
+  Ширина:<br>
+      <input type="range" id="slider_m_size0" name="volume" min="10" max="1000" value="50"  step="10" class="slider">
+
+  Висота:<br>
+    <input type="range" id="slider_m_size1" name="volume" min="10" max="1000" value="100"  step="10" class="slider">
+  </div>
+  <br>
+
+  <div class="del_all_account_btn" style="width: 570px;" onclick="$('#popupMenu_size').fadeOut();"><div class="del_all_account_btn1"><b class="del_all_account_btn2">Закрити</b></div></div>
+</div>
+
+</div>
+
+<div id="popupMenu_color" style="display:none;">
+
+  <div style="justify-content: center;
+justify-items: center;
+align-content: center;
+align-items: center;
+display: flex;
+flex-direction: column;
+min-height:100vh;
+height:auto;">
+
+  <div class="pt"  style="width: 580px;">
+    <h2>Колір 1 (Доріжка) (Формат RGB(A))<div class="area_f color-box" id="colorBox1"></div></h2>
+    Колір:<br>
+    <input type="color" id="color1" value="#ffffff">
+    Альфа канал:<br>
+    <input type="range" id="alpha1" min="0" max="255" value="255" class="slider">
+  </div>
+
+  <div class="pt" style="width: 580px;">
+    <h2>Колір 2 (Стіни) (Формат RGB(A))  <div class="area_r color-box" id="colorBox2"></div></h2>
+    Колір:<br>
+    <input type="color" id="color2" value="#000000">
+    Альфа канал:<br>
+    <input type="range" id="alpha2" min="0" max="255" value="255" class="slider">
+  </div>
+
+  <div class="pt" style="width: 580px;">
+    <h2>Колір 3 (Ціль) (Формат RGB(A))  <div class="area_t color-box" id="colorBox3"></div></h2>
+    Колір:<br>
+    <input type="color" id="color3" value="#ff0000">
+    Альфа канал:<br>
+    <input type="range" id="alpha3" min="0" max="255" value="255" class="slider">
+  </div>
+
+  <div class="pt" style="width: 580px;">
+    <h2>Колір 4 (Місце спавну мищі) (Формат RGB(A))  <div class="area_p color-box" id="colorBox4"></div></h2>
+    Колір:<br>
+    <input type="color" id="color4" value="#6B99C9">
+    Альфа канал:<br>
+    <input type="range" id="alpha4" min="0" max="255" value="255" class="slider">
+  </div>
+  <br>
+  <div class="del_all_account_btn" style="width: 600px;" onclick="$('#popupMenu_color').fadeOut();"><div class="del_all_account_btn1"><b class="del_all_account_btn2">Закрити</b></div></div>
+</div>
+</div>
+
+
+
 
 <div id="popupMenu" style="display:none;">
 <div class="pt0">
@@ -673,6 +731,72 @@ padding-top: 10px;">
       </div>
     </div>
 
+    <br>
+
+          <div style="background: rgba(0, 0, 0, 0.08);
+          border: 2px solid rgba(0, 0, 0, 0.15);
+          border-radius: 12px;
+          /* padding: 10px; */
+          padding-top: 10px;">
+
+
+          <div class="flex" style="justify-content: start; align-items: center;">
+                <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" class="x50x40">
+                <g clip-path="url(#clip0_299_3303)">
+                <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint0_linear_299_3303)"/>
+                <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint1_radial_299_3303)" fill-opacity="0.2"/>
+                <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" stroke="#373737" stroke-width="18"/>
+                <path d="M171 23.0416V99C171 103.418 167.418 107 163 107H87.0416C79.9144 107 76.3451 98.3829 81.3848 93.3431L157.343 17.3848C162.383 12.3451 171 15.9144 171 23.0416Z" stroke="#373737" stroke-width="18"/>
+                <path d="M131.741 312.881C129.026 312.881 126.696 311.908 124.751 309.963C122.806 308.019 121.834 305.688 121.834 302.973C121.834 300.258 122.806 297.927 124.751 295.983C126.696 294.038 129.026 293.065 131.741 293.065C134.457 293.065 136.787 294.038 138.732 295.983C140.677 297.927 141.649 300.258 141.649 302.973C141.649 304.771 141.19 306.422 140.273 307.927C139.392 309.431 138.2 310.642 136.695 311.56C135.227 312.44 133.576 312.881 131.741 312.881ZM199.306 313.761C191.38 313.761 184.555 311.89 178.83 308.147C173.106 304.404 168.702 299.248 165.62 292.68C162.538 286.112 160.996 278.607 160.996 270.168C160.996 261.581 162.574 254.003 165.73 247.435C168.923 240.83 173.363 235.674 179.05 231.968C184.775 228.225 191.453 226.354 199.086 226.354C205.031 226.354 210.388 227.455 215.158 229.656C219.929 231.858 223.837 234.94 226.882 238.903C229.928 242.866 231.818 247.49 232.552 252.774H219.562C218.571 248.921 216.369 245.509 212.957 242.536C209.581 239.527 205.031 238.023 199.306 238.023C194.242 238.023 189.802 239.344 185.986 241.986C182.206 244.591 179.252 248.279 177.124 253.049C175.032 257.783 173.987 263.342 173.987 269.727C173.987 276.259 175.014 281.947 177.069 286.79C179.161 291.634 182.096 295.395 185.876 298.074C189.692 300.753 194.169 302.092 199.306 302.092C202.682 302.092 205.746 301.505 208.498 300.331C211.25 299.157 213.58 297.469 215.489 295.267C217.397 293.065 218.754 290.423 219.562 287.341H232.552C231.818 292.331 230.002 296.827 227.103 300.826C224.24 304.789 220.442 307.945 215.709 310.294C211.012 312.605 205.544 313.761 199.306 313.761ZM311.428 246.389L299.759 249.692C299.025 247.747 297.942 245.857 296.511 244.022C295.117 242.151 293.209 240.61 290.787 239.399C288.365 238.188 285.264 237.582 281.485 237.582C276.311 237.582 271.999 238.775 268.55 241.16C265.137 243.509 263.431 246.499 263.431 250.132C263.431 253.361 264.605 255.912 266.953 257.783C269.302 259.654 272.971 261.214 277.962 262.462L290.512 265.544C298.071 267.379 303.704 270.186 307.41 273.966C311.116 277.708 312.969 282.534 312.969 288.442C312.969 293.286 311.575 297.616 308.786 301.432C306.034 305.248 302.181 308.257 297.227 310.459C292.273 312.661 286.512 313.761 279.944 313.761C271.32 313.761 264.183 311.89 258.532 308.147C252.881 304.404 249.303 298.937 247.799 291.744L260.128 288.662C261.302 293.212 263.522 296.625 266.788 298.9C270.091 301.175 274.403 302.312 279.723 302.312C285.778 302.312 290.585 301.028 294.145 298.46C297.741 295.854 299.539 292.735 299.539 289.102C299.539 286.167 298.511 283.708 296.456 281.727C294.401 279.708 291.246 278.204 286.989 277.213L272.898 273.911C265.155 272.076 259.468 269.232 255.835 265.379C252.239 261.489 250.441 256.627 250.441 250.793C250.441 246.022 251.78 241.802 254.459 238.133C257.174 234.463 260.862 231.583 265.522 229.491C270.219 227.4 275.54 226.354 281.485 226.354C289.851 226.354 296.42 228.188 301.19 231.858C305.997 235.527 309.41 240.371 311.428 246.389ZM392.409 246.389L380.74 249.692C380.006 247.747 378.924 245.857 377.493 244.022C376.098 242.151 374.19 240.61 371.768 239.399C369.347 238.188 366.246 237.582 362.466 237.582C357.292 237.582 352.98 238.775 349.531 241.16C346.119 243.509 344.412 246.499 344.412 250.132C344.412 253.361 345.586 255.912 347.935 257.783C350.283 259.654 353.953 261.214 358.943 262.462L371.493 265.544C379.052 267.379 384.685 270.186 388.391 273.966C392.097 277.708 393.951 282.534 393.951 288.442C393.951 293.286 392.556 297.616 389.767 301.432C387.015 305.248 383.162 308.257 378.208 310.459C373.255 312.661 367.493 313.761 360.925 313.761C352.302 313.761 345.164 311.89 339.513 308.147C333.862 304.404 330.285 298.937 328.78 291.744L341.11 288.662C342.284 293.212 344.504 296.625 347.77 298.9C351.072 301.175 355.384 302.312 360.705 302.312C366.76 302.312 371.567 301.028 375.126 298.46C378.722 295.854 380.52 292.735 380.52 289.102C380.52 286.167 379.493 283.708 377.438 281.727C375.383 279.708 372.227 278.204 367.97 277.213L353.88 273.911C346.137 272.076 340.449 269.232 336.816 265.379C333.22 261.489 331.422 256.627 331.422 250.793C331.422 246.022 332.762 241.802 335.44 238.133C338.156 234.463 341.844 231.583 346.504 229.491C351.201 227.4 356.522 226.354 362.466 226.354C370.833 226.354 377.401 228.188 382.171 231.858C386.978 235.527 390.391 240.371 392.409 246.389Z" fill="white"/>
+                </g>
+                <defs>
+                <linearGradient id="paint0_linear_299_3303" x1="450" y1="0" x2="256" y2="512" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00D1FF" stop-opacity="0"/>
+                <stop offset="0.56" stop-color="#00D1FF" stop-opacity="0.17"/>
+                <stop offset="1" stop-color="white" stop-opacity="0"/>
+                <stop offset="1" stop-color="#00D1FF" stop-opacity="0"/>
+                </linearGradient>
+                <radialGradient id="paint1_radial_299_3303" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(356.5 94.5) rotate(87.1886) scale(224.27 169.955)">
+                <stop stop-color="#189AF8"/>
+                <stop offset="1" stop-opacity="0"/>
+                </radialGradient>
+                <clipPath id="clip0_299_3303">
+                <rect width="512" height="512" fill="white"/>
+                </clipPath>
+                </defs>
+                </svg>
+
+
+
+
+            <h2 style="margin:0px;">size.css</h2>
+
+          <h3 class="to_man_css1" onclick="to_man_css1()">
+            >
+          </h3>
+
+          </div><br>
+          <div id="css_set1" style="height: 0px;">
+
+              <!-- Включение CSS (цветовая схема) -->
+      Стандартні CSS розміри об'єктів лабіринту.
+        <br>
+              <br>
+
+              <!-- Включение комментариев к коду -->
+              <!-- <label><input type="checkbox" id="includeComments" checked> Включить комментарии к коду</label><br> -->
+
+            </div>
+
+
+
+              <div onclick="downloadCssSizeFile()" id="loadButton" class="regular_btn pt0" style="width: auto; border-radius: 0px 0px 10px 10px;">
+                  <div class="regular_btn1">
+                      <b class="regular_btn2" >Завантажити</b>
+                  </div>
+              </div>
+            </div>
+
     <br><hr><br>
 
     <div style="background: rgba(0, 0, 0, 0.08);
@@ -738,6 +862,9 @@ padding-top: 10px;">
             </div>
         </div>
       </div>
+
+
+
       <br><hr><br>
 
 
@@ -759,74 +886,9 @@ padding-top: 10px;">
   <div class="pt pt2 marg_m1">
     <h2 style="margin:10px;">Стандартне</h2>
 
-    <div style="background: rgba(0, 0, 0, 0.08);
-    border: 2px solid rgba(0, 0, 0, 0.15);
-    border-radius: 12px;
-    /* padding: 10px; */
-    padding-top: 10px;">
-
-
-    <div class="flex" style="justify-content: start; align-items: center;">
-          <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" class="x50x40">
-          <g clip-path="url(#clip0_299_3303)">
-          <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint0_linear_299_3303)"/>
-          <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint1_radial_299_3303)" fill-opacity="0.2"/>
-          <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" stroke="#373737" stroke-width="18"/>
-          <path d="M171 23.0416V99C171 103.418 167.418 107 163 107H87.0416C79.9144 107 76.3451 98.3829 81.3848 93.3431L157.343 17.3848C162.383 12.3451 171 15.9144 171 23.0416Z" stroke="#373737" stroke-width="18"/>
-          <path d="M131.741 312.881C129.026 312.881 126.696 311.908 124.751 309.963C122.806 308.019 121.834 305.688 121.834 302.973C121.834 300.258 122.806 297.927 124.751 295.983C126.696 294.038 129.026 293.065 131.741 293.065C134.457 293.065 136.787 294.038 138.732 295.983C140.677 297.927 141.649 300.258 141.649 302.973C141.649 304.771 141.19 306.422 140.273 307.927C139.392 309.431 138.2 310.642 136.695 311.56C135.227 312.44 133.576 312.881 131.741 312.881ZM199.306 313.761C191.38 313.761 184.555 311.89 178.83 308.147C173.106 304.404 168.702 299.248 165.62 292.68C162.538 286.112 160.996 278.607 160.996 270.168C160.996 261.581 162.574 254.003 165.73 247.435C168.923 240.83 173.363 235.674 179.05 231.968C184.775 228.225 191.453 226.354 199.086 226.354C205.031 226.354 210.388 227.455 215.158 229.656C219.929 231.858 223.837 234.94 226.882 238.903C229.928 242.866 231.818 247.49 232.552 252.774H219.562C218.571 248.921 216.369 245.509 212.957 242.536C209.581 239.527 205.031 238.023 199.306 238.023C194.242 238.023 189.802 239.344 185.986 241.986C182.206 244.591 179.252 248.279 177.124 253.049C175.032 257.783 173.987 263.342 173.987 269.727C173.987 276.259 175.014 281.947 177.069 286.79C179.161 291.634 182.096 295.395 185.876 298.074C189.692 300.753 194.169 302.092 199.306 302.092C202.682 302.092 205.746 301.505 208.498 300.331C211.25 299.157 213.58 297.469 215.489 295.267C217.397 293.065 218.754 290.423 219.562 287.341H232.552C231.818 292.331 230.002 296.827 227.103 300.826C224.24 304.789 220.442 307.945 215.709 310.294C211.012 312.605 205.544 313.761 199.306 313.761ZM311.428 246.389L299.759 249.692C299.025 247.747 297.942 245.857 296.511 244.022C295.117 242.151 293.209 240.61 290.787 239.399C288.365 238.188 285.264 237.582 281.485 237.582C276.311 237.582 271.999 238.775 268.55 241.16C265.137 243.509 263.431 246.499 263.431 250.132C263.431 253.361 264.605 255.912 266.953 257.783C269.302 259.654 272.971 261.214 277.962 262.462L290.512 265.544C298.071 267.379 303.704 270.186 307.41 273.966C311.116 277.708 312.969 282.534 312.969 288.442C312.969 293.286 311.575 297.616 308.786 301.432C306.034 305.248 302.181 308.257 297.227 310.459C292.273 312.661 286.512 313.761 279.944 313.761C271.32 313.761 264.183 311.89 258.532 308.147C252.881 304.404 249.303 298.937 247.799 291.744L260.128 288.662C261.302 293.212 263.522 296.625 266.788 298.9C270.091 301.175 274.403 302.312 279.723 302.312C285.778 302.312 290.585 301.028 294.145 298.46C297.741 295.854 299.539 292.735 299.539 289.102C299.539 286.167 298.511 283.708 296.456 281.727C294.401 279.708 291.246 278.204 286.989 277.213L272.898 273.911C265.155 272.076 259.468 269.232 255.835 265.379C252.239 261.489 250.441 256.627 250.441 250.793C250.441 246.022 251.78 241.802 254.459 238.133C257.174 234.463 260.862 231.583 265.522 229.491C270.219 227.4 275.54 226.354 281.485 226.354C289.851 226.354 296.42 228.188 301.19 231.858C305.997 235.527 309.41 240.371 311.428 246.389ZM392.409 246.389L380.74 249.692C380.006 247.747 378.924 245.857 377.493 244.022C376.098 242.151 374.19 240.61 371.768 239.399C369.347 238.188 366.246 237.582 362.466 237.582C357.292 237.582 352.98 238.775 349.531 241.16C346.119 243.509 344.412 246.499 344.412 250.132C344.412 253.361 345.586 255.912 347.935 257.783C350.283 259.654 353.953 261.214 358.943 262.462L371.493 265.544C379.052 267.379 384.685 270.186 388.391 273.966C392.097 277.708 393.951 282.534 393.951 288.442C393.951 293.286 392.556 297.616 389.767 301.432C387.015 305.248 383.162 308.257 378.208 310.459C373.255 312.661 367.493 313.761 360.925 313.761C352.302 313.761 345.164 311.89 339.513 308.147C333.862 304.404 330.285 298.937 328.78 291.744L341.11 288.662C342.284 293.212 344.504 296.625 347.77 298.9C351.072 301.175 355.384 302.312 360.705 302.312C366.76 302.312 371.567 301.028 375.126 298.46C378.722 295.854 380.52 292.735 380.52 289.102C380.52 286.167 379.493 283.708 377.438 281.727C375.383 279.708 372.227 278.204 367.97 277.213L353.88 273.911C346.137 272.076 340.449 269.232 336.816 265.379C333.22 261.489 331.422 256.627 331.422 250.793C331.422 246.022 332.762 241.802 335.44 238.133C338.156 234.463 341.844 231.583 346.504 229.491C351.201 227.4 356.522 226.354 362.466 226.354C370.833 226.354 377.401 228.188 382.171 231.858C386.978 235.527 390.391 240.371 392.409 246.389Z" fill="white"/>
-          </g>
-          <defs>
-          <linearGradient id="paint0_linear_299_3303" x1="450" y1="0" x2="256" y2="512" gradientUnits="userSpaceOnUse">
-          <stop stop-color="#00D1FF" stop-opacity="0"/>
-          <stop offset="0.56" stop-color="#00D1FF" stop-opacity="0.17"/>
-          <stop offset="1" stop-color="white" stop-opacity="0"/>
-          <stop offset="1" stop-color="#00D1FF" stop-opacity="0"/>
-          </linearGradient>
-          <radialGradient id="paint1_radial_299_3303" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(356.5 94.5) rotate(87.1886) scale(224.27 169.955)">
-          <stop stop-color="#189AF8"/>
-          <stop offset="1" stop-opacity="0"/>
-          </radialGradient>
-          <clipPath id="clip0_299_3303">
-          <rect width="512" height="512" fill="white"/>
-          </clipPath>
-          </defs>
-          </svg>
 
 
 
-
-      <h2 style="margin:0px;">size.css</h2><h4 style="margin: 0px;
-opacity: 0.5;
-scale: 0.8;">(Default)</h4>
-
-    <h3 class="to_man_css1" onclick="to_man_css1()">
-      >
-    </h3>
-
-    </div><br>
-    <div id="css_set1" style="height: 0px;">
-
-        <!-- Включение CSS (цветовая схема) -->
-Стандартні CSS розміри об'єктів лабіринту.
-  <br>
-        <br>
-
-        <!-- Включение комментариев к коду -->
-        <!-- <label><input type="checkbox" id="includeComments" checked> Включить комментарии к коду</label><br> -->
-
-      </div>
-
-
-
-        <div onclick="downloadCssSizeFile()" id="loadButton" class="regular_btn pt0" style="width: auto; border-radius: 0px 0px 10px 10px;">
-            <div class="regular_btn1">
-                <b class="regular_btn2" >Завантажити</b>
-            </div>
-        </div>
-      </div>
-
-
-<br>
 
 
 <div style="background: rgba(0, 0, 0, 0.08);
@@ -1042,6 +1104,14 @@ scale: 0.8;">(Default)</h4>
 function openm(){
   $('#popupMenu').fadeIn();
 
+}
+
+function openm_c(){
+  $('#popupMenu_color').fadeIn();
+}
+
+function openm_s(){
+  $('#popupMenu_size').fadeIn();
 }
 
 function downloadPixelArtAsHTML() {
@@ -1486,6 +1556,552 @@ function to_man_bin() {
       }, 0);
     }
   }
+}
+
+// Обработка изменений для CSS (цветовая схема)
+$('#includeCss').change(function(){
+    if(this.checked) {
+      document.getElementById("cssOptions0").style.opacity = "1";
+        $('#cssOptions').hide();
+    } else {
+      document.getElementById("cssOptions0").style.opacity = "0.5";
+        $('#cssOptions').show();
+    }
+}).change(); // вызов .change() для инициализации состояния при загрузке
+
+// Обработка изменений для CSS (размеры)
+$('#includeCssSizes').change(function(){
+    if(this.checked) {
+      document.getElementById("cssSizesOptions0").style.opacity = "1";
+        $('#cssSizesOptions').hide();
+    } else {
+      document.getElementById("cssSizesOptions0").style.opacity = "0.5";
+        $('#cssSizesOptions').show();
+    }
+}).change(); // вызов .change() для инициализации состояния при загрузке
+
+// Обработка изменений для функционала (JS, CSS)
+$('#includeFunctionality').change(function(){
+    if(this.checked) {
+      document.getElementById("functionalityOptions0").style.opacity = "1";
+      $('#functionalityOptions').hide();
+    } else {
+      document.getElementById("functionalityOptions0").style.opacity = "0.5";
+      $('#functionalityOptions').show();
+    }
+}).change(); // вызов .change() для инициализации состояния при загрузке
+
+
+function downloadPixelArtAsHTML() {
+    const includeCss = document.getElementById('includeCss').checked;
+    const cssOption = document.querySelector('input[name="cssOption"]:checked').value;
+    const includeCssSizes = document.getElementById('includeCssSizes').checked;
+    const cssSizesOption = document.querySelector('input[name="cssSizesOption"]:checked').value;
+    const includeFunctionality = document.getElementById('includeFunctionality').checked;
+    const jsOption = document.querySelector('input[name="jsOption"]:checked').value;
+    const functionalityCssOption = document.querySelector('input[name="functionalityCssOption"]:checked').value;
+
+    // Получение содержимого пиксель-арта
+    const pixelArtContent = document.querySelector('.area0').innerHTML;
+
+    // Пример задания цветов фона для каждого класса
+    let color_for_area_p = 'rgb(107, 153, 201)'; // Пример цвета для .area_p
+    let color_for_area_f = 'white'; // Пример цвета для .area_f
+    let color_for_area_r = 'rgb(0, 0, 0)'; // Пример цвета для .area_r
+    let color_for_area_t = 'rgb(255, 0, 0)'; // Пример цвета для .area_t
+
+    // Функция для проверки и применения цвета фона
+    function applyBackgroundColor(selector, defaultColor) {
+        $(selector).each(function() {
+            var hasBackgroundStyle = false;
+
+            // Проверяем, задан ли inline стиль фона для текущего класса
+            var inlineBg = $(this).attr('style');
+            if (inlineBg && inlineBg.includes('background')) {
+                hasBackgroundStyle = true;
+            }
+
+            // Проверяем наличие класса с суффиксом _с и наличие у него стиля
+            var classWithSuffix = $(this).hasClass(selector.substring(1) + '_c');
+            if (classWithSuffix) {
+                var inlineBgSuffix = $(this).attr('style');
+                if (inlineBgSuffix && inlineBgSuffix.includes('background')) {
+                    hasBackgroundStyle = true;
+                }
+            }
+
+            // Если нет инлайнового стиля фона, применяем цвет по умолчанию
+            if (!hasBackgroundStyle) {
+                $(this).css('background', defaultColor);
+            }
+        });
+    }
+
+    // Применяем функцию к каждому классу
+    applyBackgroundColor('.area_p', color_for_area_p);
+    applyBackgroundColor('.area_f', color_for_area_f);
+    applyBackgroundColor('.area_r', color_for_area_r);
+    applyBackgroundColor('.area_t', color_for_area_t);
+
+
+    // Определение CSS и JS контента
+    let cssColorSchemeContent = includeCss && cssOption === 'inline' ? `<style>
+        .draggable {
+            background: none;
+        }
+        .area {
+            border-color: black;
+            background: none;
+        }
+
+        .area_p { background: ${color_for_area_p} !important;}
+        .area_f { background: ${color_for_area_f} !important;}
+        .area_r { background: ${color_for_area_r} !important;}
+        .area_t { background: ${color_for_area_t} !important;}
+    </style>` : includeCss && cssOption === 'link' ? '<link rel="stylesheet" href="colors.css">' : '';
+
+
+
+
+    let cssSizesContent = includeCssSizes && cssSizesOption === 'inline' ? `<style>
+    .draggable {
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        transition: 0.5s;
+        top: 0px;
+        left: 0px;
+    }
+    .area {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        border: 35px solid;
+        margin: auto;
+    }
+    .row {
+        display: flex;
+        flex-direction: row;
+    }
+    .area_p { width: 35px; height: 35px; }
+    .area_f { width: 35px; height: 35px; }
+    .area_r { width: 35px; height: 35px; }
+    .area_t { width: 35px; height: 35px; }
+    </style>` : includeCssSizes && cssSizesOption === 'link' ? '<link rel="stylesheet" href="size.css">' : '';
+    let functionalityCssContent = includeFunctionality && functionalityCssOption === 'inline' ? `<style>
+    .btns_c{
+      display: flex;
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+    }
+
+    .btn_l{
+      width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 100px;
+    bottom: 50px;
+    rotate: -90deg;
+    }
+
+    .btn_r{
+      width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 50px;
+    right: 0px;
+    rotate: 90deg;
+    }
+
+    .btn_t{
+      width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 100px;
+    right: 50px;
+    }
+
+    .btn_b{
+      width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 0px;
+    right: 50px;
+    rotate: 180deg;
+    }
+
+    .btn_style{
+      background-color: gray;
+      border-radius: 10px;
+      border: 2px solid rgb(92, 92, 92);
+      transition: 0.4s;
+      cursor: crosshair;
+    }
+
+    .btn_style:hover{
+      background-color: rgb(91, 91, 91);
+    border: 2px solid rgb(180, 180, 180);
+    }
+
+    .btn_style:active{
+      background-color: rgb(255, 91, 91);
+    border: 2px solid rgb(180, 180, 180);
+    }
+    svg{
+      width: 20px;
+      height: 20px;
+    }
+    </style>` : includeFunctionality && functionalityCssOption === 'link' ? '<link rel="stylesheet" href="controls.css">' : '';
+
+    // Исправление для экранирования закрывающего тега script
+    let jsContent = includeFunctionality && jsOption === 'inline' ? `<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const draggable = document.querySelector('.draggable');
+      const grid = document.querySelector('.area'); // Контейнер для лабиринта
+      const gridCells = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
+      let currentRow = 0; // Текущая строка
+      let currentCol = 0; // Текущий столбец
+      const gridSize = 16; // Предположим, что у нас 20 ячеек в строке
+
+      window.move = (direction) => {
+          let newRow = currentRow;
+          let newCol = currentCol;
+
+          switch(direction) {
+              case 'left':
+                  newCol--;
+                  break;
+              case 'right':
+                  newCol++;
+                  break;
+              case 'up':
+                  newRow--;
+                  break;
+              case 'down':
+                  newRow++;
+                  break;
+          }
+
+          if (canMoveTo(newRow, newCol)) {
+              currentRow = newRow;
+              currentCol = newCol;
+              updatePosition();
+          }
+      }
+
+      function canMoveTo(row, col) {
+          if (row < 0 || col < 0 || row >= gridSize || col >= gridSize) {
+            console.log("За межами лабіринту");
+              return false; // За пределами лабиринта
+          }
+          const cellIndex = row * gridSize + col;
+          return !gridCells[cellIndex].classList.contains('area_r');
+      }
+
+      function updatePosition() {
+          draggable.style.top = (currentRow * 35) + 'px'; // 50 - высота ячейки
+          draggable.style.left = (currentCol * 35) + 'px'; // 50 - ширина ячейки
+      }
+      });
+    <\/script>` : includeFunctionality && jsOption === 'link' ? '<script src="script.js"><\/script>' : '';
+
+    // Создание стандартной структуры HTML
+    const fullHtml = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Micromouse Map</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"><\/script>
+        <script>
+        const mouse_id = "id_мищі";
+        <\/script>
+        ${cssColorSchemeContent}
+        ${cssSizesContent}
+        ${functionalityCssContent}
+    </head>
+    <body style="display:flex;">
+        ${pixelArtContent}
+        <div class="btns_c">
+        <button class="button btn_l btn_style" onclick="move('left')">
+          <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M320 0H192V128H128V256H64V384H0V512H128V384H192V256H256H320V384H384V512H512V384H448V256H384V128H320V0Z" fill="white"/>
+        </svg>
+        </button>
+        <button class="button btn_t btn_style" onclick="move('up')">
+          <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M320 0H192V128H128V256H64V384H0V512H128V384H192V256H256H320V384H384V512H512V384H448V256H384V128H320V0Z" fill="white"/>
+        </svg>
+        </button>
+        <button class="button btn_r btn_style" onclick="move('right')">
+          <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M320 0H192V128H128V256H64V384H0V512H128V384H192V256H256H320V384H384V512H512V384H448V256H384V128H320V0Z" fill="white"/>
+        </svg>
+        </button>
+        <button class="button btn_b btn_style" onclick="move('down')">
+          <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M320 0H192V128H128V256H64V384H0V512H128V384H192V256H256H320V384H384V512H512V384H448V256H384V128H320V0Z" fill="white"/>
+          </svg>
+        </button>
+        </div>
+    </body>
+    ${jsContent}
+    </html>`;
+
+    // Создание и скачивание файла
+    const blob = new Blob([fullHtml], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Micromouse_Map.html';
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+function downloadJSFile() {
+    // Текст JavaScript кода, который вы хотите, чтобы пользователь скачал
+    const jsCode = `
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const draggable = document.querySelector('.draggable');
+      const grid = document.querySelector('.area'); // Контейнер для лабиринта
+      const gridCells = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
+      let currentRow = 0; // Текущая строка
+      let currentCol = 0; // Текущий столбец
+      const gridSize = 16; // Предположим, что у нас 20 ячеек в строке
+
+      window.move = (direction) => {
+          let newRow = currentRow;
+          let newCol = currentCol;
+
+          switch(direction) {
+              case 'left':
+                  newCol--;
+                  break;
+              case 'right':
+                  newCol++;
+                  break;
+              case 'up':
+                  newRow--;
+                  break;
+              case 'down':
+                  newRow++;
+                  break;
+          }
+
+          if (canMoveTo(newRow, newCol)) {
+              currentRow = newRow;
+              currentCol = newCol;
+              updatePosition();
+          }
+      }
+
+      function canMoveTo(row, col) {
+          if (row < 0 || col < 0 || row >= gridSize || col >= gridSize) {
+            console.log("За межами лабіринту");
+              return false; // За пределами лабиринта
+          }
+          const cellIndex = row * gridSize + col;
+          return !gridCells[cellIndex].classList.contains('area_r');
+      }
+
+      function updatePosition() {
+          draggable.style.top = (currentRow * 35) + 'px'; // 50 - высота ячейки
+          draggable.style.left = (currentCol * 35) + 'px'; // 50 - ширина ячейки
+      }
+      });`;
+
+    // Создаем элемент для скачивания
+    const element = document.createElement('a');
+    element.setAttribute('href', 'data:text/javascript;charset=utf-8,' + encodeURIComponent(jsCode));
+    element.setAttribute('download', "script.js");
+
+    // Программно кликаем на элементе, чтобы инициировать скачивание
+    document.body.appendChild(element); // Добавляем элемент в документ
+    element.click(); // Инициируем клик по элементу
+
+    document.body.removeChild(element); // Удаляем элемент после скачивания
+}
+
+function downloadCssColorFile() {
+  // Пример задания цветов фона для каждого класса
+  let color_for_area_p = 'rgb(107, 153, 201)'; // Пример цвета для .area_p
+  let color_for_area_f = 'white'; // Пример цвета для .area_f
+  let color_for_area_r = 'rgb(0, 0, 0)'; // Пример цвета для .area_r
+  let color_for_area_t = 'rgb(255, 0, 0)'; // Пример цвета для .area_t
+
+  // Функция для проверки и применения цвета фона
+  function applyBackgroundColorFromId(selector, defaultColor) {
+      // Преобразуем класс в id (например, .area_p -> #area_p)
+      var idSelector = '#' + selector.substring(1);
+
+      // Пытаемся найти элемент с таким id и получить его цвет фона
+      var idElementBgColor = $(idSelector).css('background-color');
+
+      // Проверяем, задан ли цвет фона для элемента с id
+      if (idElementBgColor && idElementBgColor !== 'rgba(0, 0, 0, 0)' && idElementBgColor !== 'transparent') {
+          // Применяем найденный цвет фона к элементам с указанным классом
+          $(selector).css('background-color', idElementBgColor);
+      } else {
+          // Применяем цвет по умолчанию, если цвет фона не найден
+          $(selector).css('background-color', defaultColor);
+      }
+  }
+
+  // Применяем функцию к каждому классу
+  applyBackgroundColorFromId('.area_p', color_for_area_p);
+  applyBackgroundColorFromId('.area_f', color_for_area_f);
+  applyBackgroundColorFromId('.area_r', color_for_area_r);
+  applyBackgroundColorFromId('.area_t', color_for_area_t);
+
+
+
+  // Текст CSS кода, который вы хотите, чтобы пользователь скачал
+  const css = `
+.draggable {
+    background: red;
+}
+.area {
+    border-color: black;
+    background: none;
+}
+
+.area_p { background: ${color_for_area_p} !important;}
+.area_f { background: ${color_for_area_f} !important;}
+.area_r { background: ${color_for_area_r} !important;}
+.area_t { background: ${color_for_area_t} !important;}`;
+
+  // Создаем элемент для скачивания
+  const element = document.createElement('a');
+  element.setAttribute('href', 'data:text/css;charset=utf-8,' + encodeURIComponent(css));
+  element.setAttribute('download', "colors.css");
+
+  // Программно кликаем на элементе, чтобы инициировать скачивание
+  document.body.appendChild(element); // Добавляем элемент в документ
+  element.click(); // Инициируем клик по элементу
+
+  document.body.removeChild(element); // Удаляем элемент после скачивания
+}
+
+function downloadCssSizeFile() {
+
+  // Текст CSS кода, который вы хотите, чтобы пользователь скачал
+  const css = `
+  .draggable {
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      transition: 0.5s;
+      top: 0px;
+      left: 0px;
+  }
+  .area {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      border: 35px solid;
+      margin: auto;
+  }
+  .row {
+      display: flex;
+      flex-direction: row;
+  }
+  .area_p { width: 35px; height: 35px; }
+  .area_f { width: 35px; height: 35px; }
+  .area_r { width: 35px; height: 35px; }
+  .area_t { width: 35px; height: 35px; }`;
+
+  // Создаем элемент для скачивания
+  const element = document.createElement('a');
+  element.setAttribute('href', 'data:text/css;charset=utf-8,' + encodeURIComponent(css));
+  element.setAttribute('download', "size.css");
+
+  // Программно кликаем на элементе, чтобы инициировать скачивание
+  document.body.appendChild(element); // Добавляем элемент в документ
+  element.click(); // Инициируем клик по элементу
+
+  document.body.removeChild(element); // Удаляем элемент после скачивания
+}
+
+function downloadCssControlFile() {
+
+  // Текст CSS кода, который вы хотите, чтобы пользователь скачал
+  const css = `
+  .btns_c{
+    display: flex;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .btn_l{
+    width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 100px;
+  bottom: 50px;
+  rotate: -90deg;
+  }
+
+  .btn_r{
+    width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 50px;
+  right: 0px;
+  rotate: 90deg;
+  }
+
+  .btn_t{
+    width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 100px;
+  right: 50px;
+  }
+
+  .btn_b{
+    width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 0px;
+  right: 50px;
+  rotate: 180deg;
+  }
+
+  .btn_style{
+    background-color: gray;
+    border-radius: 10px;
+    border: 2px solid rgb(92, 92, 92);
+    transition: 0.4s;
+    cursor: crosshair;
+  }
+
+  .btn_style:hover{
+    background-color: rgb(91, 91, 91);
+  border: 2px solid rgb(180, 180, 180);
+  }
+
+  .btn_style:active{
+    background-color: rgb(255, 91, 91);
+  border: 2px solid rgb(180, 180, 180);
+  }
+  svg{
+    width: 20px;
+    height: 20px;
+  }`;
+
+  // Создаем элемент для скачивания
+  const element = document.createElement('a');
+  element.setAttribute('href', 'data:text/css;charset=utf-8,' + encodeURIComponent(css));
+  element.setAttribute('download', "controls.css");
+
+  // Программно кликаем на элементе, чтобы инициировать скачивание
+  document.body.appendChild(element); // Добавляем элемент в документ
+  element.click(); // Инициируем клик по элементу
+
+  document.body.removeChild(element); // Удаляем элемент после скачивания
 }
 
 </script>
