@@ -463,6 +463,7 @@ display: none;
   transition: 0.4s;
   top: 0px;
   right: 0px;
+  z-index: 1;
 }
 
 .area:hover{
