@@ -14,6 +14,9 @@
 <!-- <script src="/inc/mouse/data/script.js"></script> -->
 
 <script>
+let color1, color2, color3, color4;
+let alpha1, alpha2, alpha3, alpha4;
+
 function loadFile(filePath, fileType, callback) {
     let tag;
 
@@ -636,9 +639,7 @@ padding-top: 10px;">
 
 
 
-    <h2 style="margin:0px;">colors.css</h2><h4 style="margin: 0px;
-  opacity: 0.5;
-  scale: 0.8;">(Soon)</h4>
+    <h2 style="margin:0px;">colors.css</h2>
 
   <h3 class="to_man_css" onclick="to_man_css()">
     >
@@ -1369,52 +1370,49 @@ function downloadJSFile() {
 
 function downloadCssColorFile() {
   // Пример задания цветов фона для каждого класса
-  let color_for_area_p = 'rgb(107, 153, 201)'; // Пример цвета для .area_p
-  let color_for_area_f = 'white'; // Пример цвета для .area_f
-  let color_for_area_r = 'rgb(0, 0, 0)'; // Пример цвета для .area_r
-  let color_for_area_t = 'rgb(255, 0, 0)'; // Пример цвета для .area_t
+  color1 = document.getElementById('color1').value;
+  color2 = document.getElementById('color2').value;
+  color3 = document.getElementById('color3').value;
+  color4 = document.getElementById('color4').value;
 
-  // Функция для проверки и применения цвета фона
-  function applyBackgroundColorFromId(selector, defaultColor) {
-      // Преобразуем класс в id (например, .area_p -> #area_p)
-      var idSelector = '#' + selector.substring(1);
-
-      // Пытаемся найти элемент с таким id и получить его цвет фона
-      var idElementBgColor = $(idSelector).css('background-color');
-
-      // Проверяем, задан ли цвет фона для элемента с id
-      if (idElementBgColor && idElementBgColor !== 'rgba(0, 0, 0, 0)' && idElementBgColor !== 'transparent') {
-          // Применяем найденный цвет фона к элементам с указанным классом
-          $(selector).css('background-color', idElementBgColor);
-      } else {
-          // Применяем цвет по умолчанию, если цвет фона не найден
-          $(selector).css('background-color', defaultColor);
-      }
-  }
-
-  // Применяем функцию к каждому классу
-  applyBackgroundColorFromId('.area_p', color_for_area_p);
-  applyBackgroundColorFromId('.area_f', color_for_area_f);
-  applyBackgroundColorFromId('.area_r', color_for_area_r);
-  applyBackgroundColorFromId('.area_t', color_for_area_t);
+  // Получаем значения прозрачности из слайдеров
+  alpha1 = document.getElementById('alpha1').value / 255;
+  alpha2 = document.getElementById('alpha2').value / 255;
+  alpha3 = document.getElementById('alpha3').value / 255;
+  alpha4 = document.getElementById('alpha4').value / 255;
 
 
 
   // Текст CSS кода, который вы хотите, чтобы пользователь скачал
   const css = `
 .draggable {
-    background: red;
+    background: none;
 }
 .area {
     border-color: black;
     background: none;
 }
 
-.area_p { background: ${color_for_area_p} !important;}
-.area_f { background: ${color_for_area_f} !important;}
-.area_r { background: ${color_for_area_r} !important;}
-.area_t { background: ${color_for_area_t} !important;}`;
-
+.area_p { background: rgba(${hexToRgb1(color4)}, ${alpha4}) !important;}
+.area_f { background: rgba(${hexToRgb1(color1)}, ${alpha1}) !important;}
+.area_r { background: rgba(${hexToRgb1(color2)}, ${alpha2}) !important;}
+.area_t { background: rgba(${hexToRgb1(color3)}, ${alpha3}) !important;}`;
+function hexToRgb1(hex) {
+    let r = 0, g = 0, b = 0;
+    // 3 digits
+    if (hex.length == 4) {
+        r = parseInt(hex[1] + hex[1], 16);
+        g = parseInt(hex[2] + hex[2], 16);
+        b = parseInt(hex[3] + hex[3], 16);
+    }
+    // 6 digits
+    else if (hex.length == 7) {
+        r = parseInt(hex[1] + hex[2], 16);
+        g = parseInt(hex[3] + hex[4], 16);
+        b = parseInt(hex[5] + hex[6], 16);
+    }
+    return `${r}, ${g}, ${b}`;
+}
   // Создаем элемент для скачивания
   const element = document.createElement('a');
   element.setAttribute('href', 'data:text/css;charset=utf-8,' + encodeURIComponent(css));
@@ -1708,43 +1706,16 @@ function downloadPixelArtAsHTML() {
     const pixelArtContent = document.querySelector('.area0').innerHTML;
 
     // Пример задания цветов фона для каждого класса
-    let color_for_area_p = 'rgb(107, 153, 201)'; // Пример цвета для .area_p
-    let color_for_area_f = 'white'; // Пример цвета для .area_f
-    let color_for_area_r = 'rgb(0, 0, 0)'; // Пример цвета для .area_r
-    let color_for_area_t = 'rgb(255, 0, 0)'; // Пример цвета для .area_t
+    color1 = document.getElementById('color1').value;
+    color2 = document.getElementById('color2').value;
+    color3 = document.getElementById('color3').value;
+    color4 = document.getElementById('color4').value;
 
-    // Функция для проверки и применения цвета фона
-    function applyBackgroundColor(selector, defaultColor) {
-        $(selector).each(function() {
-            var hasBackgroundStyle = false;
-
-            // Проверяем, задан ли inline стиль фона для текущего класса
-            var inlineBg = $(this).attr('style');
-            if (inlineBg && inlineBg.includes('background')) {
-                hasBackgroundStyle = true;
-            }
-
-            // Проверяем наличие класса с суффиксом _с и наличие у него стиля
-            var classWithSuffix = $(this).hasClass(selector.substring(1) + '_c');
-            if (classWithSuffix) {
-                var inlineBgSuffix = $(this).attr('style');
-                if (inlineBgSuffix && inlineBgSuffix.includes('background')) {
-                    hasBackgroundStyle = true;
-                }
-            }
-
-            // Если нет инлайнового стиля фона, применяем цвет по умолчанию
-            if (!hasBackgroundStyle) {
-                $(this).css('background', defaultColor);
-            }
-        });
-    }
-
-    // Применяем функцию к каждому классу
-    applyBackgroundColor('.area_p', color_for_area_p);
-    applyBackgroundColor('.area_f', color_for_area_f);
-    applyBackgroundColor('.area_r', color_for_area_r);
-    applyBackgroundColor('.area_t', color_for_area_t);
+    // Получаем значения прозрачности из слайдеров и преобразуем их в диапазон от 0 до 1
+    alpha1 = document.getElementById('alpha1').value / 255;
+    alpha2 = document.getElementById('alpha2').value / 255;
+    alpha3 = document.getElementById('alpha3').value / 255;
+    alpha4 = document.getElementById('alpha4').value / 255;
 
 
     // Определение CSS и JS контента
@@ -1757,14 +1728,26 @@ function downloadPixelArtAsHTML() {
             background: none;
         }
 
-        .area_p { background: ${color_for_area_p} !important;}
-        .area_f { background: ${color_for_area_f} !important;}
-        .area_r { background: ${color_for_area_r} !important;}
-        .area_t { background: ${color_for_area_t} !important;}
+        .area_p { background: rgba(${hexToRgb2(color4)}, ${alpha4}) !important;}
+        .area_f { background: rgba(${hexToRgb2(color1)}, ${alpha1}) !important;}
+        .area_r { background: rgba(${hexToRgb2(color2)}, ${alpha2}) !important;}
+        .area_t { background: rgba(${hexToRgb2(color3)}, ${alpha3}) !important;}
     </style>` : includeCss && cssOption === 'link' ? '<link rel="stylesheet" href="colors.css">' : '';
 
 
-
+    function hexToRgb2(hex) {
+      let r = 0, g = 0, b = 0;
+      if (hex.length == 4) {
+        r = parseInt(hex[1] + hex[1], 16);
+        g = parseInt(hex[2] + hex[2], 16);
+        b = parseInt(hex[3] + hex[3], 16);
+      } else if (hex.length == 7) {
+        r = parseInt(hex[1] + hex[2], 16);
+        g = parseInt(hex[3] + hex[4], 16);
+        b = parseInt(hex[5] + hex[6], 16);
+      }
+      return `${r}, ${g}, ${b}`;
+    }
 
     let cssSizesContent = includeCssSizes && cssSizesOption === 'inline' ? `<style>
     .draggable {
