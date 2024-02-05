@@ -1,9 +1,9 @@
 .draggable {
   width: 50px;
   height: 50px;
-  background: purple;
+  background: none;
   position: absolute;
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: 0.5s;
   top:0px;
   left: 0px;
@@ -500,17 +500,370 @@ display: none;
 
 
 #popupMenu {
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.35);
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    -webkit-backdrop-filter: blur(90px);
-    backdrop-filter: blur(90px);
-    /* transition: 0.4s; */
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.35);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  -webkit-backdrop-filter: blur(90px);
+  backdrop-filter: blur(90px);
+  /* transition: 0.4s; */
+}
+
+.x50x40{
+  width: 50px;
+  height: 40px;
+}
+
+.to_man_html{
+  margin: 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: none;
+  rotate: -90deg;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  padding: 0px;
+  margin-left: auto;
+  margin-right: 10px;
+  display: flex;
+  transition: 0.4s;
+}
+
+.to_man_html:hover{
+  background: rgba(128, 128, 128, 0.42);
+  cursor: crosshair;
+}
+.pt2{
+  justify-content: center;
+  justify-items: center;
+  /* align-content: center; */
+  /* align-items: center; */
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  /* column-count: auto;
+flex-wrap: wrap;
+align-content: flex-start;
+max-height: 95vh; */
+}
+#html_set{
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+ transition: height 0.5s ease;
+}
+
+#cssOptions{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  bottom: 0px;
+}
+
+#cssOptions0{
+  transition: 0.4s;
+}
+
+#cssSizesOptions{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  bottom: 0px;
+}
+
+#cssSizesOptions0{
+  transition: 0.4s;
+}
+
+#functionalityOptions{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  bottom: 0px;
+}
+
+#functionalityOptions0{
+  transition: 0.4s;
+}
+
+.to_man_css{
+  margin: 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: none;
+  rotate: -90deg;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  padding: 0px;
+  margin-left: auto;
+  margin-right: 10px;
+  display: flex;
+  transition: 0.4s;
+}
+
+.to_man_css:hover{
+  background: rgba(128, 128, 128, 0.42);
+  cursor: crosshair;
+}
+
+
+#css_set{
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+ transition: height 0.5s ease;
+}
+
+.to_man_css1{
+  margin: 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: none;
+  rotate: -90deg;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  padding: 0px;
+  margin-left: auto;
+  margin-right: 10px;
+  display: flex;
+  transition: 0.4s;
+}
+
+.to_man_css1:hover{
+  background: rgba(128, 128, 128, 0.42);
+  cursor: crosshair;
+}
+
+
+#css_set1{
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+ transition: height 0.5s ease;
+}
+
+.to_man_css2{
+  margin: 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: none;
+  rotate: -90deg;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  padding: 0px;
+  margin-left: auto;
+  margin-right: 10px;
+  display: flex;
+  transition: 0.4s;
+}
+
+.to_man_css2:hover{
+  background: rgba(128, 128, 128, 0.42);
+  cursor: crosshair;
+}
+
+
+#css_set2{
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+ transition: height 0.5s ease;
+}
+
+.to_man_js{
+  margin: 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: none;
+  rotate: -90deg;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  padding: 0px;
+  margin-left: auto;
+  margin-right: 10px;
+  display: flex;
+  transition: 0.4s;
+}
+
+.to_man_js:hover{
+  background: rgba(128, 128, 128, 0.42);
+  cursor: crosshair;
+}
+
+
+#js_set{
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+ transition: height 0.5s ease;
+}
+
+.to_man_bin{
+  margin: 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: none;
+  rotate: -90deg;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  padding: 0px;
+  margin-left: auto;
+  margin-right: 10px;
+  display: flex;
+  transition: 0.4s;
+}
+
+.to_man_bin:hover{
+  background: rgba(128, 128, 128, 0.42);
+  cursor: crosshair;
+}
+
+
+#bin_set{
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+ transition: height 0.5s ease;
+}
+
+.marg_m{
+  margin-right: 0px;
+}
+
+.marg_m1{
+  margin-left: 0px;
+}
+
+@media screen and (max-width: 767px)
+{
+  .marg_m{
+    margin-right: auto;
+  }
+
+  .marg_m1{
+    margin-left: auto;
+  }
+}
+
+
+
+.pt0{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.del_all_account_btn{
+  position: relative;
+  display: flex;
+    color: red;
+    background: rgba(87, 0, 0, 0.25);
+    border-radius: 10px;
+    margin: 0px;
+    width: 100%;
+/* padding-top: 10px;
+padding-bottom: 10px; */
+transition: 0.4s;
+justify-content: center;
+justify-items: center;
+white-space: nowrap;
+overflow: hidden;
+border: 2px solid rgba(137, 0, 0, 0.25);
+}
+
+.del_all_account_btn1{
+  display: flex;
+  height: 100%;
+  width: 0%;
+  /* background: rgba(59, 0, 0, 0.49);; */
+  background: linear-gradient(to right, rgba(137, 0, 0, 0), rgba(137, 0, 0, 0.5) 50%, rgba(137, 0, 0, 0));
+  position: relative;
+  transition: width 0.3s, background 14s;
+  /* margin: auto; */
+  /* text-align: center; */
+  flex-wrap: nowrap;
+  justify-content: center;
+  justify-items: center;
+
+}
+
+.del_all_account_btn2{
+  display: flex;
+  height: 100%;
+  width: 0%;
+  /* background: rgba(59, 0, 0, 0.49);; */
+  background: linear-gradient(to right, rgba(37, 0, 0, 0), rgba(81, 0, 0, 0.5) 50%, rgba(37, 0, 0, 0));
+  position: relative;
+  transition: width 0.3s, background 14s;
+  /* margin: auto; */
+  /* text-align: center; */
+  flex-wrap: nowrap;
+  justify-content: center;
+  justify-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+.del_all_account_btn:hover{
+    /* background: rgba(128, 128, 128, 0.25); */
+    border: 2px solid red;
+
+    cursor: crosshair;
+}
+
+.del_all_account_btn:hover .del_all_account_btn1{
+  width: 100%;
+  background: linear-gradient(to right, rgba(137, 0, 0, 0.5), rgba(137, 0, 0, 0.5) 50%, rgba(137, 0, 0, 0.5));
+  transition: width 0.3s, background 14s;
+
+}
+
+.del_all_account_btn:active .del_all_account_btn2{
+  width: 100%;
+  background: linear-gradient(to right, rgba(37, 0, 0, 0.25), rgba(81, 0, 0, 0.5) 50%, rgba(37, 0, 0, 0.25));
+  transition: width 0.3s, background 14s;
+
+}
+
+.marg_10{
+  margin: 10px;
+}
+hr{
+  width: 80%;
+}
+
+.flex{
+  display: flex;
+justify-content: center;
+/* flex-wrap: wrap; */
 }

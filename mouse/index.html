@@ -76,6 +76,46 @@ loadFilesSequentially(filesToLoad, 0, function() {});
 
 
 <div style="margin:auto; margin-left: 10px; margin-right: 10px; max-width: 80rem; display: flex; flex-direction: column;">
+
+  <div class="pt">
+
+  <div class="horizon">
+    <div class="regular_btn" onclick="randomizeLayer()"><div class="regular_btn1"><b class="regular_btn2">Сгенерувати</b></div></div>
+    <div class="regular_btn" onclick="openm()" style="position: relative;
+display: flex;
+color: white;
+background: rgba(51, 51, 51, 0.25);
+border-radius: 10px;
+margin: 10px;
+transition: 0.4s;
+justify-content: center;
+justify-items: center;
+white-space: nowrap;
+overflow: hidden;
+border: 2px solid rgba(73, 73, 73, 0.25);
+width: 100%;padding: 0px;
+box-shadow: none;"><div class="regular_btn1"><b class="regular_btn2">Завантажити</b></div></div>
+  </div>
+</div>
+
+<div class="pt">
+  <h2>Ідентифікация мищі</h2>
+
+  <div class="horizon">
+      <div class="textToCopy">
+          <b><span class="c0">const</span> <span class="c1">mouse_id</span> = <span class="c2">"<span id="id_inp" class="editable" contenteditable="true">id_мищі</span>"</span>;</b>
+      </div>
+      <div id="copyButton" class="regular_btn" style="width:auto; margin:0px; margin-left: 10px; height: 100%;">
+          <div class="regular_btn1">
+              <b class="regular_btn2" >Скопіювати</b>
+          </div>
+      </div>
+  </div>
+
+<span style="opacity:0.5">Вставте цю константу першою строкою у ваш JavaScript.</span>
+  <div id="textToCopy">const mouse_id = "id_мищі";</div>
+</div>
+
 <div class="pt">
 
   <h2><label for="slider_b_size">Розмір ячейки <span class="b_size">100</span>Х<span class="b_size">100</span> PX</label></h2>
@@ -127,367 +167,326 @@ loadFilesSequentially(filesToLoad, 0, function() {});
 </div>
 
 
-<div class="pt">
-  <h2>Ідентифікация мищі</h2>
 
-  <div class="horizon">
-      <div class="textToCopy">
-          <b><span class="c0">const</span> <span class="c1">mouse_id</span> = <span class="c2">"<span id="id_inp" class="editable" contenteditable="true">id_мищі</span>"</span>;</b>
-      </div>
-      <div id="copyButton" class="regular_btn" style="width:auto; margin:0px; margin-left: 10px; height: 100%;">
-          <div class="regular_btn1">
-              <b class="regular_btn2" >Скопіювати</b>
-          </div>
-      </div>
-  </div>
-
-<span style="opacity:0.5">Вставте цю константу першою строкою у ваш JavaScript.</span>
-  <div id="textToCopy">const mouse_id = "id_мищі";</div>
-</div>
 
   <br>
-  <div class="pt">
 
-  <div class="horizon">
-    <div class="regular_btn" onclick="randomizeLayer()"><div class="regular_btn1"><b class="regular_btn2">Сгенерувати</b></div></div>
-    <div class="regular_btn" onclick="openm()" style="position: relative;
-display: flex;
-color: white;
-background: rgba(51, 51, 51, 0.25);
-border-radius: 10px;
-margin: 10px;
-transition: 0.4s;
-justify-content: center;
-justify-items: center;
-white-space: nowrap;
-overflow: hidden;
-border: 2px solid rgba(73, 73, 73, 0.25);
-width: 100%;padding: 0px;
-box-shadow: none;"><div class="regular_btn1"><b class="regular_btn2">Завантажити</b></div></div>
+
+  <div class="area0">
+
+  <div class="area">
+    <div class="draggable" style="top: 0px; left: 0px;"></div>
+  <div class="row">
+      <div class="area_f" id="cel_1_1"></div>
+      <div class="area_f" id="cel_1_2"></div>
+      <div class="area_f" id="cel_1_3"></div>
+      <div class="area_f" id="cel_1_4"></div>
+      <div class="area_f" id="cel_1_5"></div>
+      <div class="area_f" id="cel_1_6"></div>
+      <div class="area_f" id="cel_1_7"></div>
+      <div class="area_f" id="cel_1_8"></div>
+      <div class="area_f" id="cel_1_9"></div>
+      <div class="area_f" id="cel_1_10"></div>
+      <div class="area_f" id="cel_1_11"></div>
+      <div class="area_f" id="cel_1_12"></div>
+      <div class="area_f" id="cel_1_13"></div>
+      <div class="area_f" id="cel_1_14"></div>
+      <div class="area_f" id="cel_1_15"></div>
+      <div class="area_f" id="cel_1_16"></div>
   </div>
-</div>
 
-<div class="area">
+  <div class="row">
+    <div class="area_f" id="cel_2_1">  </div>
+    <div class="area_f" id="cel_2_2">  </div>
+    <div class="area_f" id="cel_2_3">  </div>
+    <div class="area_f" id="cel_2_4">  </div>
+    <div class="area_f" id="cel_2_5">  </div>
+    <div class="area_f" id="cel_2_6">  </div>
+    <div class="area_f" id="cel_2_7">  </div>
+    <div class="area_f" id="cel_2_8">  </div>
+    <div class="area_f" id="cel_2_9">  </div>
+    <div class="area_f" id="cel_2_10">  </div>
+    <div class="area_f" id="cel_2_11">  </div>
+    <div class="area_f" id="cel_2_12">  </div>
+    <div class="area_f" id="cel_2_13">  </div>
+    <div class="area_f" id="cel_2_14">  </div>
+    <div class="area_f" id="cel_2_15">  </div>
+    <div class="area_f" id="cel_2_16">  </div>
+  </div>
 
-  <!-- <div class="draggable"></div> -->
-<div style="position:static; display:flex;">
-<div>
-  <!-- <div class="obstacle" style="top:100px; left:100px;"></div>
-  <div class="obstacle0" style="top:200px; left:100px;"></div>
-  <div class="obstacle" style="top:300px; left:100px;"></div> -->
+  <div class="row">
+    <div class="area_f" id="cel_3_1">  </div>
+    <div class="area_f" id="cel_3_2">  </div>
+    <div class="area_f" id="cel_3_3">  </div>
+    <div class="area_f" id="cel_3_4">  </div>
+    <div class="area_f" id="cel_3_5">  </div>
+    <div class="area_f" id="cel_3_6">  </div>
+    <div class="area_f" id="cel_3_7">  </div>
+    <div class="area_f" id="cel_3_8">  </div>
+    <div class="area_f" id="cel_3_9">  </div>
+    <div class="area_f" id="cel_3_10">  </div>
+    <div class="area_f" id="cel_3_11">  </div>
+    <div class="area_f" id="cel_3_12">  </div>
+    <div class="area_f" id="cel_3_13">  </div>
+    <div class="area_f" id="cel_3_14">  </div>
+    <div class="area_f" id="cel_3_15">  </div>
+    <div class="area_f" id="cel_3_16">  </div>
+  </div>
 
-</div>
-</div>
-<div class="row">
-    <div class="area_f" id="cel_1_1"></div>
-    <div class="area_f" id="cel_1_2"></div>
-    <div class="area_f" id="cel_1_3"></div>
-    <div class="area_f" id="cel_1_4"></div>
-    <div class="area_f" id="cel_1_5"></div>
-    <div class="area_f" id="cel_1_6"></div>
-    <div class="area_f" id="cel_1_7"></div>
-    <div class="area_f" id="cel_1_8"></div>
-    <div class="area_f" id="cel_1_9"></div>
-    <div class="area_f" id="cel_1_10"></div>
-    <div class="area_f" id="cel_1_11"></div>
-    <div class="area_f" id="cel_1_12"></div>
-    <div class="area_f" id="cel_1_13"></div>
-    <div class="area_f" id="cel_1_14"></div>
-    <div class="area_f" id="cel_1_15"></div>
-    <div class="area_f" id="cel_1_16"></div>
-</div>
+  <div class="row">
+    <div class="area_f" id="cel_4_1">  </div>
+    <div class="area_f" id="cel_4_2">  </div>
+    <div class="area_f" id="cel_4_3">  </div>
+    <div class="area_f" id="cel_4_4">  </div>
+    <div class="area_f" id="cel_4_5">  </div>
+    <div class="area_f" id="cel_4_6">  </div>
+    <div class="area_f" id="cel_4_7">  </div>
+    <div class="area_f" id="cel_4_8">  </div>
+    <div class="area_f" id="cel_4_9">  </div>
+    <div class="area_f" id="cel_4_10">  </div>
+    <div class="area_f" id="cel_4_11">  </div>
+    <div class="area_f" id="cel_4_12">  </div>
+    <div class="area_f" id="cel_4_13">  </div>
+    <div class="area_f" id="cel_4_14">  </div>
+    <div class="area_f" id="cel_4_15">  </div>
+    <div class="area_f" id="cel_4_16">  </div>
+  </div>
 
-<div class="row">
-  <div class="area_f" id="cel_2_1">  </div>
-  <div class="area_f" id="cel_2_2">  </div>
-  <div class="area_f" id="cel_2_3">  </div>
-  <div class="area_f" id="cel_2_4">  </div>
-  <div class="area_f" id="cel_2_5">  </div>
-  <div class="area_f" id="cel_2_6">  </div>
-  <div class="area_f" id="cel_2_7">  </div>
-  <div class="area_f" id="cel_2_8">  </div>
-  <div class="area_f" id="cel_2_9">  </div>
-  <div class="area_f" id="cel_2_10">  </div>
-  <div class="area_f" id="cel_2_11">  </div>
-  <div class="area_f" id="cel_2_12">  </div>
-  <div class="area_f" id="cel_2_13">  </div>
-  <div class="area_f" id="cel_2_14">  </div>
-  <div class="area_f" id="cel_2_15">  </div>
-  <div class="area_f" id="cel_2_16">  </div>
-</div>
+  <div class="row">
+    <div class="area_f" id="cel_5_1">  </div>
+    <div class="area_f" id="cel_5_2">  </div>
+    <div class="area_f" id="cel_5_3">  </div>
+    <div class="area_f" id="cel_5_4">  </div>
+    <div class="area_f" id="cel_5_5">  </div>
+    <div class="area_f" id="cel_5_6">  </div>
+    <div class="area_f" id="cel_5_7">  </div>
+    <div class="area_f" id="cel_5_8">  </div>
+    <div class="area_f" id="cel_5_9">  </div>
+    <div class="area_f" id="cel_5_10">  </div>
+    <div class="area_f" id="cel_5_11">  </div>
+    <div class="area_f" id="cel_5_12">  </div>
+    <div class="area_f" id="cel_5_13">  </div>
+    <div class="area_f" id="cel_5_14">  </div>
+    <div class="area_f" id="cel_5_15">  </div>
+    <div class="area_f" id="cel_5_16">  </div>
+  </div>
 
-<div class="row">
-  <div class="area_f" id="cel_3_1">  </div>
-  <div class="area_f" id="cel_3_2">  </div>
-  <div class="area_f" id="cel_3_3">  </div>
-  <div class="area_f" id="cel_3_4">  </div>
-  <div class="area_f" id="cel_3_5">  </div>
-  <div class="area_f" id="cel_3_6">  </div>
-  <div class="area_f" id="cel_3_7">  </div>
-  <div class="area_f" id="cel_3_8">  </div>
-  <div class="area_f" id="cel_3_9">  </div>
-  <div class="area_f" id="cel_3_10">  </div>
-  <div class="area_f" id="cel_3_11">  </div>
-  <div class="area_f" id="cel_3_12">  </div>
-  <div class="area_f" id="cel_3_13">  </div>
-  <div class="area_f" id="cel_3_14">  </div>
-  <div class="area_f" id="cel_3_15">  </div>
-  <div class="area_f" id="cel_3_16">  </div>
-</div>
+  <div class="row">
+    <div class="area_f" id="cel_6_1">  </div>
+    <div class="area_f" id="cel_6_2">  </div>
+    <div class="area_f" id="cel_6_3">  </div>
+    <div class="area_f" id="cel_6_4">  </div>
+    <div class="area_f" id="cel_6_5">  </div>
+    <div class="area_f" id="cel_6_6">  </div>
+    <div class="area_f" id="cel_6_7">  </div>
+    <div class="area_f" id="cel_6_8">  </div>
+    <div class="area_f" id="cel_6_9">  </div>
+    <div class="area_f" id="cel_6_10">  </div>
+    <div class="area_f" id="cel_6_11">  </div>
+    <div class="area_f" id="cel_6_12">  </div>
+    <div class="area_f" id="cel_6_13">  </div>
+    <div class="area_f" id="cel_6_14">  </div>
+    <div class="area_f" id="cel_6_15">  </div>
+    <div class="area_f" id="cel_6_16">  </div>
+  </div>
 
-<div class="row">
-  <div class="area_f" id="cel_4_1">  </div>
-  <div class="area_f" id="cel_4_2">  </div>
-  <div class="area_f" id="cel_4_3">  </div>
-  <div class="area_f" id="cel_4_4">  </div>
-  <div class="area_f" id="cel_4_5">  </div>
-  <div class="area_f" id="cel_4_6">  </div>
-  <div class="area_f" id="cel_4_7">  </div>
-  <div class="area_f" id="cel_4_8">  </div>
-  <div class="area_f" id="cel_4_9">  </div>
-  <div class="area_f" id="cel_4_10">  </div>
-  <div class="area_f" id="cel_4_11">  </div>
-  <div class="area_f" id="cel_4_12">  </div>
-  <div class="area_f" id="cel_4_13">  </div>
-  <div class="area_f" id="cel_4_14">  </div>
-  <div class="area_f" id="cel_4_15">  </div>
-  <div class="area_f" id="cel_4_16">  </div>
-</div>
+  <div class="row">
+    <div class="area_f" id="cel_7_1">  </div>
+    <div class="area_f" id="cel_7_2">  </div>
+    <div class="area_f" id="cel_7_3">  </div>
+    <div class="area_f" id="cel_7_4">  </div>
+    <div class="area_f" id="cel_7_5">  </div>
+    <div class="area_f" id="cel_7_6">  </div>
+    <div class="area_f" id="cel_7_7">  </div>
+    <div class="area_f" id="cel_7_8">  </div>
+    <div class="area_f" id="cel_7_9">  </div>
+    <div class="area_f" id="cel_7_10">  </div>
+    <div class="area_f" id="cel_7_11">  </div>
+    <div class="area_f" id="cel_7_12">  </div>
+    <div class="area_f" id="cel_7_13">  </div>
+    <div class="area_f" id="cel_7_14">  </div>
+    <div class="area_f" id="cel_7_15">  </div>
+    <div class="area_f" id="cel_7_16">  </div>
+  </div>
 
-<div class="row">
-  <div class="area_f" id="cel_5_1">  </div>
-  <div class="area_f" id="cel_5_2">  </div>
-  <div class="area_f" id="cel_5_3">  </div>
-  <div class="area_f" id="cel_5_4">  </div>
-  <div class="area_f" id="cel_5_5">  </div>
-  <div class="area_f" id="cel_5_6">  </div>
-  <div class="area_f" id="cel_5_7">  </div>
-  <div class="area_f" id="cel_5_8">  </div>
-  <div class="area_f" id="cel_5_9">  </div>
-  <div class="area_f" id="cel_5_10">  </div>
-  <div class="area_f" id="cel_5_11">  </div>
-  <div class="area_f" id="cel_5_12">  </div>
-  <div class="area_f" id="cel_5_13">  </div>
-  <div class="area_f" id="cel_5_14">  </div>
-  <div class="area_f" id="cel_5_15">  </div>
-  <div class="area_f" id="cel_5_16">  </div>
-</div>
+  <div class="row">
+    <div class="area_f" id="cel_8_1">  </div>
+    <div class="area_f" id="cel_8_2">  </div>
+    <div class="area_f" id="cel_8_3">  </div>
+    <div class="area_f" id="cel_8_4">  </div>
+    <div class="area_f" id="cel_8_5">  </div>
+    <div class="area_f" id="cel_8_6">  </div>
+    <div class="area_f" id="cel_8_7">  </div>
+    <div class="area_f" id="cel_8_8">  </div>
+    <div class="area_f" id="cel_8_9">  </div>
+    <div class="area_f" id="cel_8_10">  </div>
+    <div class="area_f" id="cel_8_11">  </div>
+    <div class="area_f" id="cel_8_12">  </div>
+    <div class="area_f" id="cel_8_13">  </div>
+    <div class="area_f" id="cel_8_14">  </div>
+    <div class="area_f" id="cel_8_15">  </div>
+    <div class="area_f" id="cel_8_16">  </div>
+  </div>
 
-<div class="row">
-  <div class="area_f" id="cel_6_1">  </div>
-  <div class="area_f" id="cel_6_2">  </div>
-  <div class="area_f" id="cel_6_3">  </div>
-  <div class="area_f" id="cel_6_4">  </div>
-  <div class="area_f" id="cel_6_5">  </div>
-  <div class="area_f" id="cel_6_6">  </div>
-  <div class="area_f" id="cel_6_7">  </div>
-  <div class="area_f" id="cel_6_8">  </div>
-  <div class="area_f" id="cel_6_9">  </div>
-  <div class="area_f" id="cel_6_10">  </div>
-  <div class="area_f" id="cel_6_11">  </div>
-  <div class="area_f" id="cel_6_12">  </div>
-  <div class="area_f" id="cel_6_13">  </div>
-  <div class="area_f" id="cel_6_14">  </div>
-  <div class="area_f" id="cel_6_15">  </div>
-  <div class="area_f" id="cel_6_16">  </div>
-</div>
+  <div class="row">
+    <div class="area_f" id="cel_9_1">  </div>
+    <div class="area_f" id="cel_9_2">  </div>
+    <div class="area_f" id="cel_9_3">  </div>
+    <div class="area_f" id="cel_9_4">  </div>
+    <div class="area_f" id="cel_9_5">  </div>
+    <div class="area_f" id="cel_9_6">  </div>
+    <div class="area_f" id="cel_9_7">  </div>
+    <div class="area_f" id="cel_9_8">  </div>
+    <div class="area_f" id="cel_9_9">  </div>
+    <div class="area_f" id="cel_9_10">  </div>
+    <div class="area_f" id="cel_9_11">  </div>
+    <div class="area_f" id="cel_9_12">  </div>
+    <div class="area_f" id="cel_9_13">  </div>
+    <div class="area_f" id="cel_9_14">  </div>
+    <div class="area_f" id="cel_9_15">  </div>
+    <div class="area_f" id="cel_9_16">  </div>
+  </div>
 
-<div class="row">
-  <div class="area_f" id="cel_7_1">  </div>
-  <div class="area_f" id="cel_7_2">  </div>
-  <div class="area_f" id="cel_7_3">  </div>
-  <div class="area_f" id="cel_7_4">  </div>
-  <div class="area_f" id="cel_7_5">  </div>
-  <div class="area_f" id="cel_7_6">  </div>
-  <div class="area_f" id="cel_7_7">  </div>
-  <div class="area_f" id="cel_7_8">  </div>
-  <div class="area_f" id="cel_7_9">  </div>
-  <div class="area_f" id="cel_7_10">  </div>
-  <div class="area_f" id="cel_7_11">  </div>
-  <div class="area_f" id="cel_7_12">  </div>
-  <div class="area_f" id="cel_7_13">  </div>
-  <div class="area_f" id="cel_7_14">  </div>
-  <div class="area_f" id="cel_7_15">  </div>
-  <div class="area_f" id="cel_7_16">  </div>
-</div>
+  <div class="row">
+    <div class="area_f" id="cel_10_1">  </div>
+    <div class="area_f" id="cel_10_2">  </div>
+    <div class="area_f" id="cel_10_3">  </div>
+    <div class="area_f" id="cel_10_4">  </div>
+    <div class="area_f" id="cel_10_5">  </div>
+    <div class="area_f" id="cel_10_6">  </div>
+    <div class="area_f" id="cel_10_7">  </div>
+    <div class="area_f" id="cel_10_8">  </div>
+    <div class="area_f" id="cel_10_9">  </div>
+    <div class="area_f" id="cel_10_10">  </div>
+    <div class="area_f" id="cel_10_11">  </div>
+    <div class="area_f" id="cel_10_12">  </div>
+    <div class="area_f" id="cel_10_13">  </div>
+    <div class="area_f" id="cel_10_14">  </div>
+    <div class="area_f" id="cel_10_15">  </div>
+    <div class="area_f" id="cel_10_16">  </div>
+  </div>
 
-<div class="row">
-  <div class="area_f" id="cel_8_1">  </div>
-  <div class="area_f" id="cel_8_2">  </div>
-  <div class="area_f" id="cel_8_3">  </div>
-  <div class="area_f" id="cel_8_4">  </div>
-  <div class="area_f" id="cel_8_5">  </div>
-  <div class="area_f" id="cel_8_6">  </div>
-  <div class="area_f" id="cel_8_7">  </div>
-  <div class="area_f" id="cel_8_8">  </div>
-  <div class="area_f" id="cel_8_9">  </div>
-  <div class="area_f" id="cel_8_10">  </div>
-  <div class="area_f" id="cel_8_11">  </div>
-  <div class="area_f" id="cel_8_12">  </div>
-  <div class="area_f" id="cel_8_13">  </div>
-  <div class="area_f" id="cel_8_14">  </div>
-  <div class="area_f" id="cel_8_15">  </div>
-  <div class="area_f" id="cel_8_16">  </div>
-</div>
+  <div class="row">
+    <div class="area_f" id="cel_11_1">  </div>
+    <div class="area_f" id="cel_11_2">  </div>
+    <div class="area_f" id="cel_11_3">  </div>
+    <div class="area_f" id="cel_11_4">  </div>
+    <div class="area_f" id="cel_11_5">  </div>
+    <div class="area_f" id="cel_11_6">  </div>
+    <div class="area_f" id="cel_11_7">  </div>
+    <div class="area_f" id="cel_11_8">  </div>
+    <div class="area_f" id="cel_11_9">  </div>
+    <div class="area_f" id="cel_11_10">  </div>
+    <div class="area_f" id="cel_11_11">  </div>
+    <div class="area_f" id="cel_11_12">  </div>
+    <div class="area_f" id="cel_11_13">  </div>
+    <div class="area_f" id="cel_11_14">  </div>
+    <div class="area_f" id="cel_11_15">  </div>
+    <div class="area_f" id="cel_11_16">  </div>
+  </div>
 
-<div class="row">
-  <div class="area_f" id="cel_9_1">  </div>
-  <div class="area_f" id="cel_9_2">  </div>
-  <div class="area_f" id="cel_9_3">  </div>
-  <div class="area_f" id="cel_9_4">  </div>
-  <div class="area_f" id="cel_9_5">  </div>
-  <div class="area_f" id="cel_9_6">  </div>
-  <div class="area_f" id="cel_9_7">  </div>
-  <div class="area_f" id="cel_9_8">  </div>
-  <div class="area_f" id="cel_9_9">  </div>
-  <div class="area_f" id="cel_9_10">  </div>
-  <div class="area_f" id="cel_9_11">  </div>
-  <div class="area_f" id="cel_9_12">  </div>
-  <div class="area_f" id="cel_9_13">  </div>
-  <div class="area_f" id="cel_9_14">  </div>
-  <div class="area_f" id="cel_9_15">  </div>
-  <div class="area_f" id="cel_9_16">  </div>
-</div>
+  <div class="row">
+    <div class="area_f" id="cel_12_1">  </div>
+    <div class="area_f" id="cel_12_2">  </div>
+    <div class="area_f" id="cel_12_3">  </div>
+    <div class="area_f" id="cel_12_4">  </div>
+    <div class="area_f" id="cel_12_5">  </div>
+    <div class="area_f" id="cel_12_6">  </div>
+    <div class="area_f" id="cel_12_7">  </div>
+    <div class="area_f" id="cel_12_8">  </div>
+    <div class="area_f" id="cel_12_9">  </div>
+    <div class="area_f" id="cel_12_10">  </div>
+    <div class="area_f" id="cel_12_11">  </div>
+    <div class="area_f" id="cel_12_12">  </div>
+    <div class="area_f" id="cel_12_13">  </div>
+    <div class="area_f" id="cel_12_14">  </div>
+    <div class="area_f" id="cel_12_15">  </div>
+    <div class="area_f" id="cel_12_16">  </div>
+  </div>
 
-<div class="row">
-  <div class="area_f" id="cel_10_1">  </div>
-  <div class="area_f" id="cel_10_2">  </div>
-  <div class="area_f" id="cel_10_3">  </div>
-  <div class="area_f" id="cel_10_4">  </div>
-  <div class="area_f" id="cel_10_5">  </div>
-  <div class="area_f" id="cel_10_6">  </div>
-  <div class="area_f" id="cel_10_7">  </div>
-  <div class="area_f" id="cel_10_8">  </div>
-  <div class="area_f" id="cel_10_9">  </div>
-  <div class="area_f" id="cel_10_10">  </div>
-  <div class="area_f" id="cel_10_11">  </div>
-  <div class="area_f" id="cel_10_12">  </div>
-  <div class="area_f" id="cel_10_13">  </div>
-  <div class="area_f" id="cel_10_14">  </div>
-  <div class="area_f" id="cel_10_15">  </div>
-  <div class="area_f" id="cel_10_16">  </div>
-</div>
+  <div class="row">
+    <div class="area_f" id="cel_13_1">  </div>
+    <div class="area_f" id="cel_13_2">  </div>
+    <div class="area_f" id="cel_13_3">  </div>
+    <div class="area_f" id="cel_13_4">  </div>
+    <div class="area_f" id="cel_13_5">  </div>
+    <div class="area_f" id="cel_13_6">  </div>
+    <div class="area_f" id="cel_13_7">  </div>
+    <div class="area_f" id="cel_13_8">  </div>
+    <div class="area_f" id="cel_13_9">  </div>
+    <div class="area_f" id="cel_13_10">  </div>
+    <div class="area_f" id="cel_13_11">  </div>
+    <div class="area_f" id="cel_13_12">  </div>
+    <div class="area_f" id="cel_13_13">  </div>
+    <div class="area_f" id="cel_13_14">  </div>
+    <div class="area_f" id="cel_13_15">  </div>
+    <div class="area_f" id="cel_13_16">  </div>
+  </div>
 
-<div class="row">
-  <div class="area_f" id="cel_11_1">  </div>
-  <div class="area_f" id="cel_11_2">  </div>
-  <div class="area_f" id="cel_11_3">  </div>
-  <div class="area_f" id="cel_11_4">  </div>
-  <div class="area_f" id="cel_11_5">  </div>
-  <div class="area_f" id="cel_11_6">  </div>
-  <div class="area_f" id="cel_11_7">  </div>
-  <div class="area_f" id="cel_11_8">  </div>
-  <div class="area_f" id="cel_11_9">  </div>
-  <div class="area_f" id="cel_11_10">  </div>
-  <div class="area_f" id="cel_11_11">  </div>
-  <div class="area_f" id="cel_11_12">  </div>
-  <div class="area_f" id="cel_11_13">  </div>
-  <div class="area_f" id="cel_11_14">  </div>
-  <div class="area_f" id="cel_11_15">  </div>
-  <div class="area_f" id="cel_11_16">  </div>
-</div>
+  <div class="row">
+    <div class="area_f" id="cel_14_1">  </div>
+    <div class="area_f" id="cel_14_2">  </div>
+    <div class="area_f" id="cel_14_3">  </div>
+    <div class="area_f" id="cel_14_4">  </div>
+    <div class="area_f" id="cel_14_5">  </div>
+    <div class="area_f" id="cel_14_6">  </div>
+    <div class="area_f" id="cel_14_7">  </div>
+    <div class="area_f" id="cel_14_8">  </div>
+    <div class="area_f" id="cel_14_9">  </div>
+    <div class="area_f" id="cel_14_10">  </div>
+    <div class="area_f" id="cel_14_11">  </div>
+    <div class="area_f" id="cel_14_12">  </div>
+    <div class="area_f" id="cel_14_13">  </div>
+    <div class="area_f" id="cel_14_14">  </div>
+    <div class="area_f" id="cel_14_15">  </div>
+    <div class="area_f" id="cel_14_16">  </div>
+  </div>
 
-<div class="row">
-  <div class="area_f" id="cel_12_1">  </div>
-  <div class="area_f" id="cel_12_2">  </div>
-  <div class="area_f" id="cel_12_3">  </div>
-  <div class="area_f" id="cel_12_4">  </div>
-  <div class="area_f" id="cel_12_5">  </div>
-  <div class="area_f" id="cel_12_6">  </div>
-  <div class="area_f" id="cel_12_7">  </div>
-  <div class="area_f" id="cel_12_8">  </div>
-  <div class="area_f" id="cel_12_9">  </div>
-  <div class="area_f" id="cel_12_10">  </div>
-  <div class="area_f" id="cel_12_11">  </div>
-  <div class="area_f" id="cel_12_12">  </div>
-  <div class="area_f" id="cel_12_13">  </div>
-  <div class="area_f" id="cel_12_14">  </div>
-  <div class="area_f" id="cel_12_15">  </div>
-  <div class="area_f" id="cel_12_16">  </div>
-</div>
+  <div class="row">
+    <div class="area_f" id="cel_15_1">  </div>
+    <div class="area_f" id="cel_15_2">  </div>
+    <div class="area_f" id="cel_15_3">  </div>
+    <div class="area_f" id="cel_15_4">  </div>
+    <div class="area_f" id="cel_15_5">  </div>
+    <div class="area_f" id="cel_15_6">  </div>
+    <div class="area_f" id="cel_15_7">  </div>
+    <div class="area_f" id="cel_15_8">  </div>
+    <div class="area_f" id="cel_15_9">  </div>
+    <div class="area_f" id="cel_15_10">  </div>
+    <div class="area_f" id="cel_15_11">  </div>
+    <div class="area_f" id="cel_15_12">  </div>
+    <div class="area_f" id="cel_15_13">  </div>
+    <div class="area_f" id="cel_15_14">  </div>
+    <div class="area_f" id="cel_15_15">  </div>
+    <div class="area_f" id="cel_15_16">  </div>
+  </div>
 
-<div class="row">
-  <div class="area_f" id="cel_13_1">  </div>
-  <div class="area_f" id="cel_13_2">  </div>
-  <div class="area_f" id="cel_13_3">  </div>
-  <div class="area_f" id="cel_13_4">  </div>
-  <div class="area_f" id="cel_13_5">  </div>
-  <div class="area_f" id="cel_13_6">  </div>
-  <div class="area_f" id="cel_13_7">  </div>
-  <div class="area_f" id="cel_13_8">  </div>
-  <div class="area_f" id="cel_13_9">  </div>
-  <div class="area_f" id="cel_13_10">  </div>
-  <div class="area_f" id="cel_13_11">  </div>
-  <div class="area_f" id="cel_13_12">  </div>
-  <div class="area_f" id="cel_13_13">  </div>
-  <div class="area_f" id="cel_13_14">  </div>
-  <div class="area_f" id="cel_13_15">  </div>
-  <div class="area_f" id="cel_13_16">  </div>
-</div>
-
-<div class="row">
-  <div class="area_f" id="cel_14_1">  </div>
-  <div class="area_f" id="cel_14_2">  </div>
-  <div class="area_f" id="cel_14_3">  </div>
-  <div class="area_f" id="cel_14_4">  </div>
-  <div class="area_f" id="cel_14_5">  </div>
-  <div class="area_f" id="cel_14_6">  </div>
-  <div class="area_f" id="cel_14_7">  </div>
-  <div class="area_f" id="cel_14_8">  </div>
-  <div class="area_f" id="cel_14_9">  </div>
-  <div class="area_f" id="cel_14_10">  </div>
-  <div class="area_f" id="cel_14_11">  </div>
-  <div class="area_f" id="cel_14_12">  </div>
-  <div class="area_f" id="cel_14_13">  </div>
-  <div class="area_f" id="cel_14_14">  </div>
-  <div class="area_f" id="cel_14_15">  </div>
-  <div class="area_f" id="cel_14_16">  </div>
-</div>
-
-<div class="row">
-  <div class="area_f" id="cel_15_1">  </div>
-  <div class="area_f" id="cel_15_2">  </div>
-  <div class="area_f" id="cel_15_3">  </div>
-  <div class="area_f" id="cel_15_4">  </div>
-  <div class="area_f" id="cel_15_5">  </div>
-  <div class="area_f" id="cel_15_6">  </div>
-  <div class="area_f" id="cel_15_7">  </div>
-  <div class="area_f" id="cel_15_8">  </div>
-  <div class="area_f" id="cel_15_9">  </div>
-  <div class="area_f" id="cel_15_10">  </div>
-  <div class="area_f" id="cel_15_11">  </div>
-  <div class="area_f" id="cel_15_12">  </div>
-  <div class="area_f" id="cel_15_13">  </div>
-  <div class="area_f" id="cel_15_14">  </div>
-  <div class="area_f" id="cel_15_15">  </div>
-  <div class="area_f" id="cel_15_16">  </div>
-</div>
-
-<div class="row">
-  <div class="area_f" id="cel_16_1">  </div>
-  <div class="area_f" id="cel_16_2">  </div>
-  <div class="area_f" id="cel_16_3">  </div>
-  <div class="area_f" id="cel_16_4">  </div>
-  <div class="area_f" id="cel_16_5">  </div>
-  <div class="area_f" id="cel_16_6">  </div>
-  <div class="area_f" id="cel_16_7">  </div>
-  <div class="area_f" id="cel_16_8">  </div>
-  <div class="area_f" id="cel_16_9">  </div>
-  <div class="area_f" id="cel_16_10">  </div>
-  <div class="area_f" id="cel_16_11">  </div>
-  <div class="area_f" id="cel_16_12">  </div>
-  <div class="area_f" id="cel_16_13">  </div>
-  <div class="area_f" id="cel_16_14">  </div>
-  <div class="area_f" id="cel_16_15">  </div>
-  <div class="area_f" id="cel_16_16">  </div>
-</div>
+  <div class="row">
+    <div class="area_f" id="cel_16_1">  </div>
+    <div class="area_f" id="cel_16_2">  </div>
+    <div class="area_f" id="cel_16_3">  </div>
+    <div class="area_f" id="cel_16_4">  </div>
+    <div class="area_f" id="cel_16_5">  </div>
+    <div class="area_f" id="cel_16_6">  </div>
+    <div class="area_f" id="cel_16_7">  </div>
+    <div class="area_f" id="cel_16_8">  </div>
+    <div class="area_f" id="cel_16_9">  </div>
+    <div class="area_f" id="cel_16_10">  </div>
+    <div class="area_f" id="cel_16_11">  </div>
+    <div class="area_f" id="cel_16_12">  </div>
+    <div class="area_f" id="cel_16_13">  </div>
+    <div class="area_f" id="cel_16_14">  </div>
+    <div class="area_f" id="cel_16_15">  </div>
+    <div class="area_f" id="cel_16_16">  </div>
+  </div>
 
 
 
 
 
 
-</div>
+  </div>
+  </div>
 
 </div>
 
@@ -498,17 +497,487 @@ box-shadow: none;"><div class="regular_btn1"><b class="regular_btn2">Заван�
 <div id="popupMenu" style="display:none;">
 <div class="pt0">
 
-  <div class="pt pt2">
+  <div class="pt pt2 marg_m">
+    <h2 style="margin:10px;">Користувацьке</h2>
 
-    <div onclick="downloadPixelArtAsHTML()" id="loadButton" class="regular_btn pt0" style="">
+<div style="background: rgba(0, 0, 0, 0.08);
+border: 2px solid rgba(0, 0, 0, 0.15);
+border-radius: 12px;
+/* padding: 10px; */
+padding-top: 10px;">
+
+
+<div class="flex" style="justify-content: start; align-items: center;">
+      <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" class="x50x40">
+      <g clip-path="url(#clip0_295_3291)">
+      <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint0_linear_295_3291)"/>
+      <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint1_radial_295_3291)" fill-opacity="0.2"/>
+      <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" stroke="#373737" stroke-width="18"/>
+      <path d="M171 23.0416V99C171 103.418 167.418 107 163 107H87.0416C79.9144 107 76.3451 98.3829 81.3848 93.3431L157.343 17.3848C162.383 12.3451 171 15.9144 171 23.0416Z" stroke="#373737" stroke-width="18"/>
+      <path d="M141.835 272.369V263.562L212.73 227.455V241.545L158.348 267.746L158.788 266.865V269.067L158.348 268.186L212.73 294.386V308.477L141.835 272.369ZM280.116 193.989L243.787 328.953H231.898L268.226 193.989H280.116ZM370.151 272.369L299.257 308.477V294.386L353.639 268.186L353.198 269.067V266.865L353.639 267.746L299.257 241.545V227.455L370.151 263.562V272.369Z" fill="white"/>
+      </g>
+      <defs>
+      <linearGradient id="paint0_linear_295_3291" x1="450" y1="0" x2="256" y2="512" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF6B00" stop-opacity="0"/>
+      <stop offset="0.56" stop-color="#FF6B00" stop-opacity="0.17"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+      <stop offset="1" stop-color="#FF6B00" stop-opacity="0"/>
+      </linearGradient>
+      <radialGradient id="paint1_radial_295_3291" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(195.5 145) rotate(45.2488) scale(244.308 185.139)">
+      <stop stop-color="#F81818"/>
+      <stop offset="1" stop-opacity="0"/>
+      </radialGradient>
+      <clipPath id="clip0_295_3291">
+      <rect width="512" height="512" fill="white"/>
+      </clipPath>
+      </defs>
+      </svg>
+
+
+
+
+  <h2 style="margin:0px;">index.html</h2>
+
+<h3 class="to_man_html" onclick="to_man_html()">
+  >
+</h3>
+
+</div><br>
+<div id="html_set" style="height: 0px;">
+
+    <!-- Включение CSS (цветовая схема) -->
+    <label><input type="checkbox" id="includeCss" checked> Увімкнути CSS (колірна схема)</label>
+    <div id="cssOptions0" style="margin-left: 20px; position:relative;">
+        <label><input type="radio" name="cssOption" value="inline" checked>Через тег &lt;style&gt;</label><br>
+        <label><input type="radio" name="cssOption" value="link">Через тег &lt;link&gt;</label><br>
+        <div id="cssOptions"></div>
+    </div><br>
+
+    <!-- Включение CSS (размеры) -->
+    <!-- Так как вы использовали одинаковое имя для радио-кнопок в разных группах, нужно изменить имя для этой группы, чтобы они работали независимо -->
+    <label><input type="checkbox" id="includeCssSizes" checked> Увімкнути CSS (розміри)</label>
+    <div id="cssSizesOptions0" style="margin-left: 20px; position:relative;">
+        <label><input type="radio" name="cssSizesOption" value="inline" checked>Через тег &lt;style&gt;</label><br>
+        <label><input type="radio" name="cssSizesOption" value="link">Через тег &lt;link&gt;</label><br>
+        <div id="cssSizesOptions"></div>
+    </div><br>
+
+    <!-- Включение функционала (JS, CSS) -->
+    <label><input type="checkbox" id="includeFunctionality" checked>Увімкнути функціонал (JS, CSS)</label>
+    <div id="functionalityOptions0" style="margin-left: 20px; position:relative;">
+        <label><input type="radio" name="jsOption" value="inline" checked>Вбудований JS</label><br>
+        <label><input type="radio" name="jsOption" value="link">JS через посилання</label><br>
+        <!-- Ошибка в исходном сообщении: Имя группы радио кнопок дублировалось. Должно быть уникальным для каждой группы. -->
+        <label><input type="radio" name="functionalityCssOption" value="inline" checked>Через тег &lt;style&gt;</label><br>
+        <label><input type="radio" name="functionalityCssOption" value="link">Через тег &lt;link&gt;</label><br>
+        <div id="functionalityOptions"></div>
+    </div>
+    <br>
+
+    <!-- Включение комментариев к коду -->
+    <!-- <label><input type="checkbox" id="includeComments" checked> Включить комментарии к коду</label><br> -->
+
+  </div>
+
+
+
+    <div onclick="downloadPixelArtAsHTML()" id="loadButton" class="regular_btn pt0" style="width: auto; border-radius: 0px 0px 10px 10px;">
         <div class="regular_btn1">
-            <b class="regular_btn2" >HTML</b>
+            <b class="regular_btn2" >Завантажити</b>
         </div>
     </div>
+  </div><br>
 
-    <hr>
+
+  <div style="background: rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  /* padding: 10px; */
+  padding-top: 10px;">
 
 
+  <div class="flex" style="justify-content: start; align-items: center;">
+      <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" class="x50x40">
+      <g clip-path="url(#clip0_274_3284)">
+      <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint0_linear_274_3284)"/>
+      <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint1_radial_274_3284)" fill-opacity="0.2"/>
+      <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint2_radial_274_3284)" fill-opacity="0.2"/>
+      <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint3_radial_274_3284)" fill-opacity="0.2"/>
+      <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint4_radial_274_3284)" fill-opacity="0.2"/>
+      <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint5_radial_274_3284)" fill-opacity="0.2"/>
+      <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" stroke="#373737" stroke-width="18"/>
+      <path d="M171 23.0416V99C171 103.418 167.418 107 163 107H87.0416C79.9144 107 76.3451 98.3829 81.3848 93.3431L157.343 17.3848C162.383 12.3451 171 15.9144 171 23.0416Z" stroke="#373737" stroke-width="18"/>
+      <path d="M130.741 312.881C128.026 312.881 125.696 311.908 123.751 309.963C121.806 308.019 120.834 305.688 120.834 302.973C120.834 300.258 121.806 297.927 123.751 295.983C125.696 294.038 128.026 293.065 130.741 293.065C133.457 293.065 135.787 294.038 137.732 295.983C139.677 297.927 140.649 300.258 140.649 302.973C140.649 304.771 140.19 306.422 139.273 307.927C138.392 309.431 137.2 310.642 135.695 311.56C134.227 312.44 132.576 312.881 130.741 312.881ZM198.306 313.761C190.38 313.761 183.555 311.89 177.83 308.147C172.106 304.404 167.702 299.248 164.62 292.68C161.538 286.112 159.996 278.607 159.996 270.168C159.996 261.581 161.574 254.003 164.73 247.435C167.923 240.83 172.363 235.674 178.05 231.968C183.775 228.225 190.453 226.354 198.086 226.354C204.031 226.354 209.388 227.455 214.158 229.656C218.929 231.858 222.837 234.94 225.882 238.903C228.928 242.866 230.818 247.49 231.552 252.774H218.562C217.571 248.921 215.369 245.509 211.957 242.536C208.581 239.527 204.031 238.023 198.306 238.023C193.242 238.023 188.802 239.344 184.986 241.986C181.206 244.591 178.252 248.279 176.124 253.049C174.032 257.783 172.987 263.342 172.987 269.727C172.987 276.259 174.014 281.947 176.069 286.79C178.161 291.634 181.096 295.395 184.876 298.074C188.692 300.753 193.169 302.092 198.306 302.092C201.682 302.092 204.746 301.505 207.498 300.331C210.25 299.157 212.58 297.469 214.489 295.267C216.397 293.065 217.754 290.423 218.562 287.341H231.552C230.818 292.331 229.002 296.827 226.103 300.826C223.24 304.789 219.442 307.945 214.709 310.294C210.012 312.605 204.544 313.761 198.306 313.761ZM310.428 246.389L298.759 249.692C298.025 247.747 296.942 245.857 295.511 244.022C294.117 242.151 292.209 240.61 289.787 239.399C287.365 238.188 284.264 237.582 280.485 237.582C275.311 237.582 270.999 238.775 267.55 241.16C264.137 243.509 262.431 246.499 262.431 250.132C262.431 253.361 263.605 255.912 265.953 257.783C268.302 259.654 271.971 261.214 276.962 262.462L289.512 265.544C297.071 267.379 302.704 270.186 306.41 273.966C310.116 277.708 311.969 282.534 311.969 288.442C311.969 293.286 310.575 297.616 307.786 301.432C305.034 305.248 301.181 308.257 296.227 310.459C291.273 312.661 285.512 313.761 278.944 313.761C270.32 313.761 263.183 311.89 257.532 308.147C251.881 304.404 248.303 298.937 246.799 291.744L259.128 288.662C260.302 293.212 262.522 296.625 265.788 298.9C269.091 301.175 273.403 302.312 278.723 302.312C284.778 302.312 289.585 301.028 293.145 298.46C296.741 295.854 298.539 292.735 298.539 289.102C298.539 286.167 297.511 283.708 295.456 281.727C293.401 279.708 290.246 278.204 285.989 277.213L271.898 273.911C264.155 272.076 258.468 269.232 254.835 265.379C251.239 261.489 249.441 256.627 249.441 250.793C249.441 246.022 250.78 241.802 253.459 238.133C256.174 234.463 259.862 231.583 264.522 229.491C269.219 227.4 274.54 226.354 280.485 226.354C288.851 226.354 295.42 228.188 300.19 231.858C304.997 235.527 308.41 240.371 310.428 246.389ZM391.409 246.389L379.74 249.692C379.006 247.747 377.924 245.857 376.493 244.022C375.098 242.151 373.19 240.61 370.768 239.399C368.347 238.188 365.246 237.582 361.466 237.582C356.292 237.582 351.98 238.775 348.531 241.16C345.119 243.509 343.412 246.499 343.412 250.132C343.412 253.361 344.586 255.912 346.935 257.783C349.283 259.654 352.953 261.214 357.943 262.462L370.493 265.544C378.052 267.379 383.685 270.186 387.391 273.966C391.097 277.708 392.951 282.534 392.951 288.442C392.951 293.286 391.556 297.616 388.767 301.432C386.015 305.248 382.162 308.257 377.208 310.459C372.255 312.661 366.493 313.761 359.925 313.761C351.302 313.761 344.164 311.89 338.513 308.147C332.862 304.404 329.285 298.937 327.78 291.744L340.11 288.662C341.284 293.212 343.504 296.625 346.77 298.9C350.072 301.175 354.384 302.312 359.705 302.312C365.76 302.312 370.567 301.028 374.126 298.46C377.722 295.854 379.52 292.735 379.52 289.102C379.52 286.167 378.493 283.708 376.438 281.727C374.383 279.708 371.227 278.204 366.97 277.213L352.88 273.911C345.137 272.076 339.449 269.232 335.816 265.379C332.22 261.489 330.422 256.627 330.422 250.793C330.422 246.022 331.762 241.802 334.44 238.133C337.156 234.463 340.844 231.583 345.504 229.491C350.201 227.4 355.522 226.354 361.466 226.354C369.833 226.354 376.401 228.188 381.171 231.858C385.978 235.527 389.391 240.371 391.409 246.389Z" fill="white"/>
+      </g>
+      <defs>
+      <linearGradient id="paint0_linear_274_3284" x1="450" y1="0" x2="256" y2="512" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0"/>
+      <stop offset="0.56" stop-color="white" stop-opacity="0.17"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+      </linearGradient>
+      <radialGradient id="paint1_radial_274_3284" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(195.5 145) rotate(45.2488) scale(244.308 185.139)">
+      <stop stop-color="#F81818"/>
+      <stop offset="1" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="paint2_radial_274_3284" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(356.5 94.5) rotate(87.1886) scale(224.27 169.955)">
+      <stop stop-color="#189AF8"/>
+      <stop offset="1" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="paint3_radial_274_3284" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(238.5 293) rotate(6.91793) scale(257.374 195.041)">
+      <stop stop-color="#18F864"/>
+      <stop offset="1" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="paint4_radial_274_3284" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(201.5 443) rotate(-22.1383) scale(315.78 239.302)">
+      <stop stop-color="#96F818"/>
+      <stop offset="1" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="paint5_radial_274_3284" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(503 481) rotate(-138.131) scale(433.75 328.701)">
+      <stop stop-color="#BE18F8"/>
+      <stop offset="1" stop-opacity="0"/>
+      </radialGradient>
+      <clipPath id="clip0_274_3284">
+      <rect width="512" height="512" fill="white"/>
+      </clipPath>
+      </defs>
+      </svg>
+
+
+
+    <h2 style="margin:0px;">colors.css</h2><h4 style="margin: 0px;
+  opacity: 0.5;
+  scale: 0.8;">(Soon)</h4>
+
+  <h3 class="to_man_css" onclick="to_man_css()">
+    >
+  </h3>
+
+  </div><br>
+  <div id="css_set" style="height: 0px;">
+
+      <!-- Включение CSS (цветовая схема) -->
+Колірна схема налаштована користувачем.
+<br>
+      <br>
+
+      <!-- Включение комментариев к коду -->
+      <!-- <label><input type="checkbox" id="includeComments" checked> Включить комментарии к коду</label><br> -->
+
+    </div>
+
+
+
+      <div onclick="downloadCssColorFile()" id="loadButton" class="regular_btn pt0" style="width: auto; border-radius: 0px 0px 10px 10px;">
+          <div class="regular_btn1">
+              <b class="regular_btn2" >Завантажити</b>
+          </div>
+      </div>
+    </div>
+
+    <br><hr><br>
+
+    <div style="background: rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    /* padding: 10px; */
+    padding-top: 10px;">
+
+
+    <div class="flex" style="justify-content: start; align-items: center;">
+          <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" class="x50x40">
+          <g clip-path="url(#clip0_299_3299)">
+          <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint0_linear_299_3299)"/>
+          <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint1_radial_299_3299)" fill-opacity="0.2"/>
+          <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" stroke="#373737" stroke-width="18"/>
+          <path d="M171 23.0416V99C171 103.418 167.418 107 163 107H87.0416C79.9144 107 76.3451 98.3829 81.3848 93.3431L157.343 17.3848C162.383 12.3451 171 15.9144 171 23.0416Z" stroke="#373737" stroke-width="18"/>
+          <path d="M209.561 315.86C202.947 315.86 197.264 314.62 192.511 312.14C187.757 309.557 183.831 305.888 180.731 301.135C177.631 296.382 175.357 290.543 173.911 283.62C172.464 276.697 171.741 268.792 171.741 259.905C171.741 251.122 172.464 243.268 173.911 236.345C175.357 229.318 177.631 223.428 180.731 218.675C183.831 213.922 187.757 210.305 192.511 207.825C197.264 205.242 202.947 203.95 209.561 203.95C216.174 203.95 221.857 205.242 226.611 207.825C231.364 210.305 235.291 213.922 238.391 218.675C241.491 223.428 243.764 229.318 245.211 236.345C246.657 243.268 247.381 251.122 247.381 259.905C247.381 268.792 246.657 276.697 245.211 283.62C243.764 290.543 241.491 296.382 238.391 301.135C235.291 305.888 231.364 309.557 226.611 312.14C221.857 314.62 216.174 315.86 209.561 315.86ZM209.561 304.545C213.901 304.545 217.621 303.718 220.721 302.065C223.821 300.308 226.301 297.88 228.161 294.78C230.124 291.68 231.571 287.96 232.501 283.62C233.431 279.177 233.896 274.217 233.896 268.74V251.07C233.896 245.697 233.431 240.788 232.501 236.345C231.571 231.902 230.124 228.13 228.161 225.03C226.301 221.93 223.821 219.553 220.721 217.9C217.621 216.143 213.901 215.265 209.561 215.265C205.221 215.265 201.501 216.143 198.401 217.9C195.301 219.553 192.769 221.93 190.806 225.03C188.946 228.13 187.551 231.902 186.621 236.345C185.691 240.788 185.226 245.697 185.226 251.07V268.74C185.226 274.217 185.691 279.177 186.621 283.62C187.551 287.96 188.946 291.68 190.806 294.78C192.769 297.88 195.301 300.308 198.401 302.065C201.501 303.718 205.221 304.545 209.561 304.545ZM209.561 269.05C205.944 269.05 203.412 268.327 201.966 266.88C200.622 265.433 199.951 263.677 199.951 261.61V258.2C199.951 256.133 200.622 254.377 201.966 252.93C203.412 251.483 205.944 250.76 209.561 250.76C213.177 250.76 215.657 251.483 217.001 252.93C218.447 254.377 219.171 256.133 219.171 258.2V261.61C219.171 263.677 218.447 265.433 217.001 266.88C215.657 268.327 213.177 269.05 209.561 269.05ZM269.175 314V302.685H300.175V215.42H299.09L271.81 240.84L264.215 232.625L292.89 205.81H313.195V302.685H341.715V314H269.175Z" fill="white"/>
+          </g>
+          <defs>
+          <linearGradient id="paint0_linear_299_3299" x1="450" y1="0" x2="256" y2="512" gradientUnits="userSpaceOnUse">
+          <stop stop-color="white" stop-opacity="0"/>
+          <stop offset="0.56" stop-color="white" stop-opacity="0.17"/>
+          <stop offset="1" stop-color="white" stop-opacity="0"/>
+          <stop offset="1" stop-color="white" stop-opacity="0"/>
+          </linearGradient>
+          <radialGradient id="paint1_radial_299_3299" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(195.5 145) rotate(45.2488) scale(244.308 185.139)">
+          <stop stop-color="white"/>
+          <stop offset="1" stop-opacity="0"/>
+          </radialGradient>
+          <clipPath id="clip0_299_3299">
+          <rect width="512" height="512" fill="white"/>
+          </clipPath>
+          </defs>
+          </svg>
+
+
+
+
+      <h2 style="margin:0px;">Binary</h2>
+
+    <h3 class="to_man_bin" onclick="to_man_bin()">
+      >
+    </h3>
+
+    </div><br>
+    <div id="bin_set" style="height: 0px;">
+
+        <!-- Включение CSS (цветовая схема) -->
+Стіни та доріжка у бінарному форматі.<br>0 - доріжка, та 1 - стіна.<br><span style="opacity:0.5; color:red;"><b>Мета та місце спавна не враховуються.</b></span>
+  <br>
+        <br>
+
+        <!-- Включение комментариев к коду -->
+        <!-- <label><input type="checkbox" id="includeComments" checked> Включить комментарии к коду</label><br> -->
+
+      </div>
+
+
+
+        <div onclick="downloadPixelArtAsHTML()" id="loadButton" class="regular_btn pt0" style="width: auto; border-radius: 0px 0px 10px 10px;">
+            <div class="regular_btn1">
+                <b class="regular_btn2" >Завантажити</b>
+            </div>
+        </div>
+      </div>
+      <br><hr><br>
+
+
+
+
+
+
+
+
+
+    <div class="del_all_account_btn" onclick="$('#popupMenu').fadeOut();"><div class="del_all_account_btn1"><b class="del_all_account_btn2">Закрити</b></div></div>
+<!-- <button onclick="$('#popupMenu').fadeOut();">Закрити</button> -->
+  </div>
+
+
+
+
+
+  <div class="pt pt2 marg_m1">
+    <h2 style="margin:10px;">Стандартне</h2>
+
+    <div style="background: rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    /* padding: 10px; */
+    padding-top: 10px;">
+
+
+    <div class="flex" style="justify-content: start; align-items: center;">
+          <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" class="x50x40">
+          <g clip-path="url(#clip0_299_3303)">
+          <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint0_linear_299_3303)"/>
+          <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint1_radial_299_3303)" fill-opacity="0.2"/>
+          <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" stroke="#373737" stroke-width="18"/>
+          <path d="M171 23.0416V99C171 103.418 167.418 107 163 107H87.0416C79.9144 107 76.3451 98.3829 81.3848 93.3431L157.343 17.3848C162.383 12.3451 171 15.9144 171 23.0416Z" stroke="#373737" stroke-width="18"/>
+          <path d="M131.741 312.881C129.026 312.881 126.696 311.908 124.751 309.963C122.806 308.019 121.834 305.688 121.834 302.973C121.834 300.258 122.806 297.927 124.751 295.983C126.696 294.038 129.026 293.065 131.741 293.065C134.457 293.065 136.787 294.038 138.732 295.983C140.677 297.927 141.649 300.258 141.649 302.973C141.649 304.771 141.19 306.422 140.273 307.927C139.392 309.431 138.2 310.642 136.695 311.56C135.227 312.44 133.576 312.881 131.741 312.881ZM199.306 313.761C191.38 313.761 184.555 311.89 178.83 308.147C173.106 304.404 168.702 299.248 165.62 292.68C162.538 286.112 160.996 278.607 160.996 270.168C160.996 261.581 162.574 254.003 165.73 247.435C168.923 240.83 173.363 235.674 179.05 231.968C184.775 228.225 191.453 226.354 199.086 226.354C205.031 226.354 210.388 227.455 215.158 229.656C219.929 231.858 223.837 234.94 226.882 238.903C229.928 242.866 231.818 247.49 232.552 252.774H219.562C218.571 248.921 216.369 245.509 212.957 242.536C209.581 239.527 205.031 238.023 199.306 238.023C194.242 238.023 189.802 239.344 185.986 241.986C182.206 244.591 179.252 248.279 177.124 253.049C175.032 257.783 173.987 263.342 173.987 269.727C173.987 276.259 175.014 281.947 177.069 286.79C179.161 291.634 182.096 295.395 185.876 298.074C189.692 300.753 194.169 302.092 199.306 302.092C202.682 302.092 205.746 301.505 208.498 300.331C211.25 299.157 213.58 297.469 215.489 295.267C217.397 293.065 218.754 290.423 219.562 287.341H232.552C231.818 292.331 230.002 296.827 227.103 300.826C224.24 304.789 220.442 307.945 215.709 310.294C211.012 312.605 205.544 313.761 199.306 313.761ZM311.428 246.389L299.759 249.692C299.025 247.747 297.942 245.857 296.511 244.022C295.117 242.151 293.209 240.61 290.787 239.399C288.365 238.188 285.264 237.582 281.485 237.582C276.311 237.582 271.999 238.775 268.55 241.16C265.137 243.509 263.431 246.499 263.431 250.132C263.431 253.361 264.605 255.912 266.953 257.783C269.302 259.654 272.971 261.214 277.962 262.462L290.512 265.544C298.071 267.379 303.704 270.186 307.41 273.966C311.116 277.708 312.969 282.534 312.969 288.442C312.969 293.286 311.575 297.616 308.786 301.432C306.034 305.248 302.181 308.257 297.227 310.459C292.273 312.661 286.512 313.761 279.944 313.761C271.32 313.761 264.183 311.89 258.532 308.147C252.881 304.404 249.303 298.937 247.799 291.744L260.128 288.662C261.302 293.212 263.522 296.625 266.788 298.9C270.091 301.175 274.403 302.312 279.723 302.312C285.778 302.312 290.585 301.028 294.145 298.46C297.741 295.854 299.539 292.735 299.539 289.102C299.539 286.167 298.511 283.708 296.456 281.727C294.401 279.708 291.246 278.204 286.989 277.213L272.898 273.911C265.155 272.076 259.468 269.232 255.835 265.379C252.239 261.489 250.441 256.627 250.441 250.793C250.441 246.022 251.78 241.802 254.459 238.133C257.174 234.463 260.862 231.583 265.522 229.491C270.219 227.4 275.54 226.354 281.485 226.354C289.851 226.354 296.42 228.188 301.19 231.858C305.997 235.527 309.41 240.371 311.428 246.389ZM392.409 246.389L380.74 249.692C380.006 247.747 378.924 245.857 377.493 244.022C376.098 242.151 374.19 240.61 371.768 239.399C369.347 238.188 366.246 237.582 362.466 237.582C357.292 237.582 352.98 238.775 349.531 241.16C346.119 243.509 344.412 246.499 344.412 250.132C344.412 253.361 345.586 255.912 347.935 257.783C350.283 259.654 353.953 261.214 358.943 262.462L371.493 265.544C379.052 267.379 384.685 270.186 388.391 273.966C392.097 277.708 393.951 282.534 393.951 288.442C393.951 293.286 392.556 297.616 389.767 301.432C387.015 305.248 383.162 308.257 378.208 310.459C373.255 312.661 367.493 313.761 360.925 313.761C352.302 313.761 345.164 311.89 339.513 308.147C333.862 304.404 330.285 298.937 328.78 291.744L341.11 288.662C342.284 293.212 344.504 296.625 347.77 298.9C351.072 301.175 355.384 302.312 360.705 302.312C366.76 302.312 371.567 301.028 375.126 298.46C378.722 295.854 380.52 292.735 380.52 289.102C380.52 286.167 379.493 283.708 377.438 281.727C375.383 279.708 372.227 278.204 367.97 277.213L353.88 273.911C346.137 272.076 340.449 269.232 336.816 265.379C333.22 261.489 331.422 256.627 331.422 250.793C331.422 246.022 332.762 241.802 335.44 238.133C338.156 234.463 341.844 231.583 346.504 229.491C351.201 227.4 356.522 226.354 362.466 226.354C370.833 226.354 377.401 228.188 382.171 231.858C386.978 235.527 390.391 240.371 392.409 246.389Z" fill="white"/>
+          </g>
+          <defs>
+          <linearGradient id="paint0_linear_299_3303" x1="450" y1="0" x2="256" y2="512" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#00D1FF" stop-opacity="0"/>
+          <stop offset="0.56" stop-color="#00D1FF" stop-opacity="0.17"/>
+          <stop offset="1" stop-color="white" stop-opacity="0"/>
+          <stop offset="1" stop-color="#00D1FF" stop-opacity="0"/>
+          </linearGradient>
+          <radialGradient id="paint1_radial_299_3303" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(356.5 94.5) rotate(87.1886) scale(224.27 169.955)">
+          <stop stop-color="#189AF8"/>
+          <stop offset="1" stop-opacity="0"/>
+          </radialGradient>
+          <clipPath id="clip0_299_3303">
+          <rect width="512" height="512" fill="white"/>
+          </clipPath>
+          </defs>
+          </svg>
+
+
+
+
+      <h2 style="margin:0px;">size.css</h2><h4 style="margin: 0px;
+opacity: 0.5;
+scale: 0.8;">(Default)</h4>
+
+    <h3 class="to_man_css1" onclick="to_man_css1()">
+      >
+    </h3>
+
+    </div><br>
+    <div id="css_set1" style="height: 0px;">
+
+        <!-- Включение CSS (цветовая схема) -->
+Стандартні CSS розміри об'єктів лабіринту.
+  <br>
+        <br>
+
+        <!-- Включение комментариев к коду -->
+        <!-- <label><input type="checkbox" id="includeComments" checked> Включить комментарии к коду</label><br> -->
+
+      </div>
+
+
+
+        <div onclick="downloadCssSizeFile()" id="loadButton" class="regular_btn pt0" style="width: auto; border-radius: 0px 0px 10px 10px;">
+            <div class="regular_btn1">
+                <b class="regular_btn2" >Завантажити</b>
+            </div>
+        </div>
+      </div>
+
+
+<br>
+
+
+<div style="background: rgba(0, 0, 0, 0.08);
+border: 2px solid rgba(0, 0, 0, 0.15);
+border-radius: 12px;
+/* padding: 10px; */
+padding-top: 10px;">
+
+
+<div class="flex" style="justify-content: start; align-items: center;">
+      <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" class="x50x40">
+      <g clip-path="url(#clip0_299_3307)">
+      <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint0_linear_299_3307)"/>
+      <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint1_radial_299_3307)" fill-opacity="0.2"/>
+      <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" stroke="#373737" stroke-width="18"/>
+      <path d="M171 23.0416V99C171 103.418 167.418 107 163 107H87.0416C79.9144 107 76.3451 98.3829 81.3848 93.3431L157.343 17.3848C162.383 12.3451 171 15.9144 171 23.0416Z" stroke="#373737" stroke-width="18"/>
+      <path d="M131.741 312.881C129.026 312.881 126.696 311.908 124.751 309.963C122.806 308.019 121.834 305.688 121.834 302.973C121.834 300.258 122.806 297.927 124.751 295.983C126.696 294.038 129.026 293.065 131.741 293.065C134.457 293.065 136.787 294.038 138.732 295.983C140.677 297.927 141.649 300.258 141.649 302.973C141.649 304.771 141.19 306.422 140.273 307.927C139.392 309.431 138.2 310.642 136.695 311.56C135.227 312.44 133.576 312.881 131.741 312.881ZM199.306 313.761C191.38 313.761 184.555 311.89 178.83 308.147C173.106 304.404 168.702 299.248 165.62 292.68C162.538 286.112 160.996 278.607 160.996 270.168C160.996 261.581 162.574 254.003 165.73 247.435C168.923 240.83 173.363 235.674 179.05 231.968C184.775 228.225 191.453 226.354 199.086 226.354C205.031 226.354 210.388 227.455 215.158 229.656C219.929 231.858 223.837 234.94 226.882 238.903C229.928 242.866 231.818 247.49 232.552 252.774H219.562C218.571 248.921 216.369 245.509 212.957 242.536C209.581 239.527 205.031 238.023 199.306 238.023C194.242 238.023 189.802 239.344 185.986 241.986C182.206 244.591 179.252 248.279 177.124 253.049C175.032 257.783 173.987 263.342 173.987 269.727C173.987 276.259 175.014 281.947 177.069 286.79C179.161 291.634 182.096 295.395 185.876 298.074C189.692 300.753 194.169 302.092 199.306 302.092C202.682 302.092 205.746 301.505 208.498 300.331C211.25 299.157 213.58 297.469 215.489 295.267C217.397 293.065 218.754 290.423 219.562 287.341H232.552C231.818 292.331 230.002 296.827 227.103 300.826C224.24 304.789 220.442 307.945 215.709 310.294C211.012 312.605 205.544 313.761 199.306 313.761ZM311.428 246.389L299.759 249.692C299.025 247.747 297.942 245.857 296.511 244.022C295.117 242.151 293.209 240.61 290.787 239.399C288.365 238.188 285.264 237.582 281.485 237.582C276.311 237.582 271.999 238.775 268.55 241.16C265.137 243.509 263.431 246.499 263.431 250.132C263.431 253.361 264.605 255.912 266.953 257.783C269.302 259.654 272.971 261.214 277.962 262.462L290.512 265.544C298.071 267.379 303.704 270.186 307.41 273.966C311.116 277.708 312.969 282.534 312.969 288.442C312.969 293.286 311.575 297.616 308.786 301.432C306.034 305.248 302.181 308.257 297.227 310.459C292.273 312.661 286.512 313.761 279.944 313.761C271.32 313.761 264.183 311.89 258.532 308.147C252.881 304.404 249.303 298.937 247.799 291.744L260.128 288.662C261.302 293.212 263.522 296.625 266.788 298.9C270.091 301.175 274.403 302.312 279.723 302.312C285.778 302.312 290.585 301.028 294.145 298.46C297.741 295.854 299.539 292.735 299.539 289.102C299.539 286.167 298.511 283.708 296.456 281.727C294.401 279.708 291.246 278.204 286.989 277.213L272.898 273.911C265.155 272.076 259.468 269.232 255.835 265.379C252.239 261.489 250.441 256.627 250.441 250.793C250.441 246.022 251.78 241.802 254.459 238.133C257.174 234.463 260.862 231.583 265.522 229.491C270.219 227.4 275.54 226.354 281.485 226.354C289.851 226.354 296.42 228.188 301.19 231.858C305.997 235.527 309.41 240.371 311.428 246.389ZM392.409 246.389L380.74 249.692C380.006 247.747 378.924 245.857 377.493 244.022C376.098 242.151 374.19 240.61 371.768 239.399C369.347 238.188 366.246 237.582 362.466 237.582C357.292 237.582 352.98 238.775 349.531 241.16C346.119 243.509 344.412 246.499 344.412 250.132C344.412 253.361 345.586 255.912 347.935 257.783C350.283 259.654 353.953 261.214 358.943 262.462L371.493 265.544C379.052 267.379 384.685 270.186 388.391 273.966C392.097 277.708 393.951 282.534 393.951 288.442C393.951 293.286 392.556 297.616 389.767 301.432C387.015 305.248 383.162 308.257 378.208 310.459C373.255 312.661 367.493 313.761 360.925 313.761C352.302 313.761 345.164 311.89 339.513 308.147C333.862 304.404 330.285 298.937 328.78 291.744L341.11 288.662C342.284 293.212 344.504 296.625 347.77 298.9C351.072 301.175 355.384 302.312 360.705 302.312C366.76 302.312 371.567 301.028 375.126 298.46C378.722 295.854 380.52 292.735 380.52 289.102C380.52 286.167 379.493 283.708 377.438 281.727C375.383 279.708 372.227 278.204 367.97 277.213L353.88 273.911C346.137 272.076 340.449 269.232 336.816 265.379C333.22 261.489 331.422 256.627 331.422 250.793C331.422 246.022 332.762 241.802 335.44 238.133C338.156 234.463 341.844 231.583 346.504 229.491C351.201 227.4 356.522 226.354 362.466 226.354C370.833 226.354 377.401 228.188 382.171 231.858C386.978 235.527 390.391 240.371 392.409 246.389Z" fill="white"/>
+      </g>
+      <defs>
+      <linearGradient id="paint0_linear_299_3307" x1="450" y1="0" x2="256" y2="512" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00D1FF" stop-opacity="0"/>
+      <stop offset="0.56" stop-color="#00D1FF" stop-opacity="0.17"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+      <stop offset="1" stop-color="#00D1FF" stop-opacity="0"/>
+      </linearGradient>
+      <radialGradient id="paint1_radial_299_3307" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(195.5 145) rotate(45.2488) scale(244.308 185.139)">
+      <stop stop-color="#18B5F8"/>
+      <stop offset="1" stop-opacity="0"/>
+      </radialGradient>
+      <clipPath id="clip0_299_3307">
+      <rect width="512" height="512" fill="white"/>
+      </clipPath>
+      </defs>
+      </svg>
+
+
+
+
+  <h2 style="margin:0px;">controls.css</h2><h4 style="margin: 0px;
+opacity: 0.5;
+scale: 0.8;">(Default)</h4>
+
+<h3 class="to_man_css2" onclick="to_man_css2()">
+  >
+</h3>
+
+</div><br>
+<div id="css_set2" style="height: 0px;">
+
+    <!-- Включение CSS (цветовая схема) -->
+Стилі для кнопок контролера.
+<br>
+    <br>
+
+    <!-- Включение комментариев к коду -->
+    <!-- <label><input type="checkbox" id="includeComments" checked> Включить комментарии к коду</label><br> -->
+
+  </div>
+
+
+
+    <div onclick="downloadCssControlFile()" id="loadButton" class="regular_btn pt0" style="width: auto; border-radius: 0px 0px 10px 10px;">
+        <div class="regular_btn1">
+            <b class="regular_btn2" >Завантажити</b>
+        </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div style="background: rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  /* padding: 10px; */
+  padding-top: 10px;">
+
+
+  <div class="flex" style="justify-content: start; align-items: center;">
+        <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" class="x50x40">
+        <g clip-path="url(#clip0_297_3295)">
+        <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint0_linear_297_3295)"/>
+        <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" fill="url(#paint1_radial_297_3295)" fill-opacity="0.2"/>
+        <path d="M256 9H397C421.301 9 441 28.6995 441 53V459C441 483.301 421.301 503 397 503H115C90.6995 503 71 483.301 71 459V256V128V118.953C71 107.284 75.6357 96.0922 83.8873 87.8406L149.841 21.8873C158.092 13.6357 169.284 9 180.953 9H256Z" stroke="#373737" stroke-width="18"/>
+        <path d="M171 23.0416V99C171 103.418 167.418 107 163 107H87.0416C79.9144 107 76.3451 98.3829 81.3848 93.3431L157.343 17.3848C162.383 12.3451 171 15.9144 171 23.0416Z" stroke="#373737" stroke-width="18"/>
+        <path d="M197.632 312.881C194.916 312.881 192.586 311.908 190.642 309.963C188.697 308.019 187.724 305.688 187.724 302.973C187.724 300.258 188.697 297.927 190.642 295.983C192.586 294.038 194.916 293.065 197.632 293.065C200.347 293.065 202.677 294.038 204.622 295.983C206.567 297.927 207.54 300.258 207.54 302.973C207.54 304.771 207.081 306.422 206.164 307.927C205.283 309.431 204.09 310.642 202.586 311.56C201.118 312.44 199.467 312.881 197.632 312.881ZM230.85 227.455H243.84V318.165C243.84 323.375 242.941 327.889 241.143 331.705C239.382 335.522 236.703 338.475 233.107 340.567C229.547 342.659 225.052 343.705 219.621 343.705C219.181 343.705 218.741 343.705 218.3 343.705C217.86 343.705 217.42 343.705 216.979 343.705V331.595C217.42 331.595 217.823 331.595 218.19 331.595C218.557 331.595 218.961 331.595 219.401 331.595C223.364 331.595 226.263 330.421 228.098 328.072C229.933 325.761 230.85 322.458 230.85 318.165V227.455ZM237.235 213.364C234.703 213.364 232.52 212.501 230.685 210.777C228.887 209.052 227.988 206.979 227.988 204.557C227.988 202.135 228.887 200.062 230.685 198.337C232.52 196.612 234.703 195.75 237.235 195.75C239.767 195.75 241.932 196.612 243.73 198.337C245.565 200.062 246.482 202.135 246.482 204.557C246.482 206.979 245.565 209.052 243.73 210.777C241.932 212.501 239.767 213.364 237.235 213.364ZM327.519 246.389L315.85 249.692C315.116 247.747 314.033 245.857 312.602 244.022C311.208 242.151 309.3 240.61 306.878 239.399C304.456 238.188 301.355 237.582 297.576 237.582C292.402 237.582 288.09 238.775 284.641 241.16C281.228 243.509 279.522 246.499 279.522 250.132C279.522 253.361 280.696 255.912 283.044 257.783C285.393 259.654 289.062 261.214 294.053 262.462L306.603 265.544C314.162 267.379 319.794 270.186 323.501 273.966C327.207 277.708 329.06 282.534 329.06 288.442C329.06 293.286 327.666 297.616 324.877 301.432C322.125 305.248 318.272 308.257 313.318 310.459C308.364 312.661 302.603 313.761 296.034 313.761C287.411 313.761 280.274 311.89 274.623 308.147C268.972 304.404 265.394 298.937 263.889 291.744L276.219 288.662C277.393 293.212 279.613 296.625 282.879 298.9C286.182 301.175 290.493 302.312 295.814 302.312C301.869 302.312 306.676 301.028 310.235 298.46C313.831 295.854 315.63 292.735 315.63 289.102C315.63 286.167 314.602 283.708 312.547 281.727C310.492 279.708 307.336 278.204 303.08 277.213L288.989 273.911C281.246 272.076 275.559 269.232 271.926 265.379C268.33 261.489 266.532 256.627 266.532 250.793C266.532 246.022 267.871 241.802 270.55 238.133C273.265 234.463 276.953 231.583 281.613 229.491C286.31 227.4 291.631 226.354 297.576 226.354C305.942 226.354 312.51 228.188 317.281 231.858C322.088 235.527 325.501 240.371 327.519 246.389Z" fill="white"/>
+        </g>
+        <defs>
+        <linearGradient id="paint0_linear_297_3295" x1="450" y1="0" x2="256" y2="512" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#FFD600" stop-opacity="0"/>
+        <stop offset="0.56" stop-color="#FFB800" stop-opacity="0.17"/>
+        <stop offset="1" stop-color="white" stop-opacity="0"/>
+        <stop offset="1" stop-color="#FFB800" stop-opacity="0"/>
+        </linearGradient>
+        <radialGradient id="paint1_radial_297_3295" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(195.5 145) rotate(45.2488) scale(244.308 185.139)">
+        <stop stop-color="#F4F818"/>
+        <stop offset="1" stop-opacity="0"/>
+        </radialGradient>
+        <clipPath id="clip0_297_3295">
+        <rect width="512" height="512" fill="white"/>
+        </clipPath>
+        </defs>
+        </svg>
+
+
+
+
+    <h2 style="margin:0px;">script.js</h2><h4 style="margin: 0px;
+opacity: 0.5;
+scale: 0.8;">(Default)</h4>
+
+  <h3 class="to_man_js" onclick="to_man_js()">
+    >
+  </h3>
+
+  </div><br>
+  <div id="js_set" style="height: 0px;">
+
+      <!-- Включение CSS (цветовая схема) -->
+Скрипт для функціонування Миші у лабіринті.
+<br>
+      <br>
+
+      <!-- Включение комментариев к коду -->
+      <!-- <label><input type="checkbox" id="includeComments" checked> Включить комментарии к коду</label><br> -->
+
+    </div>
+
+
+
+      <div onclick="downloadJSFile()" id="loadButton" class="regular_btn pt0" style="width: auto; border-radius: 0px 0px 10px 10px;">
+          <div class="regular_btn1">
+              <b class="regular_btn2" >Завантажити</b>
+          </div>
+      </div>
+    </div>
+
+        <br><hr><br>
+
+
+
+    <div class="del_all_account_btn" onclick="$('#popupMenu').fadeOut();"><div class="del_all_account_btn1"><b class="del_all_account_btn2">Закрити</b></div></div>
+
+  </div>
+
+
+  <!-- <div class="pt pt2">
+<h2 style="margin:0px;">Масиви</h2>
+  </div>
+
+
+  <div class="pt pt2">
     <div onclick="downloadLTAsJS()" id="loadButton" class="regular_btn pt0" style="">
         <div class="regular_btn1">
             <b class="regular_btn2" >Завантажити l_t як JS</b>
@@ -532,11 +1001,13 @@ box-shadow: none;"><div class="regular_btn1"><b class="regular_btn2">Заван�
             <b class="regular_btn2" >Завантажити r_b як JS</b>
         </div>
     </div>
+  </div> -->
 
-<button onclick="$('#popupMenu').fadeOut();">Закрити</button>
-  </div>
 
 </div>
+
+
+
 
 </div>
 <!-- <div class="btns_c">
@@ -849,6 +1320,173 @@ function updatePosition() {
 
 
 
+function to_man_html() {
+  var elements = document.getElementsByClassName("to_man_html");
+  var content = document.getElementById("html_set");
+
+  if (elements.length > 0) {
+    var element = elements[0]; // Работаем только с первым элементом
+
+    // Проверяем текущий стиль поворота
+    if (element.style.transform === "rotate(-180deg)") {
+      element.style.transform = "rotate(0deg)";
+      // Анимируем изменение высоты до 0
+      content.style.height = "0px";
+    } else {
+      element.style.transform = "rotate(-180deg)";
+      // Сначала устанавливаем высоту в auto, чтобы получить полную высоту содержимого
+      content.style.height = "auto";
+      var fullHeight = content.scrollHeight + "px"; // Получаем полную высоту
+      // Затем снова устанавливаем высоту в 0, после чего немедленно в полную высоту,
+      // чтобы инициировать анимацию
+      content.style.height = "0px";
+      // Используем setTimeout, чтобы изменение высоты произошло после того, как браузер успеет обработать установку высоты в 0px
+      setTimeout(function() {
+        content.style.height = fullHeight;
+      }, 0);
+    }
+  }
+}
+
+function to_man_css() {
+  var elements = document.getElementsByClassName("to_man_css");
+  var content = document.getElementById("css_set");
+
+  if (elements.length > 0) {
+    var element = elements[0]; // Работаем только с первым элементом
+
+    // Проверяем текущий стиль поворота
+    if (element.style.transform === "rotate(-180deg)") {
+      element.style.transform = "rotate(0deg)";
+      // Анимируем изменение высоты до 0
+      content.style.height = "0px";
+    } else {
+      element.style.transform = "rotate(-180deg)";
+      // Сначала устанавливаем высоту в auto, чтобы получить полную высоту содержимого
+      content.style.height = "auto";
+      var fullHeight = content.scrollHeight + "px"; // Получаем полную высоту
+      // Затем снова устанавливаем высоту в 0, после чего немедленно в полную высоту,
+      // чтобы инициировать анимацию
+      content.style.height = "0px";
+      // Используем setTimeout, чтобы изменение высоты произошло после того, как браузер успеет обработать установку высоты в 0px
+      setTimeout(function() {
+        content.style.height = fullHeight;
+      }, 0);
+    }
+  }
+}
+
+function to_man_css1() {
+  var elements = document.getElementsByClassName("to_man_css1");
+  var content = document.getElementById("css_set1");
+
+  if (elements.length > 0) {
+    var element = elements[0]; // Работаем только с первым элементом
+
+    // Проверяем текущий стиль поворота
+    if (element.style.transform === "rotate(-180deg)") {
+      element.style.transform = "rotate(0deg)";
+      // Анимируем изменение высоты до 0
+      content.style.height = "0px";
+    } else {
+      element.style.transform = "rotate(-180deg)";
+      // Сначала устанавливаем высоту в auto, чтобы получить полную высоту содержимого
+      content.style.height = "auto";
+      var fullHeight = content.scrollHeight + "px"; // Получаем полную высоту
+      // Затем снова устанавливаем высоту в 0, после чего немедленно в полную высоту,
+      // чтобы инициировать анимацию
+      content.style.height = "0px";
+      // Используем setTimeout, чтобы изменение высоты произошло после того, как браузер успеет обработать установку высоты в 0px
+      setTimeout(function() {
+        content.style.height = fullHeight;
+      }, 0);
+    }
+  }
+}
+
+function to_man_css2() {
+  var elements = document.getElementsByClassName("to_man_css2");
+  var content = document.getElementById("css_set2");
+
+  if (elements.length > 0) {
+    var element = elements[0]; // Работаем только с первым элементом
+
+    // Проверяем текущий стиль поворота
+    if (element.style.transform === "rotate(-180deg)") {
+      element.style.transform = "rotate(0deg)";
+      // Анимируем изменение высоты до 0
+      content.style.height = "0px";
+    } else {
+      element.style.transform = "rotate(-180deg)";
+      // Сначала устанавливаем высоту в auto, чтобы получить полную высоту содержимого
+      content.style.height = "auto";
+      var fullHeight = content.scrollHeight + "px"; // Получаем полную высоту
+      // Затем снова устанавливаем высоту в 0, после чего немедленно в полную высоту,
+      // чтобы инициировать анимацию
+      content.style.height = "0px";
+      // Используем setTimeout, чтобы изменение высоты произошло после того, как браузер успеет обработать установку высоты в 0px
+      setTimeout(function() {
+        content.style.height = fullHeight;
+      }, 0);
+    }
+  }
+}
+
+function to_man_js() {
+  var elements = document.getElementsByClassName("to_man_js");
+  var content = document.getElementById("js_set");
+
+  if (elements.length > 0) {
+    var element = elements[0]; // Работаем только с первым элементом
+
+    // Проверяем текущий стиль поворота
+    if (element.style.transform === "rotate(-180deg)") {
+      element.style.transform = "rotate(0deg)";
+      // Анимируем изменение высоты до 0
+      content.style.height = "0px";
+    } else {
+      element.style.transform = "rotate(-180deg)";
+      // Сначала устанавливаем высоту в auto, чтобы получить полную высоту содержимого
+      content.style.height = "auto";
+      var fullHeight = content.scrollHeight + "px"; // Получаем полную высоту
+      // Затем снова устанавливаем высоту в 0, после чего немедленно в полную высоту,
+      // чтобы инициировать анимацию
+      content.style.height = "0px";
+      // Используем setTimeout, чтобы изменение высоты произошло после того, как браузер успеет обработать установку высоты в 0px
+      setTimeout(function() {
+        content.style.height = fullHeight;
+      }, 0);
+    }
+  }
+}
+
+function to_man_bin() {
+  var elements = document.getElementsByClassName("to_man_bin");
+  var content = document.getElementById("bin_set");
+
+  if (elements.length > 0) {
+    var element = elements[0]; // Работаем только с первым элементом
+
+    // Проверяем текущий стиль поворота
+    if (element.style.transform === "rotate(-180deg)") {
+      element.style.transform = "rotate(0deg)";
+      // Анимируем изменение высоты до 0
+      content.style.height = "0px";
+    } else {
+      element.style.transform = "rotate(-180deg)";
+      // Сначала устанавливаем высоту в auto, чтобы получить полную высоту содержимого
+      content.style.height = "auto";
+      var fullHeight = content.scrollHeight + "px"; // Получаем полную высоту
+      // Затем снова устанавливаем высоту в 0, после чего немедленно в полную высоту,
+      // чтобы инициировать анимацию
+      content.style.height = "0px";
+      // Используем setTimeout, чтобы изменение высоты произошло после того, как браузер успеет обработать установку высоты в 0px
+      setTimeout(function() {
+        content.style.height = fullHeight;
+      }, 0);
+    }
+  }
+}
 
 </script>
 </html>
