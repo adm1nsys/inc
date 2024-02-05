@@ -821,3 +821,34 @@ width: 100%;
 #functionalityOptions0{
   transition: 0.4s;
 }
+
+.to_man_css{
+  margin: 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: none;
+  rotate: -90deg;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  padding: 0px;
+  margin-left: auto;
+  margin-right: 10px;
+  display: flex;
+  transition: 0.4s;
+}
+
+.to_man_css:hover{
+  background: rgba(128, 128, 128, 0.42);
+  cursor: crosshair;
+}
+
+
+#css_set{
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+ transition: height 0.5s ease;
+}
