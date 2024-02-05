@@ -785,3 +785,39 @@ width: 100%;
   overflow: hidden;
  transition: height 0.5s ease;
 }
+
+#cssOptions{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  bottom: 0px;
+}
+
+#cssOptions0{
+  transition: 0.4s;
+}
+
+#cssSizesOptions{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  bottom: 0px;
+}
+
+#cssSizesOptions0{
+  transition: 0.4s;
+}
+
+#functionalityOptions{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  bottom: 0px;
+}
+
+#functionalityOptions0{
+  transition: 0.4s;
+}

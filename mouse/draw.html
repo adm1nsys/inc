@@ -521,7 +521,7 @@ padding-top: 10px;">
 </svg>
 
 
-  <h2 style="margin:0px;">HTML</h2>
+  <h2 style="margin:0px;">index.html</h2>
 
 <h3 class="to_man_html" onclick="to_man_html()">
   >
@@ -532,27 +532,30 @@ padding-top: 10px;">
 
     <!-- Включение CSS (цветовая схема) -->
     <label><input type="checkbox" id="includeCss" checked> Включить CSS (цветовая схема)</label>
-    <div id="cssOptions" style="margin-left: 20px;">
+    <div id="cssOptions0" style="margin-left: 20px; position:relative;">
         <label><input type="radio" name="cssOption" value="inline" checked>Через тег &lt;style&gt;</label><br>
         <label><input type="radio" name="cssOption" value="link">Через тег &lt;link&gt;</label><br>
+        <div id="cssOptions"></div>
     </div><br>
 
     <!-- Включение CSS (размеры) -->
     <!-- Так как вы использовали одинаковое имя для радио-кнопок в разных группах, нужно изменить имя для этой группы, чтобы они работали независимо -->
     <label><input type="checkbox" id="includeCssSizes" checked> Включить CSS (размеры)</label>
-    <div id="cssSizesOptions" style="margin-left: 20px;">
+    <div id="cssSizesOptions0" style="margin-left: 20px; position:relative;">
         <label><input type="radio" name="cssSizesOption" value="inline" checked>Через тег &lt;style&gt;</label><br>
         <label><input type="radio" name="cssSizesOption" value="link">Через тег &lt;link&gt;</label><br>
+        <div id="cssSizesOptions"></div>
     </div><br>
 
     <!-- Включение функционала (JS, CSS) -->
     <label><input type="checkbox" id="includeFunctionality" checked> Включить функционал (JS, CSS)</label>
-    <div id="functionalityOptions" style="margin-left: 20px;">
+    <div id="functionalityOptions0" style="margin-left: 20px; position:relative;">
         <label><input type="radio" name="jsOption" value="inline" checked> Встроенный JS</label><br>
         <label><input type="radio" name="jsOption" value="link"> JS через ссылку</label><br>
         <!-- Ошибка в исходном сообщении: Имя группы радио кнопок дублировалось. Должно быть уникальным для каждой группы. -->
         <label><input type="radio" name="functionalityCssOption" value="inline" checked>Через тег &lt;style&gt;</label><br>
         <label><input type="radio" name="functionalityCssOption" value="link">Через тег &lt;link&gt;</label><br>
+        <div id="functionalityOptions"></div>
     </div>
     <br>
 
@@ -888,27 +891,33 @@ function downloadArrayAsJSON(arrayClass) {
 // Обработка изменений для CSS (цветовая схема)
 $('#includeCss').change(function(){
     if(this.checked) {
-        $('#cssOptions').show();
-    } else {
+      document.getElementById("cssOptions0").style.opacity = "1";
         $('#cssOptions').hide();
+    } else {
+      document.getElementById("cssOptions0").style.opacity = "0.5";
+        $('#cssOptions').show();
     }
 }).change(); // вызов .change() для инициализации состояния при загрузке
 
 // Обработка изменений для CSS (размеры)
 $('#includeCssSizes').change(function(){
     if(this.checked) {
-        $('#cssSizesOptions').show();
-    } else {
+      document.getElementById("cssSizesOptions0").style.opacity = "1";
         $('#cssSizesOptions').hide();
+    } else {
+      document.getElementById("cssSizesOptions0").style.opacity = "0.5";
+        $('#cssSizesOptions').show();
     }
 }).change(); // вызов .change() для инициализации состояния при загрузке
 
 // Обработка изменений для функционала (JS, CSS)
 $('#includeFunctionality').change(function(){
     if(this.checked) {
-        $('#functionalityOptions').show();
+      document.getElementById("functionalityOptions0").style.opacity = "1";
+      $('#functionalityOptions').hide();
     } else {
-        $('#functionalityOptions').hide();
+      document.getElementById("functionalityOptions0").style.opacity = "0.5";
+      $('#functionalityOptions').show();
     }
 }).change(); // вызов .change() для инициализации состояния при загрузке
 
