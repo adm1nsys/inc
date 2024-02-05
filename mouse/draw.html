@@ -82,10 +82,10 @@ loadFilesSequentially(filesToLoad, 0, function() {});
 <div class="flex">
 
 <div class="pt" style="display: flex; justify-content: center; flex-direction: column; margin-right: 10px;">
-  <button class="area_t area_t_c" onclick="setCurrentColor('area_t')"></button>
-  <button class="area_f area_f_c" onclick="setCurrentColor('area_f')"></button>
-  <button class="area_r area_r_c" onclick="setCurrentColor('area_r')"></button>
-  <button class="area_p area_p_c" onclick="setCurrentColor('area_p')"></button>
+  <button class="area_t area_t_c" style="background: rgb(255, 0, 0);" id="area_t" onclick="setCurrentColor('area_t')"></button>
+  <button class="area_f area_f_c" style="background: rgb(255, 255, 255);" id="area_f" onclick="setCurrentColor('area_f')"></button>
+  <button class="area_r area_r_c" style="background: rgb(0, 0, 0);" id="area_r" onclick="setCurrentColor('area_r')"></button>
+  <button class="area_p area_p_c" style="background: rgb(107, 153, 201);" id="area_p" onclick="setCurrentColor('area_p')"></button>
   <button class="area_color_change" id="color_ch_btn"><div class="area_color_change_blur"></div></button>
 
   <button class="area_color_change" style="padding: 0px;
@@ -636,7 +636,9 @@ padding-top: 10px;">
 
 
 
-    <h2 style="margin:0px;">colors.css</h2>
+    <h2 style="margin:0px;">colors.css</h2><h4 style="margin: 0px;
+  opacity: 0.5;
+  scale: 0.8;">(Soon)</h4>
 
   <h3 class="to_man_css" onclick="to_man_css()">
     >
@@ -1373,22 +1375,30 @@ function downloadCssColorFile() {
   let color_for_area_t = 'rgb(255, 0, 0)'; // Пример цвета для .area_t
 
   // Функция для проверки и применения цвета фона
-function applyBackgroundColor(selector, defaultColor) {
-  $(selector).each(function() {
-      // Проверяем, задан ли inline стиль фона
-      var inlineBg = $(this).attr('style');
-      if (!inlineBg || !inlineBg.includes('background')) {
-          // Если нет, применяем цвет по умолчанию
-          $(this).css('background', defaultColor);
-      }
-  });
-}
+  function applyBackgroundColorFromId(selector, defaultColor) {
+      // Преобразуем класс в id (например, .area_p -> #area_p)
+      var idSelector = '#' + selector.substring(1);
 
-// Применяем функцию к каждому классу
-applyBackgroundColor('.area_p', color_for_area_p);
-applyBackgroundColor('.area_f', color_for_area_f);
-applyBackgroundColor('.area_r', color_for_area_r);
-applyBackgroundColor('.area_t', color_for_area_t);
+      // Пытаемся найти элемент с таким id и получить его цвет фона
+      var idElementBgColor = $(idSelector).css('background-color');
+
+      // Проверяем, задан ли цвет фона для элемента с id
+      if (idElementBgColor && idElementBgColor !== 'rgba(0, 0, 0, 0)' && idElementBgColor !== 'transparent') {
+          // Применяем найденный цвет фона к элементам с указанным классом
+          $(selector).css('background-color', idElementBgColor);
+      } else {
+          // Применяем цвет по умолчанию, если цвет фона не найден
+          $(selector).css('background-color', defaultColor);
+      }
+  }
+
+  // Применяем функцию к каждому классу
+  applyBackgroundColorFromId('.area_p', color_for_area_p);
+  applyBackgroundColorFromId('.area_f', color_for_area_f);
+  applyBackgroundColorFromId('.area_r', color_for_area_r);
+  applyBackgroundColorFromId('.area_t', color_for_area_t);
+
+
 
   // Текст CSS кода, который вы хотите, чтобы пользователь скачал
   const css = `
@@ -1704,22 +1714,38 @@ function downloadPixelArtAsHTML() {
     let color_for_area_t = 'rgb(255, 0, 0)'; // Пример цвета для .area_t
 
     // Функция для проверки и применения цвета фона
-function applyBackgroundColor(selector, defaultColor) {
-    $(selector).each(function() {
-        // Проверяем, задан ли inline стиль фона
-        var inlineBg = $(this).attr('style');
-        if (!inlineBg || !inlineBg.includes('background')) {
-            // Если нет, применяем цвет по умолчанию
-            $(this).css('background', defaultColor);
-        }
-    });
-}
+    function applyBackgroundColor(selector, defaultColor) {
+        $(selector).each(function() {
+            var hasBackgroundStyle = false;
 
-// Применяем функцию к каждому классу
-applyBackgroundColor('.area_p', color_for_area_p);
-applyBackgroundColor('.area_f', color_for_area_f);
-applyBackgroundColor('.area_r', color_for_area_r);
-applyBackgroundColor('.area_t', color_for_area_t);
+            // Проверяем, задан ли inline стиль фона для текущего класса
+            var inlineBg = $(this).attr('style');
+            if (inlineBg && inlineBg.includes('background')) {
+                hasBackgroundStyle = true;
+            }
+
+            // Проверяем наличие класса с суффиксом _с и наличие у него стиля
+            var classWithSuffix = $(this).hasClass(selector.substring(1) + '_c');
+            if (classWithSuffix) {
+                var inlineBgSuffix = $(this).attr('style');
+                if (inlineBgSuffix && inlineBgSuffix.includes('background')) {
+                    hasBackgroundStyle = true;
+                }
+            }
+
+            // Если нет инлайнового стиля фона, применяем цвет по умолчанию
+            if (!hasBackgroundStyle) {
+                $(this).css('background', defaultColor);
+            }
+        });
+    }
+
+    // Применяем функцию к каждому классу
+    applyBackgroundColor('.area_p', color_for_area_p);
+    applyBackgroundColor('.area_f', color_for_area_f);
+    applyBackgroundColor('.area_r', color_for_area_r);
+    applyBackgroundColor('.area_t', color_for_area_t);
+
 
     // Определение CSS и JS контента
     let cssColorSchemeContent = includeCss && cssOption === 'inline' ? `<style>
@@ -1736,6 +1762,10 @@ applyBackgroundColor('.area_t', color_for_area_t);
         .area_r { background: ${color_for_area_r} !important;}
         .area_t { background: ${color_for_area_t} !important;}
     </style>` : includeCss && cssOption === 'link' ? '<link rel="stylesheet" href="colors.css">' : '';
+
+
+
+
     let cssSizesContent = includeCssSizes && cssSizesOption === 'inline' ? `<style>
     .draggable {
         width: 35px;
@@ -1888,6 +1918,9 @@ applyBackgroundColor('.area_t', color_for_area_t);
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Micromouse Map</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"><\/script>
+        <script>
+        const mouse_id = "id_мищі";
+        <\/script>
         ${cssColorSchemeContent}
         ${cssSizesContent}
         ${functionalityCssContent}
