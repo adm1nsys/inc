@@ -1786,54 +1786,77 @@ function downloadPixelArtAsHTML() {
 
     // Исправление для экранирования закрывающего тега script
     let jsContent = includeFunctionality && jsOption === 'inline' ? `<script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-      const draggable = document.querySelector('.draggable');
-      const grid = document.querySelector('.area'); // Контейнер для лабиринта
-      const gridCells = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
-      let currentRow = 0; // Текущая строка
-      let currentCol = 0; // Текущий столбец
-      const gridSize = 16; // Предположим, что у нас 20 ячеек в строке
 
-      window.move = (direction) => {
-          let newRow = currentRow;
-          let newCol = currentCol;
+          function checkElementAndApplyStyle() {
+        // Пытаемся найти элемент с указанным ID
+        const element = document.getElementById(mouse_id);
+        // Находим первый элемент с классом draggable
+        const draggableElement = document.querySelector('.draggable');
 
-          switch(direction) {
-              case 'left':
-                  newCol--;
-                  break;
-              case 'right':
-                  newCol++;
-                  break;
-              case 'up':
-                  newRow--;
-                  break;
-              case 'down':
-                  newRow++;
-                  break;
+        // Если элемент найден и существует целевой элемент с классом draggable
+        if (element && draggableElement) {
+            // Перемещаем найденный элемент в элемент с классом draggable
+            draggableElement.appendChild(element);
+        } else if (!element && draggableElement) {
+            // Если элемент с указанным ID не найден, но есть элемент с классом draggable
+            // Применяем стиль к элементу с классом draggable
+            draggableElement.style.backgroundColor = "red";
+            draggableElement.style.mixBlendMode = "difference";
+        }
+    }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+
+
+    // Вызываем функцию для проверки и применения стилей
+    checkElementAndApplyStyle();
+          const draggable = document.querySelector('.draggable');
+          const grid = document.querySelector('.area'); // Контейнер для лабиринта
+          const gridCells = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
+          let currentRow = 0; // Текущая строка
+          let currentCol = 0; // Текущий столбец
+          const gridSize = 16; // Предположим, что у нас 20 ячеек в строке
+
+          window.move = (direction) => {
+              let newRow = currentRow;
+              let newCol = currentCol;
+
+              switch(direction) {
+                  case 'left':
+                      newCol--;
+                      break;
+                  case 'right':
+                      newCol++;
+                      break;
+                  case 'up':
+                      newRow--;
+                      break;
+                  case 'down':
+                      newRow++;
+                      break;
+              }
+
+              if (canMoveTo(newRow, newCol)) {
+                  currentRow = newRow;
+                  currentCol = newCol;
+                  updatePosition();
+              }
           }
 
-          if (canMoveTo(newRow, newCol)) {
-              currentRow = newRow;
-              currentCol = newCol;
-              updatePosition();
+          function canMoveTo(row, col) {
+              if (row < 0 || col < 0 || row >= gridSize || col >= gridSize) {
+                console.log("За межами лабіринту");
+                  return false; // За пределами лабиринта
+              }
+              const cellIndex = row * gridSize + col;
+              return !gridCells[cellIndex].classList.contains('area_r');
           }
-      }
 
-      function canMoveTo(row, col) {
-          if (row < 0 || col < 0 || row >= gridSize || col >= gridSize) {
-            console.log("За межами лабіринту");
-              return false; // За пределами лабиринта
+          function updatePosition() {
+              draggable.style.top = (currentRow * ${box_size}) + 'px'; // 50 - высота ячейки
+              draggable.style.left = (currentCol * ${box_size}) + 'px'; // 50 - ширина ячейки
           }
-          const cellIndex = row * gridSize + col;
-          return !gridCells[cellIndex].classList.contains('area_r');
-      }
-
-      function updatePosition() {
-          draggable.style.top = (currentRow * 35) + 'px'; // 50 - высота ячейки
-          draggable.style.left = (currentCol * 35) + 'px'; // 50 - ширина ячейки
-      }
-      });
+          });
     <\/script>` : includeFunctionality && jsOption === 'link' ? '<script src="script.js"><\/script>' : '';
     // Создание стандартной структуры HTML
     const fullHtml = `
@@ -1892,54 +1915,77 @@ function downloadPixelArtAsHTML() {
 function downloadJSFile() {
     // Текст JavaScript кода, который вы хотите, чтобы пользователь скачал
     const jsCode = `
-    document.addEventListener('DOMContentLoaded', (event) => {
-      const draggable = document.querySelector('.draggable');
-      const grid = document.querySelector('.area'); // Контейнер для лабиринта
-      const gridCells = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
-      let currentRow = 0; // Текущая строка
-      let currentCol = 0; // Текущий столбец
-      const gridSize = 16; // Предположим, что у нас 20 ячеек в строке
 
-      window.move = (direction) => {
-          let newRow = currentRow;
-          let newCol = currentCol;
+          function checkElementAndApplyStyle() {
+        // Пытаемся найти элемент с указанным ID
+        const element = document.getElementById(mouse_id);
+        // Находим первый элемент с классом draggable
+        const draggableElement = document.querySelector('.draggable');
 
-          switch(direction) {
-              case 'left':
-                  newCol--;
-                  break;
-              case 'right':
-                  newCol++;
-                  break;
-              case 'up':
-                  newRow--;
-                  break;
-              case 'down':
-                  newRow++;
-                  break;
+        // Если элемент найден и существует целевой элемент с классом draggable
+        if (element && draggableElement) {
+            // Перемещаем найденный элемент в элемент с классом draggable
+            draggableElement.appendChild(element);
+        } else if (!element && draggableElement) {
+            // Если элемент с указанным ID не найден, но есть элемент с классом draggable
+            // Применяем стиль к элементу с классом draggable
+            draggableElement.style.backgroundColor = "red";
+            draggableElement.style.mixBlendMode = "difference";
+        }
+    }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+
+
+    // Вызываем функцию для проверки и применения стилей
+    checkElementAndApplyStyle();
+          const draggable = document.querySelector('.draggable');
+          const grid = document.querySelector('.area'); // Контейнер для лабиринта
+          const gridCells = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
+          let currentRow = 0; // Текущая строка
+          let currentCol = 0; // Текущий столбец
+          const gridSize = 16; // Предположим, что у нас 20 ячеек в строке
+
+          window.move = (direction) => {
+              let newRow = currentRow;
+              let newCol = currentCol;
+
+              switch(direction) {
+                  case 'left':
+                      newCol--;
+                      break;
+                  case 'right':
+                      newCol++;
+                      break;
+                  case 'up':
+                      newRow--;
+                      break;
+                  case 'down':
+                      newRow++;
+                      break;
+              }
+
+              if (canMoveTo(newRow, newCol)) {
+                  currentRow = newRow;
+                  currentCol = newCol;
+                  updatePosition();
+              }
           }
 
-          if (canMoveTo(newRow, newCol)) {
-              currentRow = newRow;
-              currentCol = newCol;
-              updatePosition();
+          function canMoveTo(row, col) {
+              if (row < 0 || col < 0 || row >= gridSize || col >= gridSize) {
+                console.log("За межами лабіринту");
+                  return false; // За пределами лабиринта
+              }
+              const cellIndex = row * gridSize + col;
+              return !gridCells[cellIndex].classList.contains('area_r');
           }
-      }
 
-      function canMoveTo(row, col) {
-          if (row < 0 || col < 0 || row >= gridSize || col >= gridSize) {
-            console.log("За межами лабіринту");
-              return false; // За пределами лабиринта
+          function updatePosition() {
+              draggable.style.top = (currentRow * ${box_size}) + 'px'; // 50 - высота ячейки
+              draggable.style.left = (currentCol * ${box_size}) + 'px'; // 50 - ширина ячейки
           }
-          const cellIndex = row * gridSize + col;
-          return !gridCells[cellIndex].classList.contains('area_r');
-      }
-
-      function updatePosition() {
-          draggable.style.top = (currentRow * 35) + 'px'; // 50 - высота ячейки
-          draggable.style.left = (currentCol * 35) + 'px'; // 50 - ширина ячейки
-      }
-      });`;
+          });`;
 
     // Создаем элемент для скачивания
     const element = document.createElement('a');
