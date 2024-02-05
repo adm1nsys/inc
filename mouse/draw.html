@@ -159,8 +159,8 @@ justify-content: center;" fill="none" xmlns="http://www.w3.org/2000/svg">
 <div class="area0">
 
 <div class="area">
+  <div class="draggable" style="top: 0px; left: 0px;"></div>
 <div class="row">
-  <div class="draggable"></div>
     <div class="area_f" id="cel_1_1"></div>
     <div class="area_f" id="cel_1_2"></div>
     <div class="area_f" id="cel_1_3"></div>
@@ -657,7 +657,7 @@ padding-top: 10px;">
 
 
 
-      <div onclick="downloadPixelArtAsHTML()" id="loadButton" class="regular_btn pt0" style="width: auto; border-radius: 0px 0px 10px 10px;">
+      <div onclick="downloadCssColorFile()" id="loadButton" class="regular_btn pt0" style="width: auto; border-radius: 0px 0px 10px 10px;">
           <div class="regular_btn1">
               <b class="regular_btn2" >Завантажити</b>
           </div>
@@ -809,7 +809,7 @@ scale: 0.8;">(Default)</h4>
 
 
 
-        <div onclick="downloadPixelArtAsHTML()" id="loadButton" class="regular_btn pt0" style="width: auto; border-radius: 0px 0px 10px 10px;">
+        <div onclick="downloadCssSizeFile()" id="loadButton" class="regular_btn pt0" style="width: auto; border-radius: 0px 0px 10px 10px;">
             <div class="regular_btn1">
                 <b class="regular_btn2" >Завантажити</b>
             </div>
@@ -879,7 +879,7 @@ scale: 0.8;">(Default)</h4>
 
 
 
-    <div onclick="downloadPixelArtAsHTML()" id="loadButton" class="regular_btn pt0" style="width: auto; border-radius: 0px 0px 10px 10px;">
+    <div onclick="downloadCssControlFile()" id="loadButton" class="regular_btn pt0" style="width: auto; border-radius: 0px 0px 10px 10px;">
         <div class="regular_btn1">
             <b class="regular_btn2" >Завантажити</b>
         </div>
@@ -1365,6 +1365,179 @@ function downloadJSFile() {
     document.body.removeChild(element); // Удаляем элемент после скачивания
 }
 
+function downloadCssColorFile() {
+  // Пример задания цветов фона для каждого класса
+  let color_for_area_p = 'rgb(107, 153, 201)'; // Пример цвета для .area_p
+  let color_for_area_f = 'white'; // Пример цвета для .area_f
+  let color_for_area_r = 'rgb(0, 0, 0)'; // Пример цвета для .area_r
+  let color_for_area_t = 'rgb(255, 0, 0)'; // Пример цвета для .area_t
+
+  // Функция для проверки и применения цвета фона
+function applyBackgroundColor(selector, defaultColor) {
+  $(selector).each(function() {
+      // Проверяем, задан ли inline стиль фона
+      var inlineBg = $(this).attr('style');
+      if (!inlineBg || !inlineBg.includes('background')) {
+          // Если нет, применяем цвет по умолчанию
+          $(this).css('background', defaultColor);
+      }
+  });
+}
+
+// Применяем функцию к каждому классу
+applyBackgroundColor('.area_p', color_for_area_p);
+applyBackgroundColor('.area_f', color_for_area_f);
+applyBackgroundColor('.area_r', color_for_area_r);
+applyBackgroundColor('.area_t', color_for_area_t);
+
+  // Текст CSS кода, который вы хотите, чтобы пользователь скачал
+  const css = `
+.draggable {
+    background: red;
+}
+.area {
+    border-color: black;
+    background: none;
+}
+
+.area_p { background: ${color_for_area_p} !important;}
+.area_f { background: ${color_for_area_f} !important;}
+.area_r { background: ${color_for_area_r} !important;}
+.area_t { background: ${color_for_area_t} !important;}`;
+
+  // Создаем элемент для скачивания
+  const element = document.createElement('a');
+  element.setAttribute('href', 'data:text/css;charset=utf-8,' + encodeURIComponent(css));
+  element.setAttribute('download', "colors.css");
+
+  // Программно кликаем на элементе, чтобы инициировать скачивание
+  document.body.appendChild(element); // Добавляем элемент в документ
+  element.click(); // Инициируем клик по элементу
+
+  document.body.removeChild(element); // Удаляем элемент после скачивания
+}
+
+function downloadCssSizeFile() {
+
+  // Текст CSS кода, который вы хотите, чтобы пользователь скачал
+  const css = `
+  .draggable {
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      transition: 0.5s;
+      top: 0px;
+      left: 0px;
+  }
+  .area {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      border: 35px solid;
+      margin: auto;
+  }
+  .row {
+      display: flex;
+      flex-direction: row;
+  }
+  .area_p { width: 35px; height: 35px; }
+  .area_f { width: 35px; height: 35px; }
+  .area_r { width: 35px; height: 35px; }
+  .area_t { width: 35px; height: 35px; }`;
+
+  // Создаем элемент для скачивания
+  const element = document.createElement('a');
+  element.setAttribute('href', 'data:text/css;charset=utf-8,' + encodeURIComponent(css));
+  element.setAttribute('download', "size.css");
+
+  // Программно кликаем на элементе, чтобы инициировать скачивание
+  document.body.appendChild(element); // Добавляем элемент в документ
+  element.click(); // Инициируем клик по элементу
+
+  document.body.removeChild(element); // Удаляем элемент после скачивания
+}
+
+function downloadCssControlFile() {
+
+  // Текст CSS кода, который вы хотите, чтобы пользователь скачал
+  const css = `
+  .btns_c{
+    display: flex;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .btn_l{
+    width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 100px;
+  bottom: 50px;
+  rotate: -90deg;
+  }
+
+  .btn_r{
+    width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 50px;
+  right: 0px;
+  rotate: 90deg;
+  }
+
+  .btn_t{
+    width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 100px;
+  right: 50px;
+  }
+
+  .btn_b{
+    width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 0px;
+  right: 50px;
+  rotate: 180deg;
+  }
+
+  .btn_style{
+    background-color: gray;
+    border-radius: 10px;
+    border: 2px solid rgb(92, 92, 92);
+    transition: 0.4s;
+    cursor: crosshair;
+  }
+
+  .btn_style:hover{
+    background-color: rgb(91, 91, 91);
+  border: 2px solid rgb(180, 180, 180);
+  }
+
+  .btn_style:active{
+    background-color: rgb(255, 91, 91);
+  border: 2px solid rgb(180, 180, 180);
+  }
+  svg{
+    width: 20px;
+    height: 20px;
+  }`;
+
+  // Создаем элемент для скачивания
+  const element = document.createElement('a');
+  element.setAttribute('href', 'data:text/css;charset=utf-8,' + encodeURIComponent(css));
+  element.setAttribute('download', "controls.css");
+
+  // Программно кликаем на элементе, чтобы инициировать скачивание
+  document.body.appendChild(element); // Добавляем элемент в документ
+  element.click(); // Инициируем клик по элементу
+
+  document.body.removeChild(element); // Удаляем элемент после скачивания
+}
+
+
 function downloadLTAsJS() {
     let l_t = [];
     for (let row = 1; row <= 8; row++) {
@@ -1558,10 +1731,10 @@ applyBackgroundColor('.area_t', color_for_area_t);
             background: none;
         }
 
-        .area_p { background: ${color_for_area_p};}
-        .area_f { background: ${color_for_area_f};}
-        .area_r { background: ${color_for_area_r};}
-        .area_t { background: ${color_for_area_t};}
+        .area_p { background: ${color_for_area_p} !important;}
+        .area_f { background: ${color_for_area_f} !important;}
+        .area_r { background: ${color_for_area_r} !important;}
+        .area_t { background: ${color_for_area_t} !important;}
     </style>` : includeCss && cssOption === 'link' ? '<link rel="stylesheet" href="colors.css">' : '';
     let cssSizesContent = includeCssSizes && cssSizesOption === 'inline' ? `<style>
     .draggable {
@@ -1704,7 +1877,7 @@ applyBackgroundColor('.area_t', color_for_area_t);
           draggable.style.left = (currentCol * 35) + 'px'; // 50 - ширина ячейки
       }
       });
-    <\/script>` : includeFunctionality && jsOption === 'link' ? '<script src="path/to/your/functionality_script.js"><\/script>' : '';
+    <\/script>` : includeFunctionality && jsOption === 'link' ? '<script src="script.js"><\/script>' : '';
 
     // Создание стандартной структуры HTML
     const fullHtml = `
