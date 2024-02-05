@@ -13,7 +13,9 @@
 
 <script>
 let mouse_id = "id_мищі";
-
+var box_size = "100";
+let mouse_size = "50";
+let mouse_size1 = "100";
 function loadFile(filePath, fileType, callback) {
     let tag;
 
@@ -169,7 +171,7 @@ height:auto;">
 
   <div class="pt" style="width: 550px;">
 
-    <h2><label for="slider_b_size">Розмір ячейки <span class="b_size">100</span>Х<span class="b_size">100</span> PX</label></h2>
+    <h2><label for="slider_b_size">Розмір ячейки <span class="b_size" id="box_size">100</span>Х<span class="b_size">100</span> PX</label></h2>
     <input type="range" id="slider_b_size" name="volume" min="10" max="1000" value="100"  step="10" class="slider">
   </div>
 
@@ -1212,9 +1214,12 @@ randomizeLayer();
 
   // Обновление текущего значения при перемещении ползунка
   slider.oninput = function() {
+    box_size = this.value;
              b_size = this.value; // Обновление переменной
+             box_size = b_size;
              for (var i = 0; i < outputs.length; i++) {
-                 outputs[i].innerHTML = b_size;
+               outputs[i].innerHTML = b_size;
+               outputs[i] = box_size;
                  // console.log(b_size);
              }
          }
@@ -1228,6 +1233,7 @@ randomizeLayer();
 
          // Обновление текущего значения при перемещении первого ползунка
          slider1.oninput = function() {
+           mouse_size = this.value;
              m_size0 = this.value; // Обновление переменной
              for (var i = 0; i < outputs0.length; i++) {
                  outputs0[i].innerHTML = m_size0;
@@ -1236,6 +1242,7 @@ randomizeLayer();
 
          // Обновление текущего значения при перемещении второго ползунка
          slider2.oninput = function() {
+           mouse_size1 = this.value;
              m_size1 = this.value; // Обновление переменной
              for (var i = 0; i < outputs1.length; i++) {
                  outputs1[i].innerHTML = m_size1;
@@ -1685,10 +1692,11 @@ function downloadPixelArtAsHTML() {
 
 
 
+
     let cssSizesContent = includeCssSizes && cssSizesOption === 'inline' ? `<style>
     .draggable {
-        width: 35px;
-        height: 35px;
+        width: ${mouse_size}px;
+        height: ${mouse_size1}px;
         position: absolute;
         transition: 0.5s;
         top: 0px;
@@ -1698,17 +1706,17 @@ function downloadPixelArtAsHTML() {
         display: flex;
         position: relative;
         flex-direction: column;
-        border: 35px solid;
+        border: ${box_size}px solid;
         margin: auto;
     }
     .row {
         display: flex;
         flex-direction: row;
     }
-    .area_p { width: 35px; height: 35px; }
-    .area_f { width: 35px; height: 35px; }
-    .area_r { width: 35px; height: 35px; }
-    .area_t { width: 35px; height: 35px; }
+    .area_p { width: ${box_size}px; height: ${box_size}px; }
+    .area_f { width: ${box_size}px; height: ${box_size}px; }
+    .area_r { width: ${box_size}px; height: ${box_size}px; }
+    .area_t { width: ${box_size}px; height: ${box_size}px; }
     </style>` : includeCssSizes && cssSizesOption === 'link' ? '<link rel="stylesheet" href="size.css">' : '';
     let functionalityCssContent = includeFunctionality && functionalityCssOption === 'inline' ? `<style>
     .btns_c{
@@ -1827,7 +1835,6 @@ function downloadPixelArtAsHTML() {
       }
       });
     <\/script>` : includeFunctionality && jsOption === 'link' ? '<script src="script.js"><\/script>' : '';
-
     // Создание стандартной структуры HTML
     const fullHtml = `
     <!DOCTYPE html>
@@ -2007,12 +2014,11 @@ function downloadCssColorFile() {
 }
 
 function downloadCssSizeFile() {
-
   // Текст CSS кода, который вы хотите, чтобы пользователь скачал
   const css = `
   .draggable {
-      width: 35px;
-      height: 35px;
+      width: ${mouse_size}px;
+      height: ${mouse_size1}px;
       position: absolute;
       transition: 0.5s;
       top: 0px;
@@ -2022,17 +2028,17 @@ function downloadCssSizeFile() {
       display: flex;
       position: relative;
       flex-direction: column;
-      border: 35px solid;
+      border: ${box_size}px solid;
       margin: auto;
   }
   .row {
       display: flex;
       flex-direction: row;
   }
-  .area_p { width: 35px; height: 35px; }
-  .area_f { width: 35px; height: 35px; }
-  .area_r { width: 35px; height: 35px; }
-  .area_t { width: 35px; height: 35px; }`;
+  .area_p { width: ${box_size}px; height: ${box_size}px; }
+  .area_f { width: ${box_size}px; height: ${box_size}px; }
+  .area_r { width: ${box_size}px; height: ${box_size}px; }
+  .area_t { width: ${box_size}px; height: ${box_size}px; }`;
 
   // Создаем элемент для скачивания
   const element = document.createElement('a');
