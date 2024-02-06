@@ -1992,7 +1992,7 @@ ${jsScriptContent}
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'Micromouse_Map.html';
+    a.download = 'index.html';
     a.click();
     URL.revokeObjectURL(url);
 }
@@ -2285,7 +2285,7 @@ function saveLabyrinthDataAsJson(labyrinthData) {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.setAttribute('href', url);
-    link.setAttribute('download', 'labyrinth.json');
+    link.setAttribute('download', 'Binary.json');
     document.body.appendChild(link); // Необходимо для Firefox
     link.click();
     document.body.removeChild(link); // Очистка после скачивания
