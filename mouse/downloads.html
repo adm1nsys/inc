@@ -594,7 +594,7 @@ scale: 0.8;">(Default)</h4>
 
 
 
-          <div onclick="downloadPixelArtAsHTML()" id="loadButton" class="regular_btn pt0" style="width: auto; border-radius: 0px 0px 10px 10px;">
+          <div onclick="generateAndDownloadLabyrinth()" id="loadButton" class="regular_btn pt0" style="width: auto; border-radius: 0px 0px 10px 10px;">
               <div class="regular_btn1">
                   <b class="regular_btn2" >Завантажити</b>
               </div>
@@ -1593,7 +1593,40 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 
 
+  function collectLabyrinthData() {
+      const labyrinthBinary = [];
+      for (let row = 1; row <= 16; row++) { // Начинаем с 1, заканчиваем 16
+          let rowBinary = '';
+          for (let col = 1; col <= 16; col++) { // Начинаем с 1, заканчиваем 16
+              const cellId = `cel_${row}_${col}`;
+              const cell = document.getElementById(cellId);
+              if (cell && cell.classList.contains('area_r')) {
+                  rowBinary += '1'; // Стена
+              } else {
+                  rowBinary += '0'; // Дорожка
+              }
+          }
+          labyrinthBinary.push(rowBinary);
+      }
+      return labyrinthBinary.map(binaryString => parseInt(binaryString, 2));
+  }
 
+  function saveLabyrinthDataAsJson(labyrinthData) {
+      const jsonLabyrinth = JSON.stringify(labyrinthData);
+      const blob = new Blob([jsonLabyrinth], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.setAttribute('href', url);
+      link.setAttribute('download', 'labyrinth.json');
+      document.body.appendChild(link); // Необходимо для Firefox
+      link.click();
+      document.body.removeChild(link); // Очистка после скачивания
+  }
+
+  function generateAndDownloadLabyrinth() {
+      const labyrinthData = collectLabyrinthData();
+      saveLabyrinthDataAsJson(labyrinthData);
+  }
 
 
 

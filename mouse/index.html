@@ -778,7 +778,7 @@ padding-top: 10px;">
 
 
 
-        <div onclick="downloadPixelArtAsHTML()" id="loadButton" class="regular_btn pt0" style="width: auto; border-radius: 0px 0px 10px 10px;">
+        <div onclick="generateAndDownloadLabyrinth()" id="loadButton" class="regular_btn pt0" style="width: auto; border-radius: 0px 0px 10px 10px;">
             <div class="regular_btn1">
                 <b class="regular_btn2" >Завантажити</b>
             </div>
@@ -1370,7 +1370,7 @@ mappings.forEach(function(mapping) {
 
 const draggable = document.querySelector('.draggable');
 const grid = document.querySelector('.area'); // Контейнер для лабиринта
-const gridCells = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
+const gridcels = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
 let currentRow = 0; // Текущая строка
 let currentCol = 0; // Текущий столбец
 const gridSize = 16; // Предположим, что у нас 20 ячеек в строке
@@ -1406,8 +1406,8 @@ function canMoveTo(row, col) {
       console.log("За межами лабіринту");
         return false; // За пределами лабиринта
     }
-    const cellIndex = row * gridSize + col;
-    return !gridCells[cellIndex].classList.contains('area_r');
+    const celIndex = row * gridSize + col;
+    return !gridcels[celIndex].classList.contains('area_r');
 }
 
 function updatePosition() {
@@ -1826,7 +1826,7 @@ document.body.appendChild(container);
 checkElementAndApplyStyle();
     const draggable = document.querySelector('.draggable');
     const grid = document.querySelector('.area'); // Контейнер для лабиринта
-    const gridCells = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
+    const gridcels = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
     let currentRow = 0; // Текущая строка
     let currentCol = 0; // Текущий столбец
     const gridSize = 16; // Предположим, что у нас 20 ячеек в строке
@@ -1862,8 +1862,8 @@ checkElementAndApplyStyle();
           console.log("За межами лабіринту");
             return false; // За пределами лабиринта
         }
-        const cellIndex = row * gridSize + col;
-        return !gridCells[cellIndex].classList.contains('area_r');
+        const celIndex = row * gridSize + col;
+        return !gridcels[celIndex].classList.contains('area_r');
     }
 
     function updatePosition() {
@@ -1946,7 +1946,7 @@ document.body.appendChild(container);
 checkElementAndApplyStyle();
     const draggable = document.querySelector('.draggable');
     const grid = document.querySelector('.area'); // Контейнер для лабиринта
-    const gridCells = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
+    const gridcels = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
     let currentRow = 0; // Текущая строка
     let currentCol = 0; // Текущий столбец
     const gridSize = 16; // Предположим, что у нас 20 ячеек в строке
@@ -1982,8 +1982,8 @@ checkElementAndApplyStyle();
           console.log("За межами лабіринту");
             return false; // За пределами лабиринта
         }
-        const cellIndex = row * gridSize + col;
-        return !gridCells[cellIndex].classList.contains('area_r');
+        const celIndex = row * gridSize + col;
+        return !gridcels[celIndex].classList.contains('area_r');
     }
 
     function updatePosition() {
@@ -2149,6 +2149,44 @@ function downloadCssControlFile() {
 
   document.body.removeChild(element); // Удаляем элемент после скачивания
 }
+
+function collectLabyrinthData() {
+    const labyrinthBinary = [];
+    for (let row = 1; row <= 16; row++) { // Начинаем с 1, заканчиваем 16
+        let rowBinary = '';
+        for (let col = 1; col <= 16; col++) { // Начинаем с 1, заканчиваем 16
+            const cellId = `cel_${row}_${col}`;
+            const cell = document.getElementById(cellId);
+            if (cell && cell.classList.contains('area_r')) {
+                rowBinary += '1'; // Стена
+            } else {
+                rowBinary += '0'; // Дорожка
+            }
+        }
+        labyrinthBinary.push(rowBinary);
+    }
+    return labyrinthBinary.map(binaryString => parseInt(binaryString, 2));
+}
+
+function saveLabyrinthDataAsJson(labyrinthData) {
+    const jsonLabyrinth = JSON.stringify(labyrinthData);
+    const blob = new Blob([jsonLabyrinth], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'labyrinth.json');
+    document.body.appendChild(link); // Необходимо для Firefox
+    link.click();
+    document.body.removeChild(link); // Очистка после скачивания
+}
+
+function generateAndDownloadLabyrinth() {
+    const labyrinthData = collectLabyrinthData();
+    saveLabyrinthDataAsJson(labyrinthData);
+}
+
+// Вызовите эту функцию, когда нужно сгенерировать и скачать файл
+
 
 </script>
 </html>
