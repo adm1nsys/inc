@@ -976,7 +976,25 @@ width: 100%;
   cursor: crosshair;
 }
 
+.question{
+  color: white;
+text-decoration: none;
+background: rgba(80, 80, 80, 0.47);
+border-radius: 999px;
+width: 30px;
+height: 30px;
+font-size: 20px;
+display: flex;
+position: relative;
+justify-content: center;
+align-items: center;
+border: 2px solid white;
+transition: 0.4s;
+}
 
+.question:hover{
+  background: rgba(145, 145, 145, 0.47);
+}
 #bin_set{
   padding-left: 10px;
   padding-right: 10px;

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+<meta charset="UTF-8">
+<title>Генератор Лабіринту</title>
+
+<link rel="stylesheet" type="text/css" href="btns_test.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/inc/mouse/data/const.js"></script>
+
+<style>
+html{
+  scroll-behavior: smooth;
+}
+
+.question{
+  color: white;
+text-decoration: none;
+background: rgba(80, 80, 80, 0.47);
+border-radius: 999px;
+width: 30px;
+height: 30px;
+font-size: 20px;
+display: flex;
+position: relative;
+justify-content: center;
+align-items: center;
+border: 2px solid white;
+transition: 0.4s;
+}
+
+.question:hover{
+  background: rgba(145, 145, 145, 0.47);
+}
+
+.custom-list {
+  counter-reset: my-counter; /* Initialize the counter */
+  margin: 0;
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+  padding: 0;
+}
+
+.custom-list li {
+  list-style-type: none; /* Remove default list numbering */
+  counter-increment: my-counter; /* Increment counter for each list item */
+  margin-bottom: 10px; /* Add some spacing between list items */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Allow flex items to wrap */
+  max-width: 100%; /* Set a max-width to ensure wrapping */
+}
+
+.custom-list li * { /* Apply styles to all child elements */
+  word-break: break-all; /* Force words to break and wrap */
+  max-width: 100%; /* Ensure elements do not exceed the list item width */
+}
+
+.custom-list li::before {
+  content: counter(my-counter); /* Display the counter value before each item */
+  margin-right: 5px; /* Add some spacing between the number and the text */
+  font-size: 2em;
+  flex-shrink: 0; /* Prevent the number from shrinking */
+}
+
+.h1_m {
+  font-size: 2em;
+  margin: 0;
+  word-break: break-all; /* Ensure long words do not overflow */
+}
+
+.h0{
+  font-size: 1.5em;
+}
+
+</style>
+
+</head>
+<body>
+<div class="content">
+<div style="  max-width: 80rem;
+  margin: auto;">
+
+<header>
+<center class="header"><b><h1>Генератор Лабіринту</h1></b></center>
+<div class="p0l1">
+  <div class="light1"></div>
+  <div style="top: -50%;">
+    <div class="light2"></div>
+    <div class="light3"></div>
+  </div>
+
+</div>
+<div class="h1">
+  <a class="regular_btn" style="margin: 10px; text-decoration:none;" href="/inc/mouse/index.html"><div class="regular_btn1"><b class="regular_btn2">Генератр</b></div></a>
+  <a class="regular_btn" style="margin: 10px; text-decoration:none;" href="/inc/mouse/draw.html"><div class="regular_btn1"><b class="regular_btn2">Малювати</b></div></a>
+  <a class="regular_btn marg_10" style="text-decoration:none; margin: 10px;" href="/inc/mouse/downloads.html"><div class="regular_btn1"><b class="regular_btn2">Завантаження</b></div></a>
+  <div class="regular_btn" style="margin: 10px; text-decoration:none;" onclick=""><div class="regular_btn1"><b class="regular_btn2">Інформація</b></div></div>
+
+</div>
+</header>
+
+
+
+<div style="margin:auto; margin-left: 10px; margin-right: 10px; max-width: 80rem; display: flex; flex-direction: column;">
+
+<div>
+  <ol class="custom-list">
+    <li id="cell_size">
+      <h1 class="h1_m">Розмір комірки _X_ ПX</h1>
+      <div style="flex-direction: column;">
+      <div class="h0">
+  Розмір кожної комірки лабіринту. Впливає на загальний розмір лабіринту. Рекомендовано робити більше розміру миші.
+  _X_ позначає розмір наприклад 100 на 100 пікселів. Комірка завжди є квадратом. Відповідно буде 100X100 PX або будь-яке інше число.
+  Головне, що висота завжди рівна ширині. Щоб її регулювати нижче є повзунок, змінивши який ви зміните значення ширини та висоти.
+      </div>
+      </div>
+    </li>
+
+    <li id="mouse_size">
+      <h1 class="h1_m">Розмір миші _X_ ПX</h1><br>
+      <div style="flex-direction: column;">
+      <div class="h0">
+  Розмір Миші. Розмір миші впливає не тільки на зовнішній вигляд, але й на прохідність.
+  Якщо поставити його більше комірки, ви не зможете зрушити з місця.
+  Не рекомендовано ставити розмір більше, ніж розмір комірки. _X_ позначає розмір ширини до висоти. Ці значення не залежать один від одного і можуть бути різними.
+  Щоб відредагувати потягніть повзунок параметра, який вам потрібен і налаштуйте його.
+      </div>
+      </div>
+    </li>
+
+    <li id="mouse_identification">
+      <h1 class="h1_m">Ідентифікація миші</h1>
+      <div style="flex-direction: column;">
+      <div class="h0">
+  Ідентифікація миші. вкажіть id своєї миші у пункті const mouse_id = "id_миші"; Ви можете змінювати і копіювати значення.
+  Воно автоматично підтягнеться у файл index.html. Якщо ви вкажете туди значення своєї миші script.js або &lt;script&gt;&lt;/script&gt;
+ автоматично підтягне вашу мишу з айді, який ви вказали.
+  Інакше у миші з'явиться колір.
+      </div>
+      </div>
+    </li>
+    <li id="index_html">
+      <h1 class="h1_m">index.html</h1>
+      <div style="flex-direction: column;">
+      <div class="h0">
+  index.html - це html файл із схемою лабіринту. Ви можете завантажити просто цей файл або зі стилями і скриптами.
+  Для цього поряд натисніть на стрілку, яка відкриє меню налаштувань.
+  Там Зніміть або поставте галочку на тому, що вам потрібно або не потрібно.
+  Також можете вибрати метод підключення різних стилів і script.js або <script></script>.
+      </div>
+      </div>
+    </li>
+    <li id="size_css">
+      <h1 class="h1_m">size.css</h1>
+      <div style="flex-direction: column;">
+      <div class="h0">
+  Розміри всіх елементів, вказані у вкладці Генератор.
+  Там можна побачити Розмір миші, Розмір комірки та інші технічні розміри.
+      </div>
+      </div>
+    </li>
+    <li id="binary_json">
+      <h1 class="h1_m">Binary</h1>
+      <div style="flex-direction: column;">
+      <div class="h0">
+  Майже те ж саме, що і index.html. Але ви завантажите файл Binary.json.
+  Там зашифрований для економії простору бінарний код у форматі json.
+  Приклад вмісту: [352,56638,21890,21562,21802,20878,23520,4727,56832,987,20746,21866,21594,21834,32106,1344].
+  Щоб правильно розшифрувати цей код вам потрібно перевести його в бінарний код з провідними нулями до фіксованої довжини 16 символів.
+  Приклад: <br>['0000000101100000',<br>
+  '1101110100111110',<br>
+  '0101010110000010',<br>
+  '0101010000111010',<br>
+  '0101010100101010',<br>
+  '0101000110001110',<br>
+  '0101101111100000',<br>
+  '0001001001110111',<br>
+  '1101111000000000',<br>
+  '0000001111011011',<br>
+  '0101000100001010',<br>
+  '0101010101101010',<br>
+  '0101010001011010',<br>
+  '0101010101001010',<br>
+  '0111110101101010',<br>
+  '0000010101000000']<br>
+  Отже ми отримали 16х16 куб. Щоб побудувати лабіринт треба поставити стінки там, де вказана 1. Де вказано 0 - нічого не ставимо. Це доріжка.
+  Також тут не враховуються ціль і місце спавну гравця. Тільки стіни і доріжка.
+      </div>
+      </div>
+    </li>
+    <li id="colors_css">
+      <h1 class="h1_m">colors.css</h1>
+      <div style="flex-direction: column;">
+      <div class="h0">
+  Файл colors.css містить у собі кольорову схему формату rgba для всіх елементів лабіринту.
+  Щоб його налаштувати перейдіть у пункт Малювати і там змініть схему на ту, яка вам потрібна.
+  Потім завантажте на свій комп'ютер і використовуйте.
+      </div>
+      </div>
+    </li>
+    <li id="controls_css">
+      <h1 class="h1_m">controls.css</h1>
+      <div style="flex-direction: column;">
+      <div class="h0">
+  Файл controls.css містить стилі для кнопок. Там кольори, розміри та інше для кнопок. Їх можна відредагувати тільки вручну.
+      </div>
+      </div>
+    </li>
+    <li id="script_js">
+      <h1 class="h1_m">script.js</h1>
+      <div style="flex-direction: column;">
+      <div class="h0">
+  Файл script.js містить у собі безліч скриптів для подальшої роботи лабіринту та колізії всередині нього. Він саме шукає елемент за id миші та змінює її колір, якщо не знайшов елемент
+  або вставляє елемент з вказаним айді у мишу в лабіринті. Потім цей скрипт спавнить контролери, які стилізує controls.css. Після цього гравець натискає на стрілки і
+  миша або переміщується, або стоїть на місці, якщо врізалася в щось.
+      </div>
+      </div>
+    </li>
+    <li id="path_color">
+      <h1 class="h1_m">Колір 1</h1>
+      <div style="flex-direction: column;">
+      <div class="h0">
+  Колір 1 призначений для доріжки в лабіринті. За замовчуванням він білий. Щоб змінити його натисніть на inpit colorpicker у пункті колір.
+  Також ви можете відредагувати його альфа канал потягнувши повзунок до потрібного значення у пункті Альфа канал. Також використовує формат Rgba.
+  Щоб подивитись приклад кольору біля його назви є кружечок, який показує колір включаючи прозорість.
+      </div>
+      </div>
+    </li>
+    <li id="wall_color">
+      <h1 class="h1_m">Колір 2</h1>
+      <div style="flex-direction: column;">
+      <div class="h0">
+        Колір 2 призначений для стін у лабіринті. За замовчуванням він чорний. Щоб змінити його натисніть на inpit colorpicker у пункті колір.
+        Також ви можете відредагувати його альфа канал потягнувши повзунок до потрібного значення у пункті Альфа канал. Також використовує формат Rgba.
+        Щоб подивитись приклад кольору біля його назви є кружечок, який показує колір включаючи прозорість.
+      </div>
+      </div>
+    </li>
+    <li id="goal_color">
+      <h1 class="h1_m">Колір 3</h1>
+      <div style="flex-direction: column;">
+      <div class="h0">
+        Колір 3 призначений для цілі в лабіринті. За замовчуванням він червоний. Щоб змінити його натисніть на inpit colorpicker у пункті колір.
+        Також ви можете відредагувати його альфа канал потягнувши повзунок до потрібного значення у пункті Альфа канал. Також використовує формат Rgba.
+        Щоб подивитись приклад кольору біля його назви є кружечок, який показує колір включаючи прозорість.
+      </div>
+      </div>
+    </li>
+    <li id="spawn_color">
+      <h1 class="h1_m">Колір 4</h1>
+      <div style="flex-direction: column;">
+      <div class="h0">
+        Колір 4 призначений для спавну миші в лабіринті. За замовчуванням він блакитний. Щоб змінити його натисніть на inpit colorpicker у пункті колір.
+        Також ви можете відредагувати його альфа канал потягнувши повзунок до потрібного значення у пункті Альфа канал. Також використовує формат Rgba.
+        Щоб подивитись приклад кольору біля його назви є кружечок, який показує колір включаючи прозорість.
+      </div>
+      </div>
+    </li>
+    <li id="default_files">
+      <div style="flex-direction:row;display: flex;">
+        <h1 class="h1_m">Що таке<h4 style="margin: 0px; opacity: 0.5;scale: 0.8;">(Default)</h4></h1>
+      </div>
+      <div style="flex-direction: column;">
+      <div class="h0">
+  Файли з цією позначкою є стандартними і не відредагованими користувачем. Такі файли можна знайти у вкладці Завантаження.
+  Також у різних вкладках типу Генерація і Малювати. У пункті Генерація стандартними є colors.css, controls.css, script.js.
+  Для вкладки малювати це size.css, controls.css, script.css.
+      </div>
+      </div>
+    </li>
+    <li id="standard_presets">
+      <h1 class="h1_m">Стандартні Пресети</h1>
+      <div style="flex-direction: column;">
+      <div class="h0">
+  Стандартні пресети це список з можливістю завантажити стандартні пресети, а не відредаговані користувачем.
+      </div>
+      </div>
+    </li>
+    <li id="custom_presets">
+      <h1 class="h1_m">Користувацькі Пресети</h1>
+      <div style="flex-direction: column;">
+      <div class="h0">
+  Користувацькі пресети це список з можливістю завантажити файли з користувацькими налаштуваннями відредагованими користувачем.
+      </div>
+      </div>
+    </li>
+  </ol>
+
+
+</div>
+
+</div>
+</div>
+</div>
+
+</body>
+
+<script>
+
+</script>
+</html>
