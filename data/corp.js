@@ -13,7 +13,8 @@ var corporateDataArray = [
     {
         name: "NumeraLogic",
         logo_c: "a1",
-        status: "Release",
+        // status: "Release",
+        status: "Soon",
         pcversion: "2.2PR",
         mobileversion: "2.2MR",
         vrversion: "2.2VRR",
@@ -26,7 +27,7 @@ var corporateDataArray = [
     {
         name: "WebMaster",
         logo_c: "a2",
-        status: "Release",
+        status: "Soon",
         pcversion: "2.2PR",
         mobileversion: "2.2MR",
         vrversion: "2.2VRR",
@@ -39,7 +40,7 @@ var corporateDataArray = [
     {
         name: "XN1GHT",
         logo_c: "a3",
-        status: "Release",
+        status: "Soon",
         pcversion: "2.2PR",
         mobileversion: "2.2MR",
         vrversion: "2.2VRR",
@@ -74,7 +75,8 @@ var corporateDataArray = [
     {
         name: "AX",
         logo_c: "a5",
-        status: "Beta",
+        // status: "Beta",
+        status: "Soon",
         pcversion: "2.2PR",
         mobileversion: "2.2MR",
         vrversion: "2.2VRR",
