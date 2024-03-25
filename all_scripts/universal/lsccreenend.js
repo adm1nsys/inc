@@ -8,15 +8,15 @@ if(page_id === 0){
         document.getElementById("adm").style.display = "none";
     }
 
-displayReleaseData();
-displayBetaData();
-displaySoonData();
-corp_apply();
-displayQuestionsData();
+// displayReleaseData();
+// displayBetaData();
+// displaySoonData();
+// corp_apply();
+// displayQuestionsData();
 
 }
   setTimeout(function() {
-lscrenclose() 
+lscrenclose()
 // name_id();
-}, 1000); 
+}, 1000);
 });
