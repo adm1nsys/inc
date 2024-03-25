@@ -126,6 +126,12 @@ const userLang = detectLanguage();
 
 
 
+
+
+
+
+
+
 function loadContentForLanguage() {
     $("#content").load(`templates/a0/${c01.lang}/i01.html`, function(response, status, xhr) {
         if (status === "error") {

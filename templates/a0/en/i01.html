@@ -205,6 +205,24 @@ margin: auto;">
 <a href="#p4" class="pin-btn" id="btn_beta" data-translate-key="beta">Beta</a>
 <a href="#p5" class="pin-btn" id="btn_soon" data-translate-key="soon">Coming Soon</a>
 <a href="#p7" class="pin-btn" id="btn_info" data-translate-key="info">Information</a>
+<div class="custom-select-wrapper" onclick="toggleCustomSelect()">
+  <div class="custom-select">
+    <div class="custom-select__trigger" id="lang_id"><span>EN</span>
+      <div class="arrow"></div>
+    </div>
+    <div class="custom-options">
+      <span class="custom-option selected" data-value="en">EN</span>
+      <span class="custom-option" data-value="ua">UA</span>
+      <span class="custom-option" data-value="de">DE</span>
+      <span class="custom-option" data-value="pl">PL</span>
+      <!-- Add more languages as needed -->
+      <button id="clear-lang">X</button>
+    </div>
+  </div>
+</div>
+
+
+
 <a onclick="log_screen()" class="pin-btn" id="account_btn" style="position: absolute; right: 0px;" data-translate-key="signup">Sign Up</a>
 <div id="btnpan" onclick="panop()" class="pin-btn1" style="position: absolute; right: 0px;" data-translate-key="menu">Menu</div>
 </div>
@@ -335,16 +353,28 @@ margin: auto;">
 // });
 </script>
 <script>
-function name_id01() {
-            // Ваша реализация функции
-    if (localStorage.getItem('c01.user_id') === null || localStorage.getItem('c01.user_id') === "") {
-        document.getElementById("account_btn").textContent = "sign up";
-    } else if (localStorage.getItem('c01.new_user') === 'true') {
-        document.getElementById("account_btn").textContent = "sign up";
-    } else {
-        document.getElementById("account_btn").textContent = "id: " + localStorage.getItem('c01.user_id');
-    }
-}
+
+applyTranslations(userLang);
+
+  function name_id01() {
+      // Assume currentLang holds the current language, e.g., 'en', 'ua', etc.
+      const currentLang = detectLanguage(); // Assuming detectLanguage() returns the current language code
+
+      // Retrieve the appropriate text based on the current language
+      const signUpText = translations[currentLang]['signup'];
+      const idText = translations[currentLang]['id'] || 'ID'; // Assuming you have an 'id' translation; if not, defaults to 'ID'
+
+      // Your implementation with multi-language support
+      if (localStorage.getItem('c01.user_id') === null || localStorage.getItem('c01.user_id') === "") {
+          document.getElementById("account_btn").textContent = signUpText;
+      } else if (localStorage.getItem('c01.new_user') === 'true') {
+          document.getElementById("account_btn").textContent = signUpText;
+      } else {
+          // Here we use the idText and the user's ID from localStorage
+          document.getElementById("account_btn").textContent = `${idText}: ${localStorage.getItem('c01.user_id')}`;
+      }
+  }
+
 $(document).ready(function() {
 name_id01();
 // if(page_id === 0){
@@ -359,5 +389,34 @@ displayQuestionsData();
 // }
 });
 
+function toggleCustomSelect() {
+  document.querySelector('.custom-select').classList.toggle('open');
+}
+
+for (const option of document.querySelectorAll(".custom-option")) {
+  option.addEventListener('click', function() {
+    if (!this.classList.contains('selected')) {
+      this.parentNode.querySelector('.custom-option.selected').classList.remove('selected');
+      this.classList.add('selected');
+      this.closest('.custom-select').querySelector('.custom-select__trigger span').textContent = this.textContent;
+      localStorage.setItem('c01.lang', this.dataset.value);
+    }
+  })
+}
+
+window.addEventListener('click', function(e) {
+  const select = document.querySelector('.custom-select')
+  if (!select.contains(e.target)) {
+    select.classList.remove('open');
+  }
+});
+
+document.getElementById('clear-lang').addEventListener('click', function() {
+  localStorage.removeItem('c01.lang'); // Clear the language setting
+  // Reset to default language in the UI, adjust as needed
+  const defaultLang = document.querySelector('.custom-option[data-value="en"]');
+  defaultLang.click(); // Programmatically click the default language option to reset
+  toggleCustomSelect()
+});
 
 </script>
