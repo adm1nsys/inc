@@ -8,6 +8,8 @@ switch (c01.lang) {
         break;
     case "ua":
     loadContentForLanguage()
+
+    document.getElementById("btn_home").textContent = "дим";
         break;
     // You can have as many cases as you need
     default:
@@ -51,6 +53,77 @@ if(osInfo.os === "macOS"){
 });
 
 
+// Example of language resources
+const translations = {
+  en: {
+    home: "Home",
+    brands: "Brands",
+    beta: "Beta",
+    soon: "Coming Soon",
+    info: "Information",
+    signup: "Sign Up",
+    menu: "Menu"
+  },
+  ua: {
+    home: "Головна",
+    brands: "Бренди",
+    beta: "Бета",
+    soon: "Незабаром",
+    info: "Інформація",
+    signup: "Зареєструватися",
+    menu: "Меню"
+  },
+  de: {
+    home: "Startseite",
+    brands: "Marken",
+    beta: "Beta",
+    soon: "Bald Verfügbar",
+    info: "Information",
+    signup: "Anmelden",
+    menu: "Menü"
+  },
+  pl: {
+    home: "Strona Główna",
+    brands: "Marki",
+    beta: "Beta",
+    soon: "Wkrótce",
+    info: "Informacja",
+    signup: "Zapisz Się",
+    menu: "Menu"
+  }
+};
+
+
+// Function to detect user's preferred language
+function detectLanguage() {
+  // Check URL parameters for 'lang', 'ln', or 'language'
+  const urlParams = new URLSearchParams(window.location.search);
+  const langFromUrl = urlParams.get('lang') || urlParams.get('ln') || urlParams.get('language');
+
+  if (langFromUrl && translations[langFromUrl]) {
+    return langFromUrl;
+  }
+
+  // Fallback to the browser's language or default to 'en'
+  const browserLang = navigator.language.split('-')[0]; // Get language code
+  return translations[browserLang] ? browserLang : 'en';
+}
+
+// Function to apply translations
+function applyTranslations(lang) {
+  const elements = document.querySelectorAll('[data-translate-key]');
+
+  elements.forEach(element => {
+    const key = element.getAttribute('data-translate-key');
+    element.textContent = translations[lang][key] || `No translation for "${key}"`;
+  });
+}
+
+// Detect language and apply translations
+const userLang = detectLanguage();
+
+
+
 
 
 function loadContentForLanguage() {
@@ -59,6 +132,10 @@ function loadContentForLanguage() {
             var errorMsg = "There was an error loading the content: ";
             $("#content").html(errorMsg + xhr.status + " " + xhr.statusText);
         }
+        // document.getElementById("btn_home").textContent = "Головна";
+
+applyTranslations(userLang);
+
     });
 }
 
