@@ -7,7 +7,7 @@
 
 
 <div class="apply_lang">
-  <span class="lang_tetle">
+  <span class="lang_tetle" id="lang_tetle">
     EN
   </span>
 
@@ -334,36 +334,59 @@ margin: auto;">
 <script type="text/javascript">
   // document.addEventListener("DOMContentLoaded", function() {
     // Варианты фраз для кнопки
-    function ch_phrases(){
-    var phrases = ["Explore Our Stages", "Explore Our Process"];
+  //   function ch_phrases(){
+  //   var phrases = ["Explore Our Stages", "Explore Our Process"];
+  //
+  //   // Функция для выбора случайной фразы
+  //   function chooseRandomPhrase(phrases) {
+  //       return phrases[Math.floor(Math.random() * phrases.length)];
+  //   }
+  //
+  //   // Найти кнопку по её идентификатору или классу
+  //   var span = document.getElementById("exp_st");
+  //
+  //   // Установить случайно выбранную фразу как текст кно
+  //
+  //   span.textContent = chooseRandomPhrase(phrases);
+  //
+  //       var phrases_d = ["Navigate through a collection of innovative companies.", "Explore a hub of innovative companies.", "Discover a network of pioneering companies."];
+  //
+  //   // Функция для выбора случайной фразы
+  //   function chooseRandomPhrase(phrases) {
+  //       return phrases[Math.floor(Math.random() * phrases.length)];
+  //   }
+  //
+  //   // Найти кнопку по её идентификатору или классу
+  //   var div = document.getElementById("discr_m");
+  //
+  //   // Установить случайно выбранную фразу как текст кно
+  //
+  //   div.textContent = chooseRandomPhrase(phrases_d);
+  // }
+  // ch_phrases()
 
-    // Функция для выбора случайной фразы
-    function chooseRandomPhrase(phrases) {
-        return phrases[Math.floor(Math.random() * phrases.length)];
-    }
+  function ch_phrases() {
+  let userLang = detectLanguage(); // Assume detectLanguage() returns the user's preferred language
 
-    // Найти кнопку по её идентификатору или классу
-    var span = document.getElementById("exp_st");
+  // Select phrases based on the user's preferred language
+  var phrases_d = translations[userLang].phrases_d;
+  var phrases = translations[userLang].phrases;
 
-    // Установить случайно выбранную фразу как текст кно
-
-    span.textContent = chooseRandomPhrase(phrases);
-
-        var phrases_d = ["Navigate through a collection of innovative companies.", "Explore a hub of innovative companies.", "Discover a network of pioneering companies."];
-
-    // Функция для выбора случайной фразы
-    function chooseRandomPhrase(phrases) {
-        return phrases[Math.floor(Math.random() * phrases.length)];
-    }
-
-    // Найти кнопку по её идентификатору или классу
-    var div = document.getElementById("discr_m");
-
-    // Установить случайно выбранную фразу как текст кно
-
-    div.textContent = chooseRandomPhrase(phrases_d);
+  // Function to choose a random phrase
+  function chooseRandomPhrase(phrases) {
+    return phrases[Math.floor(Math.random() * phrases.length)];
   }
-  ch_phrases()
+
+  // Set random phrases for the specified elements
+  var span = document.getElementById("exp_st");
+  span.textContent = chooseRandomPhrase(phrases);
+
+  var div = document.getElementById("discr_m");
+  div.textContent = chooseRandomPhrase(phrases_d);
+}
+
+ch_phrases();
+
 // });
 </script>
 <script>
@@ -419,6 +442,7 @@ for (const option of document.querySelectorAll(".custom-option")) {
       this.classList.add('selected');
       this.closest('.custom-select').querySelector('.custom-select__trigger span').textContent = this.textContent;
       localStorage.setItem('c01.lang', this.dataset.value);
+document.getElementById("lang_tetle").textContent = localStorage.getItem('c01.lang');
 
       // Initially set the display style to "flex" for all elements with the class 'lang_container'
       var langContainers = document.getElementsByClassName('lang_conteiner');

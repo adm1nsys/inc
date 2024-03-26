@@ -62,7 +62,16 @@ const translations = {
     soon: "Coming Soon",
     info: "Information",
     signup: "Sign Up",
-    menu: "Menu"
+    menu: "Menu",
+    phrases_d: [
+      "Navigate through a collection of innovative companies.",
+      "Explore a hub of innovative companies.",
+      "Discover a network of pioneering companies."
+    ],
+    phrases: [
+      "Explore Our Stages",
+      "Explore Our Process"
+    ]
   },
   ua: {
     home: "Головна",
@@ -71,7 +80,16 @@ const translations = {
     soon: "Незабаром",
     info: "Інформація",
     signup: "Зареєструватися",
-    menu: "Меню"
+    menu: "Меню",
+    phrases_d: [
+      "Орієнтуйтеся серед колекції інноваційних компаній.",
+      "Досліджуйте центр інноваційних компаній.",
+      "Відкрийте для себе мережу піонерських компаній."
+    ],
+    phrases: [
+      "Досліджуйте наші етапи",
+      "Досліджуйте наш процес"
+    ]
   },
   de: {
     home: "Startseite",
@@ -80,7 +98,16 @@ const translations = {
     soon: "Bald Verfügbar",
     info: "Information",
     signup: "Anmelden",
-    menu: "Menü"
+    menu: "Menü",
+    phrases_d: [
+      "Navigieren Sie durch eine Sammlung innovativer Unternehmen.",
+      "Entdecken Sie einen Hub innovativer Unternehmen.",
+      "Entdecken Sie ein Netzwerk von Pionierunternehmen."
+    ],
+    phrases: [
+      "Entdecken Sie unsere Stufen",
+      "Entdecken Sie unseren Prozess"
+    ]
   },
   pl: {
     home: "Strona Główna",
@@ -89,9 +116,19 @@ const translations = {
     soon: "Wkrótce",
     info: "Informacja",
     signup: "Zapisz Się",
-    menu: "Menu"
+    menu: "Menu",
+    phrases_d: [
+      "Przeglądaj kolekcję innowacyjnych firm.",
+      "Odkryj centrum innowacyjnych firm.",
+      "Poznaj sieć pionierskich firm."
+    ],
+    phrases: [
+      "Odkryj Nasze Etapy",
+      "Odkryj Nasz Proces"
+    ]
   }
 };
+
 
 
 // Function to detect user's preferred language
