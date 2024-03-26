@@ -1,6 +1,20 @@
 <div id="i01">
 <div class="page w11 h11" id="home">
 
+<!-- lang apply -->
+
+<div class="lang_conteiner">
+
+
+<div class="apply_lang">
+  <span class="lang_tetle">
+    EN
+  </span>
+
+<span class="language_changed">language changed</span>
+
+  </div>
+</div>
 <div class="page1_bg w11 h11"><div style="width:100%; height: 100%; background: none; mix-blend-mode: difference;"></div></div>
 
   <div class="page1-padding">
@@ -207,7 +221,7 @@ margin: auto;">
 <a href="#p7" class="pin-btn" id="btn_info" data-translate-key="info">Information</a>
 <div class="custom-select-wrapper" onclick="toggleCustomSelect()">
   <div class="custom-select">
-    <div class="custom-select__trigger" id="lang_id"><span>EN</span>
+    <div class="custom-select__trigger" id="lang_id"><span id="lang_id_title">EN</span>
       <div class="arrow"></div>
     </div>
     <div class="custom-options">
@@ -385,9 +399,14 @@ name_id01();
     corp_apply();
 displayQuestionsData();
 
+document.getElementById("lang_id_title").textContent = localStorage.getItem('c01.lang');
+
+
 }, 1000);
 // }
 });
+
+
 
 function toggleCustomSelect() {
   document.querySelector('.custom-select').classList.toggle('open');
@@ -400,6 +419,43 @@ for (const option of document.querySelectorAll(".custom-option")) {
       this.classList.add('selected');
       this.closest('.custom-select').querySelector('.custom-select__trigger span').textContent = this.textContent;
       localStorage.setItem('c01.lang', this.dataset.value);
+
+      // Initially set the display style to "flex" for all elements with the class 'lang_container'
+      var langContainers = document.getElementsByClassName('lang_conteiner');
+      for (var i = 0; i < langContainers.length; i++) {
+          langContainers[i].style.display = "flex";
+      }
+
+      // After 100 milliseconds, set the opacity to "1" for all elements with the class 'apply_lang'
+      setTimeout(function() {
+          var applyLangs = document.getElementsByClassName('apply_lang');
+          for (var i = 0; i < applyLangs.length; i++) {
+              applyLangs[i].style.opacity = "1";
+          }
+      }, 100);
+
+      // After 1000 milliseconds, set the opacity back to "0" for all elements with the class 'apply_lang'
+      setTimeout(function() {
+          var applyLangs = document.getElementsByClassName('apply_lang');
+          for (var i = 0; i < applyLangs.length; i++) {
+              applyLangs[i].style.opacity = "0";
+          }
+      }, 1000);
+
+      // After 100 milliseconds (which seems to conflict with your second timeout),
+      // set the display style to "none" for all elements with the class 'lang_container'
+      // If you want this to happen after all other animations, consider adjusting the timing
+      setTimeout(function() {
+          var langContainers = document.getElementsByClassName('lang_conteiner');
+          for (var i = 0; i < langContainers.length; i++) {
+              langContainers[i].style.display = "none";
+          }
+      }, 1500); // This timing might need adjustment based on your intentions
+
+
+
+
+      applyTranslations(localStorage.getItem('c01.lang'));
     }
   })
 }
@@ -417,6 +473,7 @@ document.getElementById('clear-lang').addEventListener('click', function() {
   const defaultLang = document.querySelector('.custom-option[data-value="en"]');
   defaultLang.click(); // Programmatically click the default language option to reset
   toggleCustomSelect()
+  applyTranslations("en");
 });
 
 </script>

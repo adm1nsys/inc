@@ -994,3 +994,41 @@ gap: 8px;
 opacity: 1;
 background: rgba(198, 0, 0, 0.27);
 }
+
+
+.lang_conteiner{
+  width: 100%;
+position: fixed;
+display: none;
+z-index: 9;
+}
+
+.apply_lang{
+  /* position: fixed; */
+/* background: red; */
+/* left: 50%; */
+color: black;
+z-index: 9;
+display: flex;
+flex-direction: column;
+padding: 20px;
+background-color: rgba(226, 226, 226, 0.5);
+-webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
+border-radius: 20px;
+transition: 0.5s;
+opacity: 0;
+margin: auto;
+display: flex;
+}
+
+.lang_tetle{
+  color: black;
+  font-size: 7rem;
+}
+
+.language_changed{
+  font-size: 1.5em;
+  opacity: 0.5;
+  color: black;
+}

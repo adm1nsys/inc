@@ -120,7 +120,7 @@ function applyTranslations(lang) {
 }
 
 // Detect language and apply translations
-const userLang = detectLanguage();
+let userLang = detectLanguage();
 
 
 
