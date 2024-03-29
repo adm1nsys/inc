@@ -392,6 +392,8 @@ function detectLanguage() {
         showLanguageSelectionMenu(langFromUrl, userLangStorage);
         lang_m_sp = false;
       }
+      lang_m_sp = false;
+
       }
       return userLangStorage; // Возвращаем текущий язык из localStorage
     }
