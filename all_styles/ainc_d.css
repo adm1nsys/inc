@@ -495,9 +495,9 @@ rotate: 0deg;
   display: none;
 }
 
-/* .custom-select-wrapper {
-  margin-left: 0.3rem;
-} */
+.custom-select-wrapper {
+  margin-left: 0.5rem;
+}
 
 .namet-pin{
   /* display: none; */

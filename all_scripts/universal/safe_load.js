@@ -264,7 +264,7 @@ const translations = {
   soon: "Brzy",
   info: "Informace",
   signup: "Zaregistrovat se",
-  menu: "Nabídka",
+  menu: "Obsah",
   lang_ch_ed: "jazyk změněn",
   whereInnovationMeets: "Kde se setkávají inovace",
   imagination: "Imaginace",
