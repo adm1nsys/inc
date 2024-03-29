@@ -137,15 +137,15 @@ let lang_m_sp = true;
 function detectLanguage() {
 
 
-
+  if(localStorage.getItem('c01.lang') === null){
+    localStorage.setItem('c01.lang', "en")
+  }
 
   const urlParams = new URLSearchParams(window.location.search);
   const langFromUrl = urlParams.get('lang') || urlParams.get('ln') || urlParams.get('language');
   const userLangStorage = localStorage.getItem('c01.lang');
 
-  if(localStorage.getItem('c01.lang') === null){
-    localStorage.setItem('c01.lang', "en")
-  }
+
 
   if (langFromUrl && translations[langFromUrl]) {
     // Если язык из URL действителен и нет userLangStorage, применяем langFromUrl и обновляем localStorage
@@ -183,16 +183,19 @@ function showLanguageSelectionMenu(preferredLang, currentLang) {
   `;
   document.body.appendChild(langMenu);
 
-  document.getElementById('applyLang').addEventListener('click', function() {
-    localStorage.setItem('c01.lang', preferredLang);
-    applyTranslations(preferredLang);
-    langMenu.remove();
-  });
+
 
   document.getElementById('keepLang').addEventListener('click', function() {
     langMenu.remove();
   });
 }
+
+
+document.getElementById('applyLang').addEventListener('click', function(preferredLang, currentLang) {
+  // localStorage.setItem('c01.lang', preferredLang);
+  applyTranslations(preferredLang);
+  // langMenu.remove();
+});
 
 // Функция применения выбранного языка без перезагрузки страницы
 function applyTranslations(lang) {
