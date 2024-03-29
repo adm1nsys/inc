@@ -1045,6 +1045,7 @@ display: flex;
   left: 2rem;
   right: 2rem;
   text-align: center;
+  z-index: 9;
 }
 
 .lang_menu_or1{
