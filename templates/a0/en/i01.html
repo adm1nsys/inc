@@ -468,6 +468,30 @@ for (const option of document.querySelectorAll(".custom-option")) {
       this.classList.add('selected');
       this.closest('.custom-select').querySelector('.custom-select__trigger span').textContent = this.textContent;
       localStorage.setItem('c01.lang', this.dataset.value);
+      ch_phrases();
+
+      // const element = document.querySelector('.lang_menu_or');
+      // element.parentNode.removeChild(element);
+      //
+      // setTimeout(function() {
+      //   if (localStorage.getItem('c01.lang') === detectLanguage()) {
+      //
+      //   } else {
+      //     showLanguageSelectionMenu(localStorage.getItem('c01.lang'), detectLanguage());
+      //   }
+      // }, 100);
+
+
+
+//       if(document.getElementsByClassName("lang_menu_or")){
+//
+// var lang_menu_or_1 = document.getElementsByClassName("lang_menu_or");
+// var body_e = document.body;
+//
+// lang_menu_or_1.d.removeChild(body_e);
+//
+//       }
+
 document.getElementById("lang_tetle").textContent = localStorage.getItem('c01.lang');
 
       // Initially set the display style to "flex" for all elements with the class 'lang_container'
@@ -524,6 +548,7 @@ document.getElementById('clear-lang').addEventListener('click', function() {
   // Reset to default language in the UI, adjust as needed
   const defaultLang = document.querySelector('.custom-option[data-value="en"]');
   defaultLang.click(); // Programmatically click the default language option to reset
+  ch_phrases();
   toggleCustomSelect()
   applyTranslations("en");
 });
