@@ -65,6 +65,7 @@ const translations = {
     info: "Information",
     signup: "Sign Up",
     menu: "Menu",
+    lang_ch_ed: "language changed",
     phrases_d: [
       "Navigate through a collection of innovative companies.",
       "Explore a hub of innovative companies.",
