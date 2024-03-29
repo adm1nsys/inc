@@ -1037,13 +1037,13 @@ display: flex;
 
 .lang_menu_or{
   display: flex;
-  padding-left: 2rem;
-  padding-right: 2rem;
-padding-bottom: 2rem;
+  /* padding-left: 2rem; */
+  /* padding-right: 2rem; */
+/* padding-bottom: 2rem; */
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
   text-align: center;
 }
 
