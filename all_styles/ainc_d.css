@@ -200,6 +200,11 @@ text-transform: uppercase;
 text-decoration: none;
 }
 
+.lang_menu_or{
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .custom-options {
   display: none;
   position: absolute;
@@ -256,10 +261,7 @@ gap: 8px;
   transition: 0.4s;
 }
 
-.lang_menu_or{
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-}
+
 
 #clear-lang{
   display: flex;

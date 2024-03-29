@@ -426,6 +426,12 @@ name_id01();
     corp_apply();
 displayQuestionsData();
 
+if(localStorage.getItem('c01.lang') === null){
+  localStorage.setItem('c01.lang', "en")
+  document.getElementById("lang_id_title").textContent = "en";
+detectLanguage()
+}
+
 document.getElementById("lang_id_title").textContent = localStorage.getItem('c01.lang');
 let currentLang = detectLanguage();
 
@@ -508,6 +514,8 @@ window.addEventListener('click', function(e) {
     select.classList.remove('open');
   }
 });
+
+
 
 document.getElementById('clear-lang').addEventListener('click', function() {
   localStorage.removeItem('c01.lang'); // Clear the language setting

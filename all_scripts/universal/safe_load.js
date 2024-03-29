@@ -135,9 +135,17 @@ let lang_m_sp = true;
 
 // Функция определения языка пользователя
 function detectLanguage() {
+
+
+
+
   const urlParams = new URLSearchParams(window.location.search);
   const langFromUrl = urlParams.get('lang') || urlParams.get('ln') || urlParams.get('language');
   const userLangStorage = localStorage.getItem('c01.lang');
+
+  if(localStorage.getItem('c01.lang') === null){
+    localStorage.setItem('c01.lang', "en")
+  }
 
   if (langFromUrl && translations[langFromUrl]) {
     // Если язык из URL действителен и нет userLangStorage, применяем langFromUrl и обновляем localStorage
