@@ -499,6 +499,33 @@ rotate: 0deg;
   margin-left: 0.3rem;
 }
 
+.apply_lang{
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.lang_tetle{
+  font-size: 5rem;
+}
+
+.language_changed{
+  font-size: 1em;
+}
+
+.lang_menu_or{
+  bottom: 1rem;
+left: 1rem;
+right: 1rem;
+}
+
+.fo_m_t
+{
+  font-size: 1em;
+}
+
+
+
+
 }
 
 }
