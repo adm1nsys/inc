@@ -495,8 +495,13 @@ rotate: 0deg;
   display: none;
 }
 
-.custom-select-wrapper {
+/* .custom-select-wrapper {
   margin-left: 0.3rem;
+} */
+
+.namet-pin{
+  /* display: none; */
+  font-size: 1rem;
 }
 
 .apply_lang{
