@@ -367,7 +367,7 @@ border-radius: 4px;*/
 
 
 
-@media screen and (max-width: 767px)
+@media screen and (max-width: 1024px)
 {
   .pin-btn1{
     display: flex;
