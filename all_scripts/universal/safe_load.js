@@ -174,28 +174,31 @@ function detectLanguage() {
 // Функция для показа меню выбора языка
 function showLanguageSelectionMenu(preferredLang, currentLang) {
   const langMenu = document.createElement('div');
+  langMenu.classList.add('lang_menu_or'); // Используем класс вместо id для стилизации
   langMenu.innerHTML = `
-    <div class="lang_menu_or">
+    <div>
       <p>Выберите язык: ${preferredLang} / ${currentLang}</p>
-      <button id="applyLang">Применить ${preferredLang}</button>
-      <button id="keepLang">Оставить ${currentLang}</button>
+      <button class="applyLang">Применить ${preferredLang}</button>
+      <button class="keepLang">Оставить ${currentLang}</button>
     </div>
   `;
   document.body.appendChild(langMenu);
 
+  // Навешиваем события на кнопки
+  langMenu.querySelector('.applyLang').addEventListener('click', function() {
+    localStorage.setItem('c01.lang', preferredLang);
+    applyTranslations(preferredLang);
+    const defaultLang = document.querySelector(`.custom-option[data-value="${preferredLang}"]`);
+  defaultLang.click(); // Programmatically click the default language option to reset
+  toggleCustomSelect()
+    langMenu.remove();
+  });
 
-
-  document.getElementById('keepLang').addEventListener('click', function() {
+  langMenu.querySelector('.keepLang').addEventListener('click', function() {
     langMenu.remove();
   });
 }
 
-
-document.getElementById('applyLang').addEventListener('click', function(preferredLang, currentLang) {
-  // localStorage.setItem('c01.lang', preferredLang);
-  applyTranslations(preferredLang);
-  // langMenu.remove();
-});
 
 // Функция применения выбранного языка без перезагрузки страницы
 function applyTranslations(lang) {
