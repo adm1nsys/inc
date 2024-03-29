@@ -392,12 +392,17 @@ function detectLanguage() {
         showLanguageSelectionMenu(langFromUrl, userLangStorage);
         lang_m_sp = false;
       }
-      lang_m_sp = false;
+
 
       }
+      lang_m_sp = false;
+
       return userLangStorage; // Возвращаем текущий язык из localStorage
     }
+    lang_m_sp = false;
+
   } else {
+    lang_m_sp = false;
     // Используем язык из localStorage или по умолчанию 'en'
     return userLangStorage || 'en';
   }
