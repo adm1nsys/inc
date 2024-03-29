@@ -1058,4 +1058,8 @@ padding-bottom: 2rem;
   max-width: 80rem;
   flex-direction: column;
   margin: auto;
+  padding: 1rem;
+  padding-top: 0;
+  border-radius: 10px;
+  border-radius: 10px;
 }

@@ -177,9 +177,9 @@ function showLanguageSelectionMenu(preferredLang, currentLang) {
   langMenu.classList.add('lang_menu_or'); // Используем класс вместо id для стилизации
   langMenu.innerHTML = `
     <div class="lang_menu_or1">
-      <p>Выберите язык: ${preferredLang} / ${currentLang}</p>
-      <button class="keepLang DB ac02 ac03" style="cursor:crosshair; margin-right: 1rem;">Оставить ${currentLang}</button>
-      <button class="applyLang DB ac02 ac03" style="background: none; cursor:crosshair; padding: 0; border: none; margin-left: 1rem; font-weight: 400;">Применить ${preferredLang}</button>
+      <p style="font-size: 1.2em;">Choose prefer Language: <span style="text-transform: uppercase;">${preferredLang}</span> or <span style="text-transform: uppercase;">${currentLang}</span></p>
+      <button class="keepLang DB ac02 ac03" style="cursor:crosshair; margin-right: 1rem;">Stay <span style="text-transform: uppercase;">${currentLang}</span></button>
+      <button class="applyLang DB ac02 ac03" style="background: none; cursor:crosshair; padding: 0; border: none; margin-left: 0rem; font-weight: 400;">Apply <span style="text-transform: uppercase;">${preferredLang}</span></button>
     </div>
   `;
   document.body.appendChild(langMenu);
