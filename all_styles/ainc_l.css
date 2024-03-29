@@ -1033,3 +1033,17 @@ display: flex;
   opacity: 0.5;
   color: black;
 }
+
+
+.lang_menu_or{
+  background-color: rgba(226, 226, 226, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: black;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  text-align: center;
+}

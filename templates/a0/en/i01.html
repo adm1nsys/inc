@@ -225,7 +225,7 @@ margin: auto;">
 <a href="#p7" class="pin-btn" id="btn_info" data-translate-key="info">Information</a>
 <div class="custom-select-wrapper" onclick="toggleCustomSelect()">
   <div class="custom-select">
-    <div class="custom-select__trigger" id="lang_id"><span id="lang_id_title">EN</span>
+    <div class="custom-select__trigger" id="lang_id"><span id="lang_id_title">lang_id</span>
       <div class="arrow"></div>
     </div>
     <div class="custom-options">
@@ -427,7 +427,21 @@ name_id01();
 displayQuestionsData();
 
 document.getElementById("lang_id_title").textContent = localStorage.getItem('c01.lang');
+let currentLang = detectLanguage();
 
+// Выбираем соответствующий элемент для текущего языка и программатически кликаем по нему
+let langOption = document.querySelector(`.custom-option[data-value="${currentLang}"]`);
+if (langOption) {
+  langOption.click();
+} else {
+  // Если не найден соответствующий элемент (например, язык не поддерживается),
+  // кликаем по элементу по умолчанию (английский)
+  document.querySelector('.custom-option[data-value="en"]').click();
+}
+
+// Вызываем toggleCustomSelect, если это часть вашей логики обновления UI
+toggleCustomSelect();
+// applyTranslations("en");
 
 }, 1000);
 // }
@@ -503,5 +517,6 @@ document.getElementById('clear-lang').addEventListener('click', function() {
   toggleCustomSelect()
   applyTranslations("en");
 });
+
 
 </script>

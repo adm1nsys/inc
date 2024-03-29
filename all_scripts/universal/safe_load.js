@@ -53,6 +53,8 @@ if(osInfo.os === "macOS"){
 });
 
 
+
+
 // Example of language resources
 const translations = {
   en: {
@@ -129,24 +131,62 @@ const translations = {
   }
 };
 
+let lang_m_sp = true;
 
-
-// Function to detect user's preferred language
+// Функция определения языка пользователя
 function detectLanguage() {
-  // Check URL parameters for 'lang', 'ln', or 'language'
   const urlParams = new URLSearchParams(window.location.search);
   const langFromUrl = urlParams.get('lang') || urlParams.get('ln') || urlParams.get('language');
+  const userLangStorage = localStorage.getItem('c01.lang');
 
   if (langFromUrl && translations[langFromUrl]) {
-    return langFromUrl;
+    // Если язык из URL действителен и нет userLangStorage, применяем langFromUrl и обновляем localStorage
+    if (!userLangStorage) {
+      localStorage.setItem('c01.lang', langFromUrl);
+      applyTranslations(langFromUrl);
+      // Убираем параметр языка из URL, если это необходимо
+      updateURLWithoutLangParam();
+      return langFromUrl;
+    } else {
+      // Если langFromUrl отличается от userLangStorage, показываем меню
+      if (langFromUrl !== userLangStorage) {
+        if(lang_m_sp === true){
+        showLanguageSelectionMenu(langFromUrl, userLangStorage);
+        lang_m_sp = false;
+      }
+      }
+      return userLangStorage; // Возвращаем текущий язык из localStorage
+    }
+  } else {
+    // Используем язык из localStorage или по умолчанию 'en'
+    return userLangStorage || 'en';
   }
-
-  // Fallback to the browser's language or default to 'en'
-  const browserLang = navigator.language.split('-')[0]; // Get language code
-  return translations[browserLang] ? browserLang : 'en';
 }
 
-// Function to apply translations
+// Функция для показа меню выбора языка
+function showLanguageSelectionMenu(preferredLang, currentLang) {
+  const langMenu = document.createElement('div');
+  langMenu.innerHTML = `
+    <div class="lang_menu_or">
+      <p>Выберите язык: ${preferredLang} / ${currentLang}</p>
+      <button id="applyLang">Применить ${preferredLang}</button>
+      <button id="keepLang">Оставить ${currentLang}</button>
+    </div>
+  `;
+  document.body.appendChild(langMenu);
+
+  document.getElementById('applyLang').addEventListener('click', function() {
+    localStorage.setItem('c01.lang', preferredLang);
+    applyTranslations(preferredLang);
+    langMenu.remove();
+  });
+
+  document.getElementById('keepLang').addEventListener('click', function() {
+    langMenu.remove();
+  });
+}
+
+// Функция применения выбранного языка без перезагрузки страницы
 function applyTranslations(lang) {
   const elements = document.querySelectorAll('[data-translate-key]');
 
@@ -156,11 +196,16 @@ function applyTranslations(lang) {
   });
 }
 
-// Detect language and apply translations
-let userLang = detectLanguage();
-
-
-
+// Обновление URL без параметра языка
+function updateURLWithoutLangParam() {
+  const url = new URL(window.location);
+  url.searchParams.delete('lang');
+  url.searchParams.delete('ln');
+  url.searchParams.delete('language');
+  window.history.replaceState({}, '', url);
+}
+let userLang = detectLanguage(); // Определяем язык пользователя
+  applyTranslations(userLang); // Применяем переводы
 
 
 

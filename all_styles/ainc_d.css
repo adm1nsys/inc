@@ -256,6 +256,11 @@ gap: 8px;
   transition: 0.4s;
 }
 
+.lang_menu_or{
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 #clear-lang{
   display: flex;
   transition: 0.4s;
@@ -302,6 +307,8 @@ display: flex;
   opacity: 0.5;
   color: white;
 }
+
+
 
 }
 
