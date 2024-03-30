@@ -1,50 +1,23 @@
 <style>
-body{
-  background:rgba(14, 14, 14, 1);
+body {
+  background: rgba(250, 250, 250, 1);
   min-height: 100vh;
 }
 
-.line_log{
+.log_c {
   display: flex;
-border: 1px solid red;
-padding: 5px;
-transition: 0.4s;
-background: none;
--webkit-touch-callout: auto;
--webkit-user-select: auto;
--khtml-user-select: auto;
--moz-user-select: auto;
--ms-user-select: auto;
-user-select: auto;
-}
-
-.line_log:hover{
-  background: rgb(115, 47, 47);
-}
-
-.line_log_num{
-  border-right: 1px solid red;
-  margin-right: 5px;
-  padding-right: 5px;
-}
-
-.log_c{
-  display: flex; flex-direction: column; position: relative; color: red; border: red; background: rgb(69, 0, 0); margin: auto; text-align: left;
-padding: 10px;
-}
-
-@media (prefers-color-scheme: dark) {
-  body{
-    background:rgba(250, 250, 250, 1);
-  }
-
-  .log_c{
-    display: flex; flex-direction: column; position: relative; color: rgb(87, 0, 0); border: rgb(87, 0, 0); background: rgb(201, 0, 0); margin: auto; text-align: left;
+  flex-direction: column;
+  position: relative;
+  color: rgb(87, 0, 0);
+  border: rgb(87, 0, 0);
+  background: rgb(201, 0, 0);
+  margin: auto;
+  text-align: left;
   padding: 10px;
-  }
+}
 
-  .line_log{
-    display: flex;
+.line_log {
+  display: flex;
   border: 1px solid rgb(87, 0, 0);
   padding: 5px;
   transition: 0.4s;
@@ -55,17 +28,44 @@ padding: 10px;
   -moz-user-select: auto;
   -ms-user-select: auto;
   user-select: auto;
+}::selection{
+  color: white;
+}
+
+.line_log:hover {
+  background: red;
+}
+
+.line_log_num {
+  border-right: 1px solid rgb(87, 0, 0);
+  margin-right: 5px;
+  padding-right: 5px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: rgba(14, 14, 14, 1);
   }
 
-  .line_log:hover{
-    background: red;
+  .line_log {
+    border: 1px solid red;
+  }
+
+  .line_log:hover {
+    background: rgb(115, 47, 47);
+  }
+
+  .log_c {
+    color: red;
+    border: red;
+    background: rgb(69, 0, 0);
   }
 
   .line_log_num{
-    border-right: 1px solid rgb(87, 0, 0);
+    border-right: 1px solid red;
   }
-
 }
+
 </style>
 
 <noscript>
