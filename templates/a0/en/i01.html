@@ -417,10 +417,12 @@ ch_phrases();
               } else {
                   // При достижении 5 попыток загружаем контент с ошибкой и сбрасываем счетчик
                   console.log("Maximum reload attempts reached. Loading error page.");
-                  $("#content").load(`inc/unavailable/works/works.html`, function(response, status, xhr) {
+                  $("#content").load(`unavaleble/works/works.html`, function(response, status, xhr) {
                       if (status === "error") {
                           $("#content").html(`There was an error loading the content: ${xhr.status} ${xhr.statusText}`);
+                          lscrenclose()
                       }
+                      lscrenclose()
                   });
                   localStorage.removeItem('reloadCount');
               }
