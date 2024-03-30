@@ -397,6 +397,41 @@ ch_phrases();
 </script>
 <script>
 
+
+
+  $(document).ready(function() {
+      function executeWithErrorHandling() {
+          try {
+              // Здесь вызываем ваш код, который может привести к ошибке
+              // Для демонстрации вызываем несуществующую функцию
+              no_function();
+              // Если код выполнен успешно, сбрасываем счетчик попыток
+              localStorage.removeItem('reloadCount');
+          } catch (e) {
+              // Обработка случая, когда произошла ошибка
+              var reloadCount = parseInt(localStorage.getItem('reloadCount')) || 0;
+              if (reloadCount < 4) { // Позволяем до 5 попыток
+                  console.log(`Error detected. Reloading attempt (${reloadCount + 1}/5)`);
+                  localStorage.setItem('reloadCount', reloadCount + 1);
+                  location.reload(); // Перезагрузка страницы
+              } else {
+                  // При достижении 5 попыток загружаем контент с ошибкой и сбрасываем счетчик
+                  console.log("Maximum reload attempts reached. Loading error page.");
+                  $("#content").load(`inc/unavailable/works/works.html`, function(response, status, xhr) {
+                      if (status === "error") {
+                          $("#content").html(`There was an error loading the content: ${xhr.status} ${xhr.statusText}`);
+                      }
+                  });
+                  localStorage.removeItem('reloadCount');
+              }
+          }
+      }
+
+      // Выполнение функции с обработкой ошибок
+      executeWithErrorHandling();
+  });
+
+
 applyTranslations(userLang);
 
   function name_id01() {
