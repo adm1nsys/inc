@@ -1,6 +1,70 @@
 <style>
 body{
-  background:radial-gradient(circle, rgba(82,82,82,1) 0%, rgba(46,46,46,1) 35%, rgba(0,0,0,1) 100%);
+  background:rgba(14, 14, 14, 1);
+  min-height: 100vh;
+}
+
+.line_log{
+  display: flex;
+border: 1px solid red;
+padding: 5px;
+transition: 0.4s;
+background: none;
+-webkit-touch-callout: auto;
+-webkit-user-select: auto;
+-khtml-user-select: auto;
+-moz-user-select: auto;
+-ms-user-select: auto;
+user-select: auto;
+}
+
+.line_log:hover{
+  background: rgb(115, 47, 47);
+}
+
+.line_log_num{
+  border-right: 1px solid red;
+  margin-right: 5px;
+  padding-right: 5px;
+}
+
+.log_c{
+  display: flex; flex-direction: column; position: relative; color: red; border: red; background: rgb(69, 0, 0); margin: auto; text-align: left;
+padding: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body{
+    background:rgba(250, 250, 250, 1);
+  }
+
+  .log_c{
+    display: flex; flex-direction: column; position: relative; color: rgb(87, 0, 0); border: rgb(87, 0, 0); background: rgb(201, 0, 0); margin: auto; text-align: left;
+  padding: 10px;
+  }
+
+  .line_log{
+    display: flex;
+  border: 1px solid rgb(87, 0, 0);
+  padding: 5px;
+  transition: 0.4s;
+  background: none;
+  -webkit-touch-callout: auto;
+  -webkit-user-select: auto;
+  -khtml-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  }
+
+  .line_log:hover{
+    background: red;
+  }
+
+  .line_log_num{
+    border-right: 1px solid rgb(87, 0, 0);
+  }
+
 }
 </style>
 
@@ -8,19 +72,29 @@ body{
    To fully experience this site, please enable JavaScript in your browser.
 </noscript>
 
+<div class="logo-pin" style="margin: auto; width: 14rem; height: 14rem; background-size: contain; margin-top: 6vh;"></div>
+<h1 style="font-size: 1.5rem; margin: 0; font-weight: 1000;">Admin inc.</h1>
+<h1 style="font-size: 1.5rem; color: rgb(255, 131, 131);">ReferenceError</h1>
 
-
-ReferenceError
-
+<div style="display: flex;">
+  <div class="log_c">
+<span class="line_log">Problem code</span>
+<span class="line_log"><span class="line_log_num">1</span>displayReleaseData();</span>
+<span class="line_log"><span class="line_log_num">2</span>displayBetaData();</span>
+<span class="line_log"><span class="line_log_num">3</span>displaySoonData();</span>
+<span class="line_log"><span class="line_log_num">4</span>corp_apply();</span>
+<span class="line_log"><span class="line_log_num">5</span>displayQuestionsData();</span>
+</div>
+</div>
 
 
 <script type="text/javascript">
 
 function delm(){
       if(document.getElementsByClassName("lang_menu_or")){
-        var element = document.getElementsByClassName("lang_menu_or")[0]; // Находим первый элемент с классом "lang_menu_or"
+        var element = document.getElementsByClassName("lang_menu_or")[0];
         if (element) {
-            element.parentNode.removeChild(element); // Удаляем найденный элемент
+            element.parentNode.removeChild(element);
         }
       }
 }
