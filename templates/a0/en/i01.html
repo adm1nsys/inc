@@ -421,7 +421,13 @@ applyTranslations(userLang);
           document.getElementById("account_btn").textContent = signUpText;
       } else {
           // Here we use the idText and the user's ID from localStorage
-          document.getElementById("account_btn").textContent = `${idText}: ${localStorage.getItem('c01.user_id')}`;
+          setTimeout(function() {
+            document.getElementById("account_btn").textContent = `${idText}: ${localStorage.getItem('c01.user_id')}`;
+
+          }, 1500); // This timing might need adjustment based on your intentions
+
+
+
       }
   }
 
