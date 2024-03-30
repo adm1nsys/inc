@@ -125,7 +125,7 @@ function displayReleaseData() {
                 <div class="brend_container0">
                     <div class="brend_container1">
                         <span class="h1-1 h1_1">${data.name}</span>
-                        <div class="h2 ac05">${data.description}</div>
+                        <div class="h2 ac05">${getLocalizedDescription(data)}</div>
                     </div>
                     <div class="brend_container_img dark">
                         <div class="jumbo absolute -inset-[10px] opacity-50 ">
@@ -136,13 +136,14 @@ function displayReleaseData() {
                     </div>
                 </div>`;
                 brendContainer.onclick = function() {
-                 window.open(data.link, '_blank'); // Assuming data.link is the URL
+                 window.open(data.link, '_blank');
             };
 
             brandsList.appendChild(brendContainer);
         }
     });
 }
+
 
 // Call the function to display data
 
@@ -158,7 +159,7 @@ function displayBetaData() {
                 <div class="brend_container0">
                     <div class="brend_container1">
                         <span class="h1-1 h1_1">${data.name}</span>
-                        <div class="h2 ac05">${data.description}</div>
+                        <div class="h2 ac05">${getLocalizedDescription(data)}</div>
                     </div>
                     <div class="brend_container_img dark">
                         <div class="jumbo absolute -inset-[10px] opacity-50 ">
@@ -169,13 +170,14 @@ function displayBetaData() {
                     </div>
                 </div>`;
                 brendContainer.onclick = function() {
-                 window.open(data.link, '_blank'); // Assuming data.link is the URL
+                 window.open(data.link, '_blank');
             };
 
             brandsList.appendChild(brendContainer);
         }
     });
 }
+
 
 // Call the function to display data
 
