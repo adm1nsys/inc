@@ -399,39 +399,9 @@ ch_phrases();
 
 
 
-  $(document).ready(function() {
-      function executeWithErrorHandling() {
-          try {
-              // Здесь вызываем ваш код, который может привести к ошибке
-              // Для демонстрации вызываем несуществующую функцию
-              no_function();
-              // Если код выполнен успешно, сбрасываем счетчик попыток
-              localStorage.removeItem('reloadCount');
-          } catch (e) {
-              // Обработка случая, когда произошла ошибка
-              var reloadCount = parseInt(localStorage.getItem('reloadCount')) || 0;
-              if (reloadCount < 4) { // Позволяем до 5 попыток
-                  console.log(`Error detected. Reloading attempt (${reloadCount + 1}/5)`);
-                  localStorage.setItem('reloadCount', reloadCount + 1);
-                  location.reload(); // Перезагрузка страницы
-              } else {
-                  // При достижении 5 попыток загружаем контент с ошибкой и сбрасываем счетчик
-                  console.log("Maximum reload attempts reached. Loading error page.");
-                  $("#content").load(`unavaleble/works/works.html`, function(response, status, xhr) {
-                      if (status === "error") {
-                          $("#content").html(`There was an error loading the content: ${xhr.status} ${xhr.statusText}`);
-                          lscrenclose()
-                      }
-                      lscrenclose()
-                  });
-                  localStorage.removeItem('reloadCount');
-              }
-          }
-      }
-
-      // Выполнение функции с обработкой ошибок
-      executeWithErrorHandling();
-  });
+  // $(document).ready(function() {
+  //
+  // });
 
 
 applyTranslations(userLang);
@@ -459,34 +429,69 @@ $(document).ready(function() {
 name_id01();
 // if(page_id === 0){
   setTimeout(function() {
-    displayReleaseData();
-    displayBetaData();
-    displaySoonData();
-    corp_apply();
-displayQuestionsData();
 
-if(localStorage.getItem('c01.lang') === null){
-  localStorage.setItem('c01.lang', "en")
-  document.getElementById("lang_id_title").textContent = "en";
-detectLanguage()
+
+
+
+function executeWithErrorHandling() {
+    try {
+        // Здесь вызываем ваш код, который может привести к ошибке
+        // Для демонстрации вызываем несуществующую функцию
+        displayReleaseData();
+        displayBetaData();
+        displaySoonData();
+        corp_apply();
+    displayQuestionsData();
+
+    if(localStorage.getItem('c01.lang') === null){
+      localStorage.setItem('c01.lang', "en")
+      document.getElementById("lang_id_title").textContent = "en";
+    detectLanguage()
+    }
+
+    document.getElementById("lang_id_title").textContent = localStorage.getItem('c01.lang');
+    let currentLang = detectLanguage();
+
+    // Выбираем соответствующий элемент для текущего языка и программатически кликаем по нему
+    let langOption = document.querySelector(`.custom-option[data-value="${currentLang}"]`);
+    if (langOption) {
+      langOption.click();
+    } else {
+      // Если не найден соответствующий элемент (например, язык не поддерживается),
+      // кликаем по элементу по умолчанию (английский)
+      document.querySelector('.custom-option[data-value="en"]').click();
+    }
+
+    // Вызываем toggleCustomSelect, если это часть вашей логики обновления UI
+    toggleCustomSelect();
+    // applyTranslations("en");
+        // Если код выполнен успешно, сбрасываем счетчик попыток
+        localStorage.removeItem('reloadCount');
+    } catch (e) {
+        // Обработка случая, когда произошла ошибка
+        var reloadCount = parseInt(localStorage.getItem('reloadCount')) || 0;
+        if (reloadCount < 4) { // Позволяем до 5 попыток
+            console.log(`Error detected. Reloading attempt (${reloadCount + 1}/5)`);
+            localStorage.setItem('reloadCount', reloadCount + 1);
+            location.reload(); // Перезагрузка страницы
+        } else {
+            // При достижении 5 попыток загружаем контент с ошибкой и сбрасываем счетчик
+            console.log("Maximum reload attempts reached. Loading error page.");
+            $("#content").load(`unavaleble/works/works.html`, function(response, status, xhr) {
+                if (status === "error") {
+                    $("#content").html(`There was an error loading the content: ${xhr.status} ${xhr.statusText}`);
+                    lscrenclose()
+                }
+                lscrenclose()
+            });
+            localStorage.removeItem('reloadCount');
+        }
+    }
 }
 
-document.getElementById("lang_id_title").textContent = localStorage.getItem('c01.lang');
-let currentLang = detectLanguage();
+// Выполнение функции с обработкой ошибок
+executeWithErrorHandling();
 
-// Выбираем соответствующий элемент для текущего языка и программатически кликаем по нему
-let langOption = document.querySelector(`.custom-option[data-value="${currentLang}"]`);
-if (langOption) {
-  langOption.click();
-} else {
-  // Если не найден соответствующий элемент (например, язык не поддерживается),
-  // кликаем по элементу по умолчанию (английский)
-  document.querySelector('.custom-option[data-value="en"]').click();
-}
-
-// Вызываем toggleCustomSelect, если это часть вашей логики обновления UI
-toggleCustomSelect();
-// applyTranslations("en");
 
 }, 1000);
 // }
