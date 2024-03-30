@@ -42,6 +42,17 @@ body {
   padding-right: 5px;
 }
 
+.error-message{
+  text-align: left;
+margin-left: 2rem;
+margin-right: 2rem;
+max-width: 80rem;
+background: rgb(212, 212, 212);
+border: 2px solid black;
+margin-bottom: 2rem;
+padding: 1rem;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background: rgba(14, 14, 14, 1);
@@ -64,6 +75,11 @@ body {
   .line_log_num{
     border-right: 1px solid red;
   }
+
+  .error-message{
+  background: black;
+  border: 2px solid white;
+  }
 }
 
 </style>
@@ -75,6 +91,19 @@ body {
 <div class="logo-pin" style="margin: auto; width: 14rem; height: 14rem; background-size: contain; margin-top: 6vh;"></div>
 <h1 style="font-size: 1.5rem; margin: 0; font-weight: 1000;">Admin inc.</h1>
 <h1 style="font-size: 1.5rem; color: rgb(255, 131, 131);">ReferenceError</h1>
+<div style="width: 100%; display: flex; justify-content: center;">
+  <div class="error-message">
+      <h1 style="text-align: center;">Technical Issue Detected</h1>
+      <p>We apologize for the inconvenience, but it seems there's been a technical issue that prevented the page from loading properly. This could be due to a variety of reasons, and we're here to guide you through some steps that might help resolve the issue.</p>
+      <p>First, we suggest <a href="javascript:location.reload();">refreshing the page</a> to see if this resolves the problem. Often, a simple reload can fix temporary loading issues.</p>
+      <p>If reloading the page does not work, it might be related to your internet connection. Please ensure your internet speed is at least <strong>90+ Mbps (actual speed)</strong>. You can check your internet speed through various <a href="https://www.speedtest.net/" target="_blank">online speed test services</a>.</p>
+      <p>Another possibility is that the issue could be on our end - perhaps due to a temporary server problem or a coding error. Rest assured, our team regularly monitors for such issues and works diligently to resolve them promptly.</p>
+      <p>For more detailed information on how to troubleshoot these types of problems, please visit our <a href="/help/troubleshooting" target="_blank">Troubleshooting Guide</a>.</p>
+      <button onclick="location.reload();">Reload Page</button>
+      <!-- <p>If you continue to experience issues, do not hesitate to contact our <a href="/support" target="_blank">support team</a>. We are committed to providing you with the best experience possible and appreciate your patience and understanding.</p> -->
+  </div>
+</div>
+
 
 <div style="display: flex;">
   <div class="log_c">
