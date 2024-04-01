@@ -521,8 +521,9 @@ rotate: 0deg;
 
 .lang_menu_or{
   bottom: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  /* margin-left: 1rem;
+  margin-right: 1rem; */
+  margin-bottom: 1rem;
 }
 
 .fo_m_t
@@ -533,9 +534,9 @@ rotate: 0deg;
 .no_w_c{
   bottom: 1em;
   height: 25px;
-  margin-top: auto;
+  /* margin-top: auto; */
   width: 100% !important;
-  margin-left: 1rem;
+  margin-left: 0rem;
 }
 
 .no_w_c1{
@@ -552,7 +553,7 @@ rotate: 0deg;
 padding: 0;
 padding-right: 0.5rem;
 text-decoration: underline;
-margin-left: 1rem;
+margin-left: 0rem;
 border-radius: 20px 8px 8px 20px;
 }
 
@@ -609,6 +610,10 @@ font-size: 0.8rem;
 
 .m1{
   font-size: 0.6rem;
+}
+
+.pd_1_2{
+  padding: 1rem;
 }
 
 }
