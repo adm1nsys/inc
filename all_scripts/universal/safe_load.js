@@ -419,6 +419,8 @@ function showLanguageSelectionMenu(preferredLang, currentLang) {
       <button class="applyLang DB ac02 ac03" style="background: none; cursor:crosshair; padding: 0; border: none; margin-left: 0rem; font-weight: 400;">Apply <span style="text-transform: uppercase;">${preferredLang}</span></button>
     </div>
   `;
+  document.getElementById("lang_allert").innerHTML = '';
+
   document.getElementById("lang_allert").appendChild(langMenu);
 
   // Навешиваем события на кнопки

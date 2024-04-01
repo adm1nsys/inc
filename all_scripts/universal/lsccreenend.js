@@ -19,8 +19,7 @@ if(page_id === 0){
 lscrenclose()
 // name_id();
 setTimeout(function() {
-
-document.getElementById("allert").style.bottom = "1rem";
+showAllert()
 }, 1000);
 
 

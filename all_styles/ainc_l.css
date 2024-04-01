@@ -1040,7 +1040,7 @@ display: flex;
   /* padding-left: 2rem; */
   /* padding-right: 2rem; */
 /* padding-bottom: 2rem; */
-  position: fixed;
+  /* position: fixed; */
   bottom: 2rem;
   left: 2rem;
   right: 2rem;
@@ -1072,10 +1072,12 @@ display: flex;
 }
 
 .no_w_c{
-  bottom: 2em;
+  /* bottom: 2em; */
   height: 40px;
   margin-top: auto;
   width: 100% !important;
+  top: 0 !important;
+  left: 0 !important;
 }
 
 .no_w_c1{
