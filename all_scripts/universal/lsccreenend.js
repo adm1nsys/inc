@@ -18,5 +18,11 @@ if(page_id === 0){
   setTimeout(function() {
 lscrenclose()
 // name_id();
+setTimeout(function() {
+
+document.getElementById("allert").style.bottom = "1rem";
+}, 1000);
+
+
 }, 1000);
 });

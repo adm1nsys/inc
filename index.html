@@ -89,25 +89,41 @@ loadFilesSequentially(filesToLoad, 0, function() {
 
 </div>
 
+
+<div id="allert" style="position: fixed; bottom: -100%; transition: all 0.4s ease 0s; display: flex; flex-direction: column; row-gap: 1rem; column-gap: 1rem; width: 100%;">
+
+<div id="lang_allert" style="width: 100%; max-width: 80rem; margin: auto;">
+
+<div class="lang_menu_or">
+    <div class="lang_menu_or1">
+      <p class="fo_m_t">Choose prefer Language: <span style="text-transform: uppercase;">pl</span> or <span style="text-transform: uppercase;">cs</span></p>
+      <button class="keepLang DB ac02 ac03" style="cursor:crosshair; margin-right: 1rem;">Stay <span style="text-transform: uppercase;">cs</span></button>
+      <button class="applyLang DB ac02 ac03" style="background: none; cursor:crosshair; padding: 0; border: none; margin-left: 0rem; font-weight: 400;">Apply <span style="text-transform: uppercase;">pl</span></button>
+    </div>
+  </div></div>
+
 <div class="pinned ac06 w11 no_w_c">
 
   <a style="display:none;" class="pin-btn no_w_c1" href="https://www.youtube.com/@Popularpolitics" target="_blank">
 
-    <?xml version="1.0" encoding="iso-8859-1"?>
+    <!--?xml version="1.0" encoding="iso-8859-1"?-->
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg fill="#000000" class="pin-btn3 no_w_c2" height="40px" width="40px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-	 viewBox="0 0 492.904 492.904" xml:space="preserve">
+
+<svg fill="#000000" class="pin-btn3 no_w_c2" height="40px" width="40px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 492.904 492.904" xml:space="preserve">
 <path id="XMLID_347_" d="M246.452,0.002C110.342,0.002,0,110.343,0,246.453c0,136.109,110.342,246.449,246.452,246.449
 	s246.452-110.34,246.452-246.449C492.904,110.343,382.563,0.002,246.452,0.002z M443.611,246.453
 	c0,44.22-14.808,84.941-39.487,117.866L271.097,231.265V51.002C368.2,63.195,443.611,146.108,443.611,246.453z M221.809,441.905
 	c-37.143-4.66-71.114-19.607-98.889-42.022l98.889-98.885V441.905z M271.097,300.982l98.9,98.9
 	c-27.788,22.415-61.757,37.362-98.9,42.022V300.982z M221.809,51.002v180.281L88.775,364.32
-	c-24.674-32.925-39.486-73.647-39.486-117.866C49.289,146.108,124.704,63.195,221.809,51.002z"/>
+	c-24.674-32.925-39.486-73.647-39.486-117.866C49.289,146.108,124.704,63.195,221.809,51.002z"></path>
 </svg>
     <div class="no_w_c3">We Support UKRAINE!</div>
   </a>
 </div>
+</div>
+
+
+
 
 <noscript>
 <link rel="stylesheet" type="text/css" href="all_styles/noscript.css">
@@ -156,7 +172,9 @@ loadFilesSequentially(filesToLoad, 0, function() {
 
 <script type="text/javascript">
 
-
+function showAllert(){
+  document.getElementById("allert").style.bottom = "1rem";
+}
 
 
 function panop() {
