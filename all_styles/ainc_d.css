@@ -537,7 +537,7 @@ right: 1rem;
 }
 
 .no_w_c1{
-  display: flex;
+  display: flex !important;
   align-items: center;
   -webkit-backdrop-filter: blur(10px);
   border-radius: 20px 8px 8px 20px;
