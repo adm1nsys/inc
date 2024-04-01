@@ -321,7 +321,7 @@ padding-left: 2px;*/
 }
 
 .pin-btn1{
-  display: none;
+  display: flex;
   color: black;
   width: auto;
   padding: 8px;
