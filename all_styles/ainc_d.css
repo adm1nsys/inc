@@ -387,11 +387,11 @@ border-radius: 4px;*/
   }
 
 .h1-1{
-  font-size: 1.5rem;
+  font-size: 1.1rem;
 }
 
   .h1 {
-font-size: 1.3rem;
+font-size: 1.1rem;
     line-height: 1.2;
 }
   .h2 {
@@ -502,7 +502,7 @@ rotate: 0deg;
 
 .namet-pin{
   /* display: none; */
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 .apply_lang{
@@ -562,13 +562,52 @@ border-radius: 20px 8px 8px 20px;
 }
 
 .no_w_c3{
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
 #copyright{
   font-size: 0.6rem;
 }
 
+.q_t0 {
+font-size: 0.8rem;
+}
+
+.logo-pin{
+  width: 25px;
+  height: 25px;
+}
+
+.custom-select__trigger{
+  font-size: 0.8rem;
+}
+
+.pin-btn1{
+  font-size: 0.8rem;
+}
+
+.custom-options{
+  padding: 4px;
+  gap: 4px;
+}
+
+.custom-option{
+  padding: 7px;
+font-size: 0.8rem;
+}
+
+#clear-lang{
+  border: 2px solid rgb(198, 0, 0);
+  font-size: 0.8rem;
+}
+
+.pin-btn1:active{
+  font-size: 0.8rem;
+}
+
+.m1{
+  font-size: 0.6rem;
+}
 
 }
 
