@@ -836,7 +836,7 @@ padding-bottom: 5%;
 
 .q_t{
 /*  background-color: #f8f8f8;*/
-  width: 100%;
+  /* width: 100%; */
 
 /*  margin-top: 2rem;*/
   margin-bottom: 1rem;
@@ -862,7 +862,7 @@ padding-bottom: 5%;
 
 .q_t1{
   background-color: #f8f8f8;
-  width: 100%;
+  /* width: 100%; */
 /*  padding-top: 2rem;*/
 /*  padding-bottom: 2rem;*/
   margin-top: 0rem;
