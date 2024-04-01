@@ -20,7 +20,7 @@ lscrenclose()
 // name_id();
 setTimeout(function() {
 showAllert()
-}, 1000);
+}, 2300);
 
 
 }, 1000);
