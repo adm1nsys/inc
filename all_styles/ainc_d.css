@@ -406,11 +406,12 @@ position: relative;
 }
 
 .DB{
-  font-size: 0.8rem;
+  font-size: 0.6rem;
+  padding: .75rem 0.6rem;
 }
 
 .DB1{
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 /*  gap: 0.8rem;*/
 margin-left: 0.8rem;
 }
@@ -564,7 +565,15 @@ border-radius: 20px 8px 8px 20px;
   font-size: 0.7rem;
 }
 
+#copyright{
+  font-size: 0.6rem;
 }
+
+
+}
+
+
+
 
 }
 
