@@ -353,6 +353,7 @@ display: flex;
   font-size: 1.2rem;
   font-weight: bold;
   z-index: 9999999999999999;
+  transition: 0.4s;
 }
 
 
