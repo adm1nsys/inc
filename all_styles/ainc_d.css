@@ -530,10 +530,9 @@ right: 1rem;
 
 .no_w_c{
   bottom: 1em;
-  right: auto !important;
   height: 25px;
   margin-top: auto;
-  width: 188px !important;
+  width: 100% !important;
 }
 
 .no_w_c1{

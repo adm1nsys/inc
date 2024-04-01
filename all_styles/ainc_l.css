@@ -1072,11 +1072,10 @@ display: flex;
 }
 
 .no_w_c{
-  bottom: 1em;
-  right: auto !important;
+  bottom: 2em;
   height: 40px;
   margin-top: auto;
-  width: 274px !important;
+  width: 100% !important;
 }
 
 .no_w_c1{
