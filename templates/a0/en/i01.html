@@ -578,7 +578,15 @@ document.getElementById("lang_tetle").textContent = localStorage.getItem('c01.la
       }, 1500); // This timing might need adjustment based on your intentions
 
 
+      document.getElementById('questions').innerHTML = '';
+      document.getElementById('brands_list').innerHTML = '';
+      document.getElementById('brands_list_beta').innerHTML = '';
+      document.getElementById('brands_list_soon').innerHTML = '';
 
+      displayReleaseData();
+      displayBetaData();
+      displaySoonData();
+  displayQuestionsData();
 
       applyTranslations(localStorage.getItem('c01.lang'));
       name_id01();
