@@ -1070,3 +1070,40 @@ display: flex;
 {
   font-size: 1.2em;
 }
+
+.no_w_c{
+  bottom: 1em;
+  right: auto !important;
+  height: 40px;
+  margin-top: auto;
+  width: 274px !important;
+}
+
+.no_w_c1{
+  display: flex;
+align-items: center;
+-webkit-backdrop-filter: blur(10px);
+border-radius: 20px 8px 8px 20px;
+padding: 0;
+padding-right: 1rem;
+margin-left: 0rem;
+}
+
+.no_w_c1:hover{
+  padding: 0;
+  padding-right: 1rem;
+  text-decoration: underline;
+  margin-left: 0;
+  border-radius: 20px 8px 8px 20px;
+}
+
+.no_w_c2{
+  padding: 0px;
+margin-right: 1rem;
+width: 40px;
+height: 40px;
+}
+
+.no_w_c3{
+  font-size: 1rem;
+}
