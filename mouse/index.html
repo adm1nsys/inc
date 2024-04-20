@@ -6,7 +6,11 @@
 
 <link rel="stylesheet" type="text/css" href="btns.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/inc/mouse/draw/style.css">
+<link rel="stylesheet" type="text/css" href="/inc/mouse/style.css">
+<!-- <link rel="stylesheet" type="text/css" href="/inc/mouse/draw/btns_draw.css"> -->
 <script src="/inc/mouse/data/const.js"></script>
+<script src="/inc/mouse/script.js"></script>
 <!-- <script src="/inc/mouse/data/l_t/1.js"></script>
 <script src="/inc/mouse/data/r_t/1.js"></script>
 <script src="/inc/mouse/data/r_b/1.js"></script>
@@ -72,7 +76,7 @@ loadFilesSequentially(filesToLoad, 0, function() {});
 <div class="h1">
   <div class="regular_btn" style="text-decoration:none;"><div class="regular_btn1"><b class="regular_btn2">Генератр</b></div></div>
   <a class="regular_btn" style="text-decoration:none;" href="/inc/mouse/draw.html"><div class="regular_btn1"><b class="regular_btn2">Малювати</b></div></a>
-  <a class="regular_btn" style="text-decoration:none;" href="/inc/mouse/downloads.html"><div class="regular_btn1"><b class="regular_btn2">Завантаження</b></div></a>
+  <!-- <a class="regular_btn" style="text-decoration:none;" href="/inc/mouse/downloads.html"><div class="regular_btn1"><b class="regular_btn2">Завантаження</b></div></a> -->
   <a class="regular_btn marg_10" style="text-decoration:none;" href="/inc/mouse/info.html"><div class="regular_btn1"><b class="regular_btn2">Інформація</b></div></a>
 
 </div>
@@ -85,8 +89,10 @@ loadFilesSequentially(filesToLoad, 0, function() {});
   <div class="pt">
 
   <div class="horizon">
-    <div class="regular_btn" onclick="randomizeLayer()"><div class="regular_btn1"><b class="regular_btn2">Сгенерувати</b></div></div>
-    <div class="regular_btn" onclick="openm()" style="position: relative;
+    <!-- <button onclick="randomize_s()">random</button> -->
+
+    <div class="regular_btn" onclick="randomize_s()"><div class="regular_btn1"><b class="regular_btn2">Сгенерувати</b></div></div>
+    <div class="regular_btn" id="exportButton" style="position: relative;
 display: flex;
 color: white;
 background: rgba(51, 51, 51, 0.25);
@@ -103,7 +109,7 @@ box-shadow: none;"><div class="regular_btn1"><b class="regular_btn2">Заван�
   </div>
 </div>
 
-<div class="pt">
+<!-- <div class="pt">
   <h2>Ідентифікация мищі<a href="info.html#mouse_identification" class="question" title="Що таке ідентифікация мищі">?</a></h2>
 
   <div class="horizon">
@@ -119,16 +125,16 @@ box-shadow: none;"><div class="regular_btn1"><b class="regular_btn2">Заван�
 
 <span style="opacity:0.5">Вставте цю константу першою строкою у ваш JavaScript.</span>
   <div id="textToCopy">const mouse_id = "id_мищі";</div>
-</div>
+</div> -->
 
 
 
 
-
+<!--
 <div class="pt">
 
 <div class="horizon">
-  <div class="regular_btn" onclick="openm_s();"><div class="regular_btn1"><b class="regular_btn2">Розміри</b></div></div>
+  <div class="regular_btn" onclick="openm_s();"><div class="regular_btn1"><b class="regular_btn2">Розміри</b></div></div> -->
   <!-- <div class="regular_btn" onclick="openm_c();" style="position: relative;
 display: flex;
 color: white;
@@ -143,8 +149,8 @@ overflow: hidden;
 border: 2px solid rgba(73, 73, 73, 0.25);
 width: 100%;padding: 0px;
 box-shadow: none;"><div class="regular_btn1"><b class="regular_btn2">Кольори</b></div></div> -->
-</div>
-</div>
+<!-- </div>
+</div> -->
 
 
 
@@ -241,320 +247,120 @@ height:auto;">
 </div>
 
 
-<div class="area0">
+<div class="area0" style="display: flex; position: fixed; top: 0; right: 0;">
 
-<div class="area">
-  <div class="draggable" style="top: 0px; left: 0px;"></div>
-<div class="row">
-    <div class="area_f" id="cel_1_1"></div>
-    <div class="area_f" id="cel_1_2"></div>
-    <div class="area_f" id="cel_1_3"></div>
-    <div class="area_f" id="cel_1_4"></div>
-    <div class="area_f" id="cel_1_5"></div>
-    <div class="area_f" id="cel_1_6"></div>
-    <div class="area_f" id="cel_1_7"></div>
-    <div class="area_f" id="cel_1_8"></div>
-    <div class="area_f" id="cel_1_9"></div>
-    <div class="area_f" id="cel_1_10"></div>
-    <div class="area_f" id="cel_1_11"></div>
-    <div class="area_f" id="cel_1_12"></div>
-    <div class="area_f" id="cel_1_13"></div>
-    <div class="area_f" id="cel_1_14"></div>
-    <div class="area_f" id="cel_1_15"></div>
-    <div class="area_f" id="cel_1_16"></div>
-</div>
+  <div>
 
-<div class="row">
-  <div class="area_f" id="cel_2_1">  </div>
-  <div class="area_f" id="cel_2_2">  </div>
-  <div class="area_f" id="cel_2_3">  </div>
-  <div class="area_f" id="cel_2_4">  </div>
-  <div class="area_f" id="cel_2_5">  </div>
-  <div class="area_f" id="cel_2_6">  </div>
-  <div class="area_f" id="cel_2_7">  </div>
-  <div class="area_f" id="cel_2_8">  </div>
-  <div class="area_f" id="cel_2_9">  </div>
-  <div class="area_f" id="cel_2_10">  </div>
-  <div class="area_f" id="cel_2_11">  </div>
-  <div class="area_f" id="cel_2_12">  </div>
-  <div class="area_f" id="cel_2_13">  </div>
-  <div class="area_f" id="cel_2_14">  </div>
-  <div class="area_f" id="cel_2_15">  </div>
-  <div class="area_f" id="cel_2_16">  </div>
-</div>
+    <!-- <div style="display: flex; margin-left: 45px; gap: 2px; position: absolute;">
+      <b class="show_n_t">1</b>
+      <b class="show_n_t">2</b>
+      <b class="show_n_t">3</b>
+      <b class="show_n_t">4</b>
+      <b class="show_n_t">5</b>
+      <b class="show_n_t">6</b>
+      <b class="show_n_t">7</b>
+      <b class="show_n_t">8</b>
+      <b class="show_n_t1">9</b>
+      <b class="show_n_t1">10</b>
+      <b class="show_n_t1">11</b>
+      <b class="show_n_t1">12</b>
+      <b class="show_n_t1">13</b>
+      <b class="show_n_t1">14</b>
+      <b class="show_n_t1">15</b>
+      <b class="show_n_t1">16</b>
+      </div> -->
+      <!-- <div style="display: flex; flex-direction: column; gap: 2px; position: absolute; margin-top: 45px;">
+        <b class="show_n_l">1</b>
+        <b class="show_n_l">2</b>
+        <b class="show_n_l">3</b>
+        <b class="show_n_l">4</b>
+        <b class="show_n_l">5</b>
+        <b class="show_n_l">6</b>
+        <b class="show_n_l">7</b>
+        <b class="show_n_l">8</b>
+        <b class="show_n_l1">9</b>
+        <b class="show_n_l1">10</b>
+        <b class="show_n_l1">11</b>
+        <b class="show_n_l1">12</b>
+        <b class="show_n_l1">13</b>
+        <b class="show_n_l1">14</b>
+        <b class="show_n_l1">15</b>
+        <b class="show_n_l1">16</b>
+        </div> -->
 
-<div class="row">
-  <div class="area_f" id="cel_3_1">  </div>
-  <div class="area_f" id="cel_3_2">  </div>
-  <div class="area_f" id="cel_3_3">  </div>
-  <div class="area_f" id="cel_3_4">  </div>
-  <div class="area_f" id="cel_3_5">  </div>
-  <div class="area_f" id="cel_3_6">  </div>
-  <div class="area_f" id="cel_3_7">  </div>
-  <div class="area_f" id="cel_3_8">  </div>
-  <div class="area_f" id="cel_3_9">  </div>
-  <div class="area_f" id="cel_3_10">  </div>
-  <div class="area_f" id="cel_3_11">  </div>
-  <div class="area_f" id="cel_3_12">  </div>
-  <div class="area_f" id="cel_3_13">  </div>
-  <div class="area_f" id="cel_3_14">  </div>
-  <div class="area_f" id="cel_3_15">  </div>
-  <div class="area_f" id="cel_3_16">  </div>
-</div>
+  <div class="area0" style="">
 
-<div class="row">
-  <div class="area_f" id="cel_4_1">  </div>
-  <div class="area_f" id="cel_4_2">  </div>
-  <div class="area_f" id="cel_4_3">  </div>
-  <div class="area_f" id="cel_4_4">  </div>
-  <div class="area_f" id="cel_4_5">  </div>
-  <div class="area_f" id="cel_4_6">  </div>
-  <div class="area_f" id="cel_4_7">  </div>
-  <div class="area_f" id="cel_4_8">  </div>
-  <div class="area_f" id="cel_4_9">  </div>
-  <div class="area_f" id="cel_4_10">  </div>
-  <div class="area_f" id="cel_4_11">  </div>
-  <div class="area_f" id="cel_4_12">  </div>
-  <div class="area_f" id="cel_4_13">  </div>
-  <div class="area_f" id="cel_4_14">  </div>
-  <div class="area_f" id="cel_4_15">  </div>
-  <div class="area_f" id="cel_4_16">  </div>
-</div>
+  <!-- <div class="area"> -->
+    <div class="draggable" style="top: 0px; left: 0px;"></div>
+    <div id="divForArea">
 
-<div class="row">
-  <div class="area_f" id="cel_5_1">  </div>
-  <div class="area_f" id="cel_5_2">  </div>
-  <div class="area_f" id="cel_5_3">  </div>
-  <div class="area_f" id="cel_5_4">  </div>
-  <div class="area_f" id="cel_5_5">  </div>
-  <div class="area_f" id="cel_5_6">  </div>
-  <div class="area_f" id="cel_5_7">  </div>
-  <div class="area_f" id="cel_5_8">  </div>
-  <div class="area_f" id="cel_5_9">  </div>
-  <div class="area_f" id="cel_5_10">  </div>
-  <div class="area_f" id="cel_5_11">  </div>
-  <div class="area_f" id="cel_5_12">  </div>
-  <div class="area_f" id="cel_5_13">  </div>
-  <div class="area_f" id="cel_5_14">  </div>
-  <div class="area_f" id="cel_5_15">  </div>
-  <div class="area_f" id="cel_5_16">  </div>
-</div>
-
-<div class="row">
-  <div class="area_f" id="cel_6_1">  </div>
-  <div class="area_f" id="cel_6_2">  </div>
-  <div class="area_f" id="cel_6_3">  </div>
-  <div class="area_f" id="cel_6_4">  </div>
-  <div class="area_f" id="cel_6_5">  </div>
-  <div class="area_f" id="cel_6_6">  </div>
-  <div class="area_f" id="cel_6_7">  </div>
-  <div class="area_f" id="cel_6_8">  </div>
-  <div class="area_f" id="cel_6_9">  </div>
-  <div class="area_f" id="cel_6_10">  </div>
-  <div class="area_f" id="cel_6_11">  </div>
-  <div class="area_f" id="cel_6_12">  </div>
-  <div class="area_f" id="cel_6_13">  </div>
-  <div class="area_f" id="cel_6_14">  </div>
-  <div class="area_f" id="cel_6_15">  </div>
-  <div class="area_f" id="cel_6_16">  </div>
-</div>
-
-<div class="row">
-  <div class="area_f" id="cel_7_1">  </div>
-  <div class="area_f" id="cel_7_2">  </div>
-  <div class="area_f" id="cel_7_3">  </div>
-  <div class="area_f" id="cel_7_4">  </div>
-  <div class="area_f" id="cel_7_5">  </div>
-  <div class="area_f" id="cel_7_6">  </div>
-  <div class="area_f" id="cel_7_7">  </div>
-  <div class="area_f" id="cel_7_8">  </div>
-  <div class="area_f" id="cel_7_9">  </div>
-  <div class="area_f" id="cel_7_10">  </div>
-  <div class="area_f" id="cel_7_11">  </div>
-  <div class="area_f" id="cel_7_12">  </div>
-  <div class="area_f" id="cel_7_13">  </div>
-  <div class="area_f" id="cel_7_14">  </div>
-  <div class="area_f" id="cel_7_15">  </div>
-  <div class="area_f" id="cel_7_16">  </div>
-</div>
-
-<div class="row">
-  <div class="area_f" id="cel_8_1">  </div>
-  <div class="area_f" id="cel_8_2">  </div>
-  <div class="area_f" id="cel_8_3">  </div>
-  <div class="area_f" id="cel_8_4">  </div>
-  <div class="area_f" id="cel_8_5">  </div>
-  <div class="area_f" id="cel_8_6">  </div>
-  <div class="area_f" id="cel_8_7">  </div>
-  <div class="area_f" id="cel_8_8">  </div>
-  <div class="area_f" id="cel_8_9">  </div>
-  <div class="area_f" id="cel_8_10">  </div>
-  <div class="area_f" id="cel_8_11">  </div>
-  <div class="area_f" id="cel_8_12">  </div>
-  <div class="area_f" id="cel_8_13">  </div>
-  <div class="area_f" id="cel_8_14">  </div>
-  <div class="area_f" id="cel_8_15">  </div>
-  <div class="area_f" id="cel_8_16">  </div>
-</div>
-
-<div class="row">
-  <div class="area_f" id="cel_9_1">  </div>
-  <div class="area_f" id="cel_9_2">  </div>
-  <div class="area_f" id="cel_9_3">  </div>
-  <div class="area_f" id="cel_9_4">  </div>
-  <div class="area_f" id="cel_9_5">  </div>
-  <div class="area_f" id="cel_9_6">  </div>
-  <div class="area_f" id="cel_9_7">  </div>
-  <div class="area_f" id="cel_9_8">  </div>
-  <div class="area_f" id="cel_9_9">  </div>
-  <div class="area_f" id="cel_9_10">  </div>
-  <div class="area_f" id="cel_9_11">  </div>
-  <div class="area_f" id="cel_9_12">  </div>
-  <div class="area_f" id="cel_9_13">  </div>
-  <div class="area_f" id="cel_9_14">  </div>
-  <div class="area_f" id="cel_9_15">  </div>
-  <div class="area_f" id="cel_9_16">  </div>
-</div>
-
-<div class="row">
-  <div class="area_f" id="cel_10_1">  </div>
-  <div class="area_f" id="cel_10_2">  </div>
-  <div class="area_f" id="cel_10_3">  </div>
-  <div class="area_f" id="cel_10_4">  </div>
-  <div class="area_f" id="cel_10_5">  </div>
-  <div class="area_f" id="cel_10_6">  </div>
-  <div class="area_f" id="cel_10_7">  </div>
-  <div class="area_f" id="cel_10_8">  </div>
-  <div class="area_f" id="cel_10_9">  </div>
-  <div class="area_f" id="cel_10_10">  </div>
-  <div class="area_f" id="cel_10_11">  </div>
-  <div class="area_f" id="cel_10_12">  </div>
-  <div class="area_f" id="cel_10_13">  </div>
-  <div class="area_f" id="cel_10_14">  </div>
-  <div class="area_f" id="cel_10_15">  </div>
-  <div class="area_f" id="cel_10_16">  </div>
-</div>
-
-<div class="row">
-  <div class="area_f" id="cel_11_1">  </div>
-  <div class="area_f" id="cel_11_2">  </div>
-  <div class="area_f" id="cel_11_3">  </div>
-  <div class="area_f" id="cel_11_4">  </div>
-  <div class="area_f" id="cel_11_5">  </div>
-  <div class="area_f" id="cel_11_6">  </div>
-  <div class="area_f" id="cel_11_7">  </div>
-  <div class="area_f" id="cel_11_8">  </div>
-  <div class="area_f" id="cel_11_9">  </div>
-  <div class="area_f" id="cel_11_10">  </div>
-  <div class="area_f" id="cel_11_11">  </div>
-  <div class="area_f" id="cel_11_12">  </div>
-  <div class="area_f" id="cel_11_13">  </div>
-  <div class="area_f" id="cel_11_14">  </div>
-  <div class="area_f" id="cel_11_15">  </div>
-  <div class="area_f" id="cel_11_16">  </div>
-</div>
-
-<div class="row">
-  <div class="area_f" id="cel_12_1">  </div>
-  <div class="area_f" id="cel_12_2">  </div>
-  <div class="area_f" id="cel_12_3">  </div>
-  <div class="area_f" id="cel_12_4">  </div>
-  <div class="area_f" id="cel_12_5">  </div>
-  <div class="area_f" id="cel_12_6">  </div>
-  <div class="area_f" id="cel_12_7">  </div>
-  <div class="area_f" id="cel_12_8">  </div>
-  <div class="area_f" id="cel_12_9">  </div>
-  <div class="area_f" id="cel_12_10">  </div>
-  <div class="area_f" id="cel_12_11">  </div>
-  <div class="area_f" id="cel_12_12">  </div>
-  <div class="area_f" id="cel_12_13">  </div>
-  <div class="area_f" id="cel_12_14">  </div>
-  <div class="area_f" id="cel_12_15">  </div>
-  <div class="area_f" id="cel_12_16">  </div>
-</div>
-
-<div class="row">
-  <div class="area_f" id="cel_13_1">  </div>
-  <div class="area_f" id="cel_13_2">  </div>
-  <div class="area_f" id="cel_13_3">  </div>
-  <div class="area_f" id="cel_13_4">  </div>
-  <div class="area_f" id="cel_13_5">  </div>
-  <div class="area_f" id="cel_13_6">  </div>
-  <div class="area_f" id="cel_13_7">  </div>
-  <div class="area_f" id="cel_13_8">  </div>
-  <div class="area_f" id="cel_13_9">  </div>
-  <div class="area_f" id="cel_13_10">  </div>
-  <div class="area_f" id="cel_13_11">  </div>
-  <div class="area_f" id="cel_13_12">  </div>
-  <div class="area_f" id="cel_13_13">  </div>
-  <div class="area_f" id="cel_13_14">  </div>
-  <div class="area_f" id="cel_13_15">  </div>
-  <div class="area_f" id="cel_13_16">  </div>
-</div>
-
-<div class="row">
-  <div class="area_f" id="cel_14_1">  </div>
-  <div class="area_f" id="cel_14_2">  </div>
-  <div class="area_f" id="cel_14_3">  </div>
-  <div class="area_f" id="cel_14_4">  </div>
-  <div class="area_f" id="cel_14_5">  </div>
-  <div class="area_f" id="cel_14_6">  </div>
-  <div class="area_f" id="cel_14_7">  </div>
-  <div class="area_f" id="cel_14_8">  </div>
-  <div class="area_f" id="cel_14_9">  </div>
-  <div class="area_f" id="cel_14_10">  </div>
-  <div class="area_f" id="cel_14_11">  </div>
-  <div class="area_f" id="cel_14_12">  </div>
-  <div class="area_f" id="cel_14_13">  </div>
-  <div class="area_f" id="cel_14_14">  </div>
-  <div class="area_f" id="cel_14_15">  </div>
-  <div class="area_f" id="cel_14_16">  </div>
-</div>
-
-<div class="row">
-  <div class="area_f" id="cel_15_1">  </div>
-  <div class="area_f" id="cel_15_2">  </div>
-  <div class="area_f" id="cel_15_3">  </div>
-  <div class="area_f" id="cel_15_4">  </div>
-  <div class="area_f" id="cel_15_5">  </div>
-  <div class="area_f" id="cel_15_6">  </div>
-  <div class="area_f" id="cel_15_7">  </div>
-  <div class="area_f" id="cel_15_8">  </div>
-  <div class="area_f" id="cel_15_9">  </div>
-  <div class="area_f" id="cel_15_10">  </div>
-  <div class="area_f" id="cel_15_11">  </div>
-  <div class="area_f" id="cel_15_12">  </div>
-  <div class="area_f" id="cel_15_13">  </div>
-  <div class="area_f" id="cel_15_14">  </div>
-  <div class="area_f" id="cel_15_15">  </div>
-  <div class="area_f" id="cel_15_16">  </div>
-</div>
-
-<div class="row">
-  <div class="area_f" id="cel_16_1">  </div>
-  <div class="area_f" id="cel_16_2">  </div>
-  <div class="area_f" id="cel_16_3">  </div>
-  <div class="area_f" id="cel_16_4">  </div>
-  <div class="area_f" id="cel_16_5">  </div>
-  <div class="area_f" id="cel_16_6">  </div>
-  <div class="area_f" id="cel_16_7">  </div>
-  <div class="area_f" id="cel_16_8">  </div>
-  <div class="area_f" id="cel_16_9">  </div>
-  <div class="area_f" id="cel_16_10">  </div>
-  <div class="area_f" id="cel_16_11">  </div>
-  <div class="area_f" id="cel_16_12">  </div>
-  <div class="area_f" id="cel_16_13">  </div>
-  <div class="area_f" id="cel_16_14">  </div>
-  <div class="area_f" id="cel_16_15">  </div>
-  <div class="area_f" id="cel_16_16">  </div>
-</div>
+    </div>
 
 
+  <!-- <script src="script.js">
 
+  </script> -->
 
+  <script src="draw/export.js">
 
+  </script>
 
-</div>
+  <script src="import.js">
+
+  </script>
+
+  <script src="script_1.js">
+
+  </script>
+
+  <div style="display:none;">
+    <button onclick="randomize_s()">random</button>
+  </div>
+
+  <div style="display:none; flex-direction: column;">
+
+  <button onclick="import_s1()">import_s1</button>
+  <button onclick="import_s2()">import_s2</button>
+  <button onclick="import_s3()">import_s3</button>
+  <button onclick="import_s4()">import_s4</button>
+  <button onclick="import_s5()">import_s5</button>
+  <button onclick="import_s6()">import_s6</button>
+  <button onclick="import_s7()">import_s7</button>
+  <button onclick="import_s8()">import_s8</button>
+  <button onclick="import_s9()">import_s9</button>
+  <button onclick="import_s10()">import_s10</button>
+  <button onclick="import_s11()">import_s11</button>
+  <button onclick="import_s12()">import_s12</button>
+  <button onclick="import_s13()">import_s13</button>
+  <button onclick="import_s14()">import_s14</button>
+  <button onclick="import_s15()">import_s15</button>
+  <button onclick="import_s16()">import_s16</button>
+
+  <br />
+
+  <button onclick="export_s1()">export_s1</button>
+  <button onclick="export_s2()">export_s2</button>
+  <button onclick="export_s3()">export_s3</button>
+  <button onclick="export_s4()">export_s4</button>
+  <button onclick="export_s5()">export_s5</button>
+  <button onclick="export_s6()">export_s6</button>
+  <button onclick="export_s7()">export_s7</button>
+  <button onclick="export_s8()">export_s8</button>
+  <button onclick="export_s9()">export_s9</button>
+  <button onclick="export_s10()">export_s10</button>
+  <button onclick="export_s11()">export_s11</button>
+  <button onclick="export_s12()">export_s12</button>
+  <button onclick="export_s13()">export_s13</button>
+  <button onclick="export_s14()">export_s14</button>
+  <button onclick="export_s15()">export_s15</button>
+  <button onclick="export_s16()">export_s16</button>
+
+  </div>
+
+  <!-- </div> -->
+  </div>
+  </div>
+
 </div>
 
 <div id="popupMenu" style="display:none;">
@@ -1106,6 +912,10 @@ scale: 0.8;">(Default)</h4><a href="info.html#script_js" class="question" title=
 </body>
 
 <script>
+
+
+// randomize_s()
+
 function openm(){
   $('#popupMenu').fadeIn();
 
@@ -1207,7 +1017,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // Для вызова из HTML, функция должна быть доступна глобально
   window.randomizeLayer = randomizeLayer;
 
-randomizeLayer();
+// randomizeLayer();
 
   var slider = document.getElementById("slider_b_size");
    var outputs = document.getElementsByClassName("b_size");
@@ -1265,65 +1075,65 @@ $(document).ready(function() {
 
          var fadeDuration = 500;
 
-function updateSize() {
-    var width = $("#slider_m_size0").val();
-    var height = $("#slider_m_size1").val();
-    $("#dynamicElement2").width(width).height(height);
-}
-
-$("#slider_m_size0, #slider_m_size1").mouseover(function() {
-    $("#dynamicElement2").fadeIn(fadeDuration);
-    updateSize();
-});
-
-$("#slider_m_size0, #slider_m_size1").mouseout(function() {
-    $("#dynamicElement2").fadeOut(fadeDuration);
-});
-
-$("#slider_m_size0, #slider_m_size1").on('input', updateSize);
+// function updateSize() {
+//     var width = $("#slider_m_size0").val();
+//     var height = $("#slider_m_size1").val();
+//     $("#dynamicElement2").width(width).height(height);
+// }
+//
+// $("#slider_m_size0, #slider_m_size1").mouseover(function() {
+//     $("#dynamicElement2").fadeIn(fadeDuration);
+//     updateSize();
+// });
+//
+// $("#slider_m_size0, #slider_m_size1").mouseout(function() {
+//     $("#dynamicElement2").fadeOut(fadeDuration);
+// });
+//
+// $("#slider_m_size0, #slider_m_size1").on('input', updateSize);
            });
-         function updateColor(colorInputId, alphaInputId, colorBoxId) {
-    var color = document.getElementById(colorInputId).value;
-    var alpha = document.getElementById(alphaInputId).value;
-    var rgbaColor = hexToRgba(color, alpha);
-    document.getElementById(colorBoxId).style.backgroundColor = rgbaColor;
-}
-document.getElementById("copyButton").addEventListener("click", function() {
-    var text = document.querySelector(".textToCopy").innerText;
-    var textArea = document.createElement("textarea");
-    textArea.value = text;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand("Copy");
-    textArea.remove();
-    alert("Текст скопирован: " + text);
-});
+//          function updateColor(colorInputId, alphaInputId, colorBoxId) {
+//     var color = document.getElementById(colorInputId).value;
+//     var alpha = document.getElementById(alphaInputId).value;
+//     var rgbaColor = hexToRgba(color, alpha);
+//     document.getElementById(colorBoxId).style.backgroundColor = rgbaColor;
+// }
+// document.getElementById("copyButton").addEventListener("click", function() {
+//     var text = document.querySelector(".textToCopy").innerText;
+//     var textArea = document.createElement("textarea");
+//     textArea.value = text;
+//     document.body.appendChild(textArea);
+//     textArea.select();
+//     document.execCommand("Copy");
+//     textArea.remove();
+//     alert("Текст скопирован: " + text);
+// });
 
 // Функция для проверки фокуса и копирования содержимого
-function copyContentIfNotFocused() {
-  // Находим элемент span по его id
-  const span = document.getElementById('id_inp');
-
-  // Проверяем, не находится ли элемент в фокусе
-  // Так как span не может быть в фокусе по умолчанию, мы используем другой подход
-  // Например, слушаем событие blur на документе или элементе, который может терять фокус
-  document.addEventListener('click', function(event) {
-    // Проверяем, что клик произошел вне элемента span
-    if (event.target !== span) {
-      // Копируем содержимое span в переменную
-      mouse_id = span.textContent || span.innerText;
-      // console.log('Содержимое скопировано в mouse_id:', mouse_id);
-    }
-  });
-}
+// function copyContentIfNotFocused() {
+//   // Находим элемент span по его id
+//   const span = document.getElementById('id_inp');
+//
+//   // Проверяем, не находится ли элемент в фокусе
+//   // Так как span не может быть в фокусе по умолчанию, мы используем другой подход
+//   // Например, слушаем событие blur на документе или элементе, который может терять фокус
+//   document.addEventListener('click', function(event) {
+//     // Проверяем, что клик произошел вне элемента span
+//     if (event.target !== span) {
+//       // Копируем содержимое span в переменную
+//       mouse_id = span.textContent || span.innerText;
+//       // console.log('Содержимое скопировано в mouse_id:', mouse_id);
+//     }
+//   });
+// }
 
 // Вызываем функцию для инициализации механизма копирования
-copyContentIfNotFocused();
-
-document.getElementById("id_inp").addEventListener("input", function() {
-    var editableText = this.innerText;
-    document.getElementById("textToCopy").innerText = 'const mouse_id = "' + editableText + '";';
-});
+// copyContentIfNotFocused();
+//
+// document.getElementById("id_inp").addEventListener("input", function() {
+//     var editableText = this.innerText;
+//     document.getElementById("textToCopy").innerText = 'const mouse_id = "' + editableText + '";';
+// });
 
 function hexToRgba(hex, alpha) {
     var r = parseInt(hex.slice(1, 3), 16);
@@ -1368,52 +1178,52 @@ mappings.forEach(function(mapping) {
     };
 });
 
-const draggable = document.querySelector('.draggable');
-const grid = document.querySelector('.area'); // Контейнер для лабиринта
-const gridcels = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
-let currentRow = 0; // Текущая строка
-let currentCol = 0; // Текущий столбец
-const gridSize = 16; // Предположим, что у нас 20 ячеек в строке
+// const draggable = document.querySelector('.draggable');
+// const grid = document.querySelector('.area'); // Контейнер для лабиринта
+// const gridcels = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
+// let currentRow = 0; // Текущая строка
+// let currentCol = 0; // Текущий столбец
+// const gridSize = 16; // Предположим, что у нас 20 ячеек в строке
 
-window.move = (direction) => {
-    let newRow = currentRow;
-    let newCol = currentCol;
+// window.move = (direction) => {
+//     let newRow = currentRow;
+//     let newCol = currentCol;
+//
+//     switch(direction) {
+//         case 'left':
+//             newCol--;
+//             break;
+//         case 'right':
+//             newCol++;
+//             break;
+//         case 'up':
+//             newRow--;
+//             break;
+//         case 'down':
+//             newRow++;
+//             break;
+//     }
+//
+//     if (canMoveTo(newRow, newCol)) {
+//         currentRow = newRow;
+//         currentCol = newCol;
+//         updatePosition();
+//     }
+// }
 
-    switch(direction) {
-        case 'left':
-            newCol--;
-            break;
-        case 'right':
-            newCol++;
-            break;
-        case 'up':
-            newRow--;
-            break;
-        case 'down':
-            newRow++;
-            break;
-    }
+// function canMoveTo(row, col) {
+//     if (row < 0 || col < 0 || row >= gridSize || col >= gridSize) {
+//       console.log("За межами лабіринту");
+//         return false; // За пределами лабиринта
+//     }
+//     const celIndex = row * gridSize + col;
+//     return !gridcels[celIndex].classList.contains('area_r');
+// }
 
-    if (canMoveTo(newRow, newCol)) {
-        currentRow = newRow;
-        currentCol = newCol;
-        updatePosition();
-    }
-}
-
-function canMoveTo(row, col) {
-    if (row < 0 || col < 0 || row >= gridSize || col >= gridSize) {
-      console.log("За межами лабіринту");
-        return false; // За пределами лабиринта
-    }
-    const celIndex = row * gridSize + col;
-    return !gridcels[celIndex].classList.contains('area_r');
-}
-
-function updatePosition() {
-    draggable.style.top = (currentRow * 50) + 'px'; // 50 - высота ячейки
-    draggable.style.left = (currentCol * 50) + 'px'; // 50 - ширина ячейки
-}
+// function updatePosition() {
+//     draggable.style.top = (currentRow * 50) + 'px'; // 50 - высота ячейки
+//     draggable.style.left = (currentCol * 50) + 'px'; // 50 - ширина ячейки
+// }
 
 
 });
@@ -1622,287 +1432,287 @@ $('#includeFunctionality').change(function(){
 }).change(); // вызов .change() для инициализации состояния при загрузке
 
 
-function downloadPixelArtAsHTML() {
-    const includeCss = document.getElementById('includeCss').checked;
-    const cssOption = document.querySelector('input[name="cssOption"]:checked').value;
-    const includeCssSizes = document.getElementById('includeCssSizes').checked;
-    const cssSizesOption = document.querySelector('input[name="cssSizesOption"]:checked').value;
-    const includeFunctionality = document.getElementById('includeFunctionality').checked;
-    const jsOption = document.querySelector('input[name="jsOption"]:checked').value;
-    const functionalityCssOption = document.querySelector('input[name="functionalityCssOption"]:checked').value;
-
-    // Получение содержимого пиксель-арта
-    const pixelArtContent = document.querySelector('.area0').innerHTML;
-
-    // Пример задания цветов фона для каждого класса
-    let color_for_area_p = 'rgb(107, 153, 201)'; // Пример цвета для .area_p
-    let color_for_area_f = 'white'; // Пример цвета для .area_f
-    let color_for_area_r = 'rgb(0, 0, 0)'; // Пример цвета для .area_r
-    let color_for_area_t = 'rgb(255, 0, 0)'; // Пример цвета для .area_t
-
-    // Функция для проверки и применения цвета фона
-    function applyBackgroundColor(selector, defaultColor) {
-        $(selector).each(function() {
-            var hasBackgroundStyle = false;
-
-            // Проверяем, задан ли inline стиль фона для текущего класса
-            var inlineBg = $(this).attr('style');
-            if (inlineBg && inlineBg.includes('background')) {
-                hasBackgroundStyle = true;
-            }
-
-            // Проверяем наличие класса с суффиксом _с и наличие у него стиля
-            var classWithSuffix = $(this).hasClass(selector.substring(1) + '_c');
-            if (classWithSuffix) {
-                var inlineBgSuffix = $(this).attr('style');
-                if (inlineBgSuffix && inlineBgSuffix.includes('background')) {
-                    hasBackgroundStyle = true;
-                }
-            }
-
-            // Если нет инлайнового стиля фона, применяем цвет по умолчанию
-            if (!hasBackgroundStyle) {
-                $(this).css('background', defaultColor);
-            }
-        });
-    }
-
-    // Применяем функцию к каждому классу
-    applyBackgroundColor('.area_p', color_for_area_p);
-    applyBackgroundColor('.area_f', color_for_area_f);
-    applyBackgroundColor('.area_r', color_for_area_r);
-    applyBackgroundColor('.area_t', color_for_area_t);
-
-
-    // Определение CSS и JS контента
-    let cssColorSchemeContent = includeCss && cssOption === 'inline' ? `<style>
-        .draggable {
-            background: none;
-        }
-        .area {
-            border-color: black;
-            background: none;
-        }
-
-        .area_p { background: ${color_for_area_p} !important;}
-        .area_f { background: ${color_for_area_f} !important;}
-        .area_r { background: ${color_for_area_r} !important;}
-        .area_t { background: ${color_for_area_t} !important;}
-    </style>` : includeCss && cssOption === 'link' ? '<link rel="stylesheet" href="colors.css">' : '';
-
-
-
-
-
-    let cssSizesContent = includeCssSizes && cssSizesOption === 'inline' ? `<style>
-    .draggable {
-        width: ${mouse_size}px;
-        height: ${mouse_size1}px;
-        position: absolute;
-        transition: 0.5s;
-        top: 0px;
-        left: 0px;
-    }
-    .area {
-        display: flex;
-        position: relative;
-        flex-direction: column;
-        border: ${box_size}px solid;
-        margin: auto;
-    }
-    .row {
-        display: flex;
-        flex-direction: row;
-    }
-    .area_p { width: ${box_size}px; height: ${box_size}px; }
-    .area_f { width: ${box_size}px; height: ${box_size}px; }
-    .area_r { width: ${box_size}px; height: ${box_size}px; }
-    .area_t { width: ${box_size}px; height: ${box_size}px; }
-    </style>` : includeCssSizes && cssSizesOption === 'link' ? '<link rel="stylesheet" href="size.css">' : '';
-    let functionalityCssContent = includeFunctionality && functionalityCssOption === 'inline' ? `<style>
-    .btns_c{
-      display: flex;
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-    }
-
-    .btn_l{
-      width: 50px;
-    height: 50px;
-    position: absolute;
-    right: 100px;
-    bottom: 50px;
-    rotate: -90deg;
-    }
-
-    .btn_r{
-      width: 50px;
-    height: 50px;
-    position: absolute;
-    bottom: 50px;
-    right: 0px;
-    rotate: 90deg;
-    }
-
-    .btn_t{
-      width: 50px;
-    height: 50px;
-    position: absolute;
-    bottom: 100px;
-    right: 50px;
-    }
-
-    .btn_b{
-      width: 50px;
-    height: 50px;
-    position: absolute;
-    bottom: 0px;
-    right: 50px;
-    rotate: 180deg;
-    }
-
-    .btn_style{
-      background-color: gray;
-      border-radius: 10px;
-      border: 2px solid rgb(92, 92, 92);
-      transition: 0.4s;
-      cursor: crosshair;
-    }
-
-    .btn_style:hover{
-      background-color: rgb(91, 91, 91);
-    border: 2px solid rgb(180, 180, 180);
-    }
-
-    .btn_style:active{
-      background-color: rgb(255, 91, 91);
-    border: 2px solid rgb(180, 180, 180);
-    }
-    svg{
-      width: 20px;
-      height: 20px;
-    }
-    </style>` : includeFunctionality && functionalityCssOption === 'link' ? '<link rel="stylesheet" href="controls.css">' : '';
-
-    // Исправление для экранирования закрывающего тега script
-    let jsContent = includeFunctionality && jsOption === 'inline' ? `<script>
-    function checkElementAndApplyStyle() {
-  // Пытаемся найти элемент с указанным ID
-  const element = document.getElementById(mouse_id);
-  // Находим первый элемент с классом draggable
-  const draggableElement = document.querySelector('.draggable');
-
-  // Если элемент найден и существует целевой элемент с классом draggable
-  if (element && draggableElement) {
-      // Перемещаем найденный элемент в элемент с классом draggable
-      draggableElement.appendChild(element);
-  } else if (!element && draggableElement) {
-      // Если элемент с указанным ID не найден, но есть элемент с классом draggable
-      // Применяем стиль к элементу с классом draggable
-      draggableElement.style.backgroundColor = "red";
-      draggableElement.style.mixBlendMode = "difference";
-  }
-}
-
-function spawnButtons() {
-${jsScriptContent}
-
-// Создаем контейнер для кнопок
-const container = document.createElement('div');
-// Добавляем HTML код кнопок в контейнер
-container.innerHTML = buttonsHtml;
-// Добавляем контейнер с кнопками в body
-document.body.appendChild(container);
-}
-
-// Вызываем функцию для добавления кнопок в документ
-
-  document.addEventListener('DOMContentLoaded', (event) => {
-
-    spawnButtons();
-
-// Вызываем функцию для проверки и применения стилей
-checkElementAndApplyStyle();
-    const draggable = document.querySelector('.draggable');
-    const grid = document.querySelector('.area'); // Контейнер для лабиринта
-    const gridcels = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
-    let currentRow = 0; // Текущая строка
-    let currentCol = 0; // Текущий столбец
-    const gridSize = 16; // Предположим, что у нас 20 ячеек в строке
-
-    window.move = (direction) => {
-        let newRow = currentRow;
-        let newCol = currentCol;
-
-        switch(direction) {
-            case 'left':
-                newCol--;
-                break;
-            case 'right':
-                newCol++;
-                break;
-            case 'up':
-                newRow--;
-                break;
-            case 'down':
-                newRow++;
-                break;
-        }
-
-        if (canMoveTo(newRow, newCol)) {
-            currentRow = newRow;
-            currentCol = newCol;
-            updatePosition();
-        }
-    }
-
-    function canMoveTo(row, col) {
-        if (row < 0 || col < 0 || row >= gridSize || col >= gridSize) {
-          console.log("За межами лабіринту");
-            return false; // За пределами лабиринта
-        }
-        const celIndex = row * gridSize + col;
-        return !gridcels[celIndex].classList.contains('area_r');
-    }
-
-    function updatePosition() {
-        draggable.style.top = (currentRow * ${box_size}) + 'px'; // 50 - высота ячейки
-        draggable.style.left = (currentCol * ${box_size}) + 'px'; // 50 - ширина ячейки
-    }
-    });
-    <\/script>` : includeFunctionality && jsOption === 'link' ? '<script src="script.js"><\/script>' : '';
-    // Создание стандартной структуры HTML
-    const fullHtml = `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Micromouse Map</title>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"><\/script>
-        <script>
-        const mouse_id = "${mouse_id}";
-        <\/script>
-        ${cssColorSchemeContent}
-        ${cssSizesContent}
-        ${functionalityCssContent}
-    </head>
-    <body style="display:flex;">
-        ${pixelArtContent}
-    </body>
-    ${jsContent}
-    </html>`;
-
-    // Создание и скачивание файла
-    const blob = new Blob([fullHtml], { type: 'text/html' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'index.html';
-    a.click();
-    URL.revokeObjectURL(url);
-}
+// function downloadPixelArtAsHTML() {
+//     const includeCss = document.getElementById('includeCss').checked;
+//     const cssOption = document.querySelector('input[name="cssOption"]:checked').value;
+//     const includeCssSizes = document.getElementById('includeCssSizes').checked;
+//     const cssSizesOption = document.querySelector('input[name="cssSizesOption"]:checked').value;
+//     const includeFunctionality = document.getElementById('includeFunctionality').checked;
+//     const jsOption = document.querySelector('input[name="jsOption"]:checked').value;
+//     const functionalityCssOption = document.querySelector('input[name="functionalityCssOption"]:checked').value;
+//
+//     // Получение содержимого пиксель-арта
+//     const pixelArtContent = document.querySelector('.area0').innerHTML;
+//
+//     // Пример задания цветов фона для каждого класса
+//     let color_for_area_p = 'rgb(107, 153, 201)'; // Пример цвета для .area_p
+//     let color_for_area_f = 'white'; // Пример цвета для .area_f
+//     let color_for_area_r = 'rgb(0, 0, 0)'; // Пример цвета для .area_r
+//     let color_for_area_t = 'rgb(255, 0, 0)'; // Пример цвета для .area_t
+//
+//     // Функция для проверки и применения цвета фона
+//     function applyBackgroundColor(selector, defaultColor) {
+//         $(selector).each(function() {
+//             var hasBackgroundStyle = false;
+//
+//             // Проверяем, задан ли inline стиль фона для текущего класса
+//             var inlineBg = $(this).attr('style');
+//             if (inlineBg && inlineBg.includes('background')) {
+//                 hasBackgroundStyle = true;
+//             }
+//
+//             // Проверяем наличие класса с суффиксом _с и наличие у него стиля
+//             var classWithSuffix = $(this).hasClass(selector.substring(1) + '_c');
+//             if (classWithSuffix) {
+//                 var inlineBgSuffix = $(this).attr('style');
+//                 if (inlineBgSuffix && inlineBgSuffix.includes('background')) {
+//                     hasBackgroundStyle = true;
+//                 }
+//             }
+//
+//             // Если нет инлайнового стиля фона, применяем цвет по умолчанию
+//             if (!hasBackgroundStyle) {
+//                 $(this).css('background', defaultColor);
+//             }
+//         });
+//     }
+//
+//     // Применяем функцию к каждому классу
+//     applyBackgroundColor('.area_p', color_for_area_p);
+//     applyBackgroundColor('.area_f', color_for_area_f);
+//     applyBackgroundColor('.area_r', color_for_area_r);
+//     applyBackgroundColor('.area_t', color_for_area_t);
+//
+//
+//     // Определение CSS и JS контента
+//     let cssColorSchemeContent = includeCss && cssOption === 'inline' ? `<style>
+//         .draggable {
+//             background: none;
+//         }
+//         .area {
+//             border-color: black;
+//             background: none;
+//         }
+//
+//         .area_p { background: ${color_for_area_p} !important;}
+//         .area_f { background: ${color_for_area_f} !important;}
+//         .area_r { background: ${color_for_area_r} !important;}
+//         .area_t { background: ${color_for_area_t} !important;}
+//     </style>` : includeCss && cssOption === 'link' ? '<link rel="stylesheet" href="colors.css">' : '';
+//
+//
+//
+//
+//
+//     let cssSizesContent = includeCssSizes && cssSizesOption === 'inline' ? `<style>
+//     .draggable {
+//         width: ${mouse_size}px;
+//         height: ${mouse_size1}px;
+//         position: absolute;
+//         transition: 0.5s;
+//         top: 0px;
+//         left: 0px;
+//     }
+//     .area {
+//         display: flex;
+//         position: relative;
+//         flex-direction: column;
+//         border: ${box_size}px solid;
+//         margin: auto;
+//     }
+//     .row {
+//         display: flex;
+//         flex-direction: row;
+//     }
+//     .area_p { width: ${box_size}px; height: ${box_size}px; }
+//     .area_f { width: ${box_size}px; height: ${box_size}px; }
+//     .area_r { width: ${box_size}px; height: ${box_size}px; }
+//     .area_t { width: ${box_size}px; height: ${box_size}px; }
+//     </style>` : includeCssSizes && cssSizesOption === 'link' ? '<link rel="stylesheet" href="size.css">' : '';
+//     let functionalityCssContent = includeFunctionality && functionalityCssOption === 'inline' ? `<style>
+//     .btns_c{
+//       display: flex;
+//       position: fixed;
+//       bottom: 10px;
+//       right: 10px;
+//     }
+//
+//     .btn_l{
+//       width: 50px;
+//     height: 50px;
+//     position: absolute;
+//     right: 100px;
+//     bottom: 50px;
+//     rotate: -90deg;
+//     }
+//
+//     .btn_r{
+//       width: 50px;
+//     height: 50px;
+//     position: absolute;
+//     bottom: 50px;
+//     right: 0px;
+//     rotate: 90deg;
+//     }
+//
+//     .btn_t{
+//       width: 50px;
+//     height: 50px;
+//     position: absolute;
+//     bottom: 100px;
+//     right: 50px;
+//     }
+//
+//     .btn_b{
+//       width: 50px;
+//     height: 50px;
+//     position: absolute;
+//     bottom: 0px;
+//     right: 50px;
+//     rotate: 180deg;
+//     }
+//
+//     .btn_style{
+//       background-color: gray;
+//       border-radius: 10px;
+//       border: 2px solid rgb(92, 92, 92);
+//       transition: 0.4s;
+//       cursor: crosshair;
+//     }
+//
+//     .btn_style:hover{
+//       background-color: rgb(91, 91, 91);
+//     border: 2px solid rgb(180, 180, 180);
+//     }
+//
+//     .btn_style:active{
+//       background-color: rgb(255, 91, 91);
+//     border: 2px solid rgb(180, 180, 180);
+//     }
+//     svg{
+//       width: 20px;
+//       height: 20px;
+//     }
+//     </style>` : includeFunctionality && functionalityCssOption === 'link' ? '<link rel="stylesheet" href="controls.css">' : '';
+//
+//     // Исправление для экранирования закрывающего тега script
+//     let jsContent = includeFunctionality && jsOption === 'inline' ? `<script>
+//     function checkElementAndApplyStyle() {
+//   // Пытаемся найти элемент с указанным ID
+//   const element = document.getElementById(mouse_id);
+//   // Находим первый элемент с классом draggable
+//   const draggableElement = document.querySelector('.draggable');
+//
+//   // Если элемент найден и существует целевой элемент с классом draggable
+//   if (element && draggableElement) {
+//       // Перемещаем найденный элемент в элемент с классом draggable
+//       draggableElement.appendChild(element);
+//   } else if (!element && draggableElement) {
+//       // Если элемент с указанным ID не найден, но есть элемент с классом draggable
+//       // Применяем стиль к элементу с классом draggable
+//       draggableElement.style.backgroundColor = "red";
+//       draggableElement.style.mixBlendMode = "difference";
+//   }
+// }
+//
+// function spawnButtons() {
+// ${jsScriptContent}
+//
+// // Создаем контейнер для кнопок
+// const container = document.createElement('div');
+// // Добавляем HTML код кнопок в контейнер
+// container.innerHTML = buttonsHtml;
+// // Добавляем контейнер с кнопками в body
+// document.body.appendChild(container);
+// }
+//
+// // Вызываем функцию для добавления кнопок в документ
+//
+//   document.addEventListener('DOMContentLoaded', (event) => {
+//
+//     spawnButtons();
+//
+// // Вызываем функцию для проверки и применения стилей
+// checkElementAndApplyStyle();
+//     const draggable = document.querySelector('.draggable');
+//     const grid = document.querySelector('.area'); // Контейнер для лабиринта
+//     const gridcels = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
+//     let currentRow = 0; // Текущая строка
+//     let currentCol = 0; // Текущий столбец
+//     const gridSize = 16; // Предположим, что у нас 20 ячеек в строке
+//
+//     window.move = (direction) => {
+//         let newRow = currentRow;
+//         let newCol = currentCol;
+//
+//         switch(direction) {
+//             case 'left':
+//                 newCol--;
+//                 break;
+//             case 'right':
+//                 newCol++;
+//                 break;
+//             case 'up':
+//                 newRow--;
+//                 break;
+//             case 'down':
+//                 newRow++;
+//                 break;
+//         }
+//
+//         if (canMoveTo(newRow, newCol)) {
+//             currentRow = newRow;
+//             currentCol = newCol;
+//             updatePosition();
+//         }
+//     }
+//
+//     function canMoveTo(row, col) {
+//         if (row < 0 || col < 0 || row >= gridSize || col >= gridSize) {
+//           console.log("За межами лабіринту");
+//             return false; // За пределами лабиринта
+//         }
+//         const celIndex = row * gridSize + col;
+//         return !gridcels[celIndex].classList.contains('area_r');
+//     }
+//
+//     function updatePosition() {
+//         draggable.style.top = (currentRow * ${box_size}) + 'px'; // 50 - высота ячейки
+//         draggable.style.left = (currentCol * ${box_size}) + 'px'; // 50 - ширина ячейки
+//     }
+//     });
+//     <\/script>` : includeFunctionality && jsOption === 'link' ? '<script src="script.js"><\/script>' : '';
+//     // Создание стандартной структуры HTML
+//     const fullHtml = `
+//     <!DOCTYPE html>
+//     <html lang="en">
+//     <head>
+//         <meta charset="UTF-8">
+//         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//         <title>Micromouse Map</title>
+//         <script src="https://code.jquery.com/jquery-3.6.0.min.js"><\/script>
+//         <script>
+//         const mouse_id = "${mouse_id}";
+//         <\/script>
+//         ${cssColorSchemeContent}
+//         ${cssSizesContent}
+//         ${functionalityCssContent}
+//     </head>
+//     <body style="display:flex;">
+//         ${pixelArtContent}
+//     </body>
+//     ${jsContent}
+//     </html>`;
+//
+//     // Создание и скачивание файла
+//     const blob = new Blob([fullHtml], { type: 'text/html' });
+//     const url = URL.createObjectURL(blob);
+//     const a = document.createElement('a');
+//     a.href = url;
+//     a.download = 'index.html';
+//     a.click();
+//     URL.revokeObjectURL(url);
+// }
 
 function downloadJSFile() {
     // Текст JavaScript кода, который вы хотите, чтобы пользователь скачал
