@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+  <div id="divForArea">
+
+  </div>
+
+<button id="exportButton">
+Export
+</button>
+<button id="modePaint">Paint Borders</button>
+<button id="modeStart">Mark Start</button>
+<button id="modeTarget">Mark Target</button>
+<br/>
+<div>
+    <label>Border Color:</label>
+    <input type="color" id="borderColorPicker" value="#ff0000">
+    <input type="range" id="borderOpacitySlider" min="0" max="1" step="0.01" value="1">
+</div>
+<div>
+    <label>Start Color:</label>
+    <input type="color" id="startColorPicker" value="#00ff00">
+    <input type="range" id="startOpacitySlider" min="0" max="1" step="0.01" value="1">
+</div>
+<div>
+    <label>Target Color:</label>
+    <input type="color" id="targetColorPicker" value="#0000ff">
+    <input type="range" id="targetOpacitySlider" min="0" max="1" step="0.01" value="1">
+</div>
+<div>
+    <label>Cell Color:</label>
+    <input type="color" id="cellColorPicker" value="#ffffff">
+    <input type="range" id="cellOpacitySlider" min="0" max="1" step="0.01" value="1">
+</div>
+
+<hr />
+<input type="file" id="importFileInput" accept=".json">
+<button id="importButton">Import Grid</button>
+
+
+<script src="script.js">
+
+</script>
+
+<script src="export.js">
+
+</script>
+
+<script src="import.js">
+
+</script>
+</body>
+</html>

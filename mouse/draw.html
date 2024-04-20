@@ -5,12 +5,14 @@
 <title>Генератор Лабіринту</title>
 
 <link rel="stylesheet" type="text/css" href="btns_draw.css">
+<link rel="stylesheet" type="text/css" href="/inc/mouse/draw/style.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="/inc/mouse/data/l_t/0_draw.js"></script>
-<script src="/inc/mouse/data/r_t/0_draw.js"></script>
-<script src="/inc/mouse/data/l_b/0_draw.js"></script>
-<script src="/inc/mouse/data/r_b/0_draw.js"></script>
-<script src="/inc/mouse/data/const.js"></script>
+<!-- <script src="/inc/mouse/data/l_t/0_draw.js"></script> -->
+<!-- <script src="/inc/mouse/data/r_t/0_draw.js"></script> -->
+<!-- <script src="/inc/mouse/data/l_b/0_draw.js"></script> -->
+<!-- <script src="/inc/mouse/data/r_b/0_draw.js"></script> -->
+<!-- <script src="/inc/mouse/data/const.js"></script> -->
+<script src=""></script>
 
 <!-- <script src="/inc/mouse/data/script.js"></script> -->
 
@@ -86,13 +88,22 @@ loadFilesSequentially(filesToLoad, 0, function() {});
 <div class="flex">
 
 <div class="pt" style="display: flex; justify-content: center; flex-direction: column; margin-right: 10px;">
-  <button class="area_t area_t_c" style="background: rgb(255, 0, 0);" id="area_t" onclick="setCurrentColor('area_t')"></button>
-  <button class="area_f area_f_c" style="background: rgb(255, 255, 255);" id="area_f" onclick="setCurrentColor('area_f')"></button>
-  <button class="area_r area_r_c" style="background: rgb(0, 0, 0);" id="area_r" onclick="setCurrentColor('area_r')"></button>
-  <button class="area_p area_p_c" style="background: rgb(107, 153, 201);" id="area_p" onclick="setCurrentColor('area_p')"></button>
+  <!-- <button class="area_t area_t_c" style="background: rgb(255, 0, 0);" id="area_t" onclick="setCurrentColor('area_t')"></button> -->
+  <button  class="area_t area_t_c" id="modePaint">
+    <!-- Paint Borders -->
+  </button>
+  <button   class="area_t area_t_c" id="modeStart">
+    <!-- Mark Start -->
+  </button>
+  <button   class="area_t area_t_c" id="modeTarget">
+    <!-- Mark Target -->
+  </button>
+  <!-- <button class="area_f area_f_c" style="background: rgb(255, 255, 255);" id="area_f" onclick="setCurrentColor('area_f')"></button> -->
+  <!-- <button class="area_r area_r_c" style="background: rgb(0, 0, 0);" id="area_r" onclick="setCurrentColor('area_r')"></button>
+  <button class="area_p area_p_c" style="background: rgb(107, 153, 201);" id="area_p" onclick="setCurrentColor('area_p')"></button> -->
   <button class="area_color_change" id="color_ch_btn"><div class="area_color_change_blur"></div></button>
 
-  <button class="area_color_change" style="padding: 0px;
+  <!-- <button class="area_color_change" style="padding: 0px;
 justify-content: center;
 border: 0px;
 border-radius: 5px;
@@ -117,7 +128,7 @@ justify-content: center;" fill="none" xmlns="http://www.w3.org/2000/svg">
 </defs>
 </svg>
 
-</button>
+</button> -->
 </div>
 
 
@@ -125,367 +136,133 @@ justify-content: center;" fill="none" xmlns="http://www.w3.org/2000/svg">
 
 
 <div>
-  <b class="show_n_t" style="margin-left: 40px;">1</b>
-  <b class="show_n_t" style="margin-left: 71px;">2</b>
-  <b class="show_n_t" style="margin-left: 107px;">3</b>
-  <b class="show_n_t" style="margin-left: 143px;">4</b>
-  <b class="show_n_t" style="margin-left: 179px;">5</b>
-  <b class="show_n_t" style="margin-left: 215px;">6</b>
-  <b class="show_n_t" style="margin-left: 251px;">7</b>
-  <b class="show_n_t" style="margin-left: 287px;">8</b>
-  <b class="show_n_t1" style="margin-left: 323px;">9</b>
-  <b class="show_n_t1" style="margin-left: 359px;">10</b>
-  <b class="show_n_t1" style="margin-left: 395px;">11</b>
-  <b class="show_n_t1" style="margin-left: 431px;">12</b>
-  <b class="show_n_t1" style="margin-left: 467px;">13</b>
-  <b class="show_n_t1" style="margin-left: 503px;">14</b>
-  <b class="show_n_t1" style="margin-left: 539px;">15</b>
-  <b class="show_n_t1" style="margin-left: 575px;">16</b>
 
-  <b class="show_n_l" style="top: 66px;">1</b>
-  <b class="show_n_l" style="top: 102px;">2</b>
-  <b class="show_n_l" style="top: 138px;">3</b>
-  <b class="show_n_l" style="top: 174px;">4</b>
-  <b class="show_n_l" style="top: 210px;">5</b>
-  <b class="show_n_l" style="top: 246px;">6</b>
-  <b class="show_n_l" style="top: 282px;">7</b>
-  <b class="show_n_l" style="top: 318px;">8</b>
+  <div style="display: flex; margin-left: 45px; gap: 2px; position: absolute;">
+    <b class="show_n_t">1</b>
+    <b class="show_n_t">2</b>
+    <b class="show_n_t">3</b>
+    <b class="show_n_t">4</b>
+    <b class="show_n_t">5</b>
+    <b class="show_n_t">6</b>
+    <b class="show_n_t">7</b>
+    <b class="show_n_t">8</b>
+    <b class="show_n_t1">9</b>
+    <b class="show_n_t1">10</b>
+    <b class="show_n_t1">11</b>
+    <b class="show_n_t1">12</b>
+    <b class="show_n_t1">13</b>
+    <b class="show_n_t1">14</b>
+    <b class="show_n_t1">15</b>
+    <b class="show_n_t1">16</b>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 2px; position: absolute; margin-top: 45px;">
+      <b class="show_n_l">1</b>
+      <b class="show_n_l">2</b>
+      <b class="show_n_l">3</b>
+      <b class="show_n_l">4</b>
+      <b class="show_n_l">5</b>
+      <b class="show_n_l">6</b>
+      <b class="show_n_l">7</b>
+      <b class="show_n_l">8</b>
+      <b class="show_n_l1">9</b>
+      <b class="show_n_l1">10</b>
+      <b class="show_n_l1">11</b>
+      <b class="show_n_l1">12</b>
+      <b class="show_n_l1">13</b>
+      <b class="show_n_l1">14</b>
+      <b class="show_n_l1">15</b>
+      <b class="show_n_l1">16</b>
+      </div>
 
-  <b class="show_n_l1" style="top: 354px;">9</b>
-  <b class="show_n_l1" style="top: 390px;">10</b>
-  <b class="show_n_l1" style="top: 426px;">11</b>
-  <b class="show_n_l1" style="top: 462px;">12</b>
-  <b class="show_n_l1" style="top: 498px;">13</b>
-  <b class="show_n_l1" style="top: 534px;">14</b>
-  <b class="show_n_l1" style="top: 570px;">15</b>
-  <b class="show_n_l1" style="top: 606px;">16</b>
+<div class="area0" style="margin: 45px;">
 
-<div class="area0">
-
-<div class="area">
+<!-- <div class="area"> -->
   <div class="draggable" style="top: 0px; left: 0px;"></div>
-<div class="row">
-    <div class="area_f" id="cel_1_1"></div>
-    <div class="area_f" id="cel_1_2"></div>
-    <div class="area_f" id="cel_1_3"></div>
-    <div class="area_f" id="cel_1_4"></div>
-    <div class="area_f" id="cel_1_5"></div>
-    <div class="area_f" id="cel_1_6"></div>
-    <div class="area_f" id="cel_1_7"></div>
-    <div class="area_f" id="cel_1_8"></div>
-    <div class="area_f" id="cel_1_9"></div>
-    <div class="area_f" id="cel_1_10"></div>
-    <div class="area_f" id="cel_1_11"></div>
-    <div class="area_f" id="cel_1_12"></div>
-    <div class="area_f" id="cel_1_13"></div>
-    <div class="area_f" id="cel_1_14"></div>
-    <div class="area_f" id="cel_1_15"></div>
-    <div class="area_f" id="cel_1_16"></div>
+  <div id="divForArea">
+
+  </div>
+
+
+<!-- <button id="modePaint">Paint Borders</button>
+<button id="modeStart">Mark Start</button>
+<button id="modeTarget">Mark Target</button> -->
+<!-- <br/> -->
+<!-- <div>
+    <label>Border Color:</label>
+    <input type="color" id="borderColorPicker" value="#ff0000">
+    <input type="range" id="borderOpacitySlider" min="0" max="1" step="0.01" value="1">
 </div>
-
-<div class="row">
-  <div class="area_f" id="cel_2_1">  </div>
-  <div class="area_f" id="cel_2_2">  </div>
-  <div class="area_f" id="cel_2_3">  </div>
-  <div class="area_f" id="cel_2_4">  </div>
-  <div class="area_f" id="cel_2_5">  </div>
-  <div class="area_f" id="cel_2_6">  </div>
-  <div class="area_f" id="cel_2_7">  </div>
-  <div class="area_f" id="cel_2_8">  </div>
-  <div class="area_f" id="cel_2_9">  </div>
-  <div class="area_f" id="cel_2_10">  </div>
-  <div class="area_f" id="cel_2_11">  </div>
-  <div class="area_f" id="cel_2_12">  </div>
-  <div class="area_f" id="cel_2_13">  </div>
-  <div class="area_f" id="cel_2_14">  </div>
-  <div class="area_f" id="cel_2_15">  </div>
-  <div class="area_f" id="cel_2_16">  </div>
+<div>
+    <label>Start Color:</label>
+    <input type="color" id="startColorPicker" value="#00ff00">
+    <input type="range" id="startOpacitySlider" min="0" max="1" step="0.01" value="1">
 </div>
-
-<div class="row">
-  <div class="area_f" id="cel_3_1">  </div>
-  <div class="area_f" id="cel_3_2">  </div>
-  <div class="area_f" id="cel_3_3">  </div>
-  <div class="area_f" id="cel_3_4">  </div>
-  <div class="area_f" id="cel_3_5">  </div>
-  <div class="area_f" id="cel_3_6">  </div>
-  <div class="area_f" id="cel_3_7">  </div>
-  <div class="area_f" id="cel_3_8">  </div>
-  <div class="area_f" id="cel_3_9">  </div>
-  <div class="area_f" id="cel_3_10">  </div>
-  <div class="area_f" id="cel_3_11">  </div>
-  <div class="area_f" id="cel_3_12">  </div>
-  <div class="area_f" id="cel_3_13">  </div>
-  <div class="area_f" id="cel_3_14">  </div>
-  <div class="area_f" id="cel_3_15">  </div>
-  <div class="area_f" id="cel_3_16">  </div>
+<div>
+    <label>Target Color:</label>
+    <input type="color" id="targetColorPicker" value="#0000ff">
+    <input type="range" id="targetOpacitySlider" min="0" max="1" step="0.01" value="1">
 </div>
+<div>
+    <label>Cell Color:</label>
+    <input type="color" id="cellColorPicker" value="#ffffff">
+    <input type="range" id="cellOpacitySlider" min="0" max="1" step="0.01" value="1">
+</div> -->
 
-<div class="row">
-  <div class="area_f" id="cel_4_1">  </div>
-  <div class="area_f" id="cel_4_2">  </div>
-  <div class="area_f" id="cel_4_3">  </div>
-  <div class="area_f" id="cel_4_4">  </div>
-  <div class="area_f" id="cel_4_5">  </div>
-  <div class="area_f" id="cel_4_6">  </div>
-  <div class="area_f" id="cel_4_7">  </div>
-  <div class="area_f" id="cel_4_8">  </div>
-  <div class="area_f" id="cel_4_9">  </div>
-  <div class="area_f" id="cel_4_10">  </div>
-  <div class="area_f" id="cel_4_11">  </div>
-  <div class="area_f" id="cel_4_12">  </div>
-  <div class="area_f" id="cel_4_13">  </div>
-  <div class="area_f" id="cel_4_14">  </div>
-  <div class="area_f" id="cel_4_15">  </div>
-  <div class="area_f" id="cel_4_16">  </div>
-</div>
+<!-- <hr /> -->
+<!-- <input type="file" id="importFileInput" accept=".json"> -->
+<!-- <button id="importButton">Import Grid</button> -->
 
-<div class="row">
-  <div class="area_f" id="cel_5_1">  </div>
-  <div class="area_f" id="cel_5_2">  </div>
-  <div class="area_f" id="cel_5_3">  </div>
-  <div class="area_f" id="cel_5_4">  </div>
-  <div class="area_f" id="cel_5_5">  </div>
-  <div class="area_f" id="cel_5_6">  </div>
-  <div class="area_f" id="cel_5_7">  </div>
-  <div class="area_f" id="cel_5_8">  </div>
-  <div class="area_f" id="cel_5_9">  </div>
-  <div class="area_f" id="cel_5_10">  </div>
-  <div class="area_f" id="cel_5_11">  </div>
-  <div class="area_f" id="cel_5_12">  </div>
-  <div class="area_f" id="cel_5_13">  </div>
-  <div class="area_f" id="cel_5_14">  </div>
-  <div class="area_f" id="cel_5_15">  </div>
-  <div class="area_f" id="cel_5_16">  </div>
-</div>
 
-<div class="row">
-  <div class="area_f" id="cel_6_1">  </div>
-  <div class="area_f" id="cel_6_2">  </div>
-  <div class="area_f" id="cel_6_3">  </div>
-  <div class="area_f" id="cel_6_4">  </div>
-  <div class="area_f" id="cel_6_5">  </div>
-  <div class="area_f" id="cel_6_6">  </div>
-  <div class="area_f" id="cel_6_7">  </div>
-  <div class="area_f" id="cel_6_8">  </div>
-  <div class="area_f" id="cel_6_9">  </div>
-  <div class="area_f" id="cel_6_10">  </div>
-  <div class="area_f" id="cel_6_11">  </div>
-  <div class="area_f" id="cel_6_12">  </div>
-  <div class="area_f" id="cel_6_13">  </div>
-  <div class="area_f" id="cel_6_14">  </div>
-  <div class="area_f" id="cel_6_15">  </div>
-  <div class="area_f" id="cel_6_16">  </div>
-</div>
+<script src="draw/script.js">
 
-<div class="row">
-  <div class="area_f" id="cel_7_1">  </div>
-  <div class="area_f" id="cel_7_2">  </div>
-  <div class="area_f" id="cel_7_3">  </div>
-  <div class="area_f" id="cel_7_4">  </div>
-  <div class="area_f" id="cel_7_5">  </div>
-  <div class="area_f" id="cel_7_6">  </div>
-  <div class="area_f" id="cel_7_7">  </div>
-  <div class="area_f" id="cel_7_8">  </div>
-  <div class="area_f" id="cel_7_9">  </div>
-  <div class="area_f" id="cel_7_10">  </div>
-  <div class="area_f" id="cel_7_11">  </div>
-  <div class="area_f" id="cel_7_12">  </div>
-  <div class="area_f" id="cel_7_13">  </div>
-  <div class="area_f" id="cel_7_14">  </div>
-  <div class="area_f" id="cel_7_15">  </div>
-  <div class="area_f" id="cel_7_16">  </div>
-</div>
+</script>
 
-<div class="row">
-  <div class="area_f" id="cel_8_1">  </div>
-  <div class="area_f" id="cel_8_2">  </div>
-  <div class="area_f" id="cel_8_3">  </div>
-  <div class="area_f" id="cel_8_4">  </div>
-  <div class="area_f" id="cel_8_5">  </div>
-  <div class="area_f" id="cel_8_6">  </div>
-  <div class="area_f" id="cel_8_7">  </div>
-  <div class="area_f" id="cel_8_8">  </div>
-  <div class="area_f" id="cel_8_9">  </div>
-  <div class="area_f" id="cel_8_10">  </div>
-  <div class="area_f" id="cel_8_11">  </div>
-  <div class="area_f" id="cel_8_12">  </div>
-  <div class="area_f" id="cel_8_13">  </div>
-  <div class="area_f" id="cel_8_14">  </div>
-  <div class="area_f" id="cel_8_15">  </div>
-  <div class="area_f" id="cel_8_16">  </div>
-</div>
+<script src="draw/export.js">
 
-<div class="row">
-  <div class="area_f" id="cel_9_1">  </div>
-  <div class="area_f" id="cel_9_2">  </div>
-  <div class="area_f" id="cel_9_3">  </div>
-  <div class="area_f" id="cel_9_4">  </div>
-  <div class="area_f" id="cel_9_5">  </div>
-  <div class="area_f" id="cel_9_6">  </div>
-  <div class="area_f" id="cel_9_7">  </div>
-  <div class="area_f" id="cel_9_8">  </div>
-  <div class="area_f" id="cel_9_9">  </div>
-  <div class="area_f" id="cel_9_10">  </div>
-  <div class="area_f" id="cel_9_11">  </div>
-  <div class="area_f" id="cel_9_12">  </div>
-  <div class="area_f" id="cel_9_13">  </div>
-  <div class="area_f" id="cel_9_14">  </div>
-  <div class="area_f" id="cel_9_15">  </div>
-  <div class="area_f" id="cel_9_16">  </div>
-</div>
+</script>
 
-<div class="row">
-  <div class="area_f" id="cel_10_1">  </div>
-  <div class="area_f" id="cel_10_2">  </div>
-  <div class="area_f" id="cel_10_3">  </div>
-  <div class="area_f" id="cel_10_4">  </div>
-  <div class="area_f" id="cel_10_5">  </div>
-  <div class="area_f" id="cel_10_6">  </div>
-  <div class="area_f" id="cel_10_7">  </div>
-  <div class="area_f" id="cel_10_8">  </div>
-  <div class="area_f" id="cel_10_9">  </div>
-  <div class="area_f" id="cel_10_10">  </div>
-  <div class="area_f" id="cel_10_11">  </div>
-  <div class="area_f" id="cel_10_12">  </div>
-  <div class="area_f" id="cel_10_13">  </div>
-  <div class="area_f" id="cel_10_14">  </div>
-  <div class="area_f" id="cel_10_15">  </div>
-  <div class="area_f" id="cel_10_16">  </div>
-</div>
+<script src="draw/import.js">
 
-<div class="row">
-  <div class="area_f" id="cel_11_1">  </div>
-  <div class="area_f" id="cel_11_2">  </div>
-  <div class="area_f" id="cel_11_3">  </div>
-  <div class="area_f" id="cel_11_4">  </div>
-  <div class="area_f" id="cel_11_5">  </div>
-  <div class="area_f" id="cel_11_6">  </div>
-  <div class="area_f" id="cel_11_7">  </div>
-  <div class="area_f" id="cel_11_8">  </div>
-  <div class="area_f" id="cel_11_9">  </div>
-  <div class="area_f" id="cel_11_10">  </div>
-  <div class="area_f" id="cel_11_11">  </div>
-  <div class="area_f" id="cel_11_12">  </div>
-  <div class="area_f" id="cel_11_13">  </div>
-  <div class="area_f" id="cel_11_14">  </div>
-  <div class="area_f" id="cel_11_15">  </div>
-  <div class="area_f" id="cel_11_16">  </div>
-</div>
-
-<div class="row">
-  <div class="area_f" id="cel_12_1">  </div>
-  <div class="area_f" id="cel_12_2">  </div>
-  <div class="area_f" id="cel_12_3">  </div>
-  <div class="area_f" id="cel_12_4">  </div>
-  <div class="area_f" id="cel_12_5">  </div>
-  <div class="area_f" id="cel_12_6">  </div>
-  <div class="area_f" id="cel_12_7">  </div>
-  <div class="area_f" id="cel_12_8">  </div>
-  <div class="area_f" id="cel_12_9">  </div>
-  <div class="area_f" id="cel_12_10">  </div>
-  <div class="area_f" id="cel_12_11">  </div>
-  <div class="area_f" id="cel_12_12">  </div>
-  <div class="area_f" id="cel_12_13">  </div>
-  <div class="area_f" id="cel_12_14">  </div>
-  <div class="area_f" id="cel_12_15">  </div>
-  <div class="area_f" id="cel_12_16">  </div>
-</div>
-
-<div class="row">
-  <div class="area_f" id="cel_13_1">  </div>
-  <div class="area_f" id="cel_13_2">  </div>
-  <div class="area_f" id="cel_13_3">  </div>
-  <div class="area_f" id="cel_13_4">  </div>
-  <div class="area_f" id="cel_13_5">  </div>
-  <div class="area_f" id="cel_13_6">  </div>
-  <div class="area_f" id="cel_13_7">  </div>
-  <div class="area_f" id="cel_13_8">  </div>
-  <div class="area_f" id="cel_13_9">  </div>
-  <div class="area_f" id="cel_13_10">  </div>
-  <div class="area_f" id="cel_13_11">  </div>
-  <div class="area_f" id="cel_13_12">  </div>
-  <div class="area_f" id="cel_13_13">  </div>
-  <div class="area_f" id="cel_13_14">  </div>
-  <div class="area_f" id="cel_13_15">  </div>
-  <div class="area_f" id="cel_13_16">  </div>
-</div>
-
-<div class="row">
-  <div class="area_f" id="cel_14_1">  </div>
-  <div class="area_f" id="cel_14_2">  </div>
-  <div class="area_f" id="cel_14_3">  </div>
-  <div class="area_f" id="cel_14_4">  </div>
-  <div class="area_f" id="cel_14_5">  </div>
-  <div class="area_f" id="cel_14_6">  </div>
-  <div class="area_f" id="cel_14_7">  </div>
-  <div class="area_f" id="cel_14_8">  </div>
-  <div class="area_f" id="cel_14_9">  </div>
-  <div class="area_f" id="cel_14_10">  </div>
-  <div class="area_f" id="cel_14_11">  </div>
-  <div class="area_f" id="cel_14_12">  </div>
-  <div class="area_f" id="cel_14_13">  </div>
-  <div class="area_f" id="cel_14_14">  </div>
-  <div class="area_f" id="cel_14_15">  </div>
-  <div class="area_f" id="cel_14_16">  </div>
-</div>
-
-<div class="row">
-  <div class="area_f" id="cel_15_1">  </div>
-  <div class="area_f" id="cel_15_2">  </div>
-  <div class="area_f" id="cel_15_3">  </div>
-  <div class="area_f" id="cel_15_4">  </div>
-  <div class="area_f" id="cel_15_5">  </div>
-  <div class="area_f" id="cel_15_6">  </div>
-  <div class="area_f" id="cel_15_7">  </div>
-  <div class="area_f" id="cel_15_8">  </div>
-  <div class="area_f" id="cel_15_9">  </div>
-  <div class="area_f" id="cel_15_10">  </div>
-  <div class="area_f" id="cel_15_11">  </div>
-  <div class="area_f" id="cel_15_12">  </div>
-  <div class="area_f" id="cel_15_13">  </div>
-  <div class="area_f" id="cel_15_14">  </div>
-  <div class="area_f" id="cel_15_15">  </div>
-  <div class="area_f" id="cel_15_16">  </div>
-</div>
-
-<div class="row">
-  <div class="area_f" id="cel_16_1">  </div>
-  <div class="area_f" id="cel_16_2">  </div>
-  <div class="area_f" id="cel_16_3">  </div>
-  <div class="area_f" id="cel_16_4">  </div>
-  <div class="area_f" id="cel_16_5">  </div>
-  <div class="area_f" id="cel_16_6">  </div>
-  <div class="area_f" id="cel_16_7">  </div>
-  <div class="area_f" id="cel_16_8">  </div>
-  <div class="area_f" id="cel_16_9">  </div>
-  <div class="area_f" id="cel_16_10">  </div>
-  <div class="area_f" id="cel_16_11">  </div>
-  <div class="area_f" id="cel_16_12">  </div>
-  <div class="area_f" id="cel_16_13">  </div>
-  <div class="area_f" id="cel_16_14">  </div>
-  <div class="area_f" id="cel_16_15">  </div>
-  <div class="area_f" id="cel_16_16">  </div>
-</div>
+</script>
 
 
 
 
 
 
-</div>
+<!-- </div> -->
 </div>
 </div>
 </div>
 </div>
 
-<div class="pt" style="justify-content: center; margin-bottom: 50px;">
+<div class="pt" style="justify-content: center; margin-bottom: 50px; display: flex; flex-direction: column;">
+  <input type="file" style="margin: auto;" id="importFileInput" accept=".json">
+
+
+  <div id="exportButton" style="margin-top: 10px;">
   <div id="loadButton" class="regular_btn" style="width:auto; margin:0px;height: 100%;">
       <div class="regular_btn1">
           <b class="regular_btn2" >Завантажити</b>
       </div>
   </div>
 </div>
+  <div id="importButton" style="margin-top: 10px;">
+  <div id="loadButton" class="regular_btn" style="width:auto; margin:0px;height: 100%;">
+      <div class="regular_btn1">
+          <b class="regular_btn2" >Імпортувати</b>
+      </div>
+  </div>
+</div>
+</div>
+
+<!-- <div class="pt" style="justify-content: center; margin-bottom: 50px;">
+
+</div> -->
+
+<!-- <button id="">
+Export
+</button> -->
 
 </div>
 
@@ -1012,38 +789,59 @@ scale: 0.8;">(Default)</h4><a href="info.html#script_js" class="question" title=
 
   <div class="pt pt4">
 
+    <div>
+        <label>Border Color:</label>
+    </div>
+    <div>
+        <label>Start Color:</label>
+    </div>
+    <div>
+        <label>Target Color:</label>
+    </div>
+    <div>
+        <label>Cell Color:</label>
+    </div>
+
     <div class="pt5">
       <h2 class="flex center_vert">Колір 1 (Доріжка) (Формат RGB(A))<a href="info.html#path_color" class="question" title="Що таке колір 1">?</a><div class="area_f color-box" id="colorBox1"></div></h2>
       Колір:<br>
-      <input type="color" id="color1" value="#ffffff">
+      <input type="color" id="cellColorPicker" value="#ffffff">
+      <!-- <input type="color" id="color1" value="#ffffff"> -->
       Альфа канал:<br>
-      <input type="range" id="alpha1" min="0" max="255" value="255" class="slider">
+      <input type="range" id="cellOpacitySlider" min="0" max="1" step="0.01" value="1">
+      <!-- <input type="range" id="alpha1" min="0" max="255" value="255" class="slider"> -->
     </div>
 <hr />
     <div class="pt5">
       <h2 class="flex center_vert">Колір 2 (Стіни) (Формат RGB(A)) <a href="info.html#wall_color" class="question" title="Що таке колір 2">?</a><div class="area_r color-box" id="colorBox2"></div></h2>
       Колір:<br>
-      <input type="color" id="color2" value="#000000">
+      <input type="color" id="borderColorPicker" value="#ff0000">
+      <!-- <input type="color" id="color2" value="#000000"> -->
       Альфа канал:<br>
-      <input type="range" id="alpha2" min="0" max="255" value="255" class="slider">
+      <input type="range" id="borderOpacitySlider" min="0" max="1" step="0.01" value="1">
+      <!-- <input type="range" id="alpha2" min="0" max="255" value="255" class="slider"> -->
     </div>
     <hr />
 
     <div class="pt5">
       <h2 class="flex center_vert">Колір 3 (Ціль) (Формат RGB(A))<a href="info.html#goal_color" class="question" title="Що таке колір 3">?</a><div class="area_t color-box" id="colorBox3"></div></h2>
       Колір:<br>
-      <input type="color" id="color3" value="#ff0000">
+      <input type="color" id="targetColorPicker" value="#0000ff">
+      <!-- <input type="color" id="color3" value="#ff0000"> -->
       Альфа канал:<br>
-      <input type="range" id="alpha3" min="0" max="255" value="255" class="slider">
+      <input type="range" id="targetOpacitySlider" min="0" max="1" step="0.01" value="1">
+      <!-- <input type="range" id="alpha3" min="0" max="255" value="255" class="slider"> -->
     </div>
     <hr />
 
     <div class="pt5">
       <h2 class="flex center_vert">Колір 4 (Місце спавну мищі) (Формат RGB(A))<a href="info.html#spawn_color" class="question" title="Що таке колір 4">?</a><div class="area_p color-box" id="colorBox4"></div></h2>
       Колір:<br>
-      <input type="color" id="color4" value="#6B99C9">
+      <input type="color" id="startColorPicker" value="#00ff00">
+      <!-- <input type="color" id="color4" value="#6B99C9"> -->
       Альфа канал:<br>
-      <input type="range" id="alpha4" min="0" max="255" value="255" class="slider">
+      <input type="range" id="startOpacitySlider" min="0" max="1" step="0.01" value="1">
+      <!-- <input type="range" id="alpha4" min="0" max="255" value="255" class="slider"> -->
     </div>
     <!-- <hr /> -->
 
@@ -1108,10 +906,10 @@ document.getElementById('alpha4').value = 255;
   ];
 
   loadFilesSequentially(filesToLoad, 0, function() {
-      applyClassesFromArray1(l_b);
-      applyClassesFromArray1(l_t);
-      applyClassesFromArray1(r_t);
-      applyClassesFromArray1(r_b);
+      // applyClassesFromArray1(l_b);
+      // applyClassesFromArray1(l_t);
+      // applyClassesFromArray1(r_t);
+      // applyClassesFromArray1(r_b);
   });
 }
 
@@ -1132,10 +930,10 @@ function applyClassesFromArray(arr) {
 }
 
 // Пример использования функции с вашим массивом
-applyClassesFromArray(l_t);
-applyClassesFromArray(r_t);
-applyClassesFromArray(l_b);
-applyClassesFromArray(r_b);
+// applyClassesFromArray(l_t);
+// applyClassesFromArray(r_t);
+// applyClassesFromArray(l_b);
+// applyClassesFromArray(r_b);
 
 function to_man_html() {
   var elements = document.getElementsByClassName("to_man_html");
@@ -2078,72 +1876,72 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
 
-setupPixelArt();
+// setupPixelArt();
 
 
 
-const draggable = document.querySelector('.draggable');
-const grid = document.querySelector('.area'); // Контейнер для лабиринта
-const gridcels = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
-let currentRow = 0; // Текущая строка
-let currentCol = 0; // Текущий столбец
-const gridSize = 16; // Предположим, что у нас 20 ячеек в строке
+// const draggable = document.querySelector('.draggable');
+// const grid = document.querySelector('.area'); // Контейнер для лабиринта
+// const gridcels = grid.querySelectorAll('.row > div'); // Все ячейки лабиринта
+// let currentRow = 0; // Текущая строка
+// let currentCol = 0; // Текущий столбец
+// const gridSize = 16; // Предположим, что у нас 20 ячеек в строке
 
-window.move = (direction) => {
-    let newRow = currentRow;
-    let newCol = currentCol;
+// window.move = (direction) => {
+//     let newRow = currentRow;
+//     let newCol = currentCol;
+//
+//     switch(direction) {
+//         case 'left':
+//             newCol--;
+//             break;
+//         case 'right':
+//             newCol++;
+//             break;
+//         case 'up':
+//             newRow--;
+//             break;
+//         case 'down':
+//             newRow++;
+//             break;
+//     }
+//
+//     if (canMoveTo(newRow, newCol)) {
+//         currentRow = newRow;
+//         currentCol = newCol;
+//         updatePosition();
+//     }
+// }
 
-    switch(direction) {
-        case 'left':
-            newCol--;
-            break;
-        case 'right':
-            newCol++;
-            break;
-        case 'up':
-            newRow--;
-            break;
-        case 'down':
-            newRow++;
-            break;
-    }
+// function canMoveTo(row, col) {
+//     if (row < 0 || col < 0 || row >= gridSize || col >= gridSize) {
+//       console.log("За межами лабіринту");
+//         return false; // За пределами лабиринта
+//     }
+//     const celIndex = row * gridSize + col;
+//     return !gridcels[celIndex].classList.contains('obstacle');
+// }
 
-    if (canMoveTo(newRow, newCol)) {
-        currentRow = newRow;
-        currentCol = newCol;
-        updatePosition();
-    }
-}
-
-function canMoveTo(row, col) {
-    if (row < 0 || col < 0 || row >= gridSize || col >= gridSize) {
-      console.log("За межами лабіринту");
-        return false; // За пределами лабиринта
-    }
-    const celIndex = row * gridSize + col;
-    return !gridcels[celIndex].classList.contains('obstacle');
-}
-
-function updatePosition() {
-    draggable.style.top = (currentRow * 35) + 'px'; // 50 - высота ячейки
-    draggable.style.left = (currentCol * 35) + 'px'; // 50 - ширина ячейки
-}
+// function updatePosition() {
+//     draggable.style.top = (currentRow * 35) + 'px'; // 50 - высота ячейки
+//     draggable.style.left = (currentCol * 35) + 'px'; // 50 - ширина ячейки
+// }
 });
 
-function setupPixelArt() {
-    // Перебор всех ячеек лабиринта
-    for (let row = 1; row <= 16; row++) {
-        for (let col = 1; col <= 16; col++) {
-            let celId = `cel_${row}_${col}`;
-            let cel = document.getElementById(celId);
-            if (cel) {
-                cel.addEventListener('click', function() {
-                    changeColor(cel);
-                });
-            }
-        }
-    }
-}
+// function setupPixelArt() {
+//     // Перебор всех ячеек лабиринта
+//     for (let row = 1; row <= 16; row++) {
+//         for (let col = 1; col <= 16; col++) {
+//             let celId = `cel_${row}_${col}`;
+//             let cel = document.getElementById(celId);
+//             if (cel) {
+//                 cel.addEventListener('click', function() {
+//                     changeColor(cel);
+//                 });
+//             }
+//         }
+//     }
+// }
 
 
 
@@ -2189,57 +1987,57 @@ function getClassIndex(className) {
 //     cursorElement.style.top = e.pageY + 5 + 'px';
 // });
 // Функция для изменения текущего цвета
-function updateCursor(newClass) {
+// function updateCursor(newClass) {
+//
+//  // cursorElement.classList.add(newClass);
+//  // cursorElement.style.backgroundColor = colorValue;
+//
+//
+// }
 
- // cursorElement.classList.add(newClass);
- // cursorElement.style.backgroundColor = colorValue;
-
-
-}
-
-function setCurrentColor(newClass) {
- currentClass = newClass;
- // Обновляем курсор при смене цвета
- // updateCursor(newClass); // Создаем курсор, если он еще не создан
- // const cursorElement = document.getElementById('customCursor');
- // if (cursorElement) {
-     // const colorValue = document.getElementById(`color${getClassIndex(currentClass)}`).value;
-     // cursorElement.classList.add(newClass);
-     // cursorElement.style.backgroundColor = colorValue;
- // } else {
-   // cursorElement.style.backgroundColor = colorValue;
- // }
-
-updateCursor()
-
-}
+// function setCurrentColor(newClass) {
+//  currentClass = newClass;
+//  // Обновляем курсор при смене цвета
+//  // updateCursor(newClass); // Создаем курсор, если он еще не создан
+//  // const cursorElement = document.getElementById('customCursor');
+//  // if (cursorElement) {
+//      // const colorValue = document.getElementById(`color${getClassIndex(currentClass)}`).value;
+//      // cursorElement.classList.add(newClass);
+//      // cursorElement.style.backgroundColor = colorValue;
+//  // } else {
+//    // cursorElement.style.backgroundColor = colorValue;
+//  // }
+//
+// updateCursor()
+//
+// }
 
 // Инициализация при загрузке страницы
 // document.addEventListener('DOMContentLoaded', );
 
 
-function hexToRgba(hex, alpha) {
-    var r = parseInt(hex.slice(1, 3), 16);
-    var g = parseInt(hex.slice(3, 5), 16);
-    var b = parseInt(hex.slice(5, 7), 16);
-    return `rgba(${r}, ${g}, ${b}, ${alpha / 255})`;
-}
-
-function updateColor(colorId, alphaId, colorBoxId, className) {
-    var colorValue = document.getElementById(colorId).value;
-    var alphaValue = document.getElementById(alphaId).value;
-    var rgbaColor = hexToRgba(colorValue, alphaValue);
-
-    // Update the color box background
-    document.getElementById(colorBoxId).style.backgroundColor = rgbaColor;
-
-    // Update the background color of elements with the specified class name
-    var elements = document.getElementsByClassName(className);
-    for (var i = 0; i < elements.length; i++) {
-      // console.log(elements[i].style.backgroundColor = rgbaColor);
-        elements[i].style.backgroundColor = rgbaColor; //Эта строка делает баг
-    }
-}
+// function hexToRgba(hex, alpha) {
+//     var r = parseInt(hex.slice(1, 3), 16);
+//     var g = parseInt(hex.slice(3, 5), 16);
+//     var b = parseInt(hex.slice(5, 7), 16);
+//     return `rgba(${r}, ${g}, ${b}, ${alpha / 255})`;
+// }
+//
+// function updateColor(colorId, alphaId, colorBoxId, className) {
+//     var colorValue = document.getElementById(colorId).value;
+//     var alphaValue = document.getElementById(alphaId).value;
+//     var rgbaColor = hexToRgba(colorValue, alphaValue);
+//
+//     // Update the color box background
+//     document.getElementById(colorBoxId).style.backgroundColor = rgbaColor;
+//
+//     // Update the background color of elements with the specified class name
+//     var elements = document.getElementsByClassName(className);
+//     for (var i = 0; i < elements.length; i++) {
+//       // console.log(elements[i].style.backgroundColor = rgbaColor);
+//         elements[i].style.backgroundColor = rgbaColor; //Эта строка делает баг
+//     }
+// }
 
 // Mapping color pickers and sliders to class names
 var mappings = [
@@ -2249,52 +2047,52 @@ var mappings = [
     { colorId: 'color4', alphaId: 'alpha4', colorBoxId: 'colorBox4', className: 'area_p' }
 ];
 
-mappings.forEach(function(mapping) {
-    // updateColor(mapping.colorId, mapping.alphaId, mapping.colorBoxId, mapping.className); // Initial update
+// mappings.forEach(function(mapping) {
+//     // updateColor(mapping.colorId, mapping.alphaId, mapping.colorBoxId, mapping.className); // Initial update
+//
+//     document.getElementById(mapping.colorId).oninput = function() {
+//         updateColor(mapping.colorId, mapping.alphaId, mapping.colorBoxId, mapping.className);
+//     };
+//
+//     document.getElementById(mapping.alphaId).oninput = function() {
+//         updateColor(mapping.colorId, mapping.alphaId, mapping.colorBoxId, mapping.className);
+//     };
+// });
 
-    document.getElementById(mapping.colorId).oninput = function() {
-        updateColor(mapping.colorId, mapping.alphaId, mapping.colorBoxId, mapping.className);
-    };
-
-    document.getElementById(mapping.alphaId).oninput = function() {
-        updateColor(mapping.colorId, mapping.alphaId, mapping.colorBoxId, mapping.className);
-    };
-});
-
-function collectLabyrinthData() {
-    const labyrinthBinary = [];
-    for (let row = 1; row <= 16; row++) { // Начинаем с 1, заканчиваем 16
-        let rowBinary = '';
-        for (let col = 1; col <= 16; col++) { // Начинаем с 1, заканчиваем 16
-            const cellId = `cel_${row}_${col}`;
-            const cell = document.getElementById(cellId);
-            if (cell && cell.classList.contains('area_r')) {
-                rowBinary += '1'; // Стена
-            } else {
-                rowBinary += '0'; // Дорожка
-            }
-        }
-        labyrinthBinary.push(rowBinary);
-    }
-    return labyrinthBinary.map(binaryString => parseInt(binaryString, 2));
-}
-
-function saveLabyrinthDataAsJson(labyrinthData) {
-    const jsonLabyrinth = JSON.stringify(labyrinthData);
-    const blob = new Blob([jsonLabyrinth], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.setAttribute('href', url);
-    link.setAttribute('download', 'Binary.json');
-    document.body.appendChild(link); // Необходимо для Firefox
-    link.click();
-    document.body.removeChild(link); // Очистка после скачивания
-}
-
-function generateAndDownloadLabyrinth() {
-    const labyrinthData = collectLabyrinthData();
-    saveLabyrinthDataAsJson(labyrinthData);
-}
+// function collectLabyrinthData() {
+//     const labyrinthBinary = [];
+//     for (let row = 1; row <= 16; row++) { // Начинаем с 1, заканчиваем 16
+//         let rowBinary = '';
+//         for (let col = 1; col <= 16; col++) { // Начинаем с 1, заканчиваем 16
+//             const cellId = `cel_${row}_${col}`;
+//             const cell = document.getElementById(cellId);
+//             if (cell && cell.classList.contains('area_r')) {
+//                 rowBinary += '1'; // Стена
+//             } else {
+//                 rowBinary += '0'; // Дорожка
+//             }
+//         }
+//         labyrinthBinary.push(rowBinary);
+//     }
+//     return labyrinthBinary.map(binaryString => parseInt(binaryString, 2));
+// }
+//
+// function saveLabyrinthDataAsJson(labyrinthData) {
+//     const jsonLabyrinth = JSON.stringify(labyrinthData);
+//     const blob = new Blob([jsonLabyrinth], { type: 'application/json' });
+//     const url = URL.createObjectURL(blob);
+//     const link = document.createElement('a');
+//     link.setAttribute('href', url);
+//     link.setAttribute('download', 'Binary.json');
+//     document.body.appendChild(link); // Необходимо для Firefox
+//     link.click();
+//     document.body.removeChild(link); // Очистка после скачивания
+// }
+//
+// function generateAndDownloadLabyrinth() {
+//     const labyrinthData = collectLabyrinthData();
+//     saveLabyrinthDataAsJson(labyrinthData);
+// }
 
 </script>
 </html>
