@@ -242,7 +242,7 @@ function import_s5() {
       `/inc/mouse/draw/${s}/sectorExport-7.json`,
       `/inc/mouse/draw/${s}/sectorExport-8.json`,
       `/inc/mouse/draw/${s}/sectorExport-9.json`,
-      `/inc/mouse/draw/${s}/sectorExport-10.json`,
+      // `/inc/mouse/draw/${s}/sectorExport-10.json`,
       // `/inc/mouse/draw/${s}/sectorExport-11.json`//
     ];
     line_start = { x: 1, y: 5 };
