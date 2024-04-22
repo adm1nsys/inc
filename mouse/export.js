@@ -17,10 +17,22 @@ function exportGridToJSON() {
         gridData.push(columnContainer);
     }
 
+    // const startAndTargets = {
+    //     start: startCell && startCell.x !== null && startCell.y !== null ? { x: parseInt(startCell.x), y: parseInt(startCell.y) } : null,
+    //     targets: targetCells.map(cell => ({ x: parseInt(cell.x), y: parseInt(cell.y) }))
+    // };
+
+    //+ ограничение
+
     const startAndTargets = {
-        start: startCell && startCell.x !== null && startCell.y !== null ? { x: parseInt(startCell.x), y: parseInt(startCell.y) } : null,
-        targets: targetCells.map(cell => ({ x: parseInt(cell.x), y: parseInt(cell.y) }))
-    };
+      start: { x: 1, y: 1 }, // Старт всегда на {x: 1, y: 1} в каждом секторе
+      targets: [
+          { x: 8, y: 8 },
+          { x: 9, y: 8 },
+          { x: 9, y: 9 },
+          { x: 8, y: 9 }
+      ] // Фиксированные цели, как в вашем примере
+  };
 
     const colorSettings = {
         borderColor: borderColor,
