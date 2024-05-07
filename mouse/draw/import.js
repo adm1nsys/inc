@@ -123,7 +123,7 @@ function rgbToHex(r, g, b) {
 
 $(document).ready(function() {
     $('#importButton2').click(function() {
-        let fileInput = document.getElementById('importFileInput2');
+        let fileInput = document.getElementById('importFileInput');
         if (fileInput.files.length > 0) {
             let reader = new FileReader();
             reader.onload = function(e) {
