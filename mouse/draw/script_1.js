@@ -202,18 +202,18 @@ function import_s4() {
   return new Promise((resolve, reject) => {
     const s = "s_4";
     var jsonFiles = [
-      `/inc/mouse/draw/${s}/sectorExport.json`,
+      `/inc/mouse/draw/${s}/sectorExport.json`, //
       // `/inc/mouse/draw/${s}/sectorExport-1.json`,
-      `/inc/mouse/draw/${s}/sectorExport-2.json`,
-      `/inc/mouse/draw/${s}/sectorExport-3.json`,
-      `/inc/mouse/draw/${s}/sectorExport-4.json`,
-      `/inc/mouse/draw/${s}/sectorExport-5.json`,
-      `/inc/mouse/draw/${s}/sectorExport-6.json`,
-      `/inc/mouse/draw/${s}/sectorExport-7.json`,
-      `/inc/mouse/draw/${s}/sectorExport-8.json`,
-      `/inc/mouse/draw/${s}/sectorExport-9.json`,
-      `/inc/mouse/draw/${s}/sectorExport-10.json`,
-      `/inc/mouse/draw/${s}/sectorExport-11.json`
+      // `/inc/mouse/draw/${s}/sectorExport-2.json`, ///
+      // `/inc/mouse/draw/${s}/sectorExport-3.json`, ///
+      // `/inc/mouse/draw/${s}/sectorExport-4.json`, ///
+      // `/inc/mouse/draw/${s}/sectorExport-5.json`, ///
+      // `/inc/mouse/draw/${s}/sectorExport-6.json`, ///
+      // `/inc/mouse/draw/${s}/sectorExport-7.json`, ///
+      // `/inc/mouse/draw/${s}/sectorExport-8.json`, ///
+      // `/inc/mouse/draw/${s}/sectorExport-9.json`, ///
+      // `/inc/mouse/draw/${s}/sectorExport-10.json`, ///
+      // `/inc/mouse/draw/${s}/sectorExport-11.json` ///
     ];
     line_start = { x: 13, y: 1 };
     line_end = { x: 16, y: 4 };
