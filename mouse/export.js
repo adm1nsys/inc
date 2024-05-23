@@ -42,7 +42,7 @@ function exportGridToJSON() {
     };
 
     const content = JSON.stringify({
-        "comment": "How to use this export: Each cell's borders are represented as a decimal number converted from binary. The binary order is Top, Bottom, Left, Right (e.g., 1010 represents top and left borders clicked). To convert from decimal to binary, use a binary converter or programming method (e.g., (9).toString(2) in JavaScript).",
+        "comment": "How to use this export: Each cell's borders are represented as a decimal number converted from binary. The binary order is top, right, bottom, left (e.g., 1010 represents top and left borders clicked). To convert from decimal to binary, use a binary converter or programming method (e.g., (9).toString(2) in JavaScript).",
         "Grid Data": gridData,
         "Start and Targets": startAndTargets,
         "Color Settings": colorSettings
