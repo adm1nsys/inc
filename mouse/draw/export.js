@@ -86,10 +86,10 @@ function exportGridToJSON2() {
         for (let c = 1; c <= columns; c++) {
             const $element = $('#e_' + r + '_' + c);
             const binaryString = [
-              isBorderRed($element, 'left') ? '1' : '0',
-              isBorderRed($element, 'bottom') ? '1' : '0',
+              isBorderRed($element, 'top') ? '1' : '0',
               isBorderRed($element, 'right') ? '1' : '0',
-                isBorderRed($element, 'top') ? '1' : '0',
+              isBorderRed($element, 'bottom') ? '1' : '0',
+              isBorderRed($element, 'left') ? '1' : '0'
             ].join('');
             const decimal = parseInt(binaryString, 2);
             columnContainer.push(decimal);
@@ -115,7 +115,7 @@ function exportGridToJSON2() {
     };
 
     const content = JSON.stringify({
-        "comment": "How to use this export: Each cell's borders are represented as a decimal number converted from binary. The binary order is Top, Bottom, Left, Right (e.g., 1010 represents top and left borders clicked).",
+      "comment": "How to use this export: Each cell's borders are represented as a decimal number converted from binary. The binary order is top, right, bottom, left (e.g., 1010 represents top and left borders clicked). To convert from decimal to binary, use a binary converter or programming method (e.g., (9).toString(2) in JavaScript).",
         "Grid Data": gridData,
         "Start and Targets": startAndTargets,
         "Color Settings": colorSettings
@@ -124,7 +124,7 @@ function exportGridToJSON2() {
     const blob = new Blob([content], { type: 'application/json;charset=utf-8;' });
     const downloadLink = document.createElement('a');
     downloadLink.href = URL.createObjectURL(blob);
-    downloadLink.download = "gridExport2.json";
+    downloadLink.download = "gridExport.json";
     document.body.appendChild(downloadLink);
     downloadLink.click();
     document.body.removeChild(downloadLink);

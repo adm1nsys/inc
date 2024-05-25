@@ -150,10 +150,10 @@ function applyImportedData2(data) {
             const cellSelector = `#e_${rowIndex + 1}_${colIndex + 1}`;
             const $cell = $(cellSelector);
             $cell.data({
-              'border-left': binaryString[3] === '1' ? 'toggled' : '',
-              'border-bottom': binaryString[2] === '1' ? 'toggled' : '',
+              'border-top': binaryString[0] === '1' ? 'toggled' : '',
               'border-right': binaryString[1] === '1' ? 'toggled' : '',
-                'border-top': binaryString[0] === '1' ? 'toggled' : '',
+              'border-bottom': binaryString[2] === '1' ? 'toggled' : '',
+              'border-left': binaryString[3] === '1' ? 'toggled' : ''
             });
 
             ['top', 'right', 'bottom', 'left'].forEach((border, index) => {
