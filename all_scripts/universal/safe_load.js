@@ -117,7 +117,7 @@ const translations = {
     menu: "Меню",
     lang_ch_ed: "мова змінена",
     whereInnovationMeets: "Де зустрічаються інновації",
-    imagination: "Уява",
+    imagination: "Та уява",
     discoverBrands: "+ Відкрити бренди",
     ourStages: "Наші етапи",
     projectPhase: "На якій стадії знаходиться проект?",
